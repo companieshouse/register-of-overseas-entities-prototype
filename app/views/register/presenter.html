@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Who is registering – {{ serviceName }} – Companies House
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set myselfHtml %}
+      {{ govukInput({
+        id: "contact-by-phone",
+        name: "contact-by-phone",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Phone number"
+        }
+      }) }}
+      {{ govukInput({
+        id: "contact-by-email",
+        name: "contact-by-email",
+        type: "email",
+        autocomplete: "email",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Email"
+        }
+      }) }}
+      {% endset -%}
+
+
+<form>
+
+      {{ govukRadios({
+        idPrefix: "contact",
+        name: "contact",
+        fieldset: {
+          legend: {
+            text: "Who is registering the overseas entity?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select one option."
+        },
+        items: [
+
+          {
+            value: "client",
+            text: "I am registering on behalf of a client"
+          },
+          {
+            value: "myself",
+            text: "I am registering for myself",
+            conditional: {
+              html: myselfHtml
+            }
+          }
+        ]
+      }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
