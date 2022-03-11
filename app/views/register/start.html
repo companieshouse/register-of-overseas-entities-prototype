@@ -32,16 +32,40 @@
       <h1 class="govuk-heading-xl">
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
+<p class="govuk-body-l">Use this service to register an overseas entity's beneficial owner, so that they can buy or sell land in the UK.</p>
 
-      <p>Use this service to:</p>
 
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "You can be fined £500 a day and have difficulty buying or selling land if you do not register.",
+  iconFallbackText: "Warning"
+}) }}
+      <p><strong>You'll need:</strong></p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
+        <li>to sign in to or create a Companies House account</li>
+        <li>a credit or debit card to pay the £100 fee</li>
       </ul>
 
-      <p>Registering takes around 5 minutes.</p>
+      <p><strong>You'll need to tell us the obliged entity's:</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>contact details</li>
+        <li>registered office address</li>
+        <li>legal authority and legal form</li>
+        <li>country of registration and registration number</li>
+      </ul>
+
+      <p><strong>You'll need to tell us the beneficial owner's:</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>correspondence address and home address</li>
+        <li>nationality</li>
+        <li>nature of control</li>
+        <li>verification status</li>
+      </ul>
+
+      <p>Registering takes around 10 minutes.</p>
 
       <a href="sign-in" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
@@ -50,13 +74,7 @@
         </svg>
       </a>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
 
-      <p>You can also <a href="#">register by post</a>.</p>
-
-      <p>The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.</p>
-
-      <p>You can’t register for this service if you’re in the UK illegally.</p>
 
     </div>
 
@@ -70,7 +88,7 @@
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
               <a href="#">
-                Search the register of overseas entities
+                Search the Register of overseas entities
               </a>
             </li>
             <li>
