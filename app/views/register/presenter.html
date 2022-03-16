@@ -69,8 +69,10 @@
       }) }}
 
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-
+      {{ govukButton({
+        text: "Continue",
+        href: "/register/entity"
+      }) }}
       </form>
 
     </div>
