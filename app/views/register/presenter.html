@@ -13,61 +13,90 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% set myselfHtml %}
-      {{ govukInput({
-        id: "contact-by-phone",
-        name: "contact-by-phone",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Phone number"
-        }
-      }) }}
-      {{ govukInput({
-        id: "contact-by-email",
-        name: "contact-by-email",
-        type: "email",
-        autocomplete: "email",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Email"
-        }
-      }) }}
-      {% endset -%}
+<span class="govuk-caption-xl">Third-party agent</span>
+<h1 class="govuk-heading-xl">Tell us about yourself</h1>
 
 
 <form>
 
-      {{ govukRadios({
-        idPrefix: "contact",
-        name: "contact",
-        fieldset: {
-          legend: {
-            text: "Who is registering the overseas entity?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "Select one option."
-        },
-        items: [
+  {{ govukInput({
+    label: {
+      text: "What is your full name?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    id: "presenter-name",
+    name: "presenter-name"
+  }) }}
 
-          {
-            value: "client",
-            text: "I am registering on behalf of a client"
-          },
-          {
-            value: "myself",
-            text: "I am registering for myself",
-            conditional: {
-              html: myselfHtml
-            }
-          }
-        ]
-      }) }}
+  {{ govukInput({
+    label: {
+      text: "What is your phone number?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    id: "presenter-number",
+    name: "presenter-number",
+    classes: "govuk-!-width-one-third"
+  }) }}
 
+  {% set otherHtml %}
+  {{ govukInput({
+    id: "other-role",
+    name: "other-role",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Role title"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "presenter-role",
+    name: "presenter-role",
+    fieldset: {
+      legend: {
+        text: "What is your role?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "Select one option."
+    },
+    items: [
+      {
+        value: "adminstrator",
+        text: "Administrator"
+      },
+      {
+        value: "agent",
+        text: "Agent"
+      },
+      {
+        value: "solicitor",
+        text: "Solicitor"
+      },
+      {
+        value: "other",
+        text: "Other",
+        conditional: {
+        html: otherHtml
+      }
+      }
+    ]
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "What is your anti-money laundering registration number?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    id: "amlr",
+    name: "amlr",
+    classes: "govuk-!-width-one-third"
+  }) }}
 
       {{ govukButton({
         text: "Continue",
