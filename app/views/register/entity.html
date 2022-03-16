@@ -100,6 +100,7 @@
         {% endcall %}
 
         {% set serviceAddressHtml %}
+        <br>
         {% call govukFieldset({
           legend: {
             text: "What is the service address?",
@@ -159,7 +160,7 @@
         {% endset -%}
 
         {{ govukRadios({
-          classes: "govuk-radios--inline",
+          classes: "govuk-radios",
           idPrefix: "same-address",
           name: "same-address",
           fieldset: {
@@ -192,6 +193,26 @@
           },
           id: "entity-email",
           name: "entity-email"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is legal form?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-legal-form",
+          name: "entity-legal-form"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is law governed?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-law-governed",
+          name: "entity-law-governed"
         }) }}
 
         {{ govukButton({
