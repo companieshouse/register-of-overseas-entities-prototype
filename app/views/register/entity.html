@@ -214,6 +214,26 @@
           id: "entity-law-governed",
           name: "entity-law-governed"
         }) }}
+
+        {{ govukInput({
+          label: {
+            text: "On which public register is the overseas entity registered?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-public-register",
+          name: "entity-public-register"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the registration number of the entity?",
+            classes: "govuk-label--m govuk-input--width-10",
+            isPageHeading: false
+          },
+          id: "entity-reg-number",
+          name: "entity-reg-number"
+        }) }}
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>
         <p>All details provided about the overseas entity will be available on the online register</p>
         <p>Something about due diligence and providing information to the best of your knowledge?</p>
