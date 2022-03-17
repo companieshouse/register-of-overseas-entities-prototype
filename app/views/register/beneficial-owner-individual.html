@@ -15,10 +15,233 @@
 
       <span class="govuk-caption-xl">Individual beneficial owner</span>
       <h1 class="govuk-heading-xl">Tell us about the beneficial owner</h1>
-
+      <span class="govuk-caption-l">You can add more individual beneficial owners later</span>
+<br>
       <form class="form" method="post">
 
+        {{ govukDetails({
+          summaryText: "What is a beneficial owner?",
+          text: "A beneficial owner is an individual who ultimately owns or controls more than 25% of a company's shares or voting rights, or who otherwise exercise control over the company or its management."
+        }) }}
 
+        {{ govukInput({
+          label: {
+            text: "What is the full name of the beneficial owner?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+            text: "You can include the title if relevant"
+          },
+          id: "individual-name",
+          name: "individual-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the country of incorporation?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "entity-country",
+          name: "entity-country"
+        }) }}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What is the principal address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+            },
+            id: "address-line-1",
+            name: "address-line-1",
+            autocomplete: "address-line1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            autocomplete: "address-line2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town",
+            autocomplete: "address-level2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "County"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "address-county"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "address-postcode",
+            autocomplete: "postal-code"
+          }) }}
+
+        {% endcall %}
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is the service address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+            },
+            id: "service-address-line-1",
+            name: "service-address-line-1",
+            autocomplete: "service-address-line1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+            },
+            id: "service-address-line-2",
+            name: "service-address-line-2",
+            autocomplete: "service-address-line2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "service-address-town",
+            name: "service-address-town",
+            autocomplete: "service-address-level2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "County"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "service-address-county",
+            name: "service-address-county"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "service-address-postcode",
+            name: "service-address-postcode",
+            autocomplete: "service-postal-code"
+          }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Is the service address the same as the principal address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+        html: serviceAddressHtml
+        }
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the email address?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-email",
+          name: "entity-email"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is legal form?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-legal-form",
+          name: "entity-legal-form"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is law governed?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-law-governed",
+          name: "entity-law-governed"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "On which public register is the overseas entity registered?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          id: "entity-public-register",
+          name: "entity-public-register"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the registration number of the entity?",
+            classes: "govuk-label--m govuk-input--width-10",
+            isPageHeading: false
+          },
+          id: "entity-reg-number",
+          name: "entity-reg-number"
+        }) }}
+        <h2 class="govuk-heading-m">What information is shown on the online register</h2>
+        <p>All details provided about the indivodual owner will be available on the online register</p>
+        <p>Something about due diligence and providing information to the best of your knowledge?</p>
 
         {{ govukButton({
           text: "Continue",
