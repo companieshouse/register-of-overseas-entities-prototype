@@ -16,3 +16,15 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.gem-c-contents-list__list-item--dashed {
+position: relative;
+padding-left: 25px;
+padding-right: 25px;
+}
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden;
+}
