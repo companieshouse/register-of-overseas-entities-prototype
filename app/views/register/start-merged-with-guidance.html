@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start – {{ serviceName }} – Companies House
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% include "../includes/govuk-content-header.html" %}
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+      <h3 id="background" class="govuk-heading-m">What the Register of Overseas Entities is</h3>
+      <p class="govuk-body">On 10 January 2020, the Fifth Anti-Money Laundering Directive (5MLD) came into force in the UK through the Money Laundering and Terrorist Financing (Amendment) Regulations 2019.</p>
+      <p class="govuk-body">Obliged entities must let us know if there’s a discrepancy between the information on the PSC register, and the information they hold about a beneficial owner of a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>company</li>
+        <li>limited liability partnership (LLP)</li>
+        <li>Scottish limited partnership (SLP)</li>
+        <li>Scottish qualifying partnership (SQP)
+        </li>
+      </ul>
+      <p class="govuk-body">If they find a discrepancy, obliged entities must make a report to Companies House.</p>
+      <p class="govuk-body">This will help us to make sure that the register is accurate and up to date.</p>
+      <h3 id="what-an-overseas-entity-is" class="govuk-heading-m">What an overseas entity is</h3>
+      <p class="govuk-body">This is any entity required to carry out due diligence checks under anti-money laundering regulations.</p>
+
+      <p class="govuk-body">Obliged entities include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>credit institutions</li>
+        <li>financial institutions</li>
+        <li>auditors, external accountants or tax advisors</li>
+        <li>notaries or other independent legal professionals</li>
+        <li>trusts or company service providers</li>
+        <li>estate agents, including when acting as intermediaries</li>
+        <li>other persons trading goods in cash amounting to €10,000 or more</li>
+        <li>gambling services</li>
+        <li>exchange services between virtual and fiat currencies</li>
+        <li>custodian wallet providers</li>
+        <li>art dealers in galleries and auction houses</li>
+        <li>art dealers in free ports</li>
+        <li>insolvency practitioners</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        If you’re not an obliged entity, do not use this service to report a PSC discrepancy. If you want to update your PSC details, you can
+        <a href="https://www.gov.uk/make-changes-to-your-limited-company" class="govuk-link">tell Companies House about changes to your limited company</a>.
+      </div>
+
+      <h3 id="what-a-beneficial-owner-is" class="govuk-heading-m">What a beneficial owner is</h3>
+      <p class="govuk-body">A PSC stands for ‘person with significant control’ and is someone who owns or controls a company. A company can have one or more PSCs.</p>
+      <p class="govuk-body">A beneficial owner does not have the same definition as a PSC. The requirement to report discrepancies is based on the Companies Act definition of a PSC - not the Money Laundering Regulations. This means that the information on the PSC register might be different to other beneficial ownership information, but it might not be inaccurate.</p>
+
+      <p class="govuk-body call-to-action">Read about
+        <a href="https://www.gov.uk/government/publications/guidance-to-the-people-with-significant-control-requirements-for-companies-and-limited-liability-partnerships" class="govuk-link">how to identify PSCs of companies and limited liability partnerships (LLPs)</a>
+        and
+        <a href="https://www.gov.uk/government/publications/scottish-qualifying-partnerships-people-with-significant-control" class="govuk-link">how to identify PSCs of Scottish qualifying partnerships</a>.</p>
+
+      <h3 id="who-can-use-this-service" class="govuk-heading-m">Who can use this service
+</h3>
+      <p class="govuk-body">A discrepancy is when the information that an obliged entity holds about a beneficial owner clearly shows that the information recorded by Companies House, in terms of the definition of a PSC, is incorrect.</p>
+
+      <p class="govuk-body">A discrepancy exists when a relevant entity has information that clearly indicates that the PSC information recorded by Companies House is inaccurate.</p>
+
+      <p class="govuk-body">This could include a discrepancy in the PSC's:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>nature of control</li>
+        <li>name</li>
+        <li>date of birth</li>
+        <li>nationality</li>
+        <li>country of residence</li>
+        <li>correspondence address</li>
+        <li>notified date</li>
+      </ul>
+      <p class="govuk-body">Our focus is on factual errors, such as a missing PSC or an incorrect correspondence address, not typing mistakes. It is not a discrepancy when the entity holds information that we do not include on the PSC register.
+      </p>
+      <p class="govuk-body">A spelling error is not a discrepancy. For example, Jon Smith instead of John Smith, or a missing or slightly different spelling of a middle name.</p>
+      <p class="govuk-body">Obliged entities can advise the company to contact us to correct these minor errors.</p>
+
+      <p class="govuk-body govuk-!-font-weight-bold">If a beneficial owner’s correspondence address is different from the service address on the PSC register</p>
+
+      <p class="govuk-body">The address shown for a PSC on Companies House records is a service address - this does not have to be their home address. Obliged entities should take this into consideration.</p>
+      <p class="govuk-body">PSCs must provide their home address to Companies House, but it’s kept on a private register. It’s only available on request to credit reference agencies and specified public authorities.</p>
+      <p class="govuk-body">As the PSC’s home address is not available on the public register, it might not be a discrepancy if it does not match the address given to an obliged entity. If the address a client has provided is different to what is shown on
+        the register, you may wish to check with them if they have used an alternative to their home address as a service address.</p>
+      <p class="govuk-body">You should only make a report when there is a clear discrepancy between the same types of address.</p>
+
+      <h3 id="what-due-diligence-checks-you-must-do" class="govuk-heading-m">What due diligence checks you must do</h3>
+      <p class="govuk-body">Obliged entities must make a report if they find a discrepancy when setting up a new business relationship with a customer.</p>
+
+      <p class="govuk-body">You should report a discrepancy as soon as possible. Bulk reporting is not allowed. Obliged entities must not wait to make reports in bulk as this means the PSC register will not be up to date.</p>
+
+      <h3 id="when-you-need-to-register" class="govuk-heading-m">When you need to register</h3>
+      <p class="govuk-body">Obliged entities must make a report if they find a discrepancy when setting up a new business relationship with a customer.</p>
+
+      <p class="govuk-body">You should report a discrepancy as soon as possible. Bulk reporting is not allowed. Obliged entities must not wait to make reports in bulk as this means the PSC register will not be up to date.</p>
+
+      <h3 id="what-information-will-be-shown-on-the-public-register" class="govuk-heading-m">What information will be shown on the public register</h3>
+      <p class="govuk-body">Obliged entities must make a report if they find a discrepancy when setting up a new business relationship with a customer.</p>
+
+      <p class="govuk-body">You should report a discrepancy as soon as possible. Bulk reporting is not allowed. Obliged entities must not wait to make reports in bulk as this means the PSC register will not be up to date.</p>
+
+      <h3 id="start" class="govuk-heading-m">Apply to register an overseas entity and its beneficial owners </h3>
+      <p class="govuk-body">To report a discrepancy, you'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the company number of the entity being reported as having a discrepancy</li>
+        <li>the type of discrepancy</li>
+        <li>the information on the PSC register you believe is incorrect, for example an incorrect address or an error in the nature of control</li>
+        <li>the correct information as you believe it should be shown on the register</li>
+        <li>any other relevant information about the discrepancy that supports the report</li>
+      </ul>
+      <p>Reporting a discrepancy takes up to 10 minutes. The service will time out after 30 minutes and your answers will not be saved.
+      </p>
+      {{ govukButton({
+        text: "Start now",
+        href: "../sign-in/sign-in",
+        isStartButton: true
+      }) }}
+    <p class="govuk-body govuk-!-font-weight-bold">Before you start</p>
+      <p class="govuk-body">If one or more person with significant control (PSC) for a company has their details protected, you will not be able to use this service to report a discrepancy. You must <a href="#contact-us">contact us</a> by telephone instead to speak to a member of the PSC discrepancy team.</p>
+
+      <h3 id="what-happens-after-an-overseas-entity-is-registered" class="govuk-heading-m">What happens after an overseas entity is registered</h3>
+
+      <p class="govuk-body">We'll investigate the discrepancy, which could take some time. We cannot say how long it will take because each case is different. We will not tell the company who has reported a discrepancy about their PSC register information.</p>
+      <p class="govuk-body">We’ll check our records and if we find that the reported discrepancy needs to be corrected, we’ll contact the company and ask that they resolve it to make sure the PSC register is up to date. If the discrepancy is not resolved
+        by the company, we may remove the incorrect information from the register.</p>
+
+      <h3 id="contact-us" class="govuk-heading-m">Contact us</h3>
+      <p class="govuk-body">If you have a question about reporting a PSC discrepancy, you can contact us.</p>
+      <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+      </p>
+      <h3 class="govuk-heading-s">Email</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">pscdiscrepancies@companieshouse.gov.uk</a>
+        </li>
+      </ul>
+      <div class="govuk-inset-text">
+        <h4 class="govuk-heading-s">Reporting a PSC who has their details protected</h4>
+        <p class="govuk-body">If one or more person with significant control (PSC) for a company has their details protected, you will not be able to use this service to report a discrepancy. Contact us by telephone on 0303 1234 500 if you need to report a discrepancy about a PSC who has their details protected.</p>
+
+      </div>
+      <h3 id="privacy-statement" class="govuk-heading-m">Privacy statement</h3>
+      <h3 class="govuk-heading-s">What personal information (or ‘data’) we collect</h3>
+      <p class="govuk-body">We collect:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the name of the obliged entity (if an individual)</li>
+  <li>the email address of the obliged entity (if an individual)</li>
+  <li>the name of the person with significant control (PSC) reported as having a discrepancy</li>
+  <li>the date of birth of the PSC reported as having a discrepancy</li>
+  <li>the nationality of the PSC reported as having a discrepancy</li>
+  <li>the postal address of the PSC reported as having a discrepancy</li>
+  <li>any other personal information voluntarily provided by the person submitting the report</li>
+</ul>
+    <h3 class="govuk-heading-s">How we use the personal information</h3>
+    <p class="govuk-body">The personal information provided by the obliged entity is compared with the relevant information on the public register.  If necessary, the information on the public register will be corrected and annotated.</p>
+    <p class="govuk-body">The obliged entity’s personal information will be used to contact them for more information if needed, and to tell them the outcome of the discrepancy report. The information will be stored on the internal Companies House database along with the associated discrepancy report.</p>
+   <p class="govuk-body">The personal information of the obliged entity and the PSC identified in the discrepancy report will not be made available to the public, although the information may already be on the public register for filing purposes.</p>
+   <h3 class="govuk-heading-s">Where the information will be stored</h3>
+   <p class="govuk-body">The information will be held on the Companies House database, but not on the public register.</p>
+   <h3 class="govuk-heading-s">How long the personal information is stored</h3>
+   <p class="govuk-body">Companies House will hold the personal information of the obliged entity and PSC in the discrepancy report on the Companies House database for 10 years.</p>
+   <h3 class="govuk-heading-s">Legal basis for the use of the personal information </h3>
+   <p class="govuk-body">Companies House has a legal obligation to collect this information.</p>
+   <h3 class="govuk-heading-s">Individual rights</h3>
+   <p class="govuk-body">The GDPR provides certain rights that people may carry out regarding their own personal information. If you want to exercise any of these rights, please contact the Data Protection Officer (DPO).</p>
+   <h3 class="govuk-heading-s">Complaints</h3>
+   <p class="govuk-body">If you have a complaint about the way we’re managing your personal information, you can let us know firstly by writing to the DPO at <a href="mailto:dpo@companieshouse.gov.uk" class="govuk-link">dpo@companieshouse.gov.uk</a>.</p>
+   <p class="govuk-body">If you’re still not satisfied, you can raise your concerns with:</p>
+   <p class="govuk-body">The Information Commissioner’s Office<br>
+Wycliffe House<br>
+Water Lane<br>
+Wilmslow<br>
+Cheshire<br>
+SK9 5AF<br>
+</p>
+      </div>
+
+
+
+  </div>
+
+{% endblock %}
