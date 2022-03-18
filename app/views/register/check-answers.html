@@ -591,13 +591,13 @@
   ]
 }) }}
 
-      <form action="https://products.payments.service.gov.uk/pay/8a86c55b848648658771fbd19d0595b1" method="post" novalidate>
+      <form method="post">
 
-        <input type="hidden" name="answers-checked" value="true">
 
-        <button type="submit" class="govuk-button" data-module="govuk-button" href="/payment">
-          Accept and send
-        </button>
+        {{ govukButton({
+          text: "Accept and send",
+          href: "https://products.payments.service.gov.uk/pay/8a86c55b848648658771fbd19d0595b1"
+        }) }}
 
       </form>
 
