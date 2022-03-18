@@ -344,9 +344,129 @@
       </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
+      <h2 class="govuk-heading-m">Managing officer details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>John Smith</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> managing officer name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Former name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>None</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> managing officer former name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>27 March 1987</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Canadian</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> nationality</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Residential address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/managing-officer">
+              Change
+              <span class="govuk-visually-hidden"> residential address</span>
+            </a>
+          </dd>
+        </div>
 
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Occupation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>director</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> occupation</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Role and responsibilities
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>strategic management of the company and the issuing of necessary directives</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/register/managing-officer">
+            Change
+            <span class="govuk-visually-hidden"> role and responsibilities</span>
+          </a>
+        </dd>
+      </div>
+      </dl>
+
+      {{ govukCheckboxes({
+  idPrefix: "due-diligence",
+  name: "due-diligence",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Due diligence",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "checked",
+      text: "Check the box to confirm that all information provided is correct and you have done everything reasonably possible to comply with current legislation and regulations."
+    }
+  ]
+}) }}
 
       <form action="/register/confirmation" method="post" novalidate>
 
