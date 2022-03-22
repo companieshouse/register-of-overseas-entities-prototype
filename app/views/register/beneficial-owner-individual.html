@@ -25,12 +25,12 @@
 
         {{ govukInput({
           label: {
-            text: "What is the full name of the beneficial owner?",
+            text: "What is their full name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-            text: "Include any titles if relevant"
+            text: "Include any professional or honorary titles, if relevant."
           },
           id: "individual-name",
           name: "individual-name"
@@ -63,7 +63,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is their usual residential address?",
+            text: "What is their home address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -143,7 +143,7 @@
         <br>
         {% call govukFieldset({
           legend: {
-            text: "What is their service address?",
+            text: "What is their correspondence address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -226,13 +226,10 @@
           name: "same-address",
           fieldset: {
             legend: {
-              text: "Is their service address the same as their usual residential address?",
+              text: "Is their correspondence address the same as their home address?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
-          },
-          hint: {
-            text: "A service address is a correspondence address."
           },
           items: [
             {
@@ -276,16 +273,20 @@
   },
   items: [
     {
-      value: "25",
-      text: "over 25% up to (and including) 50%"
+      value: "shares",
+      text: "They hold more than 25% of shares in the overseas entity"
     },
     {
-      value: "50",
-      text: "more than 50% and less than 75%"
+      value: "voting",
+      text: "They hold more than 25% of the voting rights in the overseas entity"
     },
     {
-      value: "75",
-      text: "75% or more"
+      value: "appoint",
+      text: "They hold the right to appoint or remove a majority of the board of directors of the overseas entity"
+    },
+    {
+      value: "influence",
+      text: "They have the right to exercise significant influence or control over the overseas entity"
     }
   ]
 }) }}
@@ -296,13 +297,10 @@
   name: "owner-trustee",
   fieldset: {
     legend: {
-      text: "Do they meet the condition by virtue of being a trustee?",
+      text: "Does their nature of control include being a trustee of a trust?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
-  },
-  hint: {
-    text: "This information will be shared with HMRC."
   },
   items: [
     {
@@ -341,7 +339,8 @@
 
 
                 <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-        <p>All details provided about the individual owner will be available on the online register</p>
+        <p>The beneficial owner’s home address will not be displayed. Only the month and year of their date of birth will be displayed.</p>
+        <p>All other information provided on this screen about the beneficial owner will be available on the public register.</p>
 <p><a href="/register/beneficial-owner-individual-2">Add another individual beneficial owner</a></p>
         {{ govukButton({
           text: "Continue",

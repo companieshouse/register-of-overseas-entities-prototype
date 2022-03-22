@@ -19,7 +19,7 @@
 
         {{ govukDetails({
           summaryText: "What is an overseas entity?",
-          text: "An overseas entity is an entity which is a legal person in its home country."
+          text: "This is a legal entity, such as a company or organisation, that is governed by the law of a country or territory outside the UK."
         }) }}
 
         {{ govukInput({
@@ -34,7 +34,7 @@
 
         {{ govukInput({
           label: {
-            text: "What is the country of incorporation?",
+            text: "Which country was the entity incorporated in?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -44,7 +44,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is the principal address?",
+            text: "What is the principal or registered office address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -210,7 +210,7 @@
           name: "same-address",
           fieldset: {
             legend: {
-              text: "Is the service address the same as the principal address?",
+              text: "Is the correspondence address the same as the principal address?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -232,12 +232,12 @@
 
         {{ govukInput({
           label: {
-            text: "What is the email address?",
+            text: "What is the entity's email address?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-           text: "We'll us this to..."
+           text: "We'll use this to..."
          },
           id: "entity-email",
           name: "entity-email"
@@ -245,22 +245,28 @@
 
         {{ govukInput({
           label: {
-            text: "What is legal form?",
+            text: "What is its legal form?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
+          hint: {
+           text: "For example, limited company, partnership or trust."
+         },
           id: "entity-legal-form",
           name: "entity-legal-form"
         }) }}
 
         {{ govukInput({
           label: {
-            text: "What is law governed?",
+            text: "What law or legislation does the entity operate under?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          id: "entity-law-governed",
-          name: "entity-law-governed"
+          hint: {
+           text: "This is also known as the entity’s governing law."
+         },
+          id: "entity-governing-law",
+          name: "entity-governing-law"
         }) }}
 
         {{ govukInput({
@@ -284,7 +290,7 @@
           name: "entity-reg-number"
         }) }}
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-        <p>All details provided about the overseas entity will be available on the online register</p>
+        <p>All of the information provided on this screen about the overseas entity will be available on the public register.</p>
 
         {{ govukButton({
           text: "Continue",
