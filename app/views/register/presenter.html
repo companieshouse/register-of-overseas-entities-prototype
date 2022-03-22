@@ -36,7 +36,7 @@
     },
     id: "presenter-number",
     name: "presenter-number",
-    classes: "govuk-!-width-one-third"
+    classes: "govuk-!-width-one-half"
   }) }}
 
   {% set otherHtml %}
@@ -59,9 +59,6 @@
         isPageHeading: false,
         classes: "govuk-fieldset__legend--m"
       }
-    },
-    hint: {
-      text: "Select one option."
     },
     items: [
       {
@@ -90,16 +87,44 @@
     ]
   }) }}
 
+  {% set amlrHtml %}
   {{ govukInput({
+    id: "amlr-number",
+    name: "amlr-number",
+    type: "number",
+    classes: "govuk-!-width-one-third",
     label: {
-      text: "What is your anti-money laundering registration number? (optional)",
-      classes: "govuk-label--m",
-      isPageHeading: false
-    },
-    id: "amlr",
-    name: "amlr",
-    classes: "govuk-!-width-one-third"
+      text: "Enter your anti-money laundering registration number"
+    }
   }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+  idPrefix: "amlr",
+  name: "amlr",
+  fieldset: {
+    legend: {
+      text: "Do you have an anti-money laundering registration number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: amlrHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
 
   <h2 class="govuk-heading-m">What information is shown on the online register</h2>
   <p>No third party information will be shown on the online register</p>

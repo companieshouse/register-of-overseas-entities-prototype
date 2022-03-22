@@ -52,48 +52,70 @@
 
           {{ govukInput({
             label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+              html: 'Property name or number (optional)'
             },
-            id: "address-line-1",
-            name: "address-line-1",
+            hint: {
+             text: "For example, 'The Mill', '116' or 'Flat 37a'"
+           },
+            id: "principal-address-property-name-number",
+            name: "principal-address-property-name-number"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "principal-address-line-1",
+            name: "principal-address-line-1",
             autocomplete: "address-line1"
           }) }}
 
           {{ govukInput({
             label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+              text: "Address line 2 (optional)"
             },
-            id: "address-line-2",
-            name: "address-line-2",
+            classes: "govuk-!-width-two-thirds",
+            id: "principal-address-line-2",
+            name: "principal-address-line-2",
             autocomplete: "address-line2"
           }) }}
 
           {{ govukInput({
             label: {
-              text: "Town or city"
+              text: "City or town"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "address-town",
-            autocomplete: "address-level2"
+            id: "principal-address-city-town",
+            name: "principal-address-city-town"
           }) }}
 
           {{ govukInput({
             label: {
-              text: "County"
+              text: "County, state, province or region (optional)"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-county",
-            name: "address-county"
+            id: "principal-address-state",
+            name: "principal-address-state"
           }) }}
 
           {{ govukInput({
             label: {
-              text: "Postcode"
+              text: "Country"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "principal-address-country",
+            name: "principal-address-country",
+            autocomplete: "country-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode or ZIP"
             },
             classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "address-postcode",
+            id: "principal-address-postcode",
+            name: "principal-address-postcode",
             autocomplete: "postal-code"
           }) }}
 
@@ -109,52 +131,75 @@
           }
         }) %}
 
-          {{ govukInput({
-            label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
-            },
-            id: "service-address-line-1",
-            name: "service-address-line-1",
-            autocomplete: "service-address-line1"
-          }) }}
+        {{ govukInput({
+          label: {
+            html: 'Property name or number (optional)'
+          },
+          hint: {
+           text: "For example, 'The Mill', '116' or 'Flat 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
 
-          {{ govukInput({
-            label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-            },
-            id: "service-address-line-2",
-            name: "service-address-line-2",
-            autocomplete: "service-address-line2"
-          }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
 
-          {{ govukInput({
-            label: {
-              text: "Town or city"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "service-address-town",
-            name: "service-address-town",
-            autocomplete: "service-address-level2"
-          }) }}
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
 
-          {{ govukInput({
-            label: {
-              text: "County"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "service-address-county",
-            name: "service-address-county"
-          }) }}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
 
-          {{ govukInput({
-            label: {
-              text: "Postcode"
-            },
-            classes: "govuk-input--width-10",
-            id: "service-address-postcode",
-            name: "service-address-postcode",
-            autocomplete: "service-postal-code"
-          }) }}
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-country",
+          name: "service-address-country",
+          autocomplete: "country-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
 
         {% endcall %}
         {% endset -%}
@@ -188,9 +233,12 @@
         {{ govukInput({
           label: {
             text: "What is the email address?",
-            classes: "govuk-label--m govuk-input--width-15",
+            classes: "govuk-label--m",
             isPageHeading: false
           },
+          hint: {
+           text: "We'll us this to..."
+         },
           id: "entity-email",
           name: "entity-email"
         }) }}
@@ -198,7 +246,7 @@
         {{ govukInput({
           label: {
             text: "What is legal form?",
-            classes: "govuk-label--m govuk-input--width-15",
+            classes: "govuk-label--m",
             isPageHeading: false
           },
           id: "entity-legal-form",
@@ -208,7 +256,7 @@
         {{ govukInput({
           label: {
             text: "What is law governed?",
-            classes: "govuk-label--m govuk-input--width-15",
+            classes: "govuk-label--m",
             isPageHeading: false
           },
           id: "entity-law-governed",
@@ -218,7 +266,7 @@
         {{ govukInput({
           label: {
             text: "On which public register is the overseas entity registered?",
-            classes: "govuk-label--m govuk-input--width-15",
+            classes: "govuk-label--m",
             isPageHeading: false
           },
           id: "entity-public-register",
@@ -228,15 +276,16 @@
         {{ govukInput({
           label: {
             text: "What is the registration number of the entity?",
-            classes: "govuk-label--m govuk-input--width-15",
+            classes: "govuk-label--m",
             isPageHeading: false
           },
+          classes:  "govuk-!-width-one-half",
           id: "entity-reg-number",
           name: "entity-reg-number"
         }) }}
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>
         <p>All details provided about the overseas entity will be available on the online register</p>
-        
+
         {{ govukButton({
           text: "Continue",
           href: "/register/beneficial-owner-type"

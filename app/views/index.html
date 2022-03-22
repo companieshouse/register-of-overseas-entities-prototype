@@ -93,8 +93,8 @@
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
               <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Tested on</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Changes</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third">Status</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half">Changes</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
@@ -105,29 +105,72 @@
               </th>
               <td class="govuk-table__cell">NA</td>
               <td class="govuk-table__cell">
-                <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Changes included in version 1
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-
-                        Added the following pages:
-                        <ul class="govuk-list--bulletlist">
-                          <li><a href="">Here</a></li>
-                          <li><a href="">Here</a></li>
-                          <li><a href="">Here</a></li>
-                    </ul>
-                  </div>
-                </details>
+              NA
               </td>
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Ready for testing
+                <strong class="govuk-tag govuk-tag--grey">
+                Not tested
                 </strong>
               </td>
             </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                <a href="/">Version 2</a>
+              </th>
+              <td class="govuk-table__cell">TBA</td>
+              <td class="govuk-table__cell">
+
+                <p><a href="/register/start-merged-with-guidance">Start page</a></p>
+                <ul class="govuk-list govuk-list--bullet">
+                <li>Here</li>
+              </ul>
+
+                <p><a href="/register/presenter">Tell us about yourself</a><p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li> Made phone number field larger to accomodate overseas phone numbers</li>
+                  <li>Removed hintabout only choosing one option from Role question (not needed, as is a radio selection</li>
+                  <li>  Reworked anti-money laundering question to Yes/No style</li>
+                </ul>
+
+                <p><a href="/register/entity">Tell us about the overseas entity</a><p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Updated address fields to include overseas elements (copied pattern used on Directors)</li>
+                  <li>Added hint about what we'll use the email address for (to be explained)</li>
+                  <li>Shortened 'registration number' field</li>
+                </ul>
+
+                <p><a href="/register/beneficial-owner-type">Who is a beneficial owner of the overseas entity?</a><p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Reworked page into Yes/No question</li>
+                </ul>
+
+                <p><a href="/register/beneficial-owner-individual">Tell us about the individual beneficial owner</a><p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Updated address fields to include overseas elements (copied pattern used on Directors)</li>
+                  <li>Updated spacing of sub-heading</li>
+                </ul>
+
+                <p><a href="/register/beneficial-owner-other">Tell us about the corporate beneficial owner</a><p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Updated address fields to include overseas elements (copied pattern used on Directors)</li>
+                  <li>Updated spacing of sub-heading</li>
+                </ul>
+
+                <p><a href="/register/managing-officer">Tell us about the managing officer</a><p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Updated address fields to include overseas elements (copied pattern used on Directors)</li>
+                  <li>Updated spacing of sub-heading</li>
+                </ul>
+
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red">
+                  Not ready for testing
+                </strong>
+              </td>
+            </tr>
+
           </tbody>
         </table>
       </div>

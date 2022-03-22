@@ -15,45 +15,64 @@
 
 <form>
 
-{% set ownerHint %}
-{{ govukDetails({
-  summaryText: "What is a beneficial owner?",
-  text: "A beneficial owner is an individual who ultimately owns or controls more than 25% of a company's shares or voting rights, or who otherwise exercise control over the company or its management."
-}) }}
-<p class="govuk-hint">Select all that apply.</p>
-{% endset %}
 
-  {{ govukCheckboxes({
-    idPrefix: "beneficial-owner-type",
-    name: "beneficial-owner-type",
-    fieldset: {
-      legend: {
-        text: "Who is a beneficial owner of the overseas entity?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
+  {% set yesOwnerHtml %}
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          Who is a beneficial owner of the overseas entity?
+        </h1>
+      </legend>
+      <div id="waste-hint" class="govuk-hint">
+        Select all that apply.
+      </div>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial" name="beneficial" type="checkbox" value="individual">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial">
+          An individual beneficial owner
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial-2" name="beneficial" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial-2">
+          A public authority, or other legal entity
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Can you identify at least one beneficial owne of the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesOwnerHtml
       }
     },
-    hint: {
-      html: ownerHint
-    },
-    items: [
-      {
-        value: "individual",
-        text: "An individual beneficial owner"
-      },
-      {
-        value: "other-legal",
-        text: "A public authority, or other legal entity"
-      },
     {
-      divider: "or"
-    },
-    {
-      value: "none",
-      text: "There is no beneficial owner"
+      value: "no",
+      text: "No"
     }
-    ]
-  }) }}
+  ]
+}) }}
+
+
 
       {{ govukButton({
         text: "Continue",
