@@ -269,26 +269,56 @@
           name: "entity-governing-law"
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "On which public register is the overseas entity registered?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "entity-public-register",
-          name: "entity-public-register"
-        }) }}
 
-        {{ govukInput({
-          label: {
-            text: "What is the registration number of the entity?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          classes:  "govuk-!-width-one-half",
-          id: "entity-reg-number",
-          name: "entity-reg-number"
-        }) }}
+
+
+{% set entityPublicRegisterHtml %}
+{{ govukInput({
+  id: "entity-public-register-name",
+  name: "entity-public-register-name",
+  label: {
+    text: "Enter the name of the register"
+  }
+}) }}
+{{ govukInput({
+  id: "entity-public-register-number",
+  name: "entity-public-register-number",
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Enter the entity’s registration number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "entity-public-register",
+  name: "entity-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the overseas entity already on a public register in its country of incorporation?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: entityPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
+
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>
         <p>All of the information provided on this screen about the overseas entity will be available on the public register.</p>
 
