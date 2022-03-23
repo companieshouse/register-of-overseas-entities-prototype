@@ -202,12 +202,20 @@
                 <p>The managing officer’s home address will not be displayed. Only the month and year of their date of birth will be displayed.</p>
                 <p>All other information provided on this screen about the managing owner will be available on the public register.</p>
 
-                <p><a href="/register/managing-officer-2">Add another managing officer</a></p>
 
-        {{ govukButton({
-          text: "Continue",
-          href: "/register/check-answers"
-        }) }}
+
+
+                {{ govukButton({
+                  text: "Add another managing officer",
+                  href: "/register/managing-officer-2",
+                   classes: "govuk-button--secondary govuk-!-margin-top-6"
+                }) }}
+
+                {{ govukButton({
+                  text: "Continue without adding another managing officer",
+                  href: "/register/check-answers"
+                }) }}
+
 
       </form>
 

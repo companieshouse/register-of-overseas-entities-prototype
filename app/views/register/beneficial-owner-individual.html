@@ -341,9 +341,15 @@
                 <h2 class="govuk-heading-m">What information is shown on the online register</h2>
         <p>The beneficial owner’s home address will not be displayed. Only the month and year of their date of birth will be displayed.</p>
         <p>All other information provided on this screen about the beneficial owner will be available on the public register.</p>
-<p><a href="/register/beneficial-owner-individual-2">Add another individual beneficial owner</a></p>
+
         {{ govukButton({
-          text: "Continue",
+          text: "Add another individual beneficial owner",
+          href: "/register/beneficial-owner-individual-2",
+           classes: "govuk-button--secondary govuk-!-margin-top-6"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue without adding another individual beneficial owner",
           href: "/register/beneficial-owner-other"
         }) }}
 
