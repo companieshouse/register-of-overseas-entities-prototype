@@ -13,6 +13,13 @@
       {{serviceName}}
       <span class="govuk-caption-xl">Version 2</span>
     </h1>
+
+    {{ govukWarningText({
+      text: "This version is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h4 class="govuk-tabs__title">
         Contents
