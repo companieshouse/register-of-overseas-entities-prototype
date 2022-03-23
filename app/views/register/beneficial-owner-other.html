@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Beneficial owner – {{ serviceName }} – GOV.UK
+  Corporate beneficial owner – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -327,13 +327,13 @@
 
         {{ govukButton({
           text: "Add another corporate beneficial owner",
-          href: "/register/beneficial-owner-other-2",
+          href: "",
            classes: "govuk-button--secondary govuk-!-margin-top-6"
         }) }}
 
         {{ govukButton({
           text: "Continue without adding another corporate beneficial owner",
-          href: "/register/managing-officer"
+          href: "/register/beneficial-owner-gov"
         }) }}
 
 

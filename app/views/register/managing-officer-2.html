@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Beneficial owner – {{ serviceName }} – GOV.UK
+  Individual managing officer – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -203,14 +203,14 @@
                 <p>All other information provided on this screen about the managing owner will be available on the public register.</p>
 
                 {{ govukButton({
-                  text: "Add another managing officer",
+                  text: "Add another individual managing officer",
                   href: "/register/managing-officer-2",
                    classes: "govuk-button--secondary govuk-!-margin-top-6"
                 }) }}
 
                 {{ govukButton({
-                  text: "Continue without adding another managing officer",
-                  href: "/register/check-answers"
+                  text: "Continue without adding another individual managing officer",
+                  href: "/register/managing-officer-corporate"
                 }) }}
       </form>
 
