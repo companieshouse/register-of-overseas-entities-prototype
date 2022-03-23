@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Shortcuts – Register an overseas entity and tell us about its beneficial owners (Prototype) - GOV.UK
+  Shortcuts – {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -68,11 +68,23 @@
           <li>
             <a href="/register/confirmation">Confirmation page</a>
           </li>
+
+        </ul>
+
+        <h2 class="govuk-heading-m">Emails</h2>
+        <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a href="">Confirmation email</a>
+            <a href="/emails/application-received">Application received</a>
+          </li>
+          <li>
+            <a href="/emails/application-accepted">Application accepted</a>
+          </li>
+          <li>
+            <a href="/emails/application-rejected">Application rejected</a>
           </li>
         </ul>
-        <h3 class="govuk-heading-s">Stop screens</h3>
+
+        <h3 class="govuk-heading-m">Stop screens</h3>
         <ul class="govuk-list govuk-list--bullet">
           <li>
             <a href="/service-unavailable">Service unavailable</a>
@@ -85,6 +97,10 @@
           </li>
         </ul>
         <h2 class="govuk-heading-m">Search the register of overseas entities</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>To be added</li>
+
+        </ul>
       </div>
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="form-versions">
         <table class="govuk-table version-history">
@@ -121,6 +137,11 @@
               <td class="govuk-table__cell">TBA</td>
               <td class="govuk-table__cell">
 
+                <p>All pages</p>
+                <ul class="govuk-list govuk-list--bullet">
+                <li>Page <span class="govuk-!-font-weight-bold">title</span> attribute updated to show 'GOV.UK' rather than 'Companies House'</li>
+              </ul>
+
                 <p><a href="/register/start-merged-with-guidance">Start page</a></p>
                 <ul class="govuk-list govuk-list--bullet">
                 <li>New content added throughout</li>
@@ -132,10 +153,10 @@
               </ul>
 
 
-
                 <p><a href="/register/presenter">Tell us about yourself</a><p>
                   <ul class="govuk-list govuk-list--bullet">
                   <li>Made phone number field larger to accomodate overseas phone numbers</li>
+                  <li>Added hint around international numbers (from GOV.UK Design System)</li>
                   <li>Removed hint about only choosing one option from Role question (not needed, as is a radio selection)</li>
                   <li>Reworked anti-money laundering question to Yes/No style</li>
                   <li>Updated radios in 'What is your role'</li>
@@ -213,6 +234,11 @@
                 <p>Footer<p>
                   <ul class="govuk-list govuk-list--bullet">
                   <li>Added placeholder 'accessibility statement'</li>
+                </ul>
+
+                <p>Emails<p>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Placeholder emails added</li>
                 </ul>
 
               </td>

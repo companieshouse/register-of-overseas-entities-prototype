@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who is registering – {{ serviceName }} – Companies House
+  Who is registering – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,6 +34,9 @@
       classes: "govuk-label--m",
       isPageHeading: false
     },
+    hint: {
+  text: "For international numbers include the country code"
+},
     id: "presenter-number",
     name: "presenter-number",
     classes: "govuk-!-width-one-half"
