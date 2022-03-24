@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Due diligence – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Due diligence</h1>
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        {{ govukWarningText({
+          text: "Some warning text",
+          iconFallbackText: "Warning"
+        }) }}
+
+        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim, purus vitae hendrerit sollicitudin, lorem mi pharetra orci, tempus pretium neque tellus non nunc. Praesent luctus viverra elementum. Integer bibendum diam vitae dui mattis, vitae maximus sapien dignissim. Integer lectus nisi, pellentesque eget justo at, tristique facilisis justo. Sed venenatis urna bibendum elementum bibendum. Vivamus tincidunt lectus cursus condimentum rhoncus. In tincidunt euismod sem, eget pretium ipsum eleifend sit amet.</p>
+
+          <p class="govuk-body">Maecenas egestas, arcu ut bibendum porta, metus nisi mattis nisl, ac vestibulum enim augue ac metus. Fusce vulputate nisi sed sapien maximus tempor.</p>
+
+
+        {{ govukCheckboxes({
+          idPrefix: "diligence",
+          name: "diligence",
+          fieldset: {
+            legend: {
+              text: "Some text",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "agree",
+              text: "Agree statement"
+            }
+          ]
+        }) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/register/sign-in"
+}) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Beneficial owner statements – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        <h1 class="govuk-heading-xl">A question here</h1>
+        <!-- this page title should be copied to the legend text in the radio button section-->
+
+
+        {{ govukDetails({
+          summaryText: "What is a beneficial owner?",
+          text: "A beneficial owner is an individual who ultimately owns or controls more than 25% of a company's shares or voting rights, or who otherwise exercise control over the company or its management."
+        }) }}
+
+        {{ govukRadios({
+            idPrefix: "statements",
+            name: "statements",
+            fieldset: {
+              legend: {
+                text: "A question here",
+                isPageHeading: false,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              {
+                value: "government-gateway",
+                text: "The entity has identified one or more registrable beneficial owners and that it has no reasonable cause to believe there are others",
+                hint: {
+                  text: "An explanation here?"
+                }
+              },
+              {
+                value: "govuk-verify",
+                text: "The entity is able to provide the required information about each registrable beneficial owner it has identified.",
+                hint: {
+                  text: "An explanation here?"
+                }
+              },
+              {
+                value: "govuk-verify",
+                text: "The entity has no reasonable cause to believe that it has any registrable beneficial owners.",
+                hint: {
+                  text: "An explanation here?"
+                }
+              },
+              {
+                value: "govuk-verify",
+                text: "The entity has reasonable cause to believe that there is at least one registrable beneficial owner that it has not identified.",
+                hint: {
+                  text: "An explanation here?"
+                }
+              },
+              {
+                value: "govuk-verify",
+                text: "The entity is not able to provide the required information about one or more of the registrable beneficial owners it has identified",
+                hint: {
+                  text: "An explanation here?"
+                }
+              }
+            ]
+          }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/register/beneficial-owner-type"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

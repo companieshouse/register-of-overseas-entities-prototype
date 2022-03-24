@@ -278,6 +278,30 @@
 
 {{ govukRadios({
   classes: "govuk-radios",
+  idPrefix: "owner-trustee",
+  name: "owner-trustee",
+  fieldset: {
+    legend: {
+      text: "Does their nature of control include being a trustee of a trust?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
   idPrefix: "owner-sanctions",
   name: "owner-sanctions",
   fieldset: {
