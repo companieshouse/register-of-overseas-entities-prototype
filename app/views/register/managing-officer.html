@@ -36,40 +36,40 @@
         }) }}
 
         {% set formerNameHtml %}
-{{ govukInput({
-  id: "former-full-name",
-  name: "former-full-name",
-  classes: "govuk-!-width-half",
-  label: {
-    text: "Enter the managing officer's former name or names"
-  }
-}) }}
-{% endset -%}
+            {{ govukInput({
+              id: "former-full-name",
+              name: "former-full-name",
+              classes: "govuk-!-width-half",
+              label: {
+                text: "Enter the managing officer's former name or names"
+              }
+            }) }}
+            {% endset -%}
 
-{{ govukRadios({
-  idPrefix: "former-name",
-  name: "former-name",
-  fieldset: {
-    legend: {
-      text: "Do they have any former names?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: formerNameHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+            {{ govukRadios({
+              idPrefix: "former-name",
+              name: "former-name",
+              fieldset: {
+                legend: {
+                  text: "Do they have any former names?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  conditional: {
+                    html: formerNameHtml
+                  }
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
 
         {{ govukDateInput({
           id: "officer-dob",
@@ -173,7 +173,126 @@
           autocomplete: "postal-code"
         }) }}
 
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is their service address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+        {{ govukInput({
+          label: {
+            html: 'Property name or number (optional)'
+          },
+          hint: {
+           text: "For example, 'The Mill', '116' or 'Flat 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-country",
+          name: "service-address-country",
+          autocomplete: "country-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
         {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Is their service address the same as their home address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: serviceAddressHtml
+                }
+                    }
+                  ]
+                }) }}
+
+        {% endcall %}
+
+
+
+
+
+
+
+
+
+
+
         {{ govukInput({
           label: {
             text: "What is their occupation? (optional)",
