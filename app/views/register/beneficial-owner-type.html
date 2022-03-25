@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-    What beneficial owners does the overseas entity have? – {{ serviceName }} – GOV.UK
+  Title here – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,161 @@
 
 <form>
 
+<!--{{data|dump|safe}}-->
 
+{% if (data['statements'] === "allIdentifiedAllSupplied") %}
+
+
+
+  {{ govukCheckboxes({
+  idPrefix: "beneficialTypes",
+  name: "beneficialTypes",
+  fieldset: {
+    legend: {
+      text: "Which types of beneficial owners?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "beneficialTypesIndividual",
+      text: "Individual beneficial owners",
+      hint: {
+        text: "Hint"
+      }
+    },
+    {
+      value: "beneficialTypesOther",
+      text: "Other legal entity beneficial owners",
+      hint: {
+        text: "Hint"
+      }
+    },
+    {
+      value: "beneficialTypesGov",
+      text: "Government or public authority beneficial owners",
+      hint: {
+        text: "Hint"
+      }
+    }
+  ]
+}) }}
+
+
+{% elif (data['statements'] === "noneIdentified") %}
+
+
+
+{{ govukCheckboxes({
+idPrefix: "moTypes",
+name: "moTypes",
+fieldset: {
+  legend: {
+    text: "Which types of managing officers?",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officers",
+    hint: {
+      text: "Hint"
+    }
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officers",
+    hint: {
+      text: "Hint"
+    }
+  }
+]
+}) }}
+
+{% else %}
+
+
+{{ govukCheckboxes({
+idPrefix: "beneficialTypes",
+name: "beneficialTypes",
+fieldset: {
+  legend: {
+    text: "Which types of beneficial owners?",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual beneficial owners",
+    hint: {
+      text: "Hint"
+    }
+  },
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity beneficial owners",
+    hint: {
+      text: "Hint"
+    }
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority beneficial owners",
+    hint: {
+      text: "Hint"
+    }
+  }
+]
+}) }}
+
+{{ govukCheckboxes({
+idPrefix: "moTypes",
+name: "moTypes",
+fieldset: {
+  legend: {
+    text: "Which types of managing officers?",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officers",
+    hint: {
+      text: "Hint"
+    }
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officers",
+    hint: {
+      text: "Hint"
+    }
+  }
+]
+}) }}
+
+{% endif %}
+
+<!--
   {% set yesOwnerHtml %}
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -78,7 +232,7 @@
   ]
 }) }}
 
-
+-->
 
       {{ govukButton({
         text: "Continue",
