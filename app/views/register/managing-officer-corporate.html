@@ -22,11 +22,21 @@
           text: "Here"
         }) }}
 
+        {{ govukInput({
+          label: {
+            text: "What is its name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "corp-mo-name",
+          name: "corp-mo-name"
+        }) }}
+
 
 
         {% call govukFieldset({
           legend: {
-            text: "What is the registered office address?",
+            text: "What is its principal or registered office address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -209,6 +219,64 @@
                 }) }}
 
         {% endcall %}
+
+
+        {{ govukInput({
+            label: {
+              text: "What is the legal authority supervising the corporate managing officer?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            id: "event-name",
+            name: "event-name"
+          }) }}
+
+
+          {{ govukInput({
+              label: {
+                text: "What is the legal form of the corporate managing officer as defined by its country of registration?",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              id: "event-name",
+              name: "event-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                  text: "Where is the corporate managing officer registered?",
+                  classes: "govuk-label--m",
+                  isPageHeading: true
+                },
+                id: "event-name",
+                name: "event-name"
+              }) }}
+
+              {{ govukInput({
+                  label: {
+                    text: "What is the registration number of the corporate managing officer?",
+                    classes: "govuk-label--m",
+                    isPageHeading: true
+                  },
+                  classes: "govuk-!-width-one-half",
+                  id: "event-name",
+                  name: "event-name"
+                }) }}
+
+            {{ govukDateInput({
+              id: "corp-startdate",
+              namePrefix: "corp-startdate",
+              fieldset: {
+                legend: {
+                  text: "When did it become a managing officer for the overseas entity?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
 
 
                 <h2 class="govuk-heading-m">What information is shown on the online register</h2>
