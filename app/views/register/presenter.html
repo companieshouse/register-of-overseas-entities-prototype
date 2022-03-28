@@ -27,7 +27,7 @@
     id: "presenter-name",
     name: "presenter-name"
   }) }}
-
+<!--
   {{ govukInput({
     label: {
       text: "What is your phone number?",
@@ -41,7 +41,7 @@
     name: "presenter-number",
     classes: "govuk-!-width-one-half"
   }) }}
-
+<
   {% set otherHtml %}
   {{ govukInput({
     id: "other-role",
@@ -52,7 +52,7 @@
     }
   }) }}
   {% endset -%}
-
+-->
   {{ govukRadios({
     idPrefix: "presenter-role",
     name: "presenter-role",
@@ -101,7 +101,7 @@
     }
   }) }}
   {% endset -%}
-
+<!--
   {{ govukRadios({
   idPrefix: "amlr",
   name: "amlr",
@@ -126,7 +126,32 @@
     }
   ]
 }) }}
+-->
 
+{{ govukCheckboxes({
+  idPrefix: "due-diligence",
+  name: "due-diligence",
+  fieldset: {
+  legend: {
+  text: "Due diligence",
+  isPageHeading: false,
+  classes: "govuk-fieldset__legend--m"
+  }
+  },
+  hint: {
+    text: "We will check!"
+  },
+  items: [
+  {
+  value: "due-diligence-1",
+  text: "text here"
+},
+{
+value: "due-diligence-2",
+text: "text here"
+}
+  ]
+}) }}
 
 
   <h2 class="govuk-heading-m">What information is shown on the public register</h2>
