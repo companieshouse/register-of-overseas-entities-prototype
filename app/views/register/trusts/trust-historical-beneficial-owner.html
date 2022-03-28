@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Historical beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the historical beneficial owner</h1>
+      <p class="govuk-caption-l govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more historical beneficial owners later.</p>
+
+      <form class="form" method="post">
+
+        {{ govukInput({
+            label: {
+              text: "What is the name of the historical beneficial owner?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "historical-beneficial-owner-name",
+            name: "historical-beneficial-owner-name"
+          }) }}
+
+
+          {{ govukDateInput({
+            id: "historical-beneficial-owner-start",
+            namePrefix: "historical-beneficial-owner-start",
+            fieldset: {
+              legend: {
+                text: "When did they become a beneficial owner?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+
+          {{ govukDateInput({
+              id: "historical-beneficial-owner-stop",
+              namePrefix: "historical-beneficial-owner-stop",
+              fieldset: {
+                legend: {
+                  text: "When did they cease to be a beneficial owner (if applicable)?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+
+        <h2 class="govuk-heading-m">What information is shown on the online register</h2>
+        <p>Here</p>
+
+        {{ govukButton({
+          text: "Add another historical beneficial owner",
+          href: "",
+           classes: "govuk-button--secondary govuk-!-margin-top-6"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue without adding another historical beneficial owner",
+          href: "/register/trusts/trust-beneficiary-individual"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
