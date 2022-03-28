@@ -210,7 +210,7 @@
           name: "same-address",
           fieldset: {
             legend: {
-              text: "Is the correspondence address the same as the principal address?",
+              text: "Is the correspondence address the same as the principal or registered office address?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -250,7 +250,7 @@
             isPageHeading: false
           },
           hint: {
-           text: "For example, limited company, partnership or trust."
+           text: "For example, limited company or partnership."
          },
           id: "entity-legal-form",
           name: "entity-legal-form"
@@ -258,12 +258,12 @@
 
         {{ govukInput({
           label: {
-            text: "What law or legislation does the entity operate under?",
+            text: "What is the governing law?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-           text: "This is also known as the entity’s governing law."
+           text: "This is the law that the entity operates under."
          },
           id: "entity-governing-law",
           name: "entity-governing-law"

@@ -198,7 +198,7 @@
           name: "same-address",
           fieldset: {
             legend: {
-              text: "Is its correspondence address the same as its registered office address?",
+              text: "Is its correspondence address the same as its principal or registered office address?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -219,12 +219,12 @@
         }) }}
         {{ govukInput({
           label: {
-            text: "What law or legislation does it operate under?",
+            text: "What is its governing law?",
             classes: "govuk-label--m govuk-input--width-15",
             isPageHeading: false
           },
           hint: {
-            text: "This is also known as the company or entity’s governing law."
+            text: "This is the law that the entity operates under."
           },
           id: "corp-law-governed",
           name: "corp-law-governed"
@@ -257,19 +257,19 @@
   items: [
   {
     value: "shares",
-    text: "They hold more than 25% of shares in the overseas entity"
+    text: "It holds more than 25% of shares in the overseas entity"
   },
   {
     value: "voting",
-    text: "They hold more than 25% of the voting rights in the overseas entity"
+    text: "It holds more than 25% of the voting rights in the overseas entity"
   },
   {
     value: "appoint",
-    text: "They hold the right to appoint or remove a majority of the board of directors of the overseas entity"
+    text: "It holds the right to appoint or remove a majority of the board of directors of the overseas entity"
   },
   {
     value: "influence",
-    text: "They have the right to exercise significant influence or control over the overseas entity"
+    text: "It has the right to exercise significant influence or control over the overseas entity"
   }
   ]
 }) }}
@@ -282,7 +282,7 @@
   name: "owner-trustee",
   fieldset: {
     legend: {
-      text: "Does their nature of control include being a trustee of a trust?",
+      text: "Does its nature of control include being a trustee of a trust?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
@@ -335,7 +335,7 @@
         }) }}
 
         {{ govukButton({
-          text: "Continue without adding another corporate beneficial owner",
+          text: "I do not need to add any more corporate beneficial owners",
           href: "/register/beneficial-owner-gov"
         }) }}
 

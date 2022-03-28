@@ -198,7 +198,7 @@
           name: "corp-mo-same-address",
           fieldset: {
             legend: {
-              text: "Is their service address the same as the registered office address?",
+              text: "Is their correspondence address the same as the principal or registered office address?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -232,32 +232,37 @@
           }) }}
 
 
-        {{ govukInput({
-            label: {
-              text: "What is the legal authority supervising the corporate managing officer?",
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            id: "corp-mo-legal-authority",
-            name: "corp-mo-legal-authority"
-          }) }}
-
-
           {{ govukInput({
               label: {
-                text: "What is the legal form of the corporate managing officer as defined by its country of registration?",
+                text: "What is its legal form?",
                 classes: "govuk-label--m",
                 isPageHeading: false
               },
+              hint: {
+               text: "For example, limited company or partnership."
+             },
               id: "corp-mo-legal-form",
               name: "corp-mo-legal-form"
             }) }}
 
 
+        {{ govukInput({
+            label: {
+              text: "What is its governing law?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+             text: "This is the law that the entity operates under."
+           },
+            id: "corp-mo-legal-authority",
+            name: "corp-mo-legal-authority"
+          }) }}
+
 
               {{ govukInput({
                   label: {
-                    text: "What is the registration number of the corporate managing officer?",
+                    text: "What is its registration number?",
                     classes: "govuk-label--m",
                     isPageHeading: false
                   },
@@ -283,7 +288,7 @@
 
 
                 <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-                <p>Here</p>
+                <p>All information provided on this screen about the corporate managing owner will be available on the public register.</p>
 
 
 
@@ -295,7 +300,7 @@
                 }) }}
 
                 {{ govukButton({
-                  text: "Continue without adding another corporate managing officer",
+                  text: "I do not need to add any more corporate managing officers",
                   href: "/register/check-answers"
                 }) }}
 
