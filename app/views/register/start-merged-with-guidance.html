@@ -46,14 +46,14 @@
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
       <h3 id="background" class="govuk-heading-m">What the Register of Overseas Entities is</h3>
-      <p class="govuk-body">On 23 June 2022, the <a href="#" class="govuk-link">Register of Overseas Entities</a> came into force in the UK through the new Economic Crime (Transparency and Enforcement) Act. This means that overseas entities must register with Companies House and tell us who their beneficial owners are, so that they can buy or sell property or land in the UK.</p>
+      <p class="govuk-body">On XX XXXXX 2022, the <a href="#" class="govuk-link">Register of Overseas Entities</a> came into force in the UK through the new Economic Crime (Transparency and Enforcement) Act. This means that overseas entities must register with Companies House and tell us who their beneficial owners are, so that they can buy or sell property or land in the UK.</p>
       <p class="govuk-body">After registering, the details of the overseas entity and its beneficial owners will be publicly available on the online register.</p>
 
 
       <p class="govuk-body">This will lead to more transparency, which will allow law enforcement agencies to investigate suspicious wealth more effectively.</p>
 
       {{ govukWarningText({
-        text: "The beneficial owners of overseas entities who do not register could be fined up to £2,500 per day, be put in prison for up to 5 years, and have difficulty buying or selling UK property or land.",
+        text: "The beneficial owners of overseas entities who do not register could be fined up to £X per day, be put in prison for up to X years, and have difficulty buying or selling UK property or land.",
         iconFallbackText: "Warning"
       }) }}
       <h3 id="what-an-overseas-entity-is" class="govuk-heading-m">What an overseas entity is</h3>
@@ -141,11 +141,14 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>to sign in to or create a Companies House account</li>
         <li>to tell us your name, phone number and your job role</li>
-        <li>a credit or debit card to pay the £500 fee</li>
+        <li>a credit or debit card to pay the £X fee</li>
       </ul>
 
-      <p>Registering takes around 10 minutes. The service will time out after 30 minutes and your answers will not be saved.
-      </p>
+      {{ govukInsetText({
+        text: "The service will time out after 60 minutes and your answers will not be saved."
+      }) }}
+
+
       {{ govukButton({
         text: "Start now",
         href: "due-diligence",
