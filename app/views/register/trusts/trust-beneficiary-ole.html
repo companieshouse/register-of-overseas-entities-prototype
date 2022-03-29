@@ -20,6 +20,216 @@
 
 
 
+
+        {{ govukInput({
+          label: {
+            text: "What is its name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "corp-name",
+          name: "corp-name"
+        }) }}
+        {% call govukFieldset({
+          legend: {
+            text: "What is its principal or registered office address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number (optional)'
+          },
+          hint: {
+           text: "For example, 'The Mill', '116' or 'Flat 37a'"
+         },
+          id: "principal-address-property-name-number",
+          name: "principal-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-line-1",
+          name: "principal-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-line-2",
+          name: "principal-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-city-town",
+          name: "principal-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-state",
+          name: "principal-address-state"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-country",
+          name: "principal-address-country",
+          autocomplete: "country-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          classes: "govuk-input--width-10",
+          id: "principal-address-postcode",
+          name: "principal-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+        {% endcall %}
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is its correspondence address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number (optional)'
+          },
+          hint: {
+           text: "For example, 'The Mill', '116' or 'Flat 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-country",
+          name: "service-address-country",
+          autocomplete: "country-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP"
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Is its correspondence address the same as its principal or registered office address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+        html: serviceAddressHtml
+        }
+            }
+          ]
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "What is its governing law?",
+            classes: "govuk-label--m govuk-input--width-15",
+            isPageHeading: false
+          },
+          hint: {
+            text: "This is the law that the entity operates under."
+          },
+          id: "corp-law-governed",
+          name: "corp-law-governed"
+        }) }}
+
+
+
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>
         <p>Here</p>
 
