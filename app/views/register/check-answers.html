@@ -574,23 +574,29 @@
       </dl>
 
       {{ govukCheckboxes({
-  idPrefix: "declaration",
-  name: "declaration",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Declaration",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "checked",
-      text: "I confirm that due diligence has been carried out to confirm that all of the information provided here is correct, and that I have done everything reasonably possible to comply with current legislation and regulations."
-    }
-  ]
-}) }}
+        idPrefix: "due-diligence",
+        name: "due-diligence",
+        fieldset: {
+        legend: {
+        text: "Due diligence",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+        }
+        },
+        hint: {
+          text: "Companies House has processes in place to check the accuracy of the information you provide in this service."
+        },
+        items: [
+        {
+        value: "due-diligence-1",
+        text: "text here"
+      },
+      {
+      value: "due-diligence-2",
+      text: "text here"
+      }
+        ]
+      }) }}
 
       <form method="post">
 

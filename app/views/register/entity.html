@@ -22,6 +22,8 @@
           text: "This is a legal entity, such as a company or organisation, that is governed by the law of a country or territory outside the UK."
         }) }}
 
+
+
         {{ govukInput({
           label: {
             text: "What is the name of the overseas entity?",
@@ -237,7 +239,7 @@
             isPageHeading: false
           },
           hint: {
-           text: "We'll use this to..."
+           text: "We’ll send notice of registration and Overseas Entity ID number here"
          },
           id: "entity-email",
           name: "entity-email"
@@ -276,6 +278,9 @@
 {{ govukInput({
   id: "entity-public-register-name",
   name: "entity-public-register-name",
+  hint: {
+   text: "Include its jurisdiction. For example, XXX."
+ },
   label: {
     text: "Enter the name of the register"
   }
@@ -316,6 +321,26 @@
       }
     }
   ]
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "What is the name of the person we can contact about this entity?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  id: "entity-contact-name",
+  name: "entity-contact-name"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "What is the email address of the person we can contact about this entity?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  id: "entity-contact-email",
+  name: "entity-contact-email"
 }) }}
 
 

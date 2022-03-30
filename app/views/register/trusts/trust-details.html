@@ -48,7 +48,24 @@
 
 
 
+        {{ govukCheckboxes({
+          idPrefix: "trust-disclaimer",
+          name: "trust-disclaimer",
+          fieldset: {
+            legend: {
+              text: "Title here",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
 
+          items: [
+            {
+              value: "trust-statement",
+              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
+            }
+          ]
+        }) }}
 
 
         {{ govukCheckboxes({
@@ -105,24 +122,7 @@
           }) }}
 
 
-          {{ govukCheckboxes({
-            idPrefix: "trust-disclaimer",
-            name: "trust-disclaimer",
-            fieldset: {
-              legend: {
-                text: "Disclaimer?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
 
-            items: [
-              {
-                value: "trust-statement",
-                text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
-              }
-            ]
-          }) }}
 
 
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>

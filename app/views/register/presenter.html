@@ -20,12 +20,26 @@
 
   {{ govukInput({
     label: {
-      text: "What is your full name?",
+      text: "What is your surname?",
       classes: "govuk-label--m",
       isPageHeading: false
     },
-    id: "presenter-name",
-    name: "presenter-name"
+    classes: "govuk-!-width-three-quarters",
+    id: "presenter-surname",
+    name: "presenter-surname"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "What are your forenames?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    hint: {
+    text: "Include any professional or honorary titles, if relevant."
+  },
+    id: "presenter-forenames",
+    name: "presenter-forenames"
   }) }}
 <!--
   {{ govukInput({
@@ -128,30 +142,7 @@
 }) }}
 -->
 
-{{ govukCheckboxes({
-  idPrefix: "due-diligence",
-  name: "due-diligence",
-  fieldset: {
-  legend: {
-  text: "Due diligence",
-  isPageHeading: false,
-  classes: "govuk-fieldset__legend--m"
-  }
-  },
-  hint: {
-    text: "Companies House has processes in place to check the accuracy of the information you provide in this service."
-  },
-  items: [
-  {
-  value: "due-diligence-1",
-  text: "text here"
-},
-{
-value: "due-diligence-2",
-text: "text here"
-}
-  ]
-}) }}
+
 
 
   <h2 class="govuk-heading-m">What information is shown on the public register</h2>

@@ -287,32 +287,18 @@
     {
       value: "influence",
       text: "They have the right to exercise significant influence or control over the overseas entity"
+    },
+    {
+      value: "trust",
+      text: "They are the trustee of a trust",
+      hint: {
+        text: "Do we need a hint here to explain that more information will be required on later screens?"
+      }
     }
   ]
 }) }}
 
-{{ govukRadios({
-  classes: "govuk-radios",
-  idPrefix: "owner-trustee",
-  name: "owner-trustee",
-  fieldset: {
-    legend: {
-      text: "Does their nature of control include being a trustee of a trust?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+
 
 {{ govukRadios({
   classes: "govuk-radios",
