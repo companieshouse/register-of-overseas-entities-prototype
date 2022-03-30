@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Individual settlers – {{ serviceName }} – GOV.UK
+  Other legal settlor-ole settlors – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,67 +13,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual settler</h1>
-      <p class="govuk-caption-l govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more individual settlers later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the other legal entity settlor</h1>
+      <p class="govuk-caption-l govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more other legal entity settlors later.</p>
 
       <form class="form" method="post">
 
-        {{ govukInput({
-          label: {
-            text: "What is their first name?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          hint: {
-          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
-        },
-          id: "settler-individual-first-name",
-          name: "settler-individual-first-name"
-        }) }}
 
 
-        {{ govukInput({
-          label: {
-            text: "What is their last name?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          hint: {
-          text: "This is also known as their family name."
-        },
-          classes: "govuk-!-width-three-quarters",
-          id: "settler-individual-last-name",
-          name: "settler-individual-last-name"
-        }) }}
-
-                {{ govukDateInput({
-                  id: "settler-individual-dob",
-                  namePrefix: "settler-individual-dob",
-                  fieldset: {
-                    legend: {
-                      text: "What is their date of birth?",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--m"
-                    }
-                  },
-                  hint: {
-                    text: "For example, 27 3 2007"
-                  }
-                }) }}
 
                 {{ govukInput({
                   label: {
-                    text: "What is their nationality?",
+                    text: "What is its name?",
                     classes: "govuk-label--m",
                     isPageHeading: false
                   },
-                  id: "settler-individual-nationality",
-                  name: "settler-individual-nationality"
+                  id: "corp-name",
+                  name: "corp-name"
                 }) }}
-
                 {% call govukFieldset({
                   legend: {
-                    text: "What is their home address?",
+                    text: "What is its principal or registered office address?",
                     classes: "govuk-fieldset__legend--m",
                     isPageHeading: false
                   }
@@ -86,8 +45,8 @@
                   hint: {
                    text: "For example, 'The Mill', '116' or 'Flat 37a'"
                  },
-                  id: "usual-residential-address-property-name-number",
-                  name: "usual-residential-address-property-name-number"
+                  id: "principal-address-property-name-number",
+                  name: "principal-address-property-name-number"
                 }) }}
 
                 {{ govukInput({
@@ -95,8 +54,8 @@
                     text: "Address line 1"
                   },
                   classes: "govuk-!-width-two-thirds",
-                  id: "usual-residential-address-line-1",
-                  name: "usual-residential-address-line-1",
+                  id: "principal-address-line-1",
+                  name: "principal-address-line-1",
                   autocomplete: "address-line1"
                 }) }}
 
@@ -105,8 +64,8 @@
                     text: "Address line 2 (optional)"
                   },
                   classes: "govuk-!-width-two-thirds",
-                  id: "usual-residential-address-line-2",
-                  name: "usual-residential-address-line-2",
+                  id: "principal-address-line-2",
+                  name: "principal-address-line-2",
                   autocomplete: "address-line2"
                 }) }}
 
@@ -115,8 +74,8 @@
                     text: "City or town"
                   },
                   classes: "govuk-!-width-two-thirds",
-                  id: "usual-residential-address-city-town",
-                  name: "usual-residential-address-city-town"
+                  id: "principal-address-city-town",
+                  name: "principal-address-city-town"
                 }) }}
 
                 {{ govukInput({
@@ -124,8 +83,8 @@
                     text: "County, state, province or region (optional)"
                   },
                   classes: "govuk-!-width-two-thirds",
-                  id: "service-address-state",
-                  name: "service-address-state"
+                  id: "principal-address-state",
+                  name: "principal-address-state"
                 }) }}
 
                 {{ govukInput({
@@ -133,8 +92,8 @@
                     text: "Country"
                   },
                   classes: "govuk-!-width-two-thirds",
-                  id: "usual-residential-address-country",
-                  name: "usual-residential-address-country",
+                  id: "principal-address-country",
+                  name: "principal-address-country",
                   autocomplete: "country-name"
                 }) }}
 
@@ -143,8 +102,8 @@
                     text: "Postcode or ZIP"
                   },
                   classes: "govuk-input--width-10",
-                  id: "usual-residential-address-postcode",
-                  name: "usual-residential-address-postcode",
+                  id: "principal-address-postcode",
+                  name: "principal-address-postcode",
                   autocomplete: "postal-code"
                 }) }}
                 {% endcall %}
@@ -153,11 +112,12 @@
                 <br>
                 {% call govukFieldset({
                   legend: {
-                    text: "What is their correspondence address?",
+                    text: "What is its correspondence address?",
                     classes: "govuk-fieldset__legend--m",
                     isPageHeading: false
                   }
                 }) %}
+
                 {{ govukInput({
                   label: {
                     html: 'Property name or number (optional)'
@@ -236,7 +196,7 @@
                   name: "same-address",
                   fieldset: {
                     legend: {
-                      text: "Is their correspondence address the same as their home address?",
+                      text: "Is its correspondence address the same as its principal or registered office address?",
                       isPageHeading: false,
                       classes: "govuk-fieldset__legend--m"
                     }
@@ -258,18 +218,110 @@
 
 
 
+
+
+
+                {{ govukInput({
+                    label: {
+                      text: "Where is it registered?",
+                      classes: "govuk-label--m",
+                      isPageHeading: false
+                    },
+                    id: "corp-settlor-where-registered",
+                    name: "corp-settlor-where-registered"
+                  }) }}
+
+
+                  {{ govukInput({
+                    label: {
+                      text: "What is its legal form?",
+                      classes: "govuk-label--m",
+                      isPageHeading: false
+                    },
+                    hint: {
+                     text: "For example, limited company or partnership."
+                   },
+                    id: "settlor-ole-legal-form",
+                    name: "settlor-ole-legal-form"
+                  }) }}
+
+                          {{ govukInput({
+                            label: {
+                              text: "What is the governing law?",
+                              classes: "govuk-label--m",
+                              isPageHeading: false
+                            },
+                            hint: {
+                             text: "This is the law that it operates under."
+                           },
+                            id: "settlor-ole-governing-law",
+                            name: "settlor-ole-governing-law"
+                          }) }}
+
+
+
+
+                  {% set PublicRegisterHtml %}
+                  {{ govukInput({
+                    id: "settlor-ole-public-register-name",
+                    name: "settlor-ole-public-register-name",
+                    hint: {
+                     text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
+                   },
+                    label: {
+                      text: "Enter the name of the register"
+                    }
+                  }) }}
+                  {{ govukInput({
+                    id: "settlor-ole-public-register-number",
+                    name: "settlor-ole-public-register-number",
+                    classes: "govuk-!-width-one-half",
+                    label: {
+                      text: "Enter it’s registration number"
+                    }
+                  }) }}
+                  {% endset -%}
+
+                  {{ govukRadios({
+                    idPrefix: "settlor-ole-public-register",
+                    name: "settlor-ole-public-register",
+                    fieldset: {
+                      legend: {
+                        text: "Is it already on a public register in its country of incorporation?",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "yes",
+                        text: "Yes",
+                        conditional: {
+                          html: PublicRegisterHtml
+                        }
+                      },
+                      {
+                        value: "no",
+                        text: "No",
+                        conditional: {
+                          html: phoneHtml
+                        }
+                      }
+                    ]
+                  }) }}
+
         <h2 class="govuk-heading-m">What information is shown on the online register</h2>
         <p>None of the information provided on this screen will be shown on the public register.</p>
 
         {{ govukButton({
-          text: "Add another individual settler",
+          text: "Add another other legal entity settlor",
           href: "",
            classes: "govuk-button--secondary govuk-!-margin-top-6"
         }) }}
 
         {{ govukButton({
-          text: "I do not need to add any more individual settlers",
-          href: "/register/trusts/trust-settlers-ole"
+          text: "I do not need to add any more other legal entity settlors",
+          href: "/register/trusts/trust-grantors-individual"
         }) }}
 
       </form>
