@@ -16,8 +16,12 @@
 
       <form class="form" action="/register/beneficial-owner-statements" method="post">
 
+        <h1 class="govuk-heading-xl">Have you identified any beneficial owners?</h1>
 
-
+        {{ govukDetails({
+          summaryText: "What is a beneficial owner?",
+          text: "Here"
+        }) }}
 
 
         {{ govukRadios({
@@ -26,8 +30,8 @@
           fieldset: {
             legend: {
               text: "Have you identified any beneficial owners?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
             }
           },
           items: [

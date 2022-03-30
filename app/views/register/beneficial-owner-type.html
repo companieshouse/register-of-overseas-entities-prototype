@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Title here – {{ serviceName }} – GOV.UK
+  Which types of beneficial owners have been identified? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,7 +28,7 @@
     legend: {
       text: "Which types of beneficial owners have been identified?",
       isPageHeading: false,
-      classes: "govuk-fieldset__legend--l"
+      classes: "govuk-fieldset__legend--xl"
     }
   },
   hint: {
@@ -62,6 +62,12 @@
 
 {% elif (data['statements'] === "noneIdentified") %}
 
+<h1 class="govuk-heading-xl">Which types of managing officers have been identified?</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "Here"
+}) }}
 
 
 {{ govukCheckboxes({
@@ -71,7 +77,7 @@ fieldset: {
   legend: {
     text: "Which types of managing officers have been identified?",
     isPageHeading: false,
-    classes: "govuk-fieldset__legend--l"
+    classes: "govuk-visuallyhidden"
   }
 },
 hint: {
@@ -136,6 +142,14 @@ items: [
 ]
 }) }}
 
+<h1 class="govuk-heading-xl">Which types of managing officers have been identified?</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "Here"
+}) }}
+
+
 {{ govukCheckboxes({
 idPrefix: "moTypes",
 name: "moTypes",
@@ -143,7 +157,7 @@ fieldset: {
   legend: {
     text: "Which types of managing officers have been identified?",
     isPageHeading: false,
-    classes: "govuk-fieldset__legend--l"
+    classes: "govuk-visuallyhidden"
   }
 },
 hint: {
