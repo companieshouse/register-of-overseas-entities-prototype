@@ -25,15 +25,30 @@
 
         {{ govukInput({
           label: {
-            text: "What is their full name?",
+            text: "What is their first name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-            text: "Include any professional or honorary titles, if relevant."
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "bo-individual-first-name",
+          name: "bo-individual-first-name"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
-          id: "individual-name",
-          name: "individual-name"
+          hint: {
+          text: "This is also known as your family name."
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "bo-individual-last-name",
+          name: "bo-individual-last-name"
         }) }}
 
         {{ govukDateInput({
@@ -57,8 +72,8 @@
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          id: "owner-nationality",
-          name: "owner-nationality"
+          id: "bo-individual-nationality",
+          name: "bo-individual-nationality"
         }) }}
 
         {% call govukFieldset({

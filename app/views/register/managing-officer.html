@@ -24,15 +24,30 @@
 
         {{ govukInput({
           label: {
-            text: "What is their full name?",
+            text: "What is their first name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-            text: "Include any professional or honorary titles if relevant."
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "mo-individual-first-name",
+          name: "mo-individual-first-name"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
-          id: "officer-name",
-          name: "officer-name"
+          hint: {
+          text: "This is also known as their family name."
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "mo-individual-last-name",
+          name: "mo-individual-last-name"
         }) }}
 
         {% set formerNameHtml %}
@@ -72,8 +87,8 @@
             }) }}
 
         {{ govukDateInput({
-          id: "officer-dob",
-          namePrefix: "officer-dob",
+          id: "mo-individual-dob",
+          namePrefix: "mo-individual-dob",
           fieldset: {
             legend: {
               text: "What is their date of birth?",
@@ -92,8 +107,8 @@
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          id: "officer-nationality",
-          name: "officer-nationality"
+          id: "mo-individual-nationality",
+          name: "mo-individual-nationality"
         }) }}
 
         {% call govukFieldset({

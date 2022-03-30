@@ -19,22 +19,37 @@
       <form class="form" method="post">
 
 
-                {{ govukInput({
-                  label: {
-                    text: "What is their full name?",
-                    classes: "govuk-label--m",
-                    isPageHeading: false
-                  },
-                  hint: {
-                    text: "Include any professional or honorary titles, if relevant."
-                  },
-                  id: "individual-name",
-                  name: "individual-name"
-                }) }}
+        {{ govukInput({
+          label: {
+            text: "What is their first name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "interested-person-individual-first-name",
+          name: "interested-person-individual-first-name"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+          text: "This is also known as their family name."
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "interested-person-individual-last-name",
+          name: "interested-person-individual-last-name"
+        }) }}
 
                 {{ govukDateInput({
-                  id: "owner-dob",
-                  namePrefix: "owner-dob",
+                  id: "interested-person-individual-dob",
+                  namePrefix: "interested-person-individual-dob",
                   fieldset: {
                     legend: {
                       text: "What is their date of birth?",
@@ -53,8 +68,8 @@
                     classes: "govuk-label--m",
                     isPageHeading: false
                   },
-                  id: "owner-nationality",
-                  name: "owner-nationality"
+                  id: "interested-person-individual-nationality",
+                  name: "interested-person-individual-nationality"
                 }) }}
 
                 {% call govukFieldset({

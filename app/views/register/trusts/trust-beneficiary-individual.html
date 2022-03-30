@@ -21,20 +21,35 @@
 
         {{ govukInput({
           label: {
-            text: "What is their full name?",
+            text: "What is their first name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-            text: "Include any professional or honorary titles, if relevant."
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "beneficiary-individual-first-name",
+          name: "beneficiary-individual-first-name"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
-          id: "individual-name",
-          name: "individual-name"
+          hint: {
+          text: "This is also known as your their name."
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "beneficiary-individual-last-name",
+          name: "beneficiary-individual-last-name"
         }) }}
 
         {{ govukDateInput({
-          id: "owner-dob",
-          namePrefix: "owner-dob",
+          id: "beneficiary-individual-dob",
+          namePrefix: "beneficiary-individual-dob",
           fieldset: {
             legend: {
               text: "What is their date of birth?",
