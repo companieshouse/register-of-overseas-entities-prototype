@@ -18,29 +18,35 @@
 
 <form>
 
-  {{ govukInput({
-    label: {
-      text: "What is your surname?",
-      classes: "govuk-label--m",
-      isPageHeading: false
-    },
-    classes: "govuk-!-width-three-quarters",
-    id: "presenter-surname",
-    name: "presenter-surname"
-  }) }}
 
   {{ govukInput({
     label: {
-      text: "What are your forenames?",
+      text: "What is your first name?",
       classes: "govuk-label--m",
       isPageHeading: false
     },
     hint: {
-    text: "Include any professional or honorary titles, if relevant."
+    text: "This is also known as your given name. Include any professional or honorary titles, if relevant."
   },
-    id: "presenter-forenames",
-    name: "presenter-forenames"
+    id: "presenter-first-name",
+    name: "presenter-first-name"
   }) }}
+
+
+  {{ govukInput({
+    label: {
+      text: "What is your last name?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    hint: {
+    text: "This is also known as your family name."
+  },
+    classes: "govuk-!-width-three-quarters",
+    id: "presenter-last-name",
+    name: "presenter-last-name"
+  }) }}
+
 <!--
   {{ govukInput({
     label: {
