@@ -61,18 +61,17 @@
     name: "presenter-number",
     classes: "govuk-!-width-one-half"
   }) }}
-<
+-->
   {% set otherHtml %}
   {{ govukInput({
     id: "other-role",
     name: "other-role",
-    classes: "govuk-!-width-one-third",
     label: {
       text: "Enter your role"
     }
   }) }}
   {% endset -%}
--->
+
   {{ govukRadios({
     idPrefix: "presenter-role",
     name: "presenter-role",
