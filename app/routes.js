@@ -9,3 +9,8 @@ module.exports = router
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
 		res.redirect( '/register/beneficial-owner-type' )
 } )
+
+
+router.post( '/register/beneficial-owner-type', function ( req, res ) {
+		res.redirect( '/register/beneficial-owner-individual' )
+} )

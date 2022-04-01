@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form>
+      <form class="form" action="/register/beneficial-owner-type" method="post">
 
 <!--{{data|dump|safe}}-->
 
@@ -22,8 +22,8 @@
 
 
   {{ govukCheckboxes({
-  idPrefix: "beneficialTypes",
-  name: "beneficialTypes",
+  idPrefix: "type",
+  name: "type",
   fieldset: {
     legend: {
       text: "Which types of beneficial owners have been identified?",
@@ -37,24 +37,16 @@
   items: [
     {
       value: "beneficialTypesIndividual",
-      text: "Individual beneficial owners",
-      hint: {
-        text: "Hint"
-      }
+      text: "Individual beneficial owners"
     },
     {
       value: "beneficialTypesOther",
-      text: "Other legal entity beneficial owners",
-      hint: {
-        text: "Hint"
-      }
+      text: "Other legal entity beneficial owners"
+
     },
     {
       value: "beneficialTypesGov",
-      text: "Government or public authority beneficial owners",
-      hint: {
-        text: "Hint"
-      }
+      text: "Government or public authority beneficial owners"
     }
   ]
 }) }}
@@ -71,8 +63,8 @@
 
 
 {{ govukCheckboxes({
-idPrefix: "moTypes",
-name: "moTypes",
+idPrefix: "type",
+name: "type",
 fieldset: {
   legend: {
     text: "Which types of managing officers have been identified?",
@@ -99,8 +91,8 @@ items: [
 
 
 {{ govukCheckboxes({
-idPrefix: "beneficialTypes",
-name: "beneficialTypes",
+idPrefix: "types",
+name: "types",
 fieldset: {
   legend: {
     text: "Which types of beneficial owners have been identified?",
@@ -136,8 +128,8 @@ items: [
 
 
 {{ govukCheckboxes({
-idPrefix: "moTypes",
-name: "moTypes",
+idPrefix: "types",
+name: "types",
 fieldset: {
   legend: {
     text: "Which types of managing officers have been identified?",
@@ -228,8 +220,7 @@ items: [
 -->
 
       {{ govukButton({
-        text: "Continue",
-        href: "/register/beneficial-owner-individual"
+        text: "Continue"
       }) }}
       </form>
 
