@@ -1,0 +1,288 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which types of beneficial owners have been identified? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/beneficial-owner-type" method="post">
+
+
+
+<!--{{data|dump|safe}}-->
+
+{% if (data['statements'] === "allIdentifiedAllSupplied") %}
+
+<h1 class="govuk-heading-l">You now need to tell us about beneficial owners</h1>
+
+
+  {{ govukRadios({
+  idPrefix: "type",
+  name: "type",
+  fieldset: {
+    legend: {
+      text: "Select the type of beneficial owner you want to add",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "You can add more later"
+  },
+  items: [
+    {
+      value: "beneficialTypesIndividual",
+      text: "Individual beneficial owner"
+    },
+    {
+      value: "beneficialTypesOther",
+      text: "Other legal entity beneficial owner"
+
+    },
+    {
+      value: "beneficialTypesGov",
+      text: "Government or public authority beneficial owner"
+    }
+  ]
+}) }}
+
+
+
+
+{{ govukButton({
+  text: "Add"
+}) }}
+<p>
+{{ govukButton({
+  text: "I do not need to add any more individual beneficial owners",
+   classes: "govuk-button--secondary"
+}) }}
+</p>
+
+
+{{ govukTable({
+  caption: "Beneficial owners you have added so far:",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Type",
+      classes: "govuk-visually-hidden"
+    },
+    {
+      text: "Name",
+      classes: "govuk-visually-hidden"
+    },
+    {
+      text: "Change",
+      classes: "govuk-visually-hidden"
+    },
+    {
+      text: "Remove",
+      classes: "govuk-visually-hidden"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Individual"
+      },
+      {
+        text: "Joe Bloggs"
+      },
+      {
+        html: '<a href="">Change</a>'
+      },
+      {
+        html: '<a href="">Remove</a>'
+      }
+     ],
+     [
+       {
+        text: "Other legal entity"
+      },
+      {
+        text: "SOMETHING Limited"
+      },
+      {
+        html: '<a href="">Change</a>'
+      },
+      {
+        html: '<a href="">Remove</a>'
+      }
+    ]
+  ]
+}) }}
+
+
+
+{% elif (data['statements'] === "noneIdentified") %}
+
+<h1 class="govuk-heading-l">You now need to tell us about managing officers</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "Here"
+}) }}
+
+
+{{ govukRadios({
+idPrefix: "type",
+name: "type",
+fieldset: {
+  legend: {
+    text: "Select type of managing officer you want to add",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--m"
+  }
+},
+hint: {
+  text: "You can add more later"
+},
+items: [
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officer"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officer"
+  }
+]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+{% else %}
+
+<h1 class="govuk-heading-l">You now need to tell us about beneficial owners and managing officers</h1>
+
+
+{{ govukRadios({
+idPrefix: "type",
+name: "type",
+fieldset: {
+  legend: {
+    text: "Select type of beneficial owner or managing officer you want to add",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--m"
+  }
+},
+hint: {
+  text: "You can add more later"
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual beneficial owner"
+  },
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity beneficial owner"
+
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority beneficial owner"
+  },
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officer"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officer"
+  }
+]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+
+{% endif %}
+
+<!--
+  {% set yesOwnerHtml %}
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          What beneficial owners does the overseas entity have?
+        </h1>
+      </legend>
+      <div id="waste-hint" class="govuk-hint">
+        Select all that apply.
+      </div>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial" name="beneficial" type="checkbox" value="individual">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial">
+          An individual beneficial owner
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial-2" name="beneficial" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial-2">
+          A corporate beneficial owner
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial-3" name="beneficial" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial-3">
+          A government or public authority beneficial owner
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Can you identify at least one beneficial owner of the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesOwnerHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+-->
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
