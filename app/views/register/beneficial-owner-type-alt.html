@@ -24,35 +24,44 @@
 <h1 class="govuk-heading-l">You now need to tell us about beneficial owners</h1>
 
 
-  {{ govukRadios({
-  idPrefix: "type",
-  name: "type",
-  fieldset: {
-    legend: {
-      text: "Select the type of beneficial owner you want to add",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
+{{ govukRadios({
+idPrefix: "type",
+name: "type",
+fieldset: {
+  legend: {
+    text: "Select the type of beneficial owner or managing officer you want to add",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--m"
+  }
+},
+hint: {
+  text: "You can add more later WE NEED TO EXPLAIN HERE ABOUT THEM ONLY NEEDING MO INFO IF NO INDIVIDUAL BOs IDENTIFIED?"
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual beneficial owner"
   },
-  hint: {
-    text: "You can add more later"
-  },
-  items: [
-    {
-      value: "beneficialTypesIndividual",
-      text: "Individual beneficial owner"
-    },
-    {
-      value: "beneficialTypesOther",
-      text: "Other legal entity beneficial owner"
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity beneficial owner"
 
-    },
-    {
-      value: "beneficialTypesGov",
-      text: "Government or public authority beneficial owner"
-    }
-  ]
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority beneficial owner"
+  },
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officer"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officer"
+  }
+]
 }) }}
+
 {{ govukButton({
   text: "Add"
 }) }}
