@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register/beneficial-owner-type" method="post">
+      <form class="form" action="/register/check-answers" method="post">
 
 
 
@@ -58,14 +58,10 @@
 
 
 {{ govukButton({
-  text: "Add"
+  text: "Add",
+  href: "/register/managing-officer-corporate"
 }) }}
-<p>
-{{ govukButton({
-  text: "I do not need to add any more individual beneficial owners",
-   classes: "govuk-button--secondary"
-}) }}
-</p>
+
 
 
 {{ govukTable({
@@ -82,11 +78,7 @@
       classes: "govuk-visually-hidden"
     },
     {
-      text: "Change",
-      classes: "govuk-visually-hidden"
-    },
-    {
-      text: "Remove",
+      text: "Change or remove",
       classes: "govuk-visually-hidden"
     }
   ],
@@ -99,26 +91,42 @@
         text: "Joe Bloggs"
       },
       {
-        html: '<a href="">Change</a>'
-      },
-      {
-        html: '<a href="">Remove</a>'
+        html: '<a href="">Change or remove</a>'
       }
      ],
      [
        {
-        text: "Other legal entity"
+        text: "An other legal entity"
       },
       {
-        text: "SOMETHING Limited"
+        text: "An example here"
       },
       {
-        html: '<a href="">Change</a>'
-      },
-      {
-        html: '<a href="">Remove</a>'
+        html: '<a href="">Change or remove</a>'
       }
-    ]
+    ],
+    [
+      {
+       text: "Government or public authority"
+     },
+     {
+       text: "An example here"
+     },
+     {
+       html: '<a href="">Change or remove</a>'
+     }
+   ],
+   [
+     {
+      text: "Individual managing officer"
+    },
+    {
+      text: "An example here"
+    },
+    {
+      html: '<a href="">Change or remove</a>'
+    }
+  ]
   ]
 }) }}
 
@@ -278,7 +286,12 @@ items: [
 }) }}
 
 -->
-
+<p>
+{{ govukButton({
+  text: "I do not need to add any more",
+   classes: "govuk-button--secondary"
+}) }}
+</p>
 
       </form>
 
