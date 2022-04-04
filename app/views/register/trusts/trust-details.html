@@ -68,7 +68,7 @@
         }) }}
 
 
-        {{ govukCheckboxes({
+        {{ govukRadios({
             idPrefix: "trust-types",
             name: "trust-types",
             fieldset: {
@@ -79,7 +79,7 @@
               }
             },
             hint: {
-              text: "Select all that apply."
+              text: "You can add more later"
             },
             items: [
               {
