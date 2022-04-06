@@ -8,9 +8,26 @@ module.exports = router
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
 		res.redirect( '/register/beneficial-owner-type-alt' )
-} )
+} );
 
 
 router.post( '/register/beneficial-owner-type', function ( req, res ) {
 		res.redirect( '/register/beneficial-owner-individual' )
-} )
+} );
+
+
+
+router.get( '/register/beneficial-owner-individual', function ( req, res ) {
+	var boType = req.query.boType;
+	if ( boType == "beneficialTypesOther" ) {
+		res.redirect( "/register/beneficial-owner-other" );
+	} else if ( boType == "beneficialTypesGov" ) {
+		res.redirect( "/register/beneficial-owner-gov" );
+	} else if ( boType == "moTypesIndividual" ) {
+		res.redirect( "/register/managing-officer" );
+	} else if ( boType == "moTypesCorporate" ) {
+		res.redirect( "/register/managing-officer-corporate" );
+	} else {
+		res.render( 'register/beneficial-owner-individual' );
+	}
+} );

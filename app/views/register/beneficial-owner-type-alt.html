@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register/beneficial-owner-type" method="post">
+      <form class="form" action="/register/beneficial-owner-individual" method="get">
 
 
 
@@ -25,8 +25,8 @@
 
 
 {{ govukRadios({
-idPrefix: "type",
-name: "type",
+idPrefix: "boType",
+name: "boType",
 fieldset: {
   legend: {
     text: "Select the type of beneficial owner you want to add",
@@ -69,8 +69,8 @@ items: [
 
 
 {{ govukRadios({
-idPrefix: "type",
-name: "type",
+idPrefix: "boType",
+name: "boType",
 fieldset: {
   legend: {
     text: "Select the type of managing officer you want to add",
@@ -107,8 +107,8 @@ items: [
 }) }}
 
 {{ govukRadios({
-idPrefix: "type",
-name: "type",
+idPrefix: "boType",
+name: "boType",
 fieldset: {
   legend: {
     text: "Select the type of beneficial owner or managing officer you want to add",
