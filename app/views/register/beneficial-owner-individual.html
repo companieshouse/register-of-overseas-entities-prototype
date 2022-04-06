@@ -89,7 +89,7 @@
             html: 'Property name or number (optional)'
           },
           hint: {
-           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "usual-residential-address-property-name-number",
           name: "usual-residential-address-property-name-number"
@@ -145,7 +145,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode or ZIP"
+            text: "Postcode or ZIP code (if applicable)"
           },
           classes: "govuk-input--width-10",
           id: "usual-residential-address-postcode",
@@ -168,7 +168,7 @@
             html: 'Property name or number (optional)'
           },
           hint: {
-           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "service-address-property-name-number",
           name: "service-address-property-name-number"
@@ -224,7 +224,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode or ZIP"
+            text: "Postcode or ZIP code (if applicable)"
           },
           classes: "govuk-input--width-10",
           id: "service-address-postcode",
@@ -327,7 +327,7 @@
     }
   },
   hint: {
-    text: "Hint text"
+    text: "This is a designated person within the meaning of section 9(2) of the Sanctions and Anti-Money Laundering Act 2018, where that information is publicly available."
   },
   items: [
     {
@@ -342,9 +342,9 @@
 }) }}
 
 
-        <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-        <p>The beneficial owner’s home address will not be displayed. Only the month and year of their date of birth will be displayed.</p>
-        <p>All other information provided on this screen about the beneficial owner will be available on the public register.</p>
+        <h2 class="govuk-heading-m">What information is shown on the public register</h2>
+        <p>The beneficial owner’s home address will not be shown. Only the month and year of their date of birth will be shown.</p>
+        <p>All other information provided in this section will be available on the public register.</p>
 
         {{ govukButton({
           text: "Continue",
