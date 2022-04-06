@@ -22,7 +22,7 @@
           name: "trust-disclaimer",
           fieldset: {
             legend: {
-              text: "Title here",
+              text: "Declaration",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -43,7 +43,7 @@
             isPageHeading: false
           },
           hint: {
-                   text: "Hint here"
+                   text: "If the trust does not have a name, provide a description that it can be identified by"
                  },
           id: "trust-name",
           name: "trust-name"
@@ -70,14 +70,14 @@
 
 
 
-        <h2 class="govuk-heading-m">Upload title here</h2>
+        <h2 class="govuk-heading-m">Complete and upload trust information</h2>
 
-        <p class="govuk-body">Some information to go here</p>
+
 
         <ol class="govuk-list govuk-list--number">
-          <li>Download the <a href="javascript:void(0);">Trust template (Excel 462KB)</a></li>
-          <li>Complete all relevant details</li>
-          <li>Upload the completed Trust template</li>
+          <li>Download the <a href="javascript:void(0);">Trust information template (Excel 462KB)</a>.</li>
+          <li>Complete all relevant details.</li>
+          <li>Upload the completed Trust information template.</li>
         </ol>
 
 
@@ -85,18 +85,15 @@
           id: "file-upload-1",
           name: "file-upload-1",
           label: {
-            text: "Upload a file",
-            classes: "govuk-visually-hidden"
-          },
-          hint: {
-            text: "Hint text if needed"
+            text: "Upload a file"
+
           }
         }) }}
 
 
 
-        <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-        <p>None of the information provided on this screen will be shown on the public register.</p>
+        <h2 class="govuk-heading-m">What information is shown on the public register</h2>
+        <p>None of the information provided in this section will be shown on the public register.</p>
 
         {{ govukButton({
           text: "Continue",
