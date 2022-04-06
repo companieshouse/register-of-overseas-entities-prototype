@@ -17,7 +17,24 @@
 
       <form class="form" action="/url/of/next/page" method="post">
 
+        {{ govukCheckboxes({
+          idPrefix: "trust-disclaimer",
+          name: "trust-disclaimer",
+          fieldset: {
+            legend: {
+              text: "Title here",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
 
+          items: [
+            {
+              value: "trust-statement",
+              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
+            }
+          ]
+        }) }}
 
         {{ govukInput({
           label: {
@@ -25,6 +42,9 @@
             classes: "govuk-label--m",
             isPageHeading: false
           },
+          hint: {
+                   text: "Hint here"
+                 },
           id: "trust-name",
           name: "trust-name"
         }) }}
@@ -48,28 +68,11 @@
 
 
 
-        {{ govukCheckboxes({
-          idPrefix: "trust-disclaimer",
-          name: "trust-disclaimer",
-          fieldset: {
-            legend: {
-              text: "Title here",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
 
-          items: [
-            {
-              value: "trust-statement",
-              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
-            }
-          ]
-        }) }}
 
         <h2 class="govuk-heading-m">Upload title here</h2>
 
-        <p class="govuk-body">Some information</p>
+        <p class="govuk-body">Some information to go here</p>
 
         <ol class="govuk-list govuk-list--number">
           <li>Download the <a href="javascript:void(0);">Trust template (Excel 462KB)</a></li>

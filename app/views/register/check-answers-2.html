@@ -577,7 +577,7 @@
 
       <p>There are processes in place to check the accuracy of the information you provide in this service.</p>
 
-      <p>You need to upload evidence that shows that identity checks have been done. For example, scans of passports.</p>
+      <p>You need to upload evidence that shows that identity checks have been done.</p>
 
 
 
@@ -589,27 +589,10 @@
           classes: "govuk-visually-hidden"
         },
         hint: {
-          text: "Information about file sizes, types, and numbers - TBC"
+          text: "Information about file sizes, file types, and number of file - TBC"
         }
       }) }}
 
-          {{ govukCheckboxes({
-            idPrefix: "due-diligence-statement",
-            name: "due-diligence-statement",
-            fieldset: {
-              legend: {
-                text: "Confirmation",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "due-diligence-statement-checkbox",
-                text: "Some sort of statement, if needed"
-              }
-            ]
-          }) }}
 
           <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="check-answers#diligence">UR shortcut: Alternative identity checks screen</a></p>
 
