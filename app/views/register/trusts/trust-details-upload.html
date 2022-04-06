@@ -69,7 +69,13 @@
 
         <h2 class="govuk-heading-m">Upload title here</h2>
 
-        <p class="govuk-body">Information about what we expect the users to upload.</p>
+        <p class="govuk-body">Some information</p>
+
+        <ol class="govuk-list govuk-list--number">
+          <li>Download the <a href="javascript:void(0);">Trust template (Excel 462KB)</a></li>
+          <li>Complete all relevant details</li>
+          <li>Upload the completed Trust template</li>
+        </ol>
 
 
         {{ govukFileUpload({
@@ -80,7 +86,7 @@
             classes: "govuk-visually-hidden"
           },
           hint: {
-            text: "Hint text about file types, file sizes"
+            text: "Hint text if needed"
           }
         }) }}
 

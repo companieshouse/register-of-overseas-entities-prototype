@@ -577,34 +577,21 @@
 
       <p>Companies House has processes in place to check the accuracy of the information you provide in this service.</p>
 
-      <p>Tell us who has carried out due diligence.</p>
+      <p>You need to upload evidence of due diligenc, for example scans of passports.</p>
 
 
 
-      {{ govukInput({
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "file-upload-1",
         label: {
-          text: "What is the name of the organisation that carried out due diligence?",
-          classes: "govuk-label--m",
-          isPageHeading: true
+          text: "Upload a file",
+          classes: "govuk-visually-hidden"
         },
-        id: "due-diligence-name",
-        name: "due-diligence-name"
+        hint: {
+          text: "Information about file sizes, types, and numbers"
+        }
       }) }}
-
-      {{ govukDateInput({
-            id: "due-diligence-name",
-            namePrefix: "due-diligence-name",
-            fieldset: {
-              legend: {
-                text: "When was due diligence completed?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "For example, 27 3 2007"
-            }
-          }) }}
 
           {{ govukCheckboxes({
             idPrefix: "due-diligence-statement",
@@ -624,7 +611,7 @@
             ]
           }) }}
 
-          <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="check-answers-2#diligence">UR shortcut: Alternative due diligence screen</a></p>
+          <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="check-answers#diligence">UR shortcut: Alternative due diligence screen</a></p>
 
 
       <!--{{ govukCheckboxes({
