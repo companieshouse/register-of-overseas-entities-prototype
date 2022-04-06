@@ -15,11 +15,11 @@
 
       <form class="form" action="/register/check-answers" method="post">
 
-        <h1 class="govuk-heading-l">You now need to tell us about beneficial owners and managing officers</h1>
+        <h1 class="govuk-heading-xl">Beneficial owners and managing officers</h1>
 
         {{ govukDetails({
           summaryText: "What is a managing officer?",
-          text: "Here"
+          text: "To be confirmed"
         }) }}
 
         {{ govukRadios({
@@ -27,13 +27,13 @@
         name: "boType",
         fieldset: {
           legend: {
-            text: "Select the type of beneficial owner or managing officer you want to add",
+            text: "Which type of beneficial owner or managing officer do you want to add?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "You can add more later"
+          text: "You can add more later."
         },
         items: [
           {
@@ -105,7 +105,7 @@
         text: "Corporate"
       },
       {
-        text: "An example here"
+        text: "Name here"
       },
       {
         html: '<a href="">Change or remove</a>'
@@ -116,7 +116,7 @@
        text: "Government or public authority"
      },
      {
-       text: "An example here"
+       text: "Name here"
      },
      {
        html: '<a href="">Change or remove</a>'
@@ -128,7 +128,7 @@
 
 <p>
 {{ govukButton({
-  text: "I do not need to add any more",
+  text: "No more to add",
    classes: "govuk-button--secondary"
 }) }}
 </p>
