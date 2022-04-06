@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">Tell us about yourself</h1>
+<h1 class="govuk-heading-xl">Contact details</h1>
 
 
 <form>
@@ -21,12 +21,10 @@
 
   {{ govukInput({
     label: {
-      text: "What is your first name?",
+      text: "What is the full name of the person we can contact about this application?",
       classes: "govuk-label--m",
       isPageHeading: false
-    },
-    hint: {
-    text: "This is also known as your given name. Include any professional or honorary titles, if relevant."
+
   },
     id: "presenter-first-name",
     name: "presenter-first-name"
@@ -35,13 +33,11 @@
 
   {{ govukInput({
     label: {
-      text: "What is your last name?",
+      text: "What is the email address of the person we can contact about this application?",
       classes: "govuk-label--m",
       isPageHeading: false
     },
-    hint: {
-    text: "This is also known as your family name."
-  },
+
     classes: "govuk-!-width-three-quarters",
     id: "presenter-last-name",
     name: "presenter-last-name"
@@ -72,42 +68,7 @@
   }) }}
   {% endset -%}
 
-  {{ govukRadios({
-    idPrefix: "presenter-role",
-    name: "presenter-role",
-    fieldset: {
-      legend: {
-        text: "What is your role?",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    items: [
-      {
-        value: "accountant",
-        text: "Accountant"
-      },
-      {
-        value: "administrator",
-        text: "Administrator"
-      },
-      {
-        value: "legal-representative",
-        text: "Legal representative"
-      },
-      {
-        value: "beneficial-owner",
-        text: "Beneficial owner"
-      },
-      {
-        value: "other",
-        text: "Other",
-        conditional: {
-        html: otherHtml
-      }
-      }
-    ]
-  }) }}
+
 
   {% set amlrHtml %}
   {{ govukInput({

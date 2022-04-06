@@ -21,7 +21,7 @@
 
 {% if (data['statements'] === "allIdentifiedAllSupplied") %}
 
-<h1 class="govuk-heading-l">You now need to tell us about beneficial owners</h1>
+<h1 class="govuk-heading-xl">Beneficial owners</h1>
 
 
 {{ govukRadios({
@@ -29,7 +29,7 @@ idPrefix: "boType",
 name: "boType",
 fieldset: {
   legend: {
-    text: "Select the type of beneficial owner you want to add",
+    text: "Which type of beneficial owner do you want to add?",
     isPageHeading: false,
     classes: "govuk-fieldset__legend--m"
   }
@@ -60,11 +60,11 @@ items: [
 
 {% elif (data['statements'] === "noneIdentified") %}
 
-<h1 class="govuk-heading-l">You now need to tell us about managing officers</h1>
+<h1 class="govuk-heading-xl">Managing officers</h1>
 
 {{ govukDetails({
   summaryText: "What is a managing officer?",
-  text: "Here"
+  text: "To be confirmed"
 }) }}
 
 
@@ -73,13 +73,13 @@ idPrefix: "boType",
 name: "boType",
 fieldset: {
   legend: {
-    text: "Select the type of managing officer you want to add",
+    text: "Which type of managing officer do you want to add?",
     isPageHeading: false,
     classes: "govuk-fieldset__legend--m"
   }
 },
 hint: {
-  text: "You can add more later"
+  text: "You can add more later."
 },
 items: [
   {
@@ -99,11 +99,11 @@ items: [
 
 {% else %}
 
-<h1 class="govuk-heading-l">You now need to tell us about beneficial owners and managing officers</h1>
+<h1 class="govuk-heading-xl">Beneficial owners and managing officers</h1>
 
 {{ govukDetails({
   summaryText: "What is a managing officer?",
-  text: "Here"
+  text: "To be confirmed"
 }) }}
 
 {{ govukRadios({
@@ -111,13 +111,13 @@ idPrefix: "boType",
 name: "boType",
 fieldset: {
   legend: {
-    text: "Select the type of beneficial owner or managing officer you want to add",
+    text: "Which type of beneficial owner or managing officer do you want to add?",
     isPageHeading: false,
     classes: "govuk-fieldset__legend--m"
   }
 },
 hint: {
-  text: "You can add more later"
+  text: "You can add more later."
 },
 items: [
   {
