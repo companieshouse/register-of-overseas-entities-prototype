@@ -297,8 +297,13 @@
           ]
         }) }}
 
-        <h2 class="govuk-heading-l">What is their nature of control?</h2>
-
+        {% call govukFieldset({
+          legend: {
+            text: "What is their nature of control?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: false
+          }
+        }) %}
                 {{ govukCheckboxes({
                     idPrefix: "bo-noc-individual",
                     name: "bo-noc-individual",
@@ -371,6 +376,7 @@
                         ]
                       }) }}
 
+                      {% endcall %}
 
 
                 <h2 class="govuk-heading-m">What information is shown on the public register</h2>
