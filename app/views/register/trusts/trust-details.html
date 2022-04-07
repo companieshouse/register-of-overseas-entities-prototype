@@ -19,7 +19,24 @@
 
       <form class="form" action="/url/of/next/page" method="post">
 
+        {{ govukCheckboxes({
+          idPrefix: "trust-disclaimer",
+          name: "trust-disclaimer",
+          fieldset: {
+            legend: {
+              text: "Declaration",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
 
+          items: [
+            {
+              value: "trust-statement",
+              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
+            }
+          ]
+        }) }}
 
         {{ govukInput({
 
@@ -55,24 +72,7 @@
 
 
 
-        {{ govukCheckboxes({
-          idPrefix: "trust-disclaimer",
-          name: "trust-disclaimer",
-          fieldset: {
-            legend: {
-              text: "Declaration",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
 
-          items: [
-            {
-              value: "trust-statement",
-              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
-            }
-          ]
-        }) }}
 
 
         {{ govukRadios({
