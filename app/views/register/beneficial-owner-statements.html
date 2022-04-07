@@ -16,12 +16,23 @@
 
       <form class="form" action="/register/beneficial-owner-statements" method="post">
 
-        <h1 class="govuk-heading-xl">Have you identified any beneficial owners?</h1>
+        <h1 class="govuk-heading-xl">Have any beneficial owners been identified?</h1>
 
-        {{ govukDetails({
-          summaryText: "What is a beneficial owner?",
-          text: "A beneficial owner of an overseas entity is a person, entity, government or public authority that meets one or more of the conditions known as the ‘nature of control’. For example, if they hold more than 25% of the shares or voting rights in the overseas entity."
-        }) }}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            What is a beneficial owner?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          A beneficial owner is any legal body that has significant influence or control over the overseas entity. It can be an individual person, other legal entity, government or public authority.
+          </div>
+          <div class="govuk-details__text">
+          You must provide details of any beneficial owners that meet one or more of the conditions known as the 'nature of control':
+          </div>
+        </details>
+
+
 
 
         {{ govukRadios({
@@ -37,19 +48,19 @@
           items: [
             {
               value: "allIdentifiedAllSupplied",
-              text: "All beneficial owners have been identified and all relevant information can be supplied"
+              text: "All beneficial owners have been identified and all required information can be provided"
             },
             {
               value: "allIdentifiedSomeSupplied",
-              text: "All beneficial owners identified but only some relevant information can be supplied"
+              text: "All beneficial owners have been identified but only some required information can be provided"
             },
             {
               value: "someIdentifiedAllupplied",
-              text: "Some beneficial owners identified and all relevant information can be supplied"
+              text: "Some beneficial owners have been identified and all required information can be provided"
             },
             {
               value: "someIdentifiedSomeDetails",
-              text: "Some beneficial owners have been identified but only some relevant information can be supplied"
+              text: "Some beneficial owners have been identified but only some required information can be provided"
             },
             {
               value: "noneIdentified",
