@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">Contact details</h1>
+<h1 class="govuk-heading-xl">Who can we contact about this application?</h1>
 
 
 <form>
@@ -21,26 +21,25 @@
 
   {{ govukInput({
     label: {
-      text: "What is the full name of the person we can contact about this application?",
-      classes: "govuk-label--m",
-      isPageHeading: false
-
-  },
-    id: "presenter-first-name",
-    name: "presenter-first-name"
+      text: "Full name"
+    },
+    id: "full-name",
+    name: "contact-full-name",
+    type: "contact-full-name",
+    autocomplete: "contact-full-name",
+    spellcheck: false
   }) }}
 
 
   {{ govukInput({
     label: {
-      text: "What is the email address of the person we can contact about this application?",
-      classes: "govuk-label--m",
-      isPageHeading: false
+      text: "Email address"
     },
-
-    classes: "govuk-!-width-three-quarters",
-    id: "presenter-last-name",
-    name: "presenter-last-name"
+    id: "contact-email",
+    name: "contact-email",
+    type: "contact-email",
+    autocomplete: "contact-email",
+    spellcheck: false
   }) }}
 
 <!--

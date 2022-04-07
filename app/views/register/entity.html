@@ -36,7 +36,7 @@
 
         {{ govukInput({
           label: {
-            text: "Which country was the entity formed in?",
+            text: "Which country was it formed in?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -234,12 +234,12 @@
 
         {{ govukInput({
           label: {
-            text: "What is the entity's email address?",
+            text: "Which email address at the overseas entity should we send communications to?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-           text: "We’ll use this to send any digital correspondence, including the Overseas Entity ID number and notice of registration"
+           text: "We’ll use this to send the Overseas Entity ID number, the notice of registration, and any other digital correspondence"
          },
           id: "entity-email",
           name: "entity-email"
@@ -282,7 +282,7 @@
    text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
  },
   label: {
-    text: "Enter the name of the register"
+    text: "Name of register"
   }
 }) }}
 {{ govukInput({
@@ -290,7 +290,7 @@
   name: "entity-public-register-number",
   classes: "govuk-!-width-one-half",
   label: {
-    text: "Enter the entity’s registration number"
+    text: "Entity’s registration number"
   }
 }) }}
 {% endset -%}
