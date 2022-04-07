@@ -12,16 +12,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the government or public authority beneficial owner</h1>
-      <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more government or public authority beneficial owners later.</p>
+<span class="govuk-caption-xl">Beneficial owner</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the government or public authority</h1>
+      <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
       <form class="form" method="post">
 
-        {{ govukDetails({
-          summaryText: "What is a government or public authority beneficial owner?",
-          text: "To be confirmed"
-        }) }}
 
         {{ govukInput({
           label: {
@@ -247,7 +243,7 @@
 
 
 
-
+<!--
         {% set PublicRegisterHtml %}
         {{ govukInput({
           id: "bo-gov-public-register-name",
@@ -256,7 +252,7 @@
            text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
          },
           label: {
-            text: "Enter the name of the register"
+            text: "Name of register"
           }
         }) }}
         {{ govukInput({
@@ -264,7 +260,7 @@
           name: "bo-gov-public-register-number",
           classes: "govuk-!-width-one-half",
           label: {
-            text: "Enter it’s registration number"
+            text: "Government or public authority's registration number"
           }
         }) }}
         {% endset -%}
@@ -274,7 +270,7 @@
           name: "bo-gov-public-register",
           fieldset: {
             legend: {
-              text: "Is it already on a public register in the country it was formed?",
+              text: "Is the government or public authority already on a public register in the country it was formed?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -296,87 +292,89 @@
             }
           ]
         }) }}
+-->
+{% call govukFieldset({
+  legend: {
+    text: "What is their nature of control?",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: false
+  }
+}) %}
 
-        {% call govukFieldset({
+{{ govukCheckboxes({
+    idPrefix: "bo-noc-individual",
+    name: "bo-noc-individual",
+    fieldset: {
+      legend: {
+        text: "The beneficial owner:",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+
+    items: [
+      {
+        value: "noc-individual-shares",
+        text: "holds, directly or indirectly, more than 25% of the shares in the entity"
+      },
+      {
+        value: "noc-individual-voting",
+        text: "holds, directly or indirectly, more than 25% of the voting rights in the entity"
+      },
+      {
+        value: "noc-individual-board",
+        text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
+      },
+      {
+        value: "noc-individual-influence",
+        text: "has the right to exercise, or actually exercises, significant influence or control over the entity"
+      }
+    ]
+  }) }}
+
+
+
+
+
+
+
+
+    {{ govukCheckboxes({
+        idPrefix: "bo-noc-firms",
+        name: "bo-noc-firms",
+        fieldset: {
           legend: {
-            text: "What is their nature of control?",
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: false
+            text: "The beneficial owner is a member of a firm that is not a legal person under its governing law, and:",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
           }
-        }) %}
-                {{ govukCheckboxes({
-                    idPrefix: "bo-noc-individual",
-                    name: "bo-noc-individual",
-                    fieldset: {
-                      legend: {
-                        text: "The beneficial owner is an individual, other legal entity, government or public authority and:",
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--m"
-                      }
-                    },
+        },
 
-                    items: [
-                      {
-                        value: "noc-individual-shares",
-                        text: "holds, directly or indirectly, more than 25% of the shares in the entity"
-                      },
-                      {
-                        value: "noc-individual-voting",
-                        text: "holds, directly or indirectly, more than 25% of the voting rights in the entity"
-                      },
-                      {
-                        value: "noc-individual-board",
-                        text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
-                      },
-                      {
-                        value: "noc-individual-influence",
-                        text: "has the right to exercise, or actually exercises, significant influence or control over the entity"
-                      }
-                    ]
-                  }) }}
-
-
-
-
-
-
-
-                    {{ govukCheckboxes({
-                        idPrefix: "bo-noc-firms",
-                        name: "bo-noc-firms",
-                        fieldset: {
-                          legend: {
-                            text: "The beneficial owner is a member of a firm that is not a legal person under its governing law, and:",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--m"
-                          }
-                        },
-
-                        items: [
-                          {
-                            value: "noc-firm-shares",
-                            text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
-                          },
-                          {
-                            value: "noc-firm-voting",
-                            text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
-                          },
-                          {
-                            value: "noc-firm-board",
-                            text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
-                          },
-                          {
-                            value: "noc-firm-influence",
-                            text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
-                          }
-                        ]
-                      }) }}
+        items: [
+          {
+            value: "noc-firm-shares",
+            text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+          },
+          {
+            value: "noc-firm-voting",
+            text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+          },
+          {
+            value: "noc-firm-board",
+            text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+          },
+          {
+            value: "noc-firm-influence",
+            text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+          }
+        ]
+      }) }}
 
                       {% endcall %}
 
 
                 <h2 class="govuk-heading-m">What information is shown on the public register</h2>
-        <p>All information provided in this section about the government or public authority beneficial owner will be available on the public register.</p>
+        <p>All information provided in this section about the government or public authority will be shown on the public Register of Overseas Entities.</p>
 
 
 

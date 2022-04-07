@@ -12,7 +12,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+<span class="govuk-caption-xl">Managing officer</span>
       <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the corporate managing officer</h1>
       <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more corporate managing officers later.</p>
       <form class="form" method="post">
@@ -221,15 +221,7 @@
         {% endcall %}
 
 
-        {{ govukInput({
-            label: {
-              text: "Where is it registered?",
-              classes: "govuk-label--m",
-              isPageHeading: false
-            },
-            id: "corp-mo-where-registered",
-            name: "corp-mo-where-registered"
-          }) }}
+
 
           {{ govukInput({
             label: {
@@ -268,7 +260,7 @@
              text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
            },
             label: {
-              text: "Enter the name of the register"
+              text: "Name of register"
             }
           }) }}
           {{ govukInput({
@@ -276,7 +268,7 @@
             name: "mo-corp-public-register-number",
             classes: "govuk-!-width-one-half",
             label: {
-              text: "Enter it’s registration number"
+              text: "Corporate managing officer's registration number"
             }
           }) }}
           {% endset -%}
@@ -286,7 +278,7 @@
             name: "mo-corp-public-register",
             fieldset: {
               legend: {
-                text: "Is it already on a public register in the country it was formed?",
+                text: "Is the corporate managing officer already on a public register in the country it was formed?",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -326,7 +318,7 @@
 
 
                 <h2 class="govuk-heading-m">What information is shown on the public register</h2>
-                <p>All information provided in this section will be available on the public register.</p>
+                <p>All information provided in this section will be shown on the public Register of Overseas Entities.</p>
 
 
 

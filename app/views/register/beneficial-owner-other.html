@@ -12,16 +12,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the corporate beneficial owner</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more corporate beneficial owners later.</p>
+<span class="govuk-caption-xl">Beneficial owner</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the other legal entity</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
       <form class="form" method="post">
 
-        {{ govukDetails({
-          summaryText: "What is a corporate beneficial owner?",
-          text: "This is a beneficial owner that is a legal entity, such as a company or a partnership."
-        }) }}
+
 
         {{ govukInput({
           label: {
@@ -256,7 +253,7 @@
            text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
          },
           label: {
-            text: "Enter the name of the register"
+            text: "Name of register"
           }
         }) }}
         {{ govukInput({
@@ -264,7 +261,7 @@
           name: "bo-corp-public-register-number",
           classes: "govuk-!-width-one-half",
           label: {
-            text: "Enter it's registration number"
+            text: "Entity's registration number"
           }
         }) }}
         {% endset -%}
@@ -274,7 +271,7 @@
           name: "bo-corp-public-register",
           fieldset: {
             legend: {
-              text: "Is it already on a public register in the country it was formed in?",
+              text: "Is the other legal entity already on a public register in the country it was formed in?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -319,124 +316,127 @@
         {% call govukFieldset({
           legend: {
             text: "What is their nature of control?",
-            classes: "govuk-fieldset__legend--l",
+            classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
         }) %}
-                {{ govukCheckboxes({
-                    idPrefix: "bo-noc-individual",
-                    name: "bo-noc-individual",
-                    fieldset: {
-                      legend: {
-                        text: "The beneficial owner is an individual, other legal entity, government or public authority and:",
-                        isPageHeading: false,
-                        classes: "govuk-fieldset__legend--m"
-                      }
-                    },
 
-                    items: [
-                      {
-                        value: "noc-individual-shares",
-                        text: "holds, directly or indirectly, more than 25% of the shares in the entity"
-                      },
-                      {
-                        value: "noc-individual-voting",
-                        text: "holds, directly or indirectly, more than 25% of the voting rights in the entity"
-                      },
-                      {
-                        value: "noc-individual-board",
-                        text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
-                      },
-                      {
-                        value: "noc-individual-influence",
-                        text: "has the right to exercise, or actually exercises, significant influence or control over the entity"
-                      }
-                    ]
-                  }) }}
+        {{ govukCheckboxes({
+            idPrefix: "bo-noc-individual",
+            name: "bo-noc-individual",
+            fieldset: {
+              legend: {
+                text: "The beneficial owner:",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
 
-
-
-                  {{ govukCheckboxes({
-                      idPrefix: "bo-noc-trust",
-                      name: "bo-noc-trust",
-                      fieldset: {
-                        legend: {
-                          text: "The beneficial owner is a trustee of a trust and:",
-                          isPageHeading: false,
-                          classes: "govuk-fieldset__legend--m"
-                        }
-                      },
-
-                      items: [
-                        {
-                          value: "noc-trusts-shares",
-                          text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
-                        },
-                        {
-                          value: "noc-trusts-voting",
-                          text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
-                        },
-                        {
-                          value: "noc-trusts-board",
-                          text: "the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
-                        },
-                        {
-                          value: "noc-trusts-influence",
-                          text: "the trustees of that trust (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
-                        }
-                      ]
-                    }) }}
+            items: [
+              {
+                value: "noc-individual-shares",
+                text: "holds, directly or indirectly, more than 25% of the shares in the entity"
+              },
+              {
+                value: "noc-individual-voting",
+                text: "holds, directly or indirectly, more than 25% of the voting rights in the entity"
+              },
+              {
+                value: "noc-individual-board",
+                text: "holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the entity"
+              },
+              {
+                value: "noc-individual-influence",
+                text: "has the right to exercise, or actually exercises, significant influence or control over the entity"
+              }
+            ]
+          }) }}
 
 
 
-                    {{ govukCheckboxes({
-                        idPrefix: "bo-noc-firms",
-                        name: "bo-noc-firms",
-                        fieldset: {
-                          legend: {
-                            text: "The beneficial owner is a member of a firm that is not a legal person under its governing law, and:",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--m"
-                          }
-                        },
+          {{ govukCheckboxes({
+              idPrefix: "bo-noc-trust",
+              name: "bo-noc-trust",
+              fieldset: {
+                legend: {
+                  text: "The beneficial owner is a trustee of a trust and:",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
 
-                        items: [
-                          {
-                            value: "noc-firm-shares",
-                            text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
-                          },
-                          {
-                            value: "noc-firm-voting",
-                            text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
-                          },
-                          {
-                            value: "noc-firm-board",
-                            text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
-                          },
-                          {
-                            value: "noc-firm-influence",
-                            text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
-                          }
-                        ]
-                      }) }}
-
-                      {% endcall %}
+              items: [
+                {
+                  value: "noc-trusts-shares",
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+                },
+                {
+                  value: "noc-trusts-voting",
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                },
+                {
+                  value: "noc-trusts-board",
+                  text: "the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                },
+                {
+                  value: "noc-trusts-influence",
+                  text: "the trustees of that trust (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                }
+              ]
+            }) }}
 
 
-{{ govukRadios({
+
+            {{ govukCheckboxes({
+                idPrefix: "bo-noc-firms",
+                name: "bo-noc-firms",
+                fieldset: {
+                  legend: {
+                    text: "The beneficial owner is a member of a firm that is not a legal person under its governing law, and:",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+
+                items: [
+                  {
+                    value: "noc-firm-shares",
+                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+                  },
+                  {
+                    value: "noc-firm-voting",
+                    text: "the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                  },
+                  {
+                    value: "noc-firm-board",
+                    text: "the members of that firm (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                  },
+                  {
+                    value: "noc-firm-influence",
+                    text: "the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company"
+                  }
+                ]
+              }) }}
+
+
+              {% endcall %}
+
+
+
+  {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "bo-corp-sanctions",
-  name: "bo-corp-sanctions",
+  idPrefix: "owner-sanctions",
+  name: "owner-sanctions",
   fieldset: {
     legend: {
-      text: "Is it on the sanctions list?",
+      text: "Are they on the sanctions list?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-      text: "This is a designated person within the meaning of section 9(2) of the Sanctions and Anti-Money Laundering Act 2018, where that information is publicly available."
-    },
+    text: "This means that they are subject to sanctions under the Sanctions and Anti-Money Laundering Act 2018."
+  },
   items: [
     {
       value: "yes",
@@ -447,11 +447,12 @@
       text: "No"
     }
   ]
-}) }}
+  }) }}
+
 
 
                 <h2 class="govuk-heading-m">What information is shown on the public register</h2>
-        <p>All information provided in this section about the corporate beneficial owner will be available on the public register.</p>
+        <p>All information provided in this section about the other legal entity will be shown on the public Register of Overseas Entities.</p>
 
 
 
