@@ -17,14 +17,154 @@
 
       <form class="form" action="/url/of/next/page" method="post">
 
-        {{ govukWarningText({
-          text: "Some warning text",
-          iconFallbackText: "Warning"
+
+        <p>Please provide the details of the agent that has undertaken due diligence upon the overseas entity.</p>
+
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the agent that carried out the identity checks?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "due-diligence-name",
+          name: "due-diligence-name"
         }) }}
 
-        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim, purus vitae hendrerit sollicitudin, lorem mi pharetra orci, tempus pretium neque tellus non nunc. Praesent luctus viverra elementum. Integer bibendum diam vitae dui mattis, vitae maximus sapien dignissim. Integer lectus nisi, pellentesque eget justo at, tristique facilisis justo. Sed venenatis urna bibendum elementum bibendum. Vivamus tincidunt lectus cursus condimentum rhoncus. In tincidunt euismod sem, eget pretium ipsum eleifend sit amet.</p>
+        {% call govukFieldset({
+          legend: {
+            text: "What is the address of the agent that carried out the identity checks?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
 
-          <p class="govuk-body">Maecenas egestas, arcu ut bibendum porta, metus nisi mattis nisl, ac vestibulum enim augue ac metus. Fusce vulputate nisi sed sapien maximus tempor.</p>
+          {{ govukInput({
+            label: {
+              html: 'Property name or number (optional)'
+            },
+            hint: {
+             text: "For example, 'Saron House', '116' or 'Unit 37a'"
+           },
+            id: "agent-address-property-name-number",
+            name: "agent-address-property-name-number"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-line-1",
+            name: "agent-address-line-1",
+            autocomplete: "address-line1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 2 (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-line-2",
+            name: "agent-address-line-2",
+            autocomplete: "address-line2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "City or town"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-city-town",
+            name: "agent-address-city-town"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "County, state, province or region (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-state",
+            name: "agent-address-state"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-country",
+            name: "agent-address-country",
+            autocomplete: "country-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode or ZIP code (if applicable)"
+            },
+            classes: "govuk-input--width-10",
+            id: "agent-address-postcode",
+            name: "agent-address-postcode",
+            autocomplete: "postal-code"
+          }) }}
+
+        {% endcall %}
+
+
+
+        {{ govukInput({
+          label: {
+            text: "What is the email address of the agent that carried out the identity checks?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "due-diligence-email",
+          name: "due-diligence-email"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the partner responsible for undertaking due diligence?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "partner-name",
+          name: "partner-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the supervisory body?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "supervisory-name",
+          name: "supervisory-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the Anti Money Laundering (AML) registration number of the agent (if applicable)?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "aml-number",
+          name: "aml-number",
+            classes: "govuk-!-width-one-half"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the agent’s authentication code as provided by Companies House?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "agent-code",
+          name: "agent-code",
+            classes: "govuk-!-width-one-half"
+        }) }}
 
 
         {{ govukCheckboxes({
@@ -32,7 +172,7 @@
           name: "diligence",
           fieldset: {
             legend: {
-              text: "Some text",
+              text: "Statement of compliance ",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -40,14 +180,16 @@
           items: [
             {
               value: "agree",
-              text: "Agree statement"
+              text: "I confirm that [3PA details] has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the [information/identities] of the people named in this application in accordance with [title of regulations]"
             }
           ]
         }) }}
 
+
+
 {{ govukButton({
   text: "Continue",
-  href: "/register/sign-in"
+  href: "/register/check-your-answers"
 }) }}
 
 
