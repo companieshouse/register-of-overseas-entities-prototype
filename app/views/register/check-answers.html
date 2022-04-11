@@ -575,65 +575,172 @@
 
       <h2 class="govuk-heading-l" id="diligence">Identity checks</h2>
 
-      <p>There are processes in place to check the accuracy of the information you provide in this service.</p>
+      <p>Please provide the details of the agent that has undertaken due diligence upon the overseas entity.</p>
 
 
 
 
       {{ govukInput({
         label: {
-          text: "What is the name of the organisation that carried out identity checks?",
+          text: "What is the name of the agent that carried out the identity checks?",
           classes: "govuk-label--m",
-          isPageHeading: true
+          isPageHeading: false
         },
         id: "due-diligence-name",
         name: "due-diligence-name"
       }) }}
 
-      {{ govukDateInput({
-            id: "due-diligence-name",
-            namePrefix: "due-diligence-name",
-            fieldset: {
-              legend: {
-                text: "When were identity checks completed?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "For example, 27 3 2007"
-            }
-          }) }}
-
-
-
-          <p class="govuk-body govuk-!-font-size-14 govuk-link--no-visited-state"><a href="check-answers-2#diligence">UR shortcut: Alternative identity checks screen</a></p>
-
-
-      <!--{{ govukCheckboxes({
-        idPrefix: "due-diligence",
-        name: "due-diligence",
-        fieldset: {
+      {% call govukFieldset({
         legend: {
-        text: "Due diligence",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
+          text: "What is the address of the agent that carried out the identity checks?",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
         }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Property name or number (optional)'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+         },
+          id: "agent-address-property-name-number",
+          name: "agent-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "agent-address-line-1",
+          name: "agent-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "agent-address-line-2",
+          name: "agent-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "agent-address-city-town",
+          name: "agent-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "agent-address-state",
+          name: "agent-address-state"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Country"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "agent-address-country",
+          name: "agent-address-country",
+          autocomplete: "country-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "agent-address-postcode",
+          name: "agent-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+      {% endcall %}
+
+
+
+      {{ govukInput({
+        label: {
+          text: "What is the email address of the agent that carried out the identity checks?",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
-        hint: {
-          text: "Companies House has processes in place to check the accuracy of the information you provide in this service."
+        id: "due-diligence-email",
+        name: "due-diligence-email"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is the name of the partner responsible for undertaking due diligence?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "partner-name",
+        name: "partner-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is the name of the supervisory body?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "supervisory-name",
+        name: "supervisory-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is the Anti Money Laundering (AML) registration number of the agent (if applicable)?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "aml-number",
+        name: "aml-number",
+          classes: "govuk-!-width-one-half"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is the agent’s authentication code as provided by Companies House?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "agent-code",
+        name: "agent-code",
+          classes: "govuk-!-width-one-half"
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "diligence",
+        name: "diligence",
+        fieldset: {
+          legend: {
+            text: "Statement of compliance ",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
         },
         items: [
-        {
-        value: "due-diligence-1",
-        text: "I confirm that due diligence has been done to confirm the accuracy of all the information provided."
-      },
-      {
-      value: "due-diligence-2",
-      text: "I confirm that all beneficial owners and managing officers of the overseas entity will be informed of their legal responsibility to keep their information up to date."
-      }
+          {
+            value: "agree",
+            text: "I confirm that [3PA details] has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the [information/identities] of the people named in this application in accordance with [title of regulations]"
+          }
         ]
-      }) }}-->
+      }) }}
 
 
 
