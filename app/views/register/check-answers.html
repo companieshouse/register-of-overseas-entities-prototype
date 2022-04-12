@@ -60,7 +60,7 @@
           ]
         }) }}
 
-        <h2 class="govuk-heading-l">Identity checks</h2>
+        <h2 class="govuk-heading-l">Identity checks: agent details</h2>
 
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -84,7 +84,7 @@
               },
               {
                 key: {
-                  text: "Address of agent"
+                  text: "Correspondence address"
                 },
                 value: {
                   html: "72 Guild Street<br>London<br>SE23 6FH"
@@ -99,26 +99,10 @@
                   ]
                 }
               },
+
               {
                 key: {
-                  text: "Home address of agent"
-                },
-                value: {
-                  html: "72 Guild Street<br>London<br>SE23 6FH"
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "home address of agent"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Email address of agent"
+                  text: "Email address"
                 },
                 value: {
                   text: "agent@companyX.co.uk"
@@ -133,26 +117,10 @@
                   ]
                 }
               },
+
               {
                 key: {
-                  text: "Name of partner"
-                },
-                value: {
-                  text: "Dr Alexander Taylor"
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "Name of partner"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Name of the supervisory body"
+                  text: "Name of supervisory body"
                 },
                 value: {
                   text: "HMRC"
@@ -169,7 +137,7 @@
               },
               {
                 key: {
-                  text: " Anti Money Laundering (AML) registration number of the agent"
+                  text: " Anti Money Laundering (AML) registration number"
                 },
                 value: {
                   text: "87654321"
@@ -186,7 +154,7 @@
               },
               {
                 key: {
-                  text: "Agent’s authentication code"
+                  text: "... code"
                 },
                 value: {
                   text: "CH-123456-AB-Z"
@@ -200,12 +168,29 @@
                     }
                   ]
                 }
+              },
+              {
+                key: {
+                  text: "Person responsible for overseeing identity checks"
+                },
+                value: {
+                  text: "Dr Alexander Taylor"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of partner"
+                    }
+                  ]
+                }
               }
             ]
           }) }}
 
 
-      <h2 class="govuk-heading-l">Tell us about the overseas entity</h2>
+      <h2 class="govuk-heading-l">Overseas entity details</h2>
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -329,7 +314,7 @@
 
 
 
-      <h2 class="govuk-heading-l">Have any beneficial owners been identified</h2>
+      <h2 class="govuk-heading-l">Have any beneficial owners been identified?</h2>
 
   {{ govukSummaryList({
     classes: 'govuk-!-margin-bottom-9',
