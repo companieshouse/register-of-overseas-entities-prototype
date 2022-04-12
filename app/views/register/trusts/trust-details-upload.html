@@ -77,18 +77,22 @@
         <ol class="govuk-list govuk-list--number">
           <li>Download the <a href="javascript:void(0);">Trust information template (Excel 462KB)</a>.</li>
           <li>Complete all relevant details.</li>
-          <li>Upload the completed Trust information template.</li>
+          <li>Click 'Create data' button (in the Excel template)</li>
+          <li>Click 'Copy data' button (in the Excel template)</li>
+          <li>Paste your copied data here</li>
+
         </ol>
 
 
-        {{ govukFileUpload({
-          id: "file-upload-1",
-          name: "file-upload-1",
-          label: {
-            text: "Upload a file"
-
-          }
-        }) }}
+        {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "Paste your copied data",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
 
 
 
