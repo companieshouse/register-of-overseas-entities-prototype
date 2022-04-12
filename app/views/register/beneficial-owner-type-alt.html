@@ -60,7 +60,7 @@ items: [
 
 {% elif (data['statements'] === "noneIdentified") %}
 
-<h1 class="govuk-heading-xl">Managing officers</h1>
+<h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
 
 {{ govukDetails({
   summaryText: "What is a managing officer?",
@@ -75,7 +75,7 @@ fieldset: {
   legend: {
     text: "Which type of managing officer do you want to add?",
     isPageHeading: false,
-    classes: "govuk-fieldset__legend--m"
+    classes: "govuk-visually-hidden"
   }
 },
 hint: {
@@ -99,7 +99,7 @@ items: [
 
 {% else %}
 
-<h1 class="govuk-heading-xl">Beneficial owners and managing officers</h1>
+<h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
 
 {{ govukDetails({
   summaryText: "What is a managing officer?",
@@ -113,7 +113,7 @@ fieldset: {
   legend: {
     text: "Which type of beneficial owner or managing officer do you want to add?",
     isPageHeading: false,
-    classes: "govuk-fieldset__legend--m"
+    classes: "govuk-visually-hidden"
   }
 },
 hint: {
