@@ -60,7 +60,149 @@
           ]
         }) }}
 
+        <h2 class="govuk-heading-l">Identity checks</h2>
 
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: "Name of agent"
+                },
+                value: {
+                  text: "Luther Williams"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Address of agent"
+                },
+                value: {
+                  html: "72 Guild Street<br>London<br>SE23 6FH"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Address of agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Home address of agent"
+                },
+                value: {
+                  html: "72 Guild Street<br>London<br>SE23 6FH"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "home address of agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Email address of agent"
+                },
+                value: {
+                  text: "agent@companyX.co.uk"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Email address of agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Name of partner"
+                },
+                value: {
+                  text: "Dr Alexander Taylor"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of partner"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Name of the supervisory body"
+                },
+                value: {
+                  text: "HMRC"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Name of the supervisory body"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: " Anti Money Laundering (AML) registration number of the agent"
+                },
+                value: {
+                  text: "87654321"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Anti Money Laundering (AML) registration number of the agent"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Agent’s authentication code"
+                },
+                value: {
+                  text: "CH-123456-AB-Z"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Agent’s authentication code"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
 
 
       <h2 class="govuk-heading-l">Tell us about the overseas entity</h2>
@@ -1098,149 +1240,7 @@
       </dl>
 
 
-      <h2 class="govuk-heading-l">Identity checks</h2>
 
-        {{ govukSummaryList({
-          classes: 'govuk-!-margin-bottom-9',
-          rows: [
-            {
-              key: {
-                text: "Name of agent"
-              },
-              value: {
-                text: "Luther Williams"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Name of agent"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Address of agent"
-              },
-              value: {
-                html: "72 Guild Street<br>London<br>SE23 6FH"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Address of agent"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Home address of agent"
-              },
-              value: {
-                html: "72 Guild Street<br>London<br>SE23 6FH"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "home address of agent"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Email address of agent"
-              },
-              value: {
-                text: "agent@companyX.co.uk"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Email address of agent"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Name of partner"
-              },
-              value: {
-                text: "Dr Alexander Taylor"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Name of partner"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Name of the supervisory body"
-              },
-              value: {
-                text: "HMRC"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Name of the supervisory body"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: " Anti Money Laundering (AML) registration number of the agent"
-              },
-              value: {
-                text: "87654321"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Anti Money Laundering (AML) registration number of the agent"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Agent’s authentication code"
-              },
-              value: {
-                text: "CH-123456-AB-Z"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "Agent’s authentication code"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
 
 
 
