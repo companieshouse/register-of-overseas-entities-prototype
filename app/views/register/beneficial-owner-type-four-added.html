@@ -17,19 +17,15 @@
 
 
 
-        <h1 class="govuk-heading-xl">Beneficial owners and managing officers</h1>
+        <h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
 
-        {{ govukDetails({
-          summaryText: "What is a managing officer?",
-          text: "To be confirmed"
-        }) }}
 
         {{ govukRadios({
         idPrefix: "boType",
         name: "boType",
         fieldset: {
           legend: {
-            text: "Which type of beneficial owner or managing officer do you want to add?",
+            text: "",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
