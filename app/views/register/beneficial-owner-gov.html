@@ -242,6 +242,21 @@
                 }) }}
 
 
+                {{ govukDateInput({
+                  id: "bo-gov-startdate",
+                  namePrefix: "bo-gov-startdate",
+                  fieldset: {
+                    legend: {
+                      text: "When did it become a beneficial owner for the overseas entity?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 27 3 2007"
+                  }
+                }) }}
+
 
 <!--
         {% set PublicRegisterHtml %}
@@ -293,9 +308,11 @@
           ]
         }) }}
 -->
+
+
 {% call govukFieldset({
   legend: {
-    text: "What is their nature of control?",
+    text: "What is its nature of control?",
     classes: "govuk-fieldset__legend--m",
     isPageHeading: false
   }
@@ -331,11 +348,6 @@
       }
     ]
   }) }}
-
-
-
-
-
 
 
 
