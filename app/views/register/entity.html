@@ -33,16 +33,13 @@
           id: "entity-name",
           name: "entity-name"
         }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div>
 
-        {{ govukInput({
-          label: {
-            text: "Which country was it formed in?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "entity-country",
-          name: "entity-country"
-        }) }}
+
 
         {% call govukFieldset({
           legend: {
@@ -100,6 +97,13 @@
             id: "principal-address-state",
             name: "principal-address-state"
           }) }}
+
+
+          <div class="govuk-form-group">
+             <label for="autocomplete-default" class="govuk-label">Country</label>
+            <p class="govuk-hint">Start typing a country, then choose from the list</p>
+            <div id="country-2" class="autocomplete-wrapper"></div>
+          </div>
 
           {{ govukInput({
             label: {
@@ -182,15 +186,11 @@
           name: "service-address-state"
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Country"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "service-address-country",
-          name: "service-address-country",
-          autocomplete: "country-name"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-3" class="autocomplete-wrapper"></div>
+        </div>
 
         {{ govukInput({
           label: {
@@ -338,5 +338,6 @@
 
     </div>
   </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
 
 {% endblock %}

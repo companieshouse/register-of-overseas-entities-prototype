@@ -85,11 +85,15 @@
             name: "agent-address-state"
           }) }}
 
-          <div class="govuk-form-group">
-             <label for="autocomplete-default" class="govuk-label">Country</label>
-            <p class="govuk-hint">Start typing a country, then choose from the list</p>
-            <div id="country" class="autocomplete-wrapper"></div>
-          </div>
+          {{ govukInput({
+         label: {
+           text: "Country"
+         },
+         classes: "govuk-!-width-two-thirds",
+         id: "agent-address-country",
+         name: "agent-address-country",
+         autocomplete: "country-name"
+       }) }}
 
 
 
@@ -200,6 +204,5 @@
 
     </div>
   </div>
-  <script src="/public/javascripts/accessible-autocomplete.js"></script>
 
 {% endblock %}
