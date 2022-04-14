@@ -85,15 +85,13 @@
             name: "agent-address-state"
           }) }}
 
-          {{ govukInput({
-            label: {
-              text: "Country"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "agent-address-country",
-            name: "agent-address-country",
-            autocomplete: "country-name"
-          }) }}
+          <div class="govuk-form-group">
+             <label for="autocomplete-default" class="govuk-label">Country</label>
+            <p class="govuk-hint">Start typing a country, then choose from the list</p>
+            <div id="country" class="autocomplete-wrapper"></div>
+          </div>
+
+
 
           {{ govukInput({
             label: {
@@ -188,7 +186,7 @@
         }) }}
 
         <h2 class="govuk-heading-m">What information is shown on the public register</h2>
-<p>To be confirmed.</p>
+        <p>To be confirmed.</p>
 
 
 
@@ -202,5 +200,6 @@
 
     </div>
   </div>
+  <script src="/public/javascripts/accessible-autocomplete.js"></script>
 
 {% endblock %}
