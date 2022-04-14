@@ -78,28 +78,48 @@
 
           {{ govukInput({
             label: {
-              text: "County, state, province or region (optional)"
+              text: "County"
             },
             classes: "govuk-!-width-two-thirds",
             id: "agent-address-state",
             name: "agent-address-state"
           }) }}
 
-          {{ govukInput({
-         label: {
-           text: "Country"
-         },
-         classes: "govuk-!-width-two-thirds",
-         id: "agent-address-country",
-         name: "agent-address-country",
-         autocomplete: "country-name"
-       }) }}
+          {{ govukRadios({
+    idPrefix: "where-do-you-live",
+    name: "where-do-you-live",
+    fieldset: {
+      legend: {
+        text: "Country",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend"
+      }
+    },
+    items: [
+      {
+        value: "enland-and-wales",
+        text: "England and Wales"
+      },
+      {
+        value: "northern-ireland",
+        text: "Northern Ireland"
+      },
+      {
+        value: "scotland",
+        text: "Scotland"
+      },
+      {
+        value: "wales",
+        text: "Wales"
+      }
+    ]
+  }) }}
 
 
 
           {{ govukInput({
             label: {
-              text: "Postcode or ZIP code (if applicable)"
+              text: "Postcode"
             },
             classes: "govuk-input--width-10",
             id: "agent-address-postcode",
