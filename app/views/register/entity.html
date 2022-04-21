@@ -33,6 +33,7 @@
           id: "entity-name",
           name: "entity-name"
         }) }}
+
         <div class="govuk-form-group">
            <label for="autocomplete-default" class="govuk-label--m">Which country was it formed in?</label>
           <p class="govuk-hint">Start typing a country, then choose from the list</p>
@@ -105,7 +106,7 @@
             <div id="country-2" class="autocomplete-wrapper"></div>
           </div>
 
-          {{ govukInput({
+        <!--  {{ govukInput({
             label: {
               text: "Country"
             },
@@ -113,7 +114,7 @@
             id: "principal-address-country",
             name: "principal-address-country",
             autocomplete: "country-name"
-          }) }}
+          }) }}-->
 
           {{ govukInput({
             label: {
@@ -179,7 +180,7 @@
 
         {{ govukInput({
           label: {
-            text: "County, state, province or region (optional)"
+            text: "Cobbunty, state, province or region (optional)"
           },
           classes: "govuk-!-width-two-thirds",
           id: "service-address-state",
@@ -187,9 +188,9 @@
         }) }}
 
         <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
+           <label for="autocomplete-default" class="govuk-label">Cobuntry</label>
           <p class="govuk-hint">Start typing a country, then choose from the list</p>
-          <div id="country-3" class="autocomplete-wrapper"></div>
+          <div id="country" class="autocomplete-wrapper"></div>
         </div>
 
         {{ govukInput({
@@ -338,6 +339,5 @@
 
     </div>
   </div>
-  <script src="/public/javascripts/accessible-autocomplete.js"></script>
 
 {% endblock %}

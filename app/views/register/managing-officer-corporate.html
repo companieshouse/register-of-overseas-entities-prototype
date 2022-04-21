@@ -17,7 +17,7 @@
       <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
       <form class="form" method="post">
 
-      
+
         {{ govukInput({
           label: {
             text: "What is its name?",
@@ -87,15 +87,11 @@
           name: "managing-officer-usual-residential-address-state"
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Country"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "managing-officer-usual-residential-address-country",
-          name: "managing-officer-usual-residential-address-country",
-          autocomplete: "country-name"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div>
 
         {{ govukInput({
           label: {
@@ -165,15 +161,11 @@
           name: "service-address-state"
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Country"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "service-address-country",
-          name: "service-address-country",
-          autocomplete: "country-name"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-2" class="autocomplete-wrapper"></div>
+        </div>
 
         {{ govukInput({
           label: {

@@ -86,15 +86,11 @@
           name: "bo-corp-principal-address-state"
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Country"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "bo-corp-principal-address-country",
-          name: "bo-corp-principal-address-country",
-          autocomplete: "country-name"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div>
 
         {{ govukInput({
           label: {
@@ -166,15 +162,11 @@
           name: "bo-corp-service-address-state"
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Country"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "bo-corp-service-address-country",
-          name: "bo-corp-service-address-country",
-          autocomplete: "country-name"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-2" class="autocomplete-wrapper"></div>
+        </div>
 
         {{ govukInput({
           label: {

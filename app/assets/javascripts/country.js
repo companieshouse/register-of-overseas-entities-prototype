@@ -202,7 +202,3 @@ accessibleAutocomplete({element: element, id: id, source: countries, name: "coun
 var element = document.querySelector('#country-2')
 var id = 'autocomplete-default'
 accessibleAutocomplete({element: element, id: id, source: countries, name: "countryUpdate"})
-
-var element = document.querySelector('#country-3')
-var id = 'autocomplete-default'
-accessibleAutocomplete({element: element, id: id, source: countries, name: "countryUpdate"})

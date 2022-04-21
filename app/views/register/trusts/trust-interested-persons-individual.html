@@ -62,15 +62,11 @@
                   }
                 }) }}
 
-                {{ govukInput({
-                  label: {
-                    text: "What is their nationality?",
-                    classes: "govuk-label--m",
-                    isPageHeading: false
-                  },
-                  id: "interested-person-individual-nationality",
-                  name: "interested-person-individual-nationality"
-                }) }}
+                <div class="govuk-form-group">
+                   <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
+                  <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+                  <div id="nationality" class="autocomplete-wrapper"></div>
+                </div>
 
                 {% call govukFieldset({
                   legend: {
@@ -129,15 +125,11 @@
                   name: "service-address-state"
                 }) }}
 
-                {{ govukInput({
-                  label: {
-                    text: "Country"
-                  },
-                  classes: "govuk-!-width-two-thirds",
-                  id: "usual-residential-address-country",
-                  name: "usual-residential-address-country",
-                  autocomplete: "country-name"
-                }) }}
+                <div class="govuk-form-group">
+                   <label for="autocomplete-default" class="govuk-label">Country</label>
+                  <p class="govuk-hint">Start typing a country, then choose from the list</p>
+                  <div id="country" class="autocomplete-wrapper"></div>
+                </div>
 
                 {{ govukInput({
                   label: {
@@ -208,15 +200,11 @@
                   name: "service-address-state"
                 }) }}
 
-                {{ govukInput({
-                  label: {
-                    text: "Country"
-                  },
-                  classes: "govuk-!-width-two-thirds",
-                  id: "service-address-country",
-                  name: "service-address-country",
-                  autocomplete: "country-name"
-                }) }}
+                <div class="govuk-form-group">
+                   <label for="autocomplete-default" class="govuk-label">Country</label>
+                  <p class="govuk-hint">Start typing a country, then choose from the list</p>
+                  <div id="country-2" class="autocomplete-wrapper"></div>
+                </div>
 
                 {{ govukInput({
                   label: {
