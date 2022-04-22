@@ -40,11 +40,18 @@ hint: {
 items: [
   {
     value: "beneficialTypesIndividual",
-    text: "Individual person"
+    text: "Individual person",
+    hint: {
+        text: "You can add trust information in this section, if relevant."
+      }
   },
+
   {
     value: "beneficialTypesOther",
-    text: "Other legal entity"
+    text: "Other legal entity",
+    hint: {
+        text: "You can add trust information in this section, if relevant."
+      }
 
   },
   {
@@ -55,7 +62,7 @@ items: [
 }) }}
 
 {{ govukButton({
-  text: "Add"
+  text: "Continue"
 }) }}
 
 {% elif (data['statements'] === "noneIdentified") %}
@@ -64,7 +71,7 @@ items: [
 
 {{ govukDetails({
   summaryText: "What is a managing officer?",
-  text: "To be confirmed"
+  text: "This is a director, manager or company secretary of the overseas entity."
 }) }}
 
 
@@ -94,7 +101,7 @@ items: [
 }) }}
 
 {{ govukButton({
-  text: "Add"
+  text: "Continue"
 }) }}
 
 {% else %}
@@ -103,7 +110,7 @@ items: [
 
 {{ govukDetails({
   summaryText: "What is a managing officer?",
-  text: "To be confirmed"
+  text: "This is a director, manager or company secretary of the overseas entity."
 }) }}
 
 {{ govukRadios({
@@ -122,11 +129,19 @@ hint: {
 items: [
   {
     value: "beneficialTypesIndividual",
-    text: "Individual beneficial owner"
+    text: "Individual beneficial owner",
+    hint: {
+      text: "You can add trust information in this section, if relevant.
+"
+    }
   },
   {
     value: "beneficialTypesOther",
-    text: "Corporate beneficial owner"
+    text: "Corporate beneficial owner",
+    hint: {
+      text: "You can add trust information in this section, if relevant.
+"
+    }
 
   },
   {
@@ -146,7 +161,7 @@ items: [
 
 
 {{ govukButton({
-  text: "Add"
+  text: "Continue"
 }) }}
 
 {% endif %}
