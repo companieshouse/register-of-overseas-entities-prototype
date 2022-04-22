@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual settlor</h1>
-      <p class="govuk-caption-l govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more individual settlors later.</p>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
       <form class="form" method="post">
 
@@ -245,18 +245,15 @@
                 }) }}
 
 
-
-        <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-        <p>None of the information provided on this screen will be shown on the public register.</p>
-
-        {{ govukButton({
-          text: "Add another individual settlor",
-          href: "",
-           classes: "govuk-button--secondary govuk-!-margin-top-6"
-        }) }}
+                {{ govukInsetText({
+                  html: '
+                            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                            <p>None of the information provided on this screen will be shown on the public register.</p>
+                              '
+                }) }}
 
         {{ govukButton({
-          text: "I do not need to add any more individual settlors",
+          text: "Continue",
           href: "/register/trusts/trust-settlors-ole"
         }) }}
 

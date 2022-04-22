@@ -131,10 +131,12 @@
 
 
 
-
-        <h2 class="govuk-heading-m">What information is shown on the public register</h2>
-        <p>None of the information provided in this section will be shown on the public register.</p>
-
+          {{ govukInsetText({
+            html: '
+                      <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                      <p>None of the information provided on this screen will be shown on the public register.</p>
+                        '
+          }) }}
         {{ govukButton({
           text: "Continue",
           href: "/register/trusts/trust-historical-beneficial-owner"

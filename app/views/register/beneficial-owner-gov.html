@@ -377,8 +377,16 @@
                       {% endcall %}
 
 
-                <h2 class="govuk-heading-m">What information is shown on the public register</h2>
-        <p>All information provided in this section about the government or public authority will be shown on the public Register of Overseas Entities.</p>
+
+
+
+                      {{ govukInsetText({
+                        html: '
+                                  <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                                  <p>All information provided in this section about the government or public authority will be shown on the public Register of Overseas Entities.</p>
+                                    '
+                      }) }}
+
 
 
 
