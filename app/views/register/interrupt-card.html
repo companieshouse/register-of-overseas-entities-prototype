@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Trusts – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="interrupt-card">
+        <h1 class="govuk-heading-l">Trusts</h3>
+
+        <p class="govuk-body">You'll need to tell us:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>each trust’s name, or a description that it can be identified by</li>
+          <li>the date each trust was created</li>
+          <li>what types of individuals and organisations are involved in each trust</li>
+        </ul>
+
+  <p class="govuk-body">You’ll also need to complete a <a href="#" class="govuk-link">Trust information template (Excel 462KB)</a>. You will then be asked to paste the data generated in the template into this service. We highly recommend that you complete this before you start.</p>
+
+  {{ govukButton({
+    text: "Continue",
+    href: "/register/sign-in"
+  }) }}
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

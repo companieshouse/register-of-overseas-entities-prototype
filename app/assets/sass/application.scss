@@ -30,3 +30,32 @@ padding-right: 25px;
     width: 20px;
     overflow: hidden;
 }
+
+.interrupt-card {
+  background-color: $govuk-link-colour;
+  color: #fff !important;
+  padding: 2em 2em 0em;
+
+  h1, p, ul, li, a:link {
+    color:#fff;
+  }
+  a:hover  {
+    color:   #f3f2f1		;
+  }
+  a:focus {
+    text-decoration:none;
+    color:  $govuk-focus-text-colour;
+    background-color:  $govuk-focus-colour	;
+  }
+
+  .govuk-button {
+    background-color: #fff;
+    color:  $govuk-focus-text-colour;
+    &:hover {
+      background-color: #f3f2f1	;
+      color:  $govuk-focus-text-colour;
+
+    }
+  }
+
+}
