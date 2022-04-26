@@ -75,61 +75,6 @@
 
 
 
-        {{ govukRadios({
-            idPrefix: "trust-types",
-            name: "trust-types",
-            fieldset: {
-              legend: {
-                text: "What types of individuals and organisations are involved in the trust?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "You can add more later."
-            },
-            items: [
-              {
-                value: "historical",
-                text: "Historical beneficial owners of the overseas entity that were a trustee of this trust"
-              },
-              {
-                value: "individual-beneficiaries",
-                text: "Individual beneficiaries"
-              },
-              {
-                value: "ole-beneficiaries",
-                text: "Other legal entity beneficiaries"
-              },
-              {
-                value: "individual-settlors",
-                text: "Individual settlors"
-                },
-                {
-                  value: "ole-settlors",
-                  text: "Other legal entity settlors"
-                  },
-                {
-                  value: "individual-grantors",
-                  text: "Individual grantors"
-                  },
-                  {
-                    value: "ole-grantors",
-                    text: "Other legal entity grantors"
-                    },
-                       {
-                value: "individual-interested",
-                text: "Individual interested persons"
-                },
-                     {
-              value: "ole-interested",
-              text: "Other legal entity interested persons"
-              }
-                ]
-          }) }}
-
-
-
 
           {{ govukInsetText({
             html: '
@@ -139,7 +84,7 @@
           }) }}
         {{ govukButton({
           text: "Continue",
-          href: "/register/trusts/trust-historical-beneficial-owner"
+          href: "/register/trusts/trust-involved"
         }) }}
 
       </form>
