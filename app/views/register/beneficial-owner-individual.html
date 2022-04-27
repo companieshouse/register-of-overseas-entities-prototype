@@ -304,26 +304,33 @@
           }) }}
 
           {% set trustDataHtml %}
-          <h2 class="govuk-heading-m">Complete trust information template</h2>
+          <h2 class="govuk-heading-m">Enter trust information</h2>
 
 
 
-          <ol class="govuk-list govuk-list--number">
-            <li>Download the <a href="javascript:void(0);">Trust information template (Excel 462KB)</a>.</li>
-            <li>Complete all relevant details.</li>
-            <li>Click 'Create and copy data' button (in the Excel template)</li>
-          </ol>
+
 
 
           {{ govukTextarea({
           name: "more-detail",
           id: "more-detail",
           label: {
-            text: "Paste your copied data",
-            classes: "govuk-label--m",
+            text: "If you've already completed the trust information document, follow the instructions in the document to paste the information into the box:",
+            classes: "govuk-body",
             isPageHeading: false
           }
+
         }) }}
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I have not completed the trust information document yet
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Enter the trust information into the <a href="#" class="govuk-link">Trust information document (Excel 462KB)</a>. Be aware that this service will time out after 60 minutes of inactivity and your answers will not be saved.</p>
+  </div>
+</details>
           {% endset -%}
 
           {{ govukCheckboxes({
