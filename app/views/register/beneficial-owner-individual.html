@@ -63,15 +63,11 @@
           }
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "What is their nationality?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "bo-individual-nationality",
-          name: "bo-individual-nationality"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+          <div id="nationality" class="autocomplete-wrapper"></div>
+        </div>
 
         {% call govukFieldset({
           legend: {
