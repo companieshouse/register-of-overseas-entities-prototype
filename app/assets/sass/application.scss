@@ -36,10 +36,10 @@ padding-right: 25px;
   color: #fff !important;
   padding: 2em 2em 0em;
 
-  h1, p, ul, li, a:link {
+  h1, h2, h3, p, ul, li, a:link {
     color:#fff;
   }
-  a:hover  {
+  a:hover, a:visited  {
     color:   #f3f2f1		;
   }
   a:focus {
@@ -51,11 +51,15 @@ padding-right: 25px;
   .govuk-button {
     background-color: #fff;
     color:  $govuk-focus-text-colour;
-    &:hover {
+    &:visited {
       background-color: #f3f2f1	;
       color:  $govuk-focus-text-colour;
-
     }
+    &:hover {
+      background-color: 	#b1b4b6 	;
+      color:  $govuk-focus-text-colour;
+    }
+
   }
 
 }
