@@ -304,12 +304,8 @@
           }) }}
 
           {% set trustDataHtml %}
+          <div></div>
           <h2 class="govuk-heading-m">Enter trust information</h2>
-
-
-
-
-
 
           {{ govukTextarea({
           name: "more-detail",
@@ -321,6 +317,7 @@
           }
 
         }) }}
+
         <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -347,26 +344,38 @@
               items: [
                 {
                   value: "noc-trusts-shares",
-                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity"
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the shares in the entity",
+                  conditional: {
+                    html: trustDataHtml,
+                    doRenderAfterFieldset: true
+                  }
                 },
                 {
                   value: "noc-trusts-voting",
-                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity"
+                  text: "the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 25% of the voting rights in the entity",
+                  conditional: {
+                    html: trustDataHtml,
+                    doRenderAfterFieldset: true
+                  }
                 },
                 {
                   value: "noc-trusts-board",
-                  text: "the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company"
+                  text: "the trustees of that trust (in their capacity as such) hold the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company",
+                  conditional: {
+                    html: trustDataHtml,
+                    doRenderAfterFieldset: true
+                  }
                 },
                 {
                   value: "noc-trusts-influence",
                   text: "the trustees of that trust (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company",
                 conditional: {
-                  html: trustDataHtml
+                  html: trustDataHtml,
+                  doRenderAfterFieldset: true
                 }
                 }
               ]
             }) }}
-
 
 
             {{ govukCheckboxes({

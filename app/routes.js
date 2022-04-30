@@ -4,6 +4,8 @@ const router = express.Router()
 
 // Sign in
 require('./routes/sign-in.js')(router)
+require('./routes/presenter.js')(router)
+require('./routes/due-diligence.js')(router)
 
 
 
