@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+  {% endif %}
   Beneficial owner statements – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -13,8 +16,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if errorList.length > 0 %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
 
-      <form class="form" action="/register/beneficial-owner-statements" method="post">
+      <form class="form" method="post">
 
         <h1 class="govuk-heading-xl">Have any beneficial owners been identified?</h1>
 
@@ -34,7 +43,44 @@
 
 
 
-
+{% if errorStatements == true %}
+        {{ govukRadios({
+          idPrefix: "statements",
+          name: "statements",
+          fieldset: {
+            legend: {
+              text: "Have you identified any beneficial owners?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "allIdentifiedAllSupplied",
+              text: "All beneficial owners have been identified and all required information can be provided"
+            },
+            {
+              value: "allIdentifiedSomeSupplied",
+              text: "All beneficial owners have been identified but only some required information can be provided"
+            },
+            {
+              value: "someIdentifiedAllSupplied",
+              text: "Some beneficial owners have been identified and all required information can be provided"
+            },
+            {
+              value: "someIdentifiedSomeDetails",
+              text: "Some beneficial owners have been identified but only some required information can be provided"
+            },
+            {
+              value: "noneIdentified",
+              text: "No beneficial owners have been identified"
+            }
+          ],
+          errorMessage: {
+                  text: "Select which beneficial owner types have been identified"
+                }
+        }) }}
+        {% else %}
         {{ govukRadios({
           idPrefix: "statements",
           name: "statements",
@@ -68,6 +114,7 @@
             }
           ]
         }) }}
+        {% endif %}
 
 
     <!--    {% set oneMoreHtml %}
