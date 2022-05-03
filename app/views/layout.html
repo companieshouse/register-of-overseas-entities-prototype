@@ -47,6 +47,15 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href=javascript:void(0)">feedback</a> will help us to improve it.'
+}) }}
+  </div>
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -56,6 +65,26 @@
     {{ govukFooter({
       meta: {
         items: [
+          {
+            href: "javascript:void(0)",
+            text: "Policies"
+          },
+          {
+            href: "javascript:void(0)",
+            text: "Cookies"
+          },
+          {
+            href: "https://www.gov.uk/government/organisations/companies-house#org-contacts",
+            text: "Contact Us"
+          },
+          {
+            href: "/accessibility-statement",
+            text: "Accessibility statement"
+          },
+          {
+            href: "javascript:void(0)",
+            text: "Developers"
+          },
           {
             href: "https://govuk-prototype-kit.herokuapp.com/",
             text: "GOV.UK Prototype Kit " + releaseVersion

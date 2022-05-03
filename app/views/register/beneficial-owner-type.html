@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who is registering – {{ serviceName }} – Companies House
+{% if errorList.length > 0 %}
+  Error:
+  {% endif %}
+  Which types of beneficial owners have been identified? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -9,55 +12,254 @@
 {% endblock %}
 
 {% block content %}
-
+{% if errorList.length > 0 %}
+  {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: errorList
+    }) }}
+{% endif %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form>
+      <form class="form" method="post">
 
-{% set ownerHint %}
-{{ govukDetails({
-  summaryText: "What is a beneficial owner?",
-  text: "A beneficial owner is an individual who ultimately owns or controls more than 25% of a company's shares or voting rights, or who otherwise exercise control over the company or its management."
-}) }}
-<p class="govuk-hint">Select all that apply.</p>
-{% endset %}
+<!--{{data|dump|safe}}-->
 
+{% if (data['statements'] === "allIdentifiedAllSupplied") %}
+{% if errorType == true %}
   {{ govukCheckboxes({
-    idPrefix: "beneficial-owner-type",
-    name: "beneficial-owner-type",
-    fieldset: {
-      legend: {
-        text: "Who is a beneficial owner of the overseas entity?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
+  idPrefix: "type",
+  name: "type",
+  fieldset: {
+    legend: {
+      text: "Which types of beneficial owners have been identified?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "beneficialTypesIndividual",
+      text: "Individual beneficial owners"
+    },
+    {
+      value: "beneficialTypesOther",
+      text: "Other legal entity beneficial owners"
+
+    },
+    {
+      value: "beneficialTypesGov",
+      text: "Government or public authority beneficial owners"
+    }
+  ],
+  errorMessage: {
+          text: "Select which types of beneficial owners have been identified"
+        }
+}) }}
+{% else %}
+{{ govukCheckboxes({
+idPrefix: "type",
+name: "type",
+fieldset: {
+  legend: {
+    text: "Which types of beneficial owners have been identified?",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--xl"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual beneficial owners"
+  },
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity beneficial owners"
+
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority beneficial owners"
+  }
+]
+}) }}
+{% endif %}
+
+{% elif (data['statements'] === "noneIdentified") %}
+
+<h1 class="govuk-heading-l">Which types of managing officers have been identified?</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "Here"
+}) }}
+
+
+{{ govukCheckboxes({
+idPrefix: "type",
+name: "type",
+fieldset: {
+  legend: {
+    text: "Which types of managing officers have been identified?",
+    isPageHeading: false,
+    classes: "govuk-visually-hidden"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officers"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officers"
+  }
+]
+}) }}
+
+{% else %}
+
+
+{{ govukCheckboxes({
+idPrefix: "types",
+name: "types",
+fieldset: {
+  legend: {
+    text: "Which types of beneficial owners have been identified?",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual beneficial owners"
+  },
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity beneficial owners"
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority beneficial owners"
+  }
+]
+}) }}
+
+<h1 class="govuk-heading-l">Which types of managing officers have been identified?</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "A managing officer is a director, manager or company secretary of the overseas entity."
+}) }}
+
+
+{{ govukCheckboxes({
+idPrefix: "types",
+name: "types",
+fieldset: {
+  legend: {
+    text: "Which types of managing officers have been identified?",
+    isPageHeading: false,
+    classes: "govuk-visually-hidden"
+  }
+},
+hint: {
+  text: "Select all that apply."
+},
+items: [
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officers"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officers"
+  }
+]
+}) }}
+
+{% endif %}
+
+<!--
+  {% set yesOwnerHtml %}
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          What beneficial owners does the overseas entity have?
+        </h1>
+      </legend>
+      <div id="waste-hint" class="govuk-hint">
+        Select all that apply.
+      </div>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial" name="beneficial" type="checkbox" value="individual">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial">
+          An individual beneficial owner
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial-2" name="beneficial" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial-2">
+          A corporate beneficial owner
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="beneficial-3" name="beneficial" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="beneficial-3">
+          A government or public authority beneficial owner
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Can you identify at least one beneficial owner of the overseas entity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesOwnerHtml
       }
     },
-    hint: {
-      html: ownerHint
-    },
-    items: [
-      {
-        value: "individual",
-        text: "An individual beneficial owner"
-      },
-      {
-        value: "other-legal",
-        text: "A public authority, or other legal entity"
-      },
     {
-      divider: "or"
-    },
-    {
-      value: "none",
-      text: "There is no beneficial owner"
+      value: "no",
+      text: "No"
     }
-    ]
-  }) }}
+  ]
+}) }}
+
+-->
 
       {{ govukButton({
-        text: "Continue",
-        href: "/register/beneficial-owner-individual"
+        text: "Continue"
       }) }}
       </form>
 

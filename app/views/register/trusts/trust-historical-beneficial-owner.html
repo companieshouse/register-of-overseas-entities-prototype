@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Historical beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the historical beneficial owner</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+      <form class="form" method="post">
+
+        {{ govukInput({
+            label: {
+              text: "What is the name of the historical beneficial owner?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "historical-beneficial-owner-name",
+            name: "historical-beneficial-owner-name"
+          }) }}
+
+
+          {{ govukDateInput({
+            id: "historical-beneficial-owner-start",
+            namePrefix: "historical-beneficial-owner-start",
+            fieldset: {
+              legend: {
+                text: "When did they become a beneficial owner?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+
+          {{ govukDateInput({
+              id: "historical-beneficial-owner-stop",
+              namePrefix: "historical-beneficial-owner-stop",
+              fieldset: {
+                legend: {
+                  text: "When did they cease to be a beneficial owner?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>None of the information provided on this screen will be shown on the public Register of Overseas Entities.</p>
+                          '
+            }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/register/trusts/trust-beneficiary-individual"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

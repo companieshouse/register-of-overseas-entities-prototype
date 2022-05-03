@@ -1,0 +1,414 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+  {% endif %}
+  Beneficial owner statements – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if errorList.length > 0 %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+
+      <form class="form" method="post">
+
+        <h1 class="govuk-heading-xl">Have any beneficial owners been identified?</h1>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            What is a beneficial owner?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          A beneficial owner is any legal body that has significant influence or control over the overseas entity. It can be an individual person, other legal entity, government or public authority.
+          </div>
+          <div class="govuk-details__text">
+          You must provide details of any beneficial owners that meet one or more of the conditions known as the 'nature of control'.
+          </div>
+        </details>
+
+
+
+{% if errorBoStatements == true %}
+        {{ govukRadios({
+          idPrefix: "bo-statements",
+          name: "bo-statements",
+          fieldset: {
+            legend: {
+              text: "Have you identified any beneficial owners?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "allIdentifiedAllSupplied",
+              text: "All beneficial owners have been identified and all required information can be provided"
+            },
+            {
+              value: "allIdentifiedSomeSupplied",
+              text: "All beneficial owners have been identified but only some required information can be provided"
+            },
+            {
+              value: "someIdentifiedAllSupplied",
+              text: "Some beneficial owners have been identified and all required information can be provided"
+            },
+            {
+              value: "someIdentifiedSomeDetails",
+              text: "Some beneficial owners have been identified but only some required information can be provided"
+            },
+            {
+              value: "noneIdentified",
+              text: "No beneficial owners have been identified"
+            }
+          ],
+          errorMessage: {
+                  text: "Select which beneficial owner types have been identified"
+                }
+        }) }}
+
+  {% else %}
+    {% if boStatements === 'allIdentifiedAllSupplied' %}
+                {{ govukRadios({
+                  idPrefix: "bo-statements",
+                  name: "bo-statements",
+                  fieldset: {
+                    legend: {
+                      text: "Have you identified any beneficial owners?",
+                      isPageHeading: false,
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "allIdentifiedAllSupplied",
+                      text: "All beneficial owners have been identified and all required information can be provided",
+                      checked: true
+                    },
+                    {
+                      value: "allIdentifiedSomeSupplied",
+                      text: "All beneficial owners have been identified but only some required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedAllSupplied",
+                      text: "Some beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedSomeDetails",
+                      text: "Some beneficial owners have been identified but only some required information can be provided"
+                    },
+                    {
+                      value: "noneIdentified",
+                      text: "No beneficial owners have been identified"
+                    }
+                  ]
+                }) }}
+    {% elseif boStatements === 'allIdentifiedSomeSupplied' %}
+                {{ govukRadios({
+                  idPrefix: "bo-statements",
+                  name: "bo-statements",
+                  fieldset: {
+                    legend: {
+                      text: "Have you identified any beneficial owners?",
+                      isPageHeading: false,
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "allIdentifiedAllSupplied",
+                      text: "All beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "allIdentifiedSomeSupplied",
+                      text: "All beneficial owners have been identified but only some required information can be provided",
+                      checked: true
+                    },
+                    {
+                      value: "someIdentifiedAllSupplied",
+                      text: "Some beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedSomeDetails",
+                      text: "Some beneficial owners have been identified but only some required information can be provided"
+                    },
+                    {
+                      value: "noneIdentified",
+                      text: "No beneficial owners have been identified"
+                    }
+                  ]
+                }) }}
+    {% elseif boStatements === 'someIdentifiedAllSupplied' %}
+              {{ govukRadios({
+                idPrefix: "bo-statements",
+                name: "bo-statements",
+                fieldset: {
+                  legend: {
+                    text: "Have you identified any beneficial owners?",
+                    isPageHeading: false,
+                    classes: "govuk-visually-hidden"
+                  }
+                },
+                items: [
+                  {
+                    value: "allIdentifiedAllSupplied",
+                    text: "All beneficial owners have been identified and all required information can be provided"
+                  },
+                  {
+                    value: "allIdentifiedSomeSupplied",
+                    text: "All beneficial owners have been identified but only some required information can be provided"
+                  },
+                  {
+                    value: "someIdentifiedAllSupplied",
+                    text: "Some beneficial owners have been identified and all required information can be provided",
+                    checked: true
+                  },
+                  {
+                    value: "someIdentifiedSomeDetails",
+                    text: "Some beneficial owners have been identified but only some required information can be provided"
+                  },
+                  {
+                    value: "noneIdentified",
+                    text: "No beneficial owners have been identified"
+                  }
+                ]
+              }) }}
+      {% elseif boStatements === 'someIdentifiedSomeDetails' %}
+                {{ govukRadios({
+                  idPrefix: "bo-statements",
+                  name: "bo-statements",
+                  fieldset: {
+                    legend: {
+                      text: "Have you identified any beneficial owners?",
+                      isPageHeading: false,
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "allIdentifiedAllSupplied",
+                      text: "All beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "allIdentifiedSomeSupplied",
+                      text: "All beneficial owners have been identified but only some required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedAllSupplied",
+                      text: "Some beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedSomeDetails",
+                      text: "Some beneficial owners have been identified but only some required information can be provided",
+                      checked: true
+                    },
+                    {
+                      value: "noneIdentified",
+                      text: "No beneficial owners have been identified"
+                    }
+                  ]
+                }) }}
+      {% elseif boStatements === 'noneIdentified' %}
+                {{ govukRadios({
+                  idPrefix: "bo-statements",
+                  name: "bo-statements",
+                  fieldset: {
+                    legend: {
+                      text: "Have you identified any beneficial owners?",
+                      isPageHeading: false,
+                      classes: "govuk-visually-hidden"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "allIdentifiedAllSupplied",
+                      text: "All beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "allIdentifiedSomeSupplied",
+                      text: "All beneficial owners have been identified but only some required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedAllSupplied",
+                      text: "Some beneficial owners have been identified and all required information can be provided"
+                    },
+                    {
+                      value: "someIdentifiedSomeDetails",
+                      text: "Some beneficial owners have been identified but only some required information can be provided"
+                    },
+                    {
+                      value: "noneIdentified",
+                      text: "No beneficial owners have been identified",
+                      checked: true
+                    }
+                  ]
+                }) }}
+    {% else %}
+        {{ govukRadios({
+          idPrefix: "bo-statements",
+          name: "bo-statements",
+          fieldset: {
+            legend: {
+              text: "Have you identified any beneficial owners?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "allIdentifiedAllSupplied",
+              text: "All beneficial owners have been identified and all required information can be provided"
+            },
+            {
+              value: "allIdentifiedSomeSupplied",
+              text: "All beneficial owners have been identified but only some required information can be provided"
+            },
+            {
+              value: "someIdentifiedAllupplied",
+              text: "Some beneficial owners have been identified and all required information can be provided"
+            },
+            {
+              value: "someIdentifiedSomeDetails",
+              text: "Some beneficial owners have been identified but only some required information can be provided"
+            },
+            {
+              value: "noneIdentified",
+              text: "No beneficial owners have been identified"
+            }
+          ]
+        }) }}
+  {% endif %}
+{% endif %}
+
+
+    <!--    {% set oneMoreHtml %}
+        {{ govukRadios({
+            idPrefix: "statements",
+            name: "statements",
+            fieldset: {
+              legend: {
+                text: "A question here",
+                isPageHeading: false,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+            {
+
+                value: "oneMoreAll",
+                text: "The entity is able to provide the required information about each registrable beneficial owner it has identified.",
+                hint: {
+                  text: "Hint"
+                }
+              },
+
+              {
+                value: "oneMoreSome",
+                text: "The entity is not able to provide the required information about one or more of the registrable beneficial owners it has identified",
+                hint: {
+                  text: "Hint"
+                }
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+
+        {% set oneNotIdentifiedHtml %}
+        {{ govukRadios({
+            idPrefix: "statements",
+            name: "statements",
+            fieldset: {
+              legend: {
+                text: "A question here",
+                isPageHeading: false,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+            {
+
+                value: "oneNotIdentifiedAll",
+                text: "The entity is able to provide the required information about each registrable beneficial owner it has identified.",
+                hint: {
+                  text: "Hint"
+                }
+              },
+
+              {
+                value: "oneNotIdentifiedSome",
+                text: "The entity is not able to provide the required information about one or more of the registrable beneficial owners it has identified",
+                hint: {
+                  text: "Hint"
+                }
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+
+        {{ govukRadios({
+            idPrefix: "statements",
+            name: "statements",
+            fieldset: {
+              legend: {
+                text: "A question here",
+                isPageHeading: false,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              {
+                value: "oneMore",
+                text: "The entity has identified one or more registrable beneficial owners and that it has no reasonable cause to believe there are others",
+                hint: {
+                  text: "Hint"
+                  },
+                conditional: {
+                  html: oneMoreHtml
+                }
+              },
+              {
+                value: "oneNotIdentified",
+                text: "The entity has reasonable cause to believe that there is at least one registrable beneficial owner that it has not identified.",
+                hint: {
+                  text: "Hint"
+                },
+                  conditional: {
+                    html: oneNotIdentifiedHtml
+                  }
+              },
+              {
+                value: "noCause",
+                text: "The entity has no reasonable cause to believe that it has any registrable beneficial owners",
+                hint: {
+                  text: "Hint"
+                }
+              }
+            ]
+          }) }}-->
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

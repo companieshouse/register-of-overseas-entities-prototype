@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who is registering – {{ serviceName }} – Companies House
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+Who can we contact about this application? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,101 +15,152 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% if errorName == true or errorEmail == true %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+<h1 class="govuk-heading-xl">Who can we contact about this application?</h1>
 
-<h1 class="govuk-heading-xl">Tell us about yourself</h1>
 
+<form action="" method="post">
 
-<form>
-
+{% if errorName == true %}
   {{ govukInput({
     label: {
-      text: "What is your full name?",
-      classes: "govuk-label--m",
-      isPageHeading: false
+      text: "Full name"
     },
-    id: "presenter-name",
-    name: "presenter-name"
+    id: "contact-full-name",
+    name: "contact-full-name",
+    type: "contact-full-name",
+    autocomplete: "contact-full-name",
+    spellcheck: false,
+    errorMessage: {
+            text: "Enter your full name"
+          }
   }) }}
+{% else %}
+{{ govukInput({
+  label: {
+    text: "Full name"
+  },
+  id: "contact-full-name",
+  name: "contact-full-name",
+  type: "contact-full-name",
+  autocomplete: "contact-full-name",
+  spellcheck: false
+}) }}
+{% endif %}
 
+{% if errorEmail == true %}
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    id: "contact-email",
+    name: "contact-email",
+    type: "contact-email",
+    autocomplete: "contact-email",
+    spellcheck: false,
+    errorMessage: {
+            text: "Enter your email address"
+          }
+  }) }}
+  {% else %}
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    id: "contact-email",
+    name: "contact-email",
+    type: "contact-email",
+    autocomplete: "contact-email",
+    spellcheck: false
+  }) }}
+  {% endif %}
+
+<!--
   {{ govukInput({
     label: {
       text: "What is your phone number?",
       classes: "govuk-label--m",
       isPageHeading: false
     },
+    hint: {
+  text: "For international numbers include the country code"
+},
     id: "presenter-number",
     name: "presenter-number",
-    classes: "govuk-!-width-one-third"
+    classes: "govuk-!-width-one-half"
   }) }}
-
+-->
   {% set otherHtml %}
   {{ govukInput({
     id: "other-role",
     name: "other-role",
-    classes: "govuk-!-width-one-third",
     label: {
-      text: "Role title"
+      text: "Enter your role"
     }
   }) }}
   {% endset -%}
 
-  {{ govukRadios({
-    idPrefix: "presenter-role",
-    name: "presenter-role",
-    fieldset: {
-      legend: {
-        text: "What is your role?",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    hint: {
-      text: "Select one option."
-    },
-    items: [
-      {
-        value: "adminstrator",
-        text: "Administrator"
-      },
-      {
-        value: "agent",
-        text: "Agent"
-      },
-      {
-        value: "solicitor",
-        text: "Solicitor"
-      },
-      {
-        value: "beneficial-owner",
-        text: "Beneficial owner"
-      },
-      {
-        value: "other",
-        text: "Other",
-        conditional: {
-        html: otherHtml
-      }
-      }
-    ]
-  }) }}
 
+
+  {% set amlrHtml %}
   {{ govukInput({
+    id: "amlr-number",
+    name: "amlr-number",
+    type: "number",
+    classes: "govuk-!-width-one-third",
     label: {
-      text: "What is your anti-money laundering registration number? (optional)",
-      classes: "govuk-label--m",
-      isPageHeading: false
-    },
-    id: "amlr",
-    name: "amlr",
-    classes: "govuk-!-width-one-third"
+      text: "Enter your anti-money laundering registration number"
+    }
   }) }}
+  {% endset -%}
+<!--
+  {{ govukRadios({
+  idPrefix: "amlr",
+  name: "amlr",
+  fieldset: {
+    legend: {
+      text: "Do you have an anti-money laundering registration number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: amlrHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+-->
 
-  <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-  <p>No third party information will be shown on the online register</p>
+
+<!--{{ govukInsetText({
+  html: '<h2 class="govuk-heading-m">Information shown on the public register</h2>
+    <p>None of the information provided in this section will be shown on the public Register of Overseas Entities.</p>'
+}) }}-->
+
+
+{{ govukInsetText({
+  html: '  <h2 class="govuk-heading-m">Information shown on the public register</h2>
+    <p>None of the information provided in this section will be shown on the public Register of Overseas Entities.</p>'
+}) }}
+
+
 
       {{ govukButton({
-        text: "Continue",
-        href: "/register/entity"
+        text: "Continue"
       }) }}
       </form>
 

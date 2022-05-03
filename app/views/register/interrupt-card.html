@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="interrupt-card">
+        <h1 class="govuk-heading-l">Before you start</h3>
+
+          <h2 class="govuk-heading-m">Agent code</h2>
+                  <p class="govuk-body">You'll need to <a href="javascript:void(0);" class="govuk-link">request an agent code</a> for the agent that's completed the identity checks for the overseas entity, if you haven't already. </p>
+
+  <h2 class="govuk-heading-m">Trusts</h2>
+          <p class="govuk-body">If you need to tell us about trusts, you’ll need to complete a <a href="/public/pdf/TrustDataCapture.xlsm" class="govuk-link">Trust information document (Excel 52KB)</a>. We highly recommend that you complete this before you start using the service. </p>
+
+  {{ govukButton({
+    text: "Continue",
+    href: "/register/sign-in"
+  }) }}
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

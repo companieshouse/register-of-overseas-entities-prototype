@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Beneficial owner – {{ serviceName }} – Companies House
+  Individual managing officer – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,69 +12,79 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the managing officer</h1>
-      <p class="govuk-caption-l">You can add more managing officers later</p>
-<br>
+<span class="govuk-caption-xl">Managing officer</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual person</h1>
+      <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
       <form class="form" method="post">
 
-        {{ govukDetails({
-          summaryText: "What is a managing officer?",
-          text: "Managing officer has been defined in the draft legislation as a director, manager or secretary of an overseas company."
-        }) }}
 
         {{ govukInput({
           label: {
-            text: "What is the full name of the managing officer?",
+            text: "What is their first name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-            text: "Include any titles if relevant"
+          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+        },
+          id: "mo-individual-first-name",
+          name: "mo-individual-first-name"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "What is their last name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
-          id: "officer-name",
-          name: "officer-name"
+          hint: {
+          text: "This is also known as their family name."
+        },
+          classes: "govuk-!-width-three-quarters",
+          id: "mo-individual-last-name",
+          name: "mo-individual-last-name"
         }) }}
 
         {% set formerNameHtml %}
-{{ govukInput({
-  id: "former-full-name",
-  name: "former-full-name",
-  classes: "govuk-!-width-half",
-  label: {
-    text: "What is the managing officers former name?"
-  }
-}) }}
-{% endset -%}
+            {{ govukInput({
+              id: "former-full-name",
+              name: "former-full-name",
+              classes: "govuk-!-width-half",
+              label: {
+                text: "Former name or names"
+              }
+            }) }}
+            {% endset -%}
 
-{{ govukRadios({
-  idPrefix: "former-name",
-  name: "former-name",
-  fieldset: {
-    legend: {
-      text: "Has the managing officer used a different name in the last 20 years?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: formerNameHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+            {{ govukRadios({
+              idPrefix: "former-name",
+              name: "former-name",
+              fieldset: {
+                legend: {
+                  text: "Do they have any former names?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  conditional: {
+                    html: formerNameHtml
+                  }
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
 
         {{ govukDateInput({
-          id: "officer-dob",
-          namePrefix: "officer-dob",
+          id: "mo-individual-dob",
+          namePrefix: "mo-individual-dob",
           fieldset: {
             legend: {
               text: "What is their date of birth?",
@@ -87,88 +97,210 @@
           }
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "What is their nationality?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "officer-nationality",
-          name: "officer-nationality"
-        }) }}
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
+          <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
+          <div id="nationality" class="autocomplete-wrapper"></div>
+        </div>
 
         {% call govukFieldset({
           legend: {
-            text: "What is their usual residential address?",
+            text: "What is their home address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
         }) %}
 
-          {{ govukInput({
-            label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
-            },
-            id: "address-line-1",
-            name: "address-line-1",
-            autocomplete: "address-line1"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-            },
-            id: "address-line-2",
-            name: "address-line-2",
-            autocomplete: "address-line2"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Town or city"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "address-town",
-            autocomplete: "address-level2"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "County"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-county",
-            name: "address-county"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Postcode"
-            },
-            classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "address-postcode",
-            autocomplete: "postal-code"
-          }) }}
-
-        {% endcall %}
         {{ govukInput({
           label: {
-            text: "What is the managing officer's business occupation? (optional)",
-            classes: "govuk-label--m",
-            isPageHeading: false
+            html: 'Property name or number (optional)'
           },
           hint: {
-            text: "e.g. director"
-          },
-          id: "officer-occupation",
-          name: "officer-occupation"
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "managing-officer-usual-residential-address-property-name-number",
+          name: "managing-officer-usual-residential-address-property-name-number"
         }) }}
 
         {{ govukInput({
           label: {
-            text: "Describe the role and responsibilities in relation to the entity (optional)",
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-line-1",
+          name: "managing-officer-usual-residential-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-line-2",
+          name: "managing-officer-usual-residential-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-city-town",
+          name: "managing-officer-usual-residential-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "managing-officer-usual-residential-address-state",
+          name: "managing-officer-usual-residential-address-state"
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country" class="autocomplete-wrapper"></div>
+        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "managing-officer-usual-residential-address-postcode",
+          name: "managing-officer-usual-residential-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+
+        {% set serviceAddressHtml %}
+        <br>
+        {% call govukFieldset({
+          legend: {
+            text: "What is their correspondence address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: false
+          }
+        }) %}
+        {{ govukInput({
+          label: {
+            html: 'Property name or number (optional)'
+          },
+          hint: {
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
+         },
+          id: "service-address-property-name-number",
+          name: "service-address-property-name-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-1",
+          name: "service-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-line-2",
+          name: "service-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-city-town",
+          name: "service-address-city-town"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County, state, province or region (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "service-address-state",
+          name: "service-address-state"
+        }) }}
+
+        <div class="govuk-form-group">
+           <label for="autocomplete-default" class="govuk-label">Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+          <div id="country-2" class="autocomplete-wrapper"></div>
+        </div>
+
+        {{ govukInput({
+          label: {
+            text: "Postcode or ZIP code (if applicable)"
+          },
+          classes: "govuk-input--width-10",
+          id: "service-address-postcode",
+          name: "service-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+
+        {% endcall %}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "same-address",
+          name: "same-address",
+          fieldset: {
+            legend: {
+              text: "Is their correspondence address the same as their home address?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: serviceAddressHtml
+                }
+                    }
+                  ]
+                }) }}
+
+        {% endcall %}
+
+
+
+
+
+
+
+        <div class="govuk-!-padding-bottom-6">
+          <h1 class="govuk-label-wrapper"><label for="autocomplete-default" class="govuk-label govuk-label--m">What is their occupation? (Optional)</label></h1>
+          <p class="govuk-hint">For example, consultant. <br>Start typing an occupation, then choose from the list. If their occupation is not shown, you can type it directly into the box.</p>
+          <div id="occupation" name="occupation" class="autocomplete-wrapper"></div>
+        </div>
+
+
+
+
+
+        {{ govukTextarea({
+          label: {
+            text: "Describe their role and responsibilities in relation to the entity",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -177,13 +309,29 @@
         }) }}
 
 
-                <h2 class="govuk-heading-m">What information is shown on the online register</h2>
-        <p>All details provided about the managing officer will be available on the online register</p>
 
-        {{ govukButton({
-          text: "Continue",
-          href: "/register/check-answers"
+
+        {{ govukInsetText({
+          html: '
+                    <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                    <p>The managing officer’s home address will not be shown. Only the month and year of their date of birth will be shown.</p>
+                    <p>All other information provided in this section will be shown on the public Register of Overseas Entities.</p>
+                '
         }) }}
+
+
+
+
+
+
+
+
+
+                {{ govukButton({
+                  text: "Continue",
+                  href: "/register/beneficial-owner-type-four-added"
+                }) }}
+
 
       </form>
 
