@@ -1,11 +1,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+  {% endif %}
   Which types of beneficial owners have been identified? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  <a class="govuk-back-link" href="/register/beneficial-owner-statements">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,20 +16,166 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register/beneficial-owner-individual" method="get">
+      <form class="form" method="get">
 
-
+        {% if errorList.length > 0 %}
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: errorList
+            }) }}
+        {% endif %}
 
 <!--{{data|dump|safe}}-->
-
-{% if (data['statements'] === "allIdentifiedAllSupplied") %}
+{% if errorBoType == true %}
+{% if (boStatements === "allIdentifiedAllSupplied") %}
 
 <h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
 
+{{ govukRadios({
+idPrefix: "bo-type",
+name: "bo-type",
+fieldset: {
+  legend: {
+    text: "",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--m"
+  }
+},
+hint: {
+  text: "You can add more later."
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual person",
+    hint: {
+        text: "You can add trust information in this section, if relevant."
+      }
+  },
+
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity",
+    hint: {
+        text: "You can add trust information in this section, if relevant."
+      }
+
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority"
+  }
+],
+errorMessage: {
+        text: "Select which beneficial owner types have been identified"
+      }
+}) }}
+
+{% elif (boStatements === "noneIdentified") %}
+
+<h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "This is a director, manager or company secretary of the overseas entity."
+}) }}
+
 
 {{ govukRadios({
-idPrefix: "boType",
-name: "boType",
+idPrefix: "bo-type",
+name: "bo-type",
+fieldset: {
+  legend: {
+    text: "Which type of managing officer do you want to add?",
+    isPageHeading: false,
+    classes: "govuk-visually-hidden"
+  }
+},
+hint: {
+  text: "You can add more later."
+},
+items: [
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officer"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officer"
+  }
+],
+errorMessage: {
+        text: "Select which managing officer types have been identified"
+      }
+}) }}
+
+{% else %}
+
+<h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
+
+{{ govukDetails({
+  summaryText: "What is a managing officer?",
+  text: "This is a director, manager or company secretary of the overseas entity."
+}) }}
+
+{{ govukRadios({
+idPrefix: "bo-type",
+name: "bo-type",
+fieldset: {
+  legend: {
+    text: "Which type of beneficial owner or managing officer do you want to add?",
+    isPageHeading: false,
+    classes: "govuk-visually-hidden"
+  }
+},
+hint: {
+  text: "You can add more later."
+},
+items: [
+  {
+    value: "beneficialTypesIndividual",
+    text: "Individual beneficial owner",
+    hint: {
+      text: "You can add trust information in this section, if relevant.
+"
+    }
+  },
+  {
+    value: "beneficialTypesOther",
+    text: "Other legal entity beneficial owner",
+    hint: {
+      text: "You can add trust information in this section, if relevant.
+"
+    }
+
+  },
+  {
+    value: "beneficialTypesGov",
+    text: "Government or public authority beneficial owner"
+  },
+  {
+    value: "moTypesIndividual",
+    text: "Individual managing officer"
+  },
+  {
+    value: "moTypesCorporate",
+    text: "Corporate managing officer"
+  }
+],
+errorMessage: {
+        text: "Select which beneficial owner types have been identified"
+      }
+}) }}
+
+{% endif %}
+{% else %}
+{% if (boStatements === "allIdentifiedAllSupplied") %}
+
+<h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
+
+{{ govukRadios({
+idPrefix: "bo-type",
+name: "bo-type",
 fieldset: {
   legend: {
     text: "",
@@ -61,11 +210,7 @@ items: [
 ]
 }) }}
 
-{{ govukButton({
-  text: "Continue"
-}) }}
-
-{% elif (data['statements'] === "noneIdentified") %}
+{% elif (boStatements === "noneIdentified") %}
 
 <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
 
@@ -76,8 +221,8 @@ items: [
 
 
 {{ govukRadios({
-idPrefix: "boType",
-name: "boType",
+idPrefix: "bo-type",
+name: "bo-type",
 fieldset: {
   legend: {
     text: "Which type of managing officer do you want to add?",
@@ -100,10 +245,6 @@ items: [
 ]
 }) }}
 
-{{ govukButton({
-  text: "Continue"
-}) }}
-
 {% else %}
 
 <h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
@@ -114,8 +255,8 @@ items: [
 }) }}
 
 {{ govukRadios({
-idPrefix: "boType",
-name: "boType",
+idPrefix: "bo-type",
+name: "bo-type",
 fieldset: {
   legend: {
     text: "Which type of beneficial owner or managing officer do you want to add?",
@@ -159,13 +300,8 @@ items: [
 ]
 }) }}
 
-
-{{ govukButton({
-  text: "Continue"
-}) }}
-
 {% endif %}
-
+{% endif %}
 <!--
   {% set yesOwnerHtml %}
   <div class="govuk-form-group">
@@ -231,7 +367,9 @@ items: [
 
 -->
 
-
+{{ govukButton({
+  text: "Continue"
+}) }}
       </form>
 
     </div>

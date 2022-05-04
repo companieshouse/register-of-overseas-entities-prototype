@@ -12,11 +12,11 @@ $(document).ready(function () {
 var a = $("#conditional");
 //Then hide the variable a by default
 a.hide();
-//Listen for a change to the checkbox, in this case the name of the checkbox is waste. So whenever you tick one of those boxes the following code will fire each time.
+//Listen for a change to the checkbox, in this case the name of the checkbox is bo-noc-trust. So whenever you tick one of those boxes the following code will fire each time.
 $("input[name='bo-noc-trust']").change(function() {
-    //Create a new variable called A_is_checked with a value which checks to see if the last item of the checboxes is checked
+    //Create a new variable called A_is_checked with a value which checks to see if any of the checboxes is checked
     var A_is_checked = $("input[name='bo-noc-trust']").is(':checked');
-    //If the user has checked the last item (variable A_is_checked) then
+    //If the user has checked (variable A_is_checked) then
     if (A_is_checked) {
       //Show A (or the conditional)
       a.show();
