@@ -1,9 +1,6 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if errorList.length > 0 %}
-  Error:
-{% endif %}
 Who can we contact about this application? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -15,59 +12,25 @@ Who can we contact about this application? – {{ serviceName }} – GOV.UK
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if errorName == true or errorEmail == true %}
-        {{ govukErrorSummary({
-            titleText: "There is a problem",
-            errorList: errorList
-          }) }}
-      {% endif %}
+
 <h1 class="govuk-heading-xl">Who can we contact about this application?</h1>
 
 
-<form action="" method="post">
+<form>
 
-{% if errorName == true %}
+
   {{ govukInput({
     label: {
       text: "Full name"
     },
-    id: "contact-full-name",
+    id: "full-name",
     name: "contact-full-name",
     type: "contact-full-name",
     autocomplete: "contact-full-name",
-    spellcheck: false,
-    errorMessage: {
-            text: "Enter your full name"
-          }
+    spellcheck: false
   }) }}
-{% else %}
-{{ govukInput({
-  label: {
-    text: "Full name"
-  },
-  id: "contact-full-name",
-  name: "contact-full-name",
-  type: "contact-full-name",
-  autocomplete: "contact-full-name",
-  spellcheck: false
-}) }}
-{% endif %}
 
-{% if errorEmail == true %}
-  {{ govukInput({
-    label: {
-      text: "Email address"
-    },
-    id: "contact-email",
-    name: "contact-email",
-    type: "contact-email",
-    autocomplete: "contact-email",
-    spellcheck: false,
-    errorMessage: {
-            text: "Enter your email address"
-          }
-  }) }}
-  {% else %}
+
   {{ govukInput({
     label: {
       text: "Email address"
@@ -78,7 +41,6 @@ Who can we contact about this application? – {{ serviceName }} – GOV.UK
     autocomplete: "contact-email",
     spellcheck: false
   }) }}
-  {% endif %}
 
 <!--
   {{ govukInput({
@@ -160,7 +122,8 @@ Who can we contact about this application? – {{ serviceName }} – GOV.UK
 
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        href: "/register/due-diligence"
       }) }}
       </form>
 
