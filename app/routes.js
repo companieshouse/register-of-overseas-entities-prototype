@@ -10,14 +10,12 @@ require('./routes/presenter.js')(router)
 require('./routes/due-diligence.js')(router)
 require('./routes/entity.js')(router)
 require('./routes/beneficial-owner-statements.js')(router)
-require('./routes/beneficial-owner-type.js')(router)
 require('./routes/beneficial-owner-type-alt.js')(router)
 require('./routes/beneficial-owner-individual.js')(router)
 require('./routes/beneficial-owner-other.js')(router)
 require('./routes/beneficial-owner-gov.js')(router)
 require('./routes/managing-officer.js')(router)
 require('./routes/managing-officer-corporate.js')(router)
-=======
 =======
 >>>>>>> parent of 57a6828 (Validation contact and presenter commit)
 
