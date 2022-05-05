@@ -4,4 +4,4 @@ module.exports = function (router) {
   	res.render( 'register/beneficial-owner-individual', {
     });
   })
-  
+}
