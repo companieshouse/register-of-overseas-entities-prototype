@@ -5,6 +5,7 @@ const router = express.Router()
 // Sign in
 require('./routes/sign-in.js')(router)
 require('./routes/presenter.js')(router)
+require('./routes/due-diligence.js')(router)
 
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {

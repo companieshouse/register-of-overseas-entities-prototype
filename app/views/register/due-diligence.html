@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
   Due diligence – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -13,23 +16,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if errorList.length > 0 %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+      {% endif %}
+
       <h1 class="govuk-heading-xl">Tell us about the agent that carried out identity checks</h1>
 
-      <form class="form" action="/register/entity" method="post">
+      <form class="form" method="post">
 
-
+{% if errorName == true %}
         {{ govukInput({
           label: {
             text: "What is the name of the agent?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          hint: {
-           text: "For example, the name of the law firm or accountant."
-         },
           id: "due-diligence-name",
-          name: "due-diligence-name"
+          name: "due-diligence-name",
+          value: dueDiligenceName,
+          errorMessage: {
+                  text: "Enter the name of the agent"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is the name of the agent?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "due-diligence-name",
+          name: "due-diligence-name",
+          value: dueDiligenceName
+          }) }}
+        {% endif %}
 
         {% call govukFieldset({
           legend: {
@@ -50,6 +73,7 @@
             name: "agent-address-property-name-number"
           }) }}
 
+{% if errorPropertyAddress == true %}
           {{ govukInput({
             label: {
               text: "Address line 1"
@@ -57,8 +81,25 @@
             classes: "govuk-!-width-two-thirds",
             id: "agent-address-line-1",
             name: "agent-address-line-1",
+            value: agentAddressLine1,
+            autocomplete: "address-line1",
+            errorMessage: {
+                    text: "Enter the first line of the agent's correspondence address"
+                  }
+          }) }}
+          {% else %}
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-line-1",
+            name: "agent-address-line-1",
+            value: agentAddressLine1,
             autocomplete: "address-line1"
           }) }}
+{% endif %}
+
 
           {{ govukInput({
             label: {
@@ -70,24 +111,57 @@
             autocomplete: "address-line2"
           }) }}
 
+{% if errorCity == true %}
           {{ govukInput({
             label: {
               text: "City or town"
             },
             classes: "govuk-!-width-two-thirds",
             id: "agent-address-city-town",
-            name: "agent-address-city-town"
+            name: "agent-address-city-town",
+            value: agentCity,
+            errorMessage: {
+                    text: "Enter the city or town of the agent's correspondence address"
+                  }
           }) }}
+          {% else %}
+          {{ govukInput({
+            label: {
+              text: "City or town"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-city-town",
+            name: "agent-address-city-town",
+            value: agentCity
+          }) }}
+          {% endif %}
 
+{% if errorCounty == true %}
           {{ govukInput({
             label: {
               text: "County"
             },
             classes: "govuk-!-width-two-thirds",
             id: "agent-address-state",
-            name: "agent-address-state"
+            name: "agent-address-state",
+            value: agentCounty,
+            errorMessage: {
+                    text: "Enter the county of the agent's correspondence address"
+                  }
           }) }}
+          {% else %}
+          {{ govukInput({
+            label: {
+              text: "County"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "agent-address-state",
+            name: "agent-address-state",
+            value: agentCounty
+          }) }}
+          {% endif %}
 
+{% if errorCountry == true %}
           {{ govukRadios({
     idPrefix: "where-do-you-live",
     name: "where-do-you-live",
@@ -101,25 +175,70 @@
     items: [
       {
         value: "england",
-        text: "England"
+        text: "England",
+        checked: checked("where-do-you-live", "england")
       },
       {
         value: "northern-ireland",
-        text: "Northern Ireland"
+        text: "Northern Ireland",
+        checked: checked("where-do-you-live", "northern-ireland")
       },
       {
         value: "scotland",
-        text: "Scotland"
+        text: "Scotland",
+        checked: checked("where-do-you-live", "scotland")
       },
       {
         value: "wales",
-        text: "Wales"
+        text: "Wales",
+        checked: checked("where-do-you-live", "wales")
       }
-    ]
+    ],
+    errorMessage: {
+            text: "Select the country where the agent is based"
+          }
   }) }}
+  {% else %}
 
 
+  {{ govukRadios({
+idPrefix: "where-do-you-live",
+name: "where-do-you-live",
+fieldset: {
+legend: {
+text: "Country",
+isPageHeading: false,
+classes: "govuk-fieldset__legend"
+}
+},
+items: [
+{
+value: "england",
+text: "England",
+checked: checked("where-do-you-live", "england")
+},
+{
+value: "northern-ireland",
+text: "Northern Ireland",
+checked: checked("where-do-you-live", "northern-ireland")
+},
+{
+value: "scotland",
+text: "Scotland",
+checked: checked("where-do-you-live", "scotland")
+},
+{
+value: "wales",
+text: "Wales",
+checked: checked("where-do-you-live", "wales"),
+checked: checked("where-do-you-live", "wales")
+}
+]
+}) }}
+{% endif %}
 
+
+  {% if errorPostcode == true %}
           {{ govukInput({
             label: {
               text: "Postcode"
@@ -127,38 +246,82 @@
             classes: "govuk-input--width-10",
             id: "agent-address-postcode",
             name: "agent-address-postcode",
+            autocomplete: "postal-code",
+            value: agentPostcode,
+            errorMessage: {
+                    text: "Enter the postcode of the agent's correspondence address"
+                  }
+          }) }}
+          {% else %}
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "agent-address-postcode",
+            name: "agent-address-postcode",
+            value: agentPostcode,
             autocomplete: "postal-code"
           }) }}
+          {% endif %}
 
         {% endcall %}
 
 
-
+{% if errorEmail == true %}
         {{ govukInput({
           label: {
             text: "What is the agent's email address?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
-
           id: "due-diligence-email",
-          name: "due-diligence-email"
+          name: "due-diligence-email",
+          value: agentEmail,
+          errorMessage: {
+                  text: "Enter the agent's email address"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is the agent's email address?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "due-diligence-email",
+          name: "due-diligence-email",
+          value: agentEmail
+        }) }}
+        {% endif %}
 
 
-
+{% if errorSupervisor == true %}
         {{ govukInput({
           label: {
             text: "What is the name of the agent's supervisory body?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          hint: {
-           text: "For example, the Law Society"
-         },
           id: "supervisory-name",
-          name: "supervisory-name"
+          name: "supervisory-name",
+          value: agentSupervisor,
+          errorMessage: {
+                  text: "Enter the name of the agent's supervisory body"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is the name of the agent's supervisory body?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "supervisory-name",
+          name: "supervisory-name",
+          value: agentSupervisor
+        }) }}
+        {% endif %}
 
         {{ govukInput({
           label: {
@@ -171,6 +334,7 @@
             classes: "govuk-!-width-one-half"
         }) }}
 
+{% if errorAgentCode == true %}
         {{ govukInput({
           label: {
             text: "What is the agent code?",
@@ -182,9 +346,30 @@
   },
           id: "agent-code",
           name: "agent-code",
+          value: agentCode,
+            classes: "govuk-!-width-one-half",
+            errorMessage: {
+                    text: "Enter the agent code"
+                  }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is the agent code?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+    text: "This is provided by Companies House and is used to authenticate the agent"
+  },
+          id: "agent-code",
+          name: "agent-code",
+          value: agentCode,
             classes: "govuk-!-width-one-half"
         }) }}
+        {% endif %}
 
+{% if errorIdentityCheck == true %}
         {{ govukInput({
           label: {
             text: "What is the name of the person responsible for overseeing identity checks?",
@@ -192,12 +377,32 @@
             isPageHeading: false
           },
           hint: {
-    text: "For example, tell us the name of the Head of Compliance"
+    text: "Hint text"
   },
           id: "partner-name",
-          name: "partner-name"
+          name: "partner-name",
+          value: partnerName,
+          errorMessage: {
+                  text: "Enter the name of the person responsible for overseeing identity checks"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is the name of the person responsible for overseeing identity checks?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+    text: "Hint text"
+  },
+          id: "partner-name",
+          name: "partner-name",
+          value: partnerName
+        }) }}
+        {% endif %}
 
+{% if errorStatement == true %}
         {{ govukCheckboxes({
           idPrefix: "diligence",
           name: "diligence",
@@ -213,8 +418,31 @@
               value: "agree",
               text: "I confirm that [3PA details] has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the [information/identities] of the people named in this application in accordance with [title of regulations]"
             }
+          ],
+          errorMessage: {
+                  text: "Check and confirm the statement of compliance"
+                }
+        }) }}
+        {% else %}
+        {{ govukCheckboxes({
+          idPrefix: "diligence",
+          name: "diligence",
+          fieldset: {
+            legend: {
+              text: "Statement of compliance ",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "agree",
+              text: "I confirm that [3PA details] has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the [information/identities] of the people named in this application in accordance with [title of regulations]",
+              checked: checked("diligence", "agree")
+            }
           ]
         }) }}
+        {% endif %}
 
 
         {{ govukInsetText({
@@ -228,8 +456,7 @@
 
 
 {{ govukButton({
-  text: "Continue",
-  href: "/register/entity"
+  text: "Continue"
 }) }}
 
 
