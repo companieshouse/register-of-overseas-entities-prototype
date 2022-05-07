@@ -113,7 +113,7 @@ module.exports = function (router) {
     if (typeof req.session.data['entity-public-register'] === 'undefined') {
   		publicRegisterHasError = true
   		errors.push({
-  			text: 'Select yes if the overseas entity is already on a public register',
+  			text: 'Select yes if the overseas entity is already on a public register in the country it was formed in',
   			href: '#entity-public-register'
   		})
   	}
