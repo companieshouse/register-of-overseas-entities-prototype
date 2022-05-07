@@ -6,7 +6,7 @@ const router = express.Router()
 require('./routes/sign-in.js')(router)
 require('./routes/presenter.js')(router)
 require('./routes/due-diligence.js')(router)
-
+require('./routes/entity.js')(router)
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
 		res.redirect( '/register/beneficial-owner-type-alt' )
