@@ -13,12 +13,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register/beneficial-owner-individual" method="get">
+      <form class="form" action="" method="get">
 
 
 
 <!--{{data|dump|safe}}-->
-
 {% if (data['statements'] === "allIdentifiedAllSupplied") %}
 
 <h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
@@ -41,6 +40,7 @@ items: [
   {
     value: "beneficialTypesIndividual",
     text: "Individual person",
+    checked: checked("boType", "beneficialTypesIndividual"),
     hint: {
         text: "You can add trust information in this section, if relevant."
       }
@@ -49,6 +49,7 @@ items: [
   {
     value: "beneficialTypesOther",
     text: "Other legal entity",
+    checked: checked("boType", "beneficialTypesOther"),
     hint: {
         text: "You can add trust information in this section, if relevant."
       }
@@ -56,13 +57,10 @@ items: [
   },
   {
     value: "beneficialTypesGov",
-    text: "Government or public authority"
+    text: "Government or public authority",
+    checked: checked("boType", "beneficialTypesGov")
   }
 ]
-}) }}
-
-{{ govukButton({
-  text: "Continue"
 }) }}
 
 {% elif (data['statements'] === "noneIdentified") %}
@@ -91,17 +89,15 @@ hint: {
 items: [
   {
     value: "moTypesIndividual",
-    text: "Individual managing officer"
+    text: "Individual managing officer",
+    checked: checked("boType", "moTypesIndividual")
   },
   {
     value: "moTypesCorporate",
-    text: "Corporate managing officer"
+    text: "Corporate managing officer",
+    checked: checked("boType", "moTypesCorporate")
   }
 ]
-}) }}
-
-{{ govukButton({
-  text: "Continue"
 }) }}
 
 {% else %}
@@ -130,6 +126,7 @@ items: [
   {
     value: "beneficialTypesIndividual",
     text: "Individual beneficial owner",
+    checked: checked("boType", "beneficialTypesIndividual"),
     hint: {
       text: "You can add trust information in this section, if relevant.
 "
@@ -138,6 +135,7 @@ items: [
   {
     value: "beneficialTypesOther",
     text: "Other legal entity beneficial owner",
+    checked: checked("boType", "beneficialTypesOther"),
     hint: {
       text: "You can add trust information in this section, if relevant.
 "
@@ -146,95 +144,31 @@ items: [
   },
   {
     value: "beneficialTypesGov",
-    text: "Government or public authority beneficial owner"
+    text: "Government or public authority beneficial owner",
+    checked: checked("boType", "beneficialTypesGov")
   },
   {
     value: "moTypesIndividual",
-    text: "Individual managing officer"
+    text: "Individual managing officer",
+    checked: checked("boType", "moTypesIndividual")
   },
   {
     value: "moTypesCorporate",
-    text: "Corporate managing officer"
+    text: "Corporate managing officer",
+    checked: checked("boType", "moTypesCorporate")
   }
 ]
 }) }}
 
+{% endif %}
 
 {{ govukButton({
   text: "Continue"
 }) }}
 
-{% endif %}
+</form>
 
-<!--
-  {% set yesOwnerHtml %}
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-        <h1 class="govuk-fieldset__heading">
-          What beneficial owners does the overseas entity have?
-        </h1>
-      </legend>
-      <div id="waste-hint" class="govuk-hint">
-        Select all that apply.
-      </div>
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="beneficial" name="beneficial" type="checkbox" value="individual">
-          <label class="govuk-label govuk-checkboxes__label" for="beneficial">
-          An individual beneficial owner
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="beneficial-2" name="beneficial" type="checkbox" value="other">
-          <label class="govuk-label govuk-checkboxes__label" for="beneficial-2">
-          A corporate beneficial owner
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="beneficial-3" name="beneficial" type="checkbox" value="other">
-          <label class="govuk-label govuk-checkboxes__label" for="beneficial-3">
-          A government or public authority beneficial owner
-          </label>
-        </div>
-      </div>
-
-    </fieldset>
-  </div>
-{% endset -%}
-
-
-{{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Can you identify at least one beneficial owner of the overseas entity?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: yesOwnerHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
-
--->
-
-
-      </form>
-
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

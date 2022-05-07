@@ -22,7 +22,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Sarah Philips
+            {{data['contact-full-name']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/presenter">
@@ -83,7 +83,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Sugar Hotel
+            {{data['entity-name']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -97,7 +97,7 @@
             Country of incorporation
           </dt>
           <dd class="govuk-summary-list__value">
-            Here
+            {{data['country']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -111,9 +111,7 @@
             Principal or registered office address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            {{data['principal-address-line-1']}}<br>{{data['principal-address-city-town']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -127,9 +125,11 @@
             Correspondence address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            {% if data['same-address'] == 'yes' %}
+            {{data['principal-address-line-1']}}<br>{{data['principal-address-city-town']}}
+            {% else %}
+            {{data['service-address-line-1']}}<br>{{data['service-address-city-town']}}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -143,7 +143,7 @@
             Email
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>sarah.phillips@sugar.com</p>
+            <p>{{data['entity-email']}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -157,7 +157,7 @@
             Legal form
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Corp.</p>
+            <p>{{data['entity-legal-form']}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -171,7 +171,7 @@
             Governing law
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Here</p>
+            <p>{{data['entity-governing-law']}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -182,10 +182,25 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Is the overseas entity on a public register?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{data['entity-public-register']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/register/entity">
+              Change
+              <span class="govuk-visually-hidden"> overseas public register</span>
+            </a>
+          </dd>
+        </div>
+        {% if data['entity-public-register'] == 'yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Overseas public register
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Here</p>
+            <p>{{data['entity-public-register-name']}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -199,7 +214,7 @@
             Registration number
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Here</p>
+            <p>{{data['entity-public-register-number']}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/register/entity">
@@ -208,6 +223,7 @@
             </a>
           </dd>
         </div>
+        {% endif %}
       </dl>
 
       <h2 class="govuk-heading-l">Beneficial owner details</h2>

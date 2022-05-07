@@ -1,13 +1,33 @@
 module.exports = function (router) {
   router.get( '/register/entity', function ( req, res ) {
-    var entityName = entityName
-    var sameAddress = sameAddress
-    var publicRegister = publicRegister
+    var entityName = req.session.data['entity-name']
+    var countryFormed = req.session.data['country']
+    var principalAddressLine1 = req.session.data['principal-address-line-1']
+    var principalCity = req.session.data['principal-address-city-town']
+    var sameAddress = req.session.data['same-address']
+    var serviceAddressLine1 = req.session.data['service-address-line-1']
+    var serviceCity = req.session.data['service-address-city-town']
+    var entityEmail = req.session.data['entity-email']
+    var legalForm = req.session.data['entity-legal-form']
+    var governingLaw = req.session.data['entity-governing-law']
+    var publicRegister = req.session.data['entity-public-register']
+    var publicName = req.session.data['entity-public-register-name']
+    var publicNumber = req.session.data['entity-public-register-number']
 
   	res.render( 'register/entity', {
       entityName: entityName,
+      countryFormed: countryFormed,
+      principalAddressLine1: principalAddressLine1,
+      principalCity: principalCity,
       sameAddress: sameAddress,
-      publicRegister: publicRegister
+      serviceAddressLine1: serviceAddressLine1,
+      serviceCity: serviceCity,
+      entityEmail: entityEmail,
+      legalForm: legalForm,
+      governingLaw: governingLaw,
+      publicRegister: publicRegister,
+      publicNumber: publicNumber,
+      publicName: publicName
     });
   })
 

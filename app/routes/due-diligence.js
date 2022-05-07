@@ -1,6 +1,27 @@
 module.exports = function (router) {
   router.get( '/register/due-diligence', function ( req, res ) {
-  	res.render( 'register/due-diligence' );
+    var dueDiligenceName = req.session.data['due-diligence-name']
+    var agentAddressLine1 = req.session.data['agent-address-line-1']
+    var agentCity = req.session.data['agent-address-city-town']
+    var agentCounty = req.session.data['agent-address-state']
+    var agentCountry = req.session.data['where-do-you-live']
+    var agentPostcode = req.session.data['agent-address-postcode']
+    var agentEmail = req.session.data['due-diligence-email']
+    var agentSupervisor = req.session.data['supervisory-name']
+    var agentCode = req.session.data['agent-code']
+    var partnerName = req.session.data['partner-name']
+  	res.render( 'register/due-diligence', {
+      dueDiligenceName: dueDiligenceName,
+      agentAddressLine1: agentAddressLine1,
+      agentCity: agentCity,
+      agentCounty: agentCounty,
+      agentCountry: agentCountry,
+      agentPostcode: agentPostcode,
+      agentEmail: agentEmail,
+      agentSupervisor: agentSupervisor,
+      agentCode: agentCode,
+      partnerName: partnerName
+    } );
   })
 
   router.post( '/register/due-diligence', function ( req, res ) {

@@ -31,8 +31,8 @@
                 text: "Full name"
               },
               value: {
-                text: "Jane Doe"
-              },
+                text: data['contact-full-name']
+                },
               actions: {
                 items: [
                   {
@@ -48,7 +48,7 @@
                 text: "Email address"
               },
               value: {
-                text: "jdoe@example.com"
+                text: data['contact-email']
               },
               actions: {
                 items: [
@@ -73,7 +73,7 @@
                   text: "Name of agent"
                 },
                 value: {
-                  text: "Luther Williams"
+                  text: data['due-diligence-name']
                 },
                 actions: {
                   items: [
@@ -90,7 +90,7 @@
                   text: "Correspondence address"
                 },
                 value: {
-                  html: "72 Guild Street<br>London<br>SE23 6FH"
+                  html: data['agent-address-line-1'] <br> data['agent-address-city-town'] <br> data['agent-address-state'] <br> data['where-do-you-live']<br> data['agent-address-postcode']
                 },
                 actions: {
                   items: [
@@ -108,7 +108,7 @@
                   text: "Email address"
                 },
                 value: {
-                  text: "agent@companyX.co.uk"
+                  text: data['due-diligence-email']
                 },
                 actions: {
                   items: [
@@ -126,7 +126,7 @@
                   text: "Name of supervisory body"
                 },
                 value: {
-                  text: "HMRC"
+                  text: data['supervisory-name']
                 },
                 actions: {
                   items: [
@@ -160,7 +160,7 @@
                   text: "Agent code"
                 },
                 value: {
-                  text: "CH-123456-AB-Z"
+                  text: data['agent-code']
                 },
                 actions: {
                   items: [
@@ -177,7 +177,7 @@
                   text: "Person responsible for overseeing identity checks"
                 },
                 value: {
-                  text: "Dr Alexander Taylor"
+                  text: data['partner-name']
                 },
                 actions: {
                   items: [
