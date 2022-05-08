@@ -270,6 +270,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-line-1",
           name: "usual-residential-address-line-1",
+          value: homeAddressLine1,
           autocomplete: "address-line1",
           errorMessage: {
                     text: "Enter the first line of the individual person's home address"
@@ -283,7 +284,8 @@
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-line-1",
           name: "usual-residential-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+          value: homeAddressLine1
         }) }}
         {% endif %}
 
@@ -305,6 +307,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-city-town",
           name: "usual-residential-address-city-town",
+          value: homeCity,
           errorMessage: {
                     text: "Enter the city or town of the individual person's home address"
                   }
@@ -316,7 +319,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-city-town",
-          name: "usual-residential-address-city-town"
+          name: "usual-residential-address-city-town",
+          value: homeCity
         }) }}
         {% endif %}
 
@@ -638,7 +642,7 @@
                     I have not completed the trust information document yet
                   </span>
                 </summary>
-                <div class="govuk-details__text">
+                <div class="govuk-details__text" id="more-detail" value="data.['more-detail']">
                   <p class="govuk-body">Enter the trust information into the <a href="/public/pdf/TrustDataCaptureV4.xlsm" class="govuk-link">Trust information document (Excel 52KB)</a>. Be aware that this service will time out after 60 minutes of inactivity and your answers will not be saved.</p>
                 </div>
               </details>
