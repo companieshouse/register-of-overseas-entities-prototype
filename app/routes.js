@@ -9,6 +9,7 @@ require('./routes/due-diligence.js')(router)
 require('./routes/entity.js')(router)
 require('./routes/beneficial-owner-statements.js')(router)
 require('./routes/beneficial-owner-individual.js')(router)
+require('./routes/beneficial-owner-gov.js')(router)
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
 		res.redirect( '/register/beneficial-owner-type-alt' )

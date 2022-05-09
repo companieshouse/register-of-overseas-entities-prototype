@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+Government or public authority beneficial owner – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -9,6 +12,12 @@
 {% endblock %}
 
 {% block content %}
+{% if errorList.length > 0 %}
+  {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: errorList
+    }) }}
+{% endif %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -16,9 +25,9 @@
       <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the government or public authority</h1>
       <p class="  govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
-      <form class="form" method="post">
+      <form class="form" action="" method="post">
 
-
+{% if errorCorpName == true %}
         {{ govukInput({
           label: {
             text: "What is its name?",
@@ -26,8 +35,24 @@
             isPageHeading: false
           },
           id: "corp-name",
-          name: "corp-name"
+          name: "corp-name",
+          errorMessage: {
+                  text: "Enter the name of the government or public authority"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is its name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "corp-name",
+          name: "corp-name",
+          value: corpName
+        }) }}
+
+        {% endif %}
         {% call govukFieldset({
           legend: {
             text: "What is its principal or registered office address?",
@@ -47,6 +72,7 @@
           name: "principal-address-property-name-number"
         }) }}
 
+{% if errorGovPrincipalAddressLine1 == true %}
         {{ govukInput({
           label: {
             text: "Address line 1"
@@ -54,8 +80,23 @@
           classes: "govuk-!-width-two-thirds",
           id: "principal-address-line-1",
           name: "principal-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+          errorMessage: {
+                  text: "Enter the first line of the principal or registered office address"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-line-1",
+          name: "principal-address-line-1",
+          autocomplete: "address-line1",
+          value: govPrincipalAddressLine1
+        }) }}
+        {% endif %}
 
         {{ govukInput({
           label: {
@@ -67,14 +108,29 @@
           autocomplete: "address-line2"
         }) }}
 
+{% if errorGovPrincipalCity == true %}
         {{ govukInput({
           label: {
             text: "City or town"
           },
           classes: "govuk-!-width-two-thirds",
           id: "principal-address-city-town",
-          name: "principal-address-city-town"
+          name: "principal-address-city-town",
+          errorMessage: {
+                  text: "Enter the city of the principal or registered office address"
+                }
         }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "City or town"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "principal-address-city-town",
+          name: "principal-address-city-town",
+          value: govPrincipalCity
+        }) }}
+        {% endif %}
 
         {{ govukInput({
           label: {
@@ -179,7 +235,7 @@
 
         {% endcall %}
         {% endset -%}
-
+ {% if errorSameAddress == true %}
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "same-address",
@@ -194,18 +250,51 @@
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              checked: checked("same-address", "yes")
             },
             {
               value: "no",
               text: "No",
+              checked: checked("same-address", "no"),
               conditional: {
         html: serviceAddressHtml
         }
             }
-          ]
+          ],
+          errorMessage: {
+                  text: "Select yes if the correspondence address is the same as the principal or registered office address"
+                }
         }) }}
-
+{% else %}
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "same-address",
+  name: "same-address",
+  fieldset: {
+    legend: {
+      text: "Is its correspondence address the same as its principal or registered office address?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked("same-address", "yes")
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: checked("same-address", "no"),
+      conditional: {
+html: serviceAddressHtml
+}
+    }
+  ]
+}) }}
+{% endif %}
 
         {{ govukInput({
           label: {
@@ -391,8 +480,7 @@
 
 
         {{ govukButton({
-          text: "Continue",
-          href: "/register/beneficial-owner-type-three-added"
+          text: "Continue"
         }) }}
 
 
