@@ -431,9 +431,6 @@ html: serviceAddressHtml
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          hint: {
-           text: "We’ll use this to send the Overseas Entity ID number, the notice of registration, and any other digital correspondence"
-         },
           id: "entity-email",
           name: "entity-email",
           value: entityEmail,
@@ -448,15 +445,27 @@ html: serviceAddressHtml
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          hint: {
-           text: "We’ll use this to send the Overseas Entity ID number, the notice of registration, and any other digital correspondence"
-         },
           id: "entity-email",
           name: "entity-email",
           value: entityEmail
         }) }}
         {% endif %}
-
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What we'll use this email address for
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">We'll use this to send:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the Overseas Entity ID number</li>
+    <li>the notice of registration</li>
+    <li>the authentication code to file online for this entity in the future</li>
+    <li>any other important information</li>
+  </ul>
+          </div>
+        </details>
 {% if errorLegalForm == true %}
         {{ govukInput({
           label: {
