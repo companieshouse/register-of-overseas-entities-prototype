@@ -80,7 +80,7 @@ module.exports = function (router) {
     var startYearHasError = false
     var trustHasError = false
     var trustBoxHasError = false
-    var santionsHasError = false
+    var sanctionsHasError = false
 
     if (req.session.data['bo-individual-first-name'] === '') {
       individualFirstNameHasError = true
