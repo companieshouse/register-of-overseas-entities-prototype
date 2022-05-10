@@ -1,7 +1,26 @@
 module.exports = function (router) {
 
   router.get( '/register/beneficial-owner-gov', function ( req, res ) {
-		res.render( 'register/beneficial-owner-gov')
+    var corpName = req.session.data['corp-name']
+    var govPrincipalAddressLine1 = req.session.data['principal-address-line-1']
+    var govPrincipalCity = req.session.data['usual-residential-address-city-town']
+    var country = req.session.data['country']
+    var sameAddress = req.session.data['same-address']
+    var serviceAddressLine1 = req.session.data['service-address-line-1']
+    var serviceAddressCity = req.session.data['service-address-city-town']
+    var boGovLegalForm = req.session.data['bo-gov-legal-form']
+    var boGovGoverningLaw = req.session.data['bo-gov-governing-law']
+		res.render( 'register/beneficial-owner-gov', {
+      corpName: corpName,
+      govPrincipalAddressLine1: govPrincipalAddressLine1,
+      govPrincipalCity: govPrincipalCity,
+      country: country,
+      sameAddress: sameAddress,
+      serviceAddressLine1: serviceAddressLine1,
+      serviceAddressCity: serviceAddressCity,
+      boGovLegalForm: boGovLegalForm,
+      boGovGoverningLaw: boGovGoverningLaw,
+    })
 })
 
 
@@ -13,13 +32,8 @@ module.exports = function (router) {
     var sameAddress = req.session.data['same-address']
     var serviceAddressLine1 = req.session.data['service-address-line-1']
     var serviceAddressCity = req.session.data['service-address-city-town']
-    var serviceAddressCountry = req.session.data['country-2']
-    var startDay = req.session.data['owner-startdate-day']
-    var startMonth = req.session.data['owner-startdate-month']
-    var startYear = req.session.data['owner-startdate-year']
-    var trust = req.session.data['bo-noc-trust']
-    var trustBox = req.session.data['more-detail']
-    var sanctions = req.session.data['owner-sanctions']
+    var boGovLegalForm = req.session.data['bo-gov-legal-form']
+    var boGovGoverningLaw = req.session.data['bo-gov-governing-law']
     var errors = []
     var corpNameHasError = false
     var govPrincipalAddressLine1HasError = false
@@ -28,13 +42,8 @@ module.exports = function (router) {
     var sameAddressHasError = false
     var serviceAddressLine1HasError = false
     var serviceAddressCityHasError = false
-    var serviceAddressCountryHasError = false
-    var startDayHasError = false
-    var startMonthHasError = false
-    var startYearHasError = false
-    var trustHasError = false
-    var trustBoxHasError = false
-    var santionsHasError = false
+    var boGovLegalFormHasError = false
+    var boGovGoverningLawHasError = false
 
     if (req.session.data['corp-name'] === '') {
       corpNameHasError = true
@@ -67,67 +76,39 @@ module.exports = function (router) {
     if (typeof req.session.data['same-address'] === 'undefined') {
   		sameAddressHasError = true
   		errors.push({
-  			text: "Select yes if the correspondence address is the same as the govPrincipal address",
+  			text: "Select yes if the correspondence address is the same as the Principal address",
   			href: '#same-address'
   		})
   	}
     if (req.session.data['service-address-line-1'] === '' && req.session.data['same-address'] === 'no') {
   		serviceAddressLine1HasError = true
   		errors.push({
-  			text: "Enter the first line of the gov person's correspondence address",
+  			text: "Enter the first line of the correspondence address",
   			href: '#service-address-line-1'
   		})
   	}
     if (req.session.data['service-address-city-town'] === '' && req.session.data['same-address'] === 'no') {
   		serviceAddressCityHasError = true
   		errors.push({
-  			text: "Enter the city or town of the gov person's correspondence address",
+  			text: "Enter the city or town of the correspondence address",
   			href: '#service-address-city-town'
   		})
   	}
-    if (req.session.data['country-2'] === '' && req.session.data['same-address'] === 'no') {
+    if (req.session.data['bo-gov-legal-form'] === '') {
   		serviceAddressCountryHasError = true
   		errors.push({
-  			text: "Enter the country of the gov person's correspondence address",
-  			href: '#country-2'
+  			text: "Enter the legal form of the government",
+  			href: '#bo-gov-legal-form'
   		})
   	}
-    if (req.session.data['owner-startdate-day'] === '') {
-      startDayHasError = true
-      errors.push({
-        text: "The date the gov person became a beneficial owner must include a day",
-        href: '#owner-startdate-day'
-      })
-    }
-    if (req.session.data['owner-startdate-month'] === '') {
-      startMonthHasError = true
-      errors.push({
-        text: "The date the gov person became a beneficial owner must include a month",
-        href: '#owner-startdate-month'
-      })
-    }
-    if (req.session.data['owner-startdate-year'] === '') {
-      startYearHasError = true
-      errors.push({
-        text: "The date the gov person became a beneficial owner must include a year",
-        href: '#owner-startdate-year'
-      })
-    }
-    if (typeof req.session.data['bo-noc-trust'] !== 'undefined' && req.session.data['more-detail'] === '') {
-  		trustBoxHasError = true
+    if (req.session.data['bo-gov-governing-law'] === '') {
+  		boGovGoverningLawHasError = true
   		errors.push({
-  			text: "Enter trust information code in the box",
-  			href: '#more-detail'
+  			text: "Enter the governing law of the government",
+  			href: '#bo-gov-governing-law'
   		})
   	}
-    if (typeof req.session.data['owner-sanctions'] === 'undefined') {
-  		sanctionsHasError = true
-  		errors.push({
-  			text: "Select yes if the gov person is on the santions list",
-  			href: '#owner-sanctions'
-  		})
-  	}
-    if (corpNameHasError || govLastNameHasError || birthDayHasError || birthMonthHasError || birthYearHasError || nationalityHasError || govPrincipalAddressLine1HasError || govPrincipalCityHasError || countryHasError || sameAddressHasError || serviceAddressLine1HasError || serviceAddressCityHasError || serviceAddressCountryHasError || startDayHasError || startMonthHasError || startYearHasError || trustHasError || trustBoxHasError || sanctionsHasError) {
+    if (corpNameHasError || govPrincipalAddressLine1HasError || govPrincipalCityHasError || countryHasError || sameAddressHasError || serviceAddressLine1HasError || serviceAddressCityHasError || boGovLegalFormHasError || boGovGoverningLawHasError) {
       res.render('register/beneficial-owner-gov', {
         corpName: corpName,
         govPrincipalAddressLine1: govPrincipalAddressLine1,
@@ -136,13 +117,8 @@ module.exports = function (router) {
         sameAddress: sameAddress,
         serviceAddressLine1: serviceAddressLine1,
         serviceAddressCity: serviceAddressCity,
-        serviceAddressCountry: serviceAddressCountry,
-        startDay: startDay,
-        startMonth: startMonth,
-        startYear: startYear,
-        trust: trust,
-        trustBox: trustBox,
-        sanctions: sanctions,
+        boGovLegalForm: boGovLegalForm,
+        boGovGoverningLaw: boGovGoverningLaw,
         errorCorpName: corpNameHasError,
         errorGovPrincipalAddressLine1: govPrincipalAddressLine1HasError,
         errorGovPrincipalCity: govPrincipalCityHasError,
@@ -150,13 +126,8 @@ module.exports = function (router) {
         errorSameAddress: sameAddressHasError,
         errorServiceAddressLine1: serviceAddressLine1HasError,
         errorServiceAddressCity: serviceAddressCityHasError,
-        errorServiceAddressCountry: serviceAddressCountryHasError,
-        errorStartDay: startDayHasError,
-        errorStartMonth: startMonthHasError,
-        errorStartYear: startYearHasError,
-        errorTrust: trustHasError,
-        errorTrustBox: trustBoxHasError,
-        errorSanctions: sanctionsHasError,
+        errorBoGovLegalForm: boGovLegalFormHasError,
+        errorBoGovGoverningLaw: boGovGoverningLawHasError,
         errorList: errors
       })
     } else {
