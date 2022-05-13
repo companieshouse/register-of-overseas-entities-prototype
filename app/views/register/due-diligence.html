@@ -327,7 +327,7 @@ checked: checked("where-do-you-live", "wales")
             isPageHeading: false
           },
           hint: {
-           text: "For example, the Law Society"
+           text: "For example, the Solicitors Regulation Authority"
          },
           id: "supervisory-name",
           name: "supervisory-name",
@@ -345,7 +345,7 @@ checked: checked("where-do-you-live", "wales")
           name: "aml-number",
             classes: "govuk-!-width-one-half"
         }) }}
-
+<!--
 {% if errorAgentCode == true %}
         {{ govukInput({
           label: {
@@ -379,12 +379,12 @@ checked: checked("where-do-you-live", "wales")
           value: agentCode,
             classes: "govuk-!-width-one-half"
         }) }}
-        {% endif %}
+        {% endif %}-->
 
 {% if errorIdentityCheck == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the person responsible for overseeing identity checks?",
+            text: "What is the name of the person with overall responsibility for identity checks?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -401,7 +401,7 @@ checked: checked("where-do-you-live", "wales")
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the person responsible for overseeing identity checks?",
+            text: "What is the name of the person with overall responsibility for identity checks?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -413,6 +413,10 @@ checked: checked("where-do-you-live", "wales")
           value: partnerName
         }) }}
         {% endif %}
+
+
+
+
 
 {% if errorStatement == true %}
         {{ govukCheckboxes({
@@ -449,7 +453,7 @@ checked: checked("where-do-you-live", "wales")
           items: [
             {
               value: "agree",
-              text: "I confirm that [3PA details] has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the [information/identities] of the people named in this application in accordance with [title of regulations]",
+              text: "TO BE UPDATED I confirm that... has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the identities of the people named in this application.",
               checked: checked("diligence", "agree")
             }
           ]
