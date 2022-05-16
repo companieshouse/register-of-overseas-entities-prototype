@@ -16,6 +16,49 @@
 
 
 
+
+
+
+              {{ govukSummaryList({
+                classes: 'govuk-!-margin-bottom-9',
+                rows: [
+                  {
+                    key: {
+                      text: "Has the entity disposed of land since the 28 February 2022?"
+                    },
+                    value: {
+                      text: 'No'
+                      },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Has the entity disposed of land since the 28 February 2022?"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Does the registration include people that have protection or that have applied for protection?"
+                    },
+                    value: {
+                      text: 'No'
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Does the registration include people that have protection or that have applied for protection?"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
       <h2 class="govuk-heading-l">Contact details</h2>
 
 
