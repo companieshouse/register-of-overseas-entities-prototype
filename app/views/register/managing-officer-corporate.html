@@ -186,7 +186,7 @@
           name: "corp-mo-same-address",
           fieldset: {
             legend: {
-              text: "Is their correspondence address the same as the principal or registered office address?",
+              text: "Is its correspondence address the same as the principal or registered office address?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -289,20 +289,7 @@
             ]
           }) }}
 
-            {{ govukDateInput({
-              id: "corp-startdate",
-              namePrefix: "corp-startdate",
-              fieldset: {
-                legend: {
-                  text: "When did it become a managing officer for the overseas entity?",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                text: "For example, 27 3 2007"
-              }
-            }) }}
+            
 
 
             {{ govukInsetText({
