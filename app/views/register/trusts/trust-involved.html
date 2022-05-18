@@ -16,15 +16,15 @@
 
 
 
-      <form class="form" action="/url/of/next/page" method="post">
+      <form class="form" action="/register/trusts/trust-involved" method="post">
 
 
 
 
 
         {{ govukRadios({
-            idPrefix: "trust-types",
-            name: "trust-types",
+            idPrefix: "trustTypes",
+            name: "trustTypes",
             fieldset: {
               legend: {
                 text: "What types of individuals and organisations are involved in the trust?",
@@ -61,12 +61,11 @@
 
 
 
-        {{ govukButton({
-          text: "Continue",
-          href: "/register/trusts/trust-historical-beneficial-owner"
-        }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
 
-      </form>
+          </form>
 
     </div>
   </div>
