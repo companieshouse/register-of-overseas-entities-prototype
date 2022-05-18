@@ -12,6 +12,8 @@ require('./routes/beneficial-owner-individual.js')(router)
 require('./routes/beneficial-owner-gov.js')(router)
 require('./routes/sold-land-filter.js')(router)
 require('./routes/secure-register-filter.js')(router)
+require('./routes/trust-involved.js')(router)
+
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
 		res.redirect( '/register/beneficial-owner-type-alt' )
@@ -25,16 +27,7 @@ router.post( '/register/beneficial-owner-type', function ( req, res ) {
 
 //   What types of individuals and organisations are involved in the trust?
 
-router.post( '/register/trusts/trust-involved', function ( req, res ) {
-	var trustTypes = req.query.trustTypes
-	if ( trustTypes == 'individual-trusts' ) {
-		res.redirect( '/register/trusts/trust-individual' )
-	} else if ( trustTypes == "ole-trusts" ) {
-		res.redirect( '/register/trusts/trust-ole' );
-	} else {
-		res.render( 'register/trusts/trust-historical-beneficial-owner' );
-	}
-} );
+
 
 
 
