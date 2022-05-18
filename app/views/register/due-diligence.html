@@ -24,7 +24,9 @@
       {% endif %}
 
       <h1 class="govuk-heading-xl">Tell us about the agent that carried out identity checks</h1>
-
+      <div  class="govuk-hint">
+                  These are the identity checks that have been carried out on all beneficial owners and managing officers.
+                  </div>
       <form class="form" method="post">
 
 {% if errorName == true %}
@@ -295,6 +297,9 @@ checked: checked("where-do-you-live", "wales")
             classes: "govuk-label--m",
             isPageHeading: false
           },
+          hint: {
+           text: "We'll use this if we need more information about the identity checks"
+         },
           id: "due-diligence-email",
           name: "due-diligence-email",
           value: agentEmail
@@ -453,7 +458,7 @@ checked: checked("where-do-you-live", "wales")
           items: [
             {
               value: "agree",
-              text: "TO BE UPDATED I confirm that... has complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the identities of the people named in this application.",
+              text: "PLACEHOLDER CONTENT: The identity checks have complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the identities of the people named in this application.",
               checked: checked("diligence", "agree")
             }
           ]
