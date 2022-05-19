@@ -307,7 +307,8 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is its nature of control?",
+            html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply</p>',
+
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
