@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Tell us about the trust – {{ serviceName }} – GOV.UK
+  Add trust information for the beneficial owners – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,96 +13,87 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Tell us about the trust</h1>
+      <h1 class="govuk-heading-xl">Add trust information for the beneficial owners</h1>
 
       <form class="form" action="/url/of/next/page" method="post">
 
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
         {{ govukCheckboxes({
-          idPrefix: "trust-disclaimer",
-          name: "trust-disclaimer",
+          idPrefix: "waste",
+          name: "waste",
           fieldset: {
             legend: {
-              text: "Declaration",
+              text: "Who is involved in this trust?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--l"
             }
           },
-
+          hint: {
+            text: "Select all that apply"
+          },
           items: [
             {
-              value: "trust-statement",
-              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
+              value: "joe",
+              text: "Joe Bloggs	"
+            },
+            {
+              value: "jane",
+              text: "Jane Doe"
+            },
+            {
+              value: "acme",
+              text: "Acme Example"
             }
           ]
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "What is the name of the trust?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          hint: {
-                   text: "If the trust does not have a name, provide a description that it can be identified by"
-                 },
-          id: "trust-name",
-          name: "trust-name"
-        }) }}
 
 
-
-        {{ govukDateInput({
-          id: "trust-created",
-          namePrefix: "trust-created",
-          fieldset: {
-            legend: {
-              text: "When was the trust created?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
-
-
-
-
-
-        <h2 class="govuk-heading-m">Complete trust information template</h2>
-
-
-
-        <ol class="govuk-list govuk-list--number">
-          <li>Download the <a href="javascript:void(0);">Trust information template (Excel 462KB)</a>.</li>
-          <li>Complete all relevant details.</li>
-          <li>Click 'Create and copy data' button (in the Excel template)</li>
-        </ol>
-
-
+        <h2 class="govuk-heading-m">Enter trust information from the Excel document</h2>
         {{ govukTextarea({
         name: "more-detail",
         id: "more-detail",
         label: {
-          text: "Paste your copied data",
-          classes: "govuk-label--m",
+          text: "If you've already completed the trust Excel documents, follow the instructions in the document to paste the code into the box:",
+          classes: "govuk-body",
           isPageHeading: false
         }
       }) }}
+                    <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                I have not completed the trust Excel document yet
+                </span>
+                </summary>
+                <div class="govuk-details__text" id="more-detail" value="data.['more-detail']">
+                <p class="govuk-body">Enter the trust information into the <a href="/public/pdf/TrustDataCapture.xlsm" class="govuk-link">Trust Excel document (52KB)</a>. Be aware that this service will time out after 60 minutes of inactivity. Your answers will not be saved.</p>
+                </div>
+              </details>
+
+
 
 
 
       {{ govukInsetText({
         html: '
                   <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                  <p>None of the information provided on this screen will be shown on the public Register of Overseas Entities.</p>
+                  <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
                     '
       }) }}
         {{ govukButton({
-          text: "Continue",
-          href: "/register/trusts/trust-historical-beneficial-owner"
+          text: "Add another trust",
+          href: "/register/trusts/trust-details-upload"
         }) }}
+
+      <p>  {{ govukButton({
+          text: "No more to add",
+          href: "/register/check-answers",
+          classes: "govuk-button--secondary"
+        }) }}
+      </p>
 
       </form>
 
