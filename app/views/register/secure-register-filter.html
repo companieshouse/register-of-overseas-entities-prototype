@@ -2,7 +2,8 @@
 
 {% block pageTitle %}
 
-Does the registration include people that have protection or that have applied for protection? – {{ serviceName }} – GOV.UK
+Have any of the entity’s beneficial owners or managing officers ever applied to protect personal information at Companies House?
+ – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,7 +24,8 @@ Does the registration include people that have protection or that have applied f
   name: "secureRegister",
   fieldset: {
     legend: {
-      text: "Does the registration include people that have protection or that have applied for protection?",
+      text: "Have any of the entity’s beneficial owners or managing officers ever applied to protect personal information at Companies House?
+",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -49,9 +51,9 @@ Does the registration include people that have protection or that have applied f
     </span>
   </summary>
   <div class="govuk-details__text">
-    <p class="govuk-body">TO BE UPDATED</p>
-    <p class="govuk-body">Some directors can apply to protect their personal details if they meet certain criteria.</p>
-    <p class="govuk-body">You should only select ‘yes’ if the director has:</p>
+    <p class="govuk-body">Some people are eligible to <a href="https://www.gov.uk/guidance/applying-to-protect-your-personal-information-on-the-companies-house-register" class="govuk-link">apply to protect personal information at Companies House</a> if they meet certain criteria.</p>
+    
+    <p class="govuk-body">You should only select ‘yes’ if any of the beneficial owners or managing officers you’re registering have:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>provided evidence that they are eligible to have their details protected </li>
       <li>paid the £100 fee</li>
