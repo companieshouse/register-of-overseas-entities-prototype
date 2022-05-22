@@ -92,7 +92,7 @@
             value: agentAddressLine1,
             autocomplete: "address-line1",
             errorMessage: {
-                    text: "Enter the first line of the agent's correspondence address"
+                    text: "Enter an address"
                   }
           }) }}
           {% else %}
@@ -129,7 +129,7 @@
             name: "agent-address-city-town",
             value: agentCity,
             errorMessage: {
-                    text: "Enter the city or town of the agent's correspondence address"
+                    text: "Enter a city or town"
                   }
           }) }}
           {% else %}
@@ -154,7 +154,7 @@
             name: "agent-address-state",
             value: agentCounty,
             errorMessage: {
-                    text: "Enter the county of the agent's correspondence address"
+                    text: "Enter a county"
                   }
           }) }}
           {% else %}
@@ -203,7 +203,7 @@
       }
     ],
     errorMessage: {
-            text: "Select the country where the agent is based"
+            text: "Select a country"
           }
   }) }}
   {% else %}
@@ -257,7 +257,7 @@ checked: checked("where-do-you-live", "wales")
             autocomplete: "postal-code",
             value: agentPostcode,
             errorMessage: {
-                    text: "Enter the postcode of the agent's correspondence address"
+                    text: "Enter a postcode"
                   }
           }) }}
           {% else %}
@@ -287,7 +287,7 @@ checked: checked("where-do-you-live", "wales")
           name: "due-diligence-email",
           value: agentEmail,
           errorMessage: {
-                  text: "Enter the agent's email address"
+                  text: "Enter an email address"
                 }
         }) }}
         {% else %}
@@ -400,7 +400,7 @@ checked: checked("where-do-you-live", "wales")
           name: "partner-name",
           value: partnerName,
           errorMessage: {
-                  text: "Enter the name of the person responsible for overseeing identity checks"
+                  text: "Enter the name of the person with overall responsibility for identity checks"
                 }
         }) }}
         {% else %}

@@ -17,14 +17,14 @@ module.exports = function (router) {
   	if (req.session.data['contact-full-name'] === '') {
   		nameHasError = true
   		errors.push({
-  			text: 'Enter your full name',
+  			text: 'Enter a full name',
   			href: '#contact-full-name'
   		})
   	}
   	if (req.session.data['contact-email'] === '') {
   		emailHasError = true
   		errors.push({
-  			text: 'Enter your email',
+  			text: 'Enter an email address',
   			href: '#contact-email'
   		})
   	}

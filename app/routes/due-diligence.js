@@ -59,42 +59,42 @@ module.exports = function (router) {
     if (req.session.data['agent-address-line-1'] === '') {
   		propertyAddressHasError = true
   		errors.push({
-  			text: "Enter the first line of the agent's correspondence address",
+  			text: "Enter an address",
   			href: '#agent-address-line-1'
   		})
   	}
     if (req.session.data['agent-address-city-town'] === '') {
   		cityHasError = true
   		errors.push({
-  			text: "Enter the city or town of the agent's correspondence address",
+  			text: "Enter a city or town",
   			href: '#agent-address-city-town'
   		})
   	}
     if (req.session.data['agent-address-state'] === '') {
   		countyHasError = true
   		errors.push({
-  			text: "Enter the county of the agent's correspondence address",
+  			text: "Enter a county",
   			href: '#agent-address-state'
   		})
   	}
   	if (typeof req.session.data['where-do-you-live'] === 'undefined') {
   		countryHasError = true
   		errors.push({
-  			text: 'Select the country where the agent is based',
+  			text: 'Select a country',
   			href: '#where-do-you-live'
   		})
   	}
     if (req.session.data['agent-address-postcode'] === '') {
   		postcodeHasError = true
   		errors.push({
-  			text: "Enter the postcode of the agent's correspondence address",
+  			text: "Enter a postcode",
   			href: '#agent-address-postcode'
   		})
   	}
     if (req.session.data['due-diligence-email'] === '') {
   		emailHasError = true
   		errors.push({
-  			text: "Enter the agent's email address",
+  			text: "Enter an email address",
   			href: '#due-diligence-email'
   		})
   	}
@@ -115,7 +115,7 @@ module.exports = function (router) {
     if (req.session.data['partner-name'] === '') {
       identityCheckHasError = true
       errors.push({
-        text: "Enter the name of the person responsible for overseeing identity checks",
+        text: "Enter the name of the person with overall responsibility for identity checks",
         href: '#partner-name'
       })
     }

@@ -14,7 +14,7 @@ module.exports = function (router) {
     if (typeof statements === 'undefined') {
       statementsHasError = true
       errors.push({
-        text: 'Select which beneficial owner types have been identified',
+        text: 'Select if any beneficial owners have been identified ',
         href: '#statements'
       })
     }

@@ -99,21 +99,21 @@ module.exports = function (router) {
     if (req.session.data['owner-dob-day'] === '') {
       birthDayHasError = true
       errors.push({
-        text: "The date of birth must include a day",
+        text: "Date of birth must include a day",
         href: '#owner-dob-day'
       })
     }
     if (req.session.data['owner-dob-month'] === '') {
       birthMonthHasError = true
       errors.push({
-        text: "The date of birth must include a month",
+        text: "Date of birth must include a month",
         href: '#owner-dob-month'
       })
     }
     if (req.session.data['owner-dob-year'] === '') {
       birthYearHasError = true
       errors.push({
-        text: "The date of birth must include a year",
+        text: "Date of birth must include a year",
         href: '#owner-dob-year'
       })
     }
@@ -127,14 +127,14 @@ module.exports = function (router) {
     if (req.session.data['usual-residential-address-line-1'] === '') {
       homeAddressLine1HasError = true
       errors.push({
-        text: "Enter the first line of the individual person's home address",
+        text: "Enter a home address",
         href: '#usual-residential-address-line-1'
       })
     }
     if (req.session.data['usual-residential-address-city-town'] === '') {
       homeCityHasError = true
       errors.push({
-        text: "Enter the first line of the individual person's home address",
+        text: "Enter a city or town",
         href: '#usual-residential-address-city-town'
       })
     }
@@ -176,35 +176,35 @@ module.exports = function (router) {
     if (req.session.data['owner-startdate-day'] === '') {
       startDayHasError = true
       errors.push({
-        text: "The date the individual person became a beneficial owner must include a day",
+        text: "Date must include a day",
         href: '#owner-startdate-day'
       })
     }
     if (req.session.data['owner-startdate-month'] === '') {
       startMonthHasError = true
       errors.push({
-        text: "The date the individual person became a beneficial owner must include a month",
+        text: "Date must include a month",
         href: '#owner-startdate-month'
       })
     }
     if (req.session.data['owner-startdate-year'] === '') {
       startYearHasError = true
       errors.push({
-        text: "The date the individual person became a beneficial owner must include a year",
+        text: "Date must include a year",
         href: '#owner-startdate-year'
       })
     }
     if (typeof req.session.data['bo-noc-trust'] !== 'undefined' && req.session.data['more-detail'] === '') {
   		trustBoxHasError = true
   		errors.push({
-  			text: "Enter trust information code in the box",
+  			text: "Paste the data from the trust Excel document",
   			href: '#more-detail'
   		})
   	}
     if (typeof req.session.data['owner-sanctions'] === 'undefined') {
   		sanctionsHasError = true
   		errors.push({
-  			text: "Select yes if the individual person is on the santions list",
+  			text: "Select yes if the individual person is on the sanctions list",
   			href: '#owner-sanctions'
   		})
   	}

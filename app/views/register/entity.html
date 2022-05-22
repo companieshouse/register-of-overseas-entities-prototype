@@ -110,7 +110,7 @@
             autocomplete: "address-line1",
             value: principalAddressLine1,
             errorMessage: {
-                    text: "Enter the first line of the entity's principal address"
+                    text: "Enter an address"
                   }
           }) }}
           {% else %}
@@ -146,7 +146,7 @@
             name: "principal-address-city-town",
             value: principalCity,
             errorMessage: {
-                    text: "Enter the city or town of the entity's principal address"
+                    text: "Enter a city or town"
                   }
           }) }}
           {% else %}
@@ -231,7 +231,7 @@
           autocomplete: "address-line1",
           value: serviceAddressLine1,
           errorMessage: {
-                  text: "Enter the first line of the entity's correspondence address"
+                  text: "Enter an address"
                 }
         }) }}
         {% else %}
@@ -267,7 +267,7 @@
           name: "service-address-city-town",
           value: serviceCity,
           errorMessage: {
-                  text: "Enter the city or town of the entity's correspondence address"
+                  text: "Enter a city or town"
                 }
         }) }}
         {% else %}
@@ -337,7 +337,7 @@
             }
           ],
           errorMessage: {
-                  text: "Select yes if the correspondence address is the same as the principal address"
+                  text: "Select yes if the correspondence address is the same as the principal or registered office address"
                 }
         }) }}
 {% else %}
@@ -435,7 +435,7 @@ html: serviceAddressHtml
           name: "entity-email",
           value: entityEmail,
           errorMessage: {
-                  text: "Enter the entity's email address"
+                  text: "Enter an email address"
                 }
         }) }}
         {% else %}
@@ -480,7 +480,7 @@ html: serviceAddressHtml
           name: "entity-legal-form",
           value: legalForm,
           errorMessage: {
-                  text: "Enter the entity's legal form"
+                  text: "Enter the legal form"
                 }
         }) }}
         {% else %}
@@ -513,7 +513,7 @@ html: serviceAddressHtml
           name: "entity-governing-law",
           value: governingLaw,
           errorMessage: {
-                  text: "Enter the law that the entity operates under"
+                  text: "Enter the governing law"
                 }
         }) }}
         {% else %}

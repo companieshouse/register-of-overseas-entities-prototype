@@ -77,14 +77,14 @@ module.exports = function (router) {
     if (req.session.data['principal-address-line-1'] === '') {
   		principalAddressHasError = true
   		errors.push({
-  			text: "Enter the first line of the entity's principal address",
+  			text: "Enter an address",
   			href: '#principal-address-line-1'
   		})
   	}
     if (req.session.data['principal-address-city-town'] === '') {
   		cityHasError = true
   		errors.push({
-  			text: "Enter the city or town of the entity's principal address",
+  			text: "Enter a city or town",
   			href: '#principal-address-city-town'
   		})
   	}
@@ -98,35 +98,35 @@ module.exports = function (router) {
     if (req.session.data['service-address-city-town'] === '' && req.session.data['same-address'] === 'no') {
       serviceCityHasError = true
       errors.push({
-        text: "Enter the city or town of the entity's service address",
+        text: "Enter a city or town",
         href: '#service-address-city-town'
       })
     }
     if (typeof req.session.data['same-address'] === 'undefined') {
   		sameAddressHasError = true
   		errors.push({
-  			text: "Select yes if the correspondence address is the same as the principal address",
+  			text: "Select yes if the correspondence address is the same as the principal or registered office address",
   			href: '#same-address'
   		})
   	}
     if (req.session.data['entity-email'] === '') {
   		emailHasError = true
   		errors.push({
-  			text: "Enter the entity's email address",
+  			text: "Enter an email address",
   			href: '#entity-email'
   		})
   	}
     if (req.session.data['entity-legal-form'] === '') {
   		legalFormHasError = true
   		errors.push({
-  			text: "Enter the entity's legal form",
+  			text: "Enter the legal form",
   			href: '#entity-legal-form'
   		})
   	}
     if (req.session.data['entity-governing-law'] === '') {
       governingLawHasError = true
       errors.push({
-        text: "Enter the law that the entity operates under",
+        text: "Enter the governing law",
         href: '#entity-governing-law'
       })
     }

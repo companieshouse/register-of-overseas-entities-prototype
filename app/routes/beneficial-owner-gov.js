@@ -55,14 +55,14 @@ module.exports = function (router) {
       if (req.session.data['principal-address-line-1'] === '') {
       govPrincipalAddressLine1HasError = true
       errors.push({
-        text: "Enter the first line of the principal or registered office address",
+        text: "Enter an address",
         href: '#principal-address-line-1'
       })
     }
     if (req.session.data['principal-address-city-town'] === '') {
       govPrincipalCityHasError = true
       errors.push({
-        text: "Enter the city of the principal or registered office address",
+        text: "Enter a city or town",
         href: '#principal-address-city-town'
       })
     }
@@ -76,35 +76,35 @@ module.exports = function (router) {
     if (typeof req.session.data['same-address'] === 'undefined') {
   		sameAddressHasError = true
   		errors.push({
-  			text: "Select yes if the correspondence address is the same as the Principal address",
+  			text: "Select yes if the correspondence address is the same as the principal or registered office address",
   			href: '#same-address'
   		})
   	}
     if (req.session.data['service-address-line-1'] === '' && req.session.data['same-address'] === 'no') {
   		serviceAddressLine1HasError = true
   		errors.push({
-  			text: "Enter the first line of the correspondence address",
+  			text: "Enter an address",
   			href: '#service-address-line-1'
   		})
   	}
     if (req.session.data['service-address-city-town'] === '' && req.session.data['same-address'] === 'no') {
   		serviceAddressCityHasError = true
   		errors.push({
-  			text: "Enter the city or town of the correspondence address",
+  			text: "Enter a city or town",
   			href: '#service-address-city-town'
   		})
   	}
     if (req.session.data['bo-gov-legal-form'] === '') {
   		serviceAddressCountryHasError = true
   		errors.push({
-  			text: "Enter the legal form of the government",
+  			text: "Enter the legal form",
   			href: '#bo-gov-legal-form'
   		})
   	}
     if (req.session.data['bo-gov-governing-law'] === '') {
   		boGovGoverningLawHasError = true
   		errors.push({
-  			text: "Enter the governing law of the government",
+  			text: "Enter the governing law",
   			href: '#bo-gov-governing-law'
   		})
   	}
