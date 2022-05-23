@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about an individual</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the individual</h1>
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
       <form class="form" method="post">
@@ -24,7 +24,7 @@
           name: "trust-individual",
           fieldset: {
             legend: {
-              text: "What type are they?",
+              text: "What is their role within the trust?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -57,7 +57,7 @@
             isPageHeading: false
           },
           hint: {
-          text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+          text: "This is also known as their given name."
         },
           id: "beneficiary-individual-first-name",
           name: "beneficiary-individual-first-name"
@@ -71,7 +71,7 @@
             isPageHeading: false
           },
           hint: {
-          text: "This is also known as your their name."
+          text: "This is also known as their family name."
         },
           classes: "govuk-!-width-three-quarters",
           id: "beneficiary-individual-last-name",
@@ -122,7 +122,7 @@
 
         {% call govukFieldset({
           legend: {
-            html: 'What is their home address?<br><p class="govuk-hint govuk-!-padding-top-1"> If they have more than one home address, use the address where they live most of the time</p>',
+            html: 'What is their home address?<br><p class="govuk-hint govuk-!-padding-top-1"> If they have more than one home address, use the address where they live most of the time.</p>',
             classes: "govuk-fieldset__legend--m govuk-!-padding-top-3",
             isPageHeading: false
           }
@@ -134,7 +134,7 @@
             html: 'Property name or number'
           },
           hint: {
-           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "usual-residential-address-property-name-number",
           name: "usual-residential-address-property-name-number"
@@ -186,7 +186,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode or ZIP"
+            text: "Postcode or ZIP code (if applicable)"
           },
           classes: "govuk-input--width-10",
           id: "usual-residential-address-postcode",
@@ -209,7 +209,7 @@
             html: 'Property name or number'
           },
           hint: {
-           text: "For example, 'Saron House', '116' or 'Unit 37a'"
+           text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
           id: "service-address-property-name-number",
           name: "service-address-property-name-number"
@@ -261,7 +261,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode or ZIP"
+            text: "Postcode or ZIP code (if applicable) "
           },
           classes: "govuk-input--width-10",
           id: "service-address-postcode",
@@ -301,7 +301,7 @@
         {{ govukInsetText({
           html: '
                     <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                    <p>None of the information provided on this screen will be shown on the public Register of Overseas Entities.</p>
+                    <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
                       '
         }) }}
 

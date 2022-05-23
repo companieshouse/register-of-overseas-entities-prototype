@@ -13,8 +13,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about an other legal entity</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the legal entity</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later. You do not need to tell us about government or public authorities.</p>
 
       <form class="form" method="post">
 
@@ -23,7 +23,7 @@
           name: "trust-individual",
           fieldset: {
             legend: {
-              text: "What type are they?",
+              text: "What is its role within the trust?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -123,7 +123,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode or ZIP"
+            text: "Postcode or ZIP code (if applicable)"
           },
           classes: "govuk-input--width-10",
           id: "principal-address-postcode",
@@ -199,7 +199,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode or ZIP"
+            text: "Postcode or ZIP code (if applicable)"
           },
           classes: "govuk-input--width-10",
           id: "service-address-postcode",
@@ -241,7 +241,7 @@
 
         {{ govukInput({
             label: {
-              text: "Where is it registered?",
+              text: "Which country was it formed in?",
               classes: "govuk-label--m",
               isPageHeading: false
             },
@@ -256,7 +256,7 @@
               isPageHeading: false
             },
             hint: {
-             text: "For example, limited company or partnership."
+             text: "For example, limited company"
            },
             id: "beneficiary-ole-legal-form",
             name: "beneficiary-ole-legal-form"
@@ -286,7 +286,7 @@
              text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
            },
             label: {
-              text: "Enter the name of the register"
+              text: "Name of register"
             }
           }) }}
           {{ govukInput({
@@ -294,7 +294,7 @@
             name: "beneficiary-ole-public-register-number",
             classes: "govuk-!-width-one-half",
             label: {
-              text: "Enter the entity’s registration number"
+              text: "Entity’s registration number"
             }
           }) }}
           {% endset -%}
@@ -304,7 +304,7 @@
             name: "beneficiary-ole-public-register",
             fieldset: {
               legend: {
-                text: "Is it already on a public register in its country of incorporation?",
+                text: "Is it already on a public register in the country it was formed in?",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -330,7 +330,7 @@
           {{ govukInsetText({
             html: '
                       <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                      <p>None of the information provided on this screen will be shown on the public Register of Overseas Entities.</p>
+                      <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
                         '
           }) }}
 

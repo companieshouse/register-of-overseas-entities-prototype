@@ -27,7 +27,7 @@
             name: "trustTypes",
             fieldset: {
               legend: {
-                text: "What types of individuals and organisations are involved in the trust?",
+                text: "Who is involved in the trust?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -38,20 +38,23 @@
             items: [
               {
                 value: "historical",
-                text: "Historical beneficial owners of the overseas entity that were a trustee of this trust"
+                text: "Beneficial owners",
+                hint: {
+                    text: "This includes every individual or legal entity that has ever been a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
+                  }
               },
               {
                 value: "individual-trusts",
                 text: "Individuals",
                 hint: {
-                    text: "These could be beneficiaries, settlors, grantors, or interested persons"
+                    text: "These could be beneficiaries, settlors, grantors, or interested persons."
                   }
               },
               {
                 value: "ole-trusts",
-                text: "Other legal entities",
+                text: "Legal entities",
                 hint: {
-                  text: "These could be beneficiaries, settlors, grantors, or interested persons"
+                  text: "These could be beneficiaries, settlors, grantors, or interested persons. You do not need to tell us about government or public authorities."
                   }
               }
                 ]
@@ -62,7 +65,7 @@
 
 
           {{ govukButton({
-            text: "Add"
+            text: "Continue"
           }) }}
 
           </form>

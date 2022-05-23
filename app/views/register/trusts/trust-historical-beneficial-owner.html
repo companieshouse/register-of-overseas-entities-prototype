@@ -13,14 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the historical beneficial owner</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about all beneficial owners</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You need to tell us about every individual or legal entity that has ever been a registrable beneficial owner of the overseas entity, due to being a trustee of this trust. You can add more later.</p>
 
       <form class="form" action="" method="get">
 
         {{ govukInput({
             label: {
-              text: "What is the name of the historical beneficial owner?",
+              text: "What is the name of the beneficial owner?",
               classes: "govuk-label--m",
               isPageHeading: false
             },
@@ -49,7 +49,7 @@
               namePrefix: "historical-beneficial-owner-stop",
               fieldset: {
                 legend: {
-                  text: "When did they cease to be a beneficial owner?",
+                  text: "When did they cease to be a beneficial owner? (If relevant)",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--m"
                 }
@@ -62,7 +62,7 @@
             {{ govukInsetText({
               html: '
                         <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                        <p>None of the information provided on this screen will be shown on the public Register of Overseas Entities.</p>
+                        <p>To be confirmed.</p>
                           '
             }) }}
 
