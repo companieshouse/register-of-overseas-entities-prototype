@@ -576,7 +576,7 @@
 
         {% call govukFieldset({
           legend: {
-            html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply</p>',
+            html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. If the beneficial owner is a trustee of a trust, you&#39ll need to enter trust information later in the service. </p>',
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -625,9 +625,7 @@
                   classes: "govuk-fieldset__legend--s"
                 }
                   },
-                  hint: {
-                    text: "You'll need to tell us about trust later if you select any of these"
-                  },
+
                   items: [
                 {
                   value: "noc-trusts-shares",
