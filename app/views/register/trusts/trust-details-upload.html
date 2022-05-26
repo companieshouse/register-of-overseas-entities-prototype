@@ -10,12 +10,15 @@
 
 {% block content %}
 
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">Tell us about the trust</h1>
 
       <form class="form" action="/url/of/next/page" method="post">
+
+
 
         {{ govukCheckboxes({
           idPrefix: "trust-disclaimer",
@@ -35,6 +38,43 @@
             }
           ]
         }) }}
+
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Who is involved in this trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "joe",
+              text: "Joe Bloggs	"
+            },
+            {
+              value: "jane",
+              text: "Jane Doe"
+            },
+            {
+              value: "acme",
+              text: "Acme Example"
+              }
+          ]
+        }) }}
+
+
+
+
 
         {{ govukInput({
           label: {

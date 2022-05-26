@@ -32,7 +32,67 @@
           items: [
             {
               value: "trust-statement",
-              text: "A statement as to whether the entity has any reasonable cause to believe that there is required information about the trust that it has not been able to obtain"
+              text: "To the best of the entity's knowledge, it has all the required information about the trust. "
+            }
+          ]
+        }) }}
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+        {{ govukCheckboxes({
+          idPrefix: "involved",
+          name: "involved",
+          fieldset: {
+            legend: {
+              text: "Who is involved in this trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "joe",
+              text: "Joe Bloggs",
+              conditional: {
+                html: bodateHtml
+              }
+            },
+            {
+              value: "jane",
+              text: "Jane Doe",
+              conditional: {
+                html: bodateHtml
+              }
+            },
+            {
+              value: "acme",
+              text: "Acme Example",
+              conditional: {
+                html: bodateHtml
+              }
             }
           ]
         }) }}
@@ -49,7 +109,7 @@
           id: "trust-name",
           name: "trust-name",
           hint: {
-            text: "If the trust does not have a name, provide a description that it can be identified by"
+            text: "If the trust does not have a name, give a description that it can be identified by."
           }
         }) }}
 
@@ -79,7 +139,7 @@
           {{ govukInsetText({
             html: '
                       <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                      <p>None of the information provided on this screen will be shown on the public Register of Overseas Entities.</p>
+                      <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
                         '
           }) }}
         {{ govukButton({
