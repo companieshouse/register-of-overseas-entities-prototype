@@ -16,28 +16,28 @@
       <h1 class="govuk-heading-xl">
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
-<p>Use this service to add an overseas entity and its beneficial owners or managing officers to the Register of Overseas Entities. This will allow it to buy and sell land or property in the UK.</p>
+<p>Use this service to add an overseas entity and its registrable beneficial owners or managing officers to the Register of Overseas Entities. This will allow it to buy and sell land or property in the UK.</p>
 
 
       {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {{ govukWarningText({
-  text: "The beneficial owners of overseas entities who do not register could be fined up to £X per day, be put in prison for up to X years, and have difficulty buying or selling UK property or land.",
+  text: "Beneficial owners and managing officers who do not register could be fined up to £2,500 per day, be put in prison for up to X years, and will not be able to buy or sell UK property or land.",
   iconFallbackText: "Warning"
 }) }}
-      <p>You'll need:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>to sign in to or create a Companies House account</li>
-        <li>a credit or debit card to pay the £X fee</li>
-        <li>to give us the name and email address of someone we can contact about the application</li>
-      </ul>
 
-      <p>In the service you’ll need to give us information about the overseas entity and its beneficial owners or managing officers. <a href="/register/guidance" class="govuk-link">Read the guidance about registering an overseas entity</a> to find out what information you'll need to provide.</p>
+<p class="govuk-body">You'll need:</p>
 
-      <p>You’ll also need to confirm that identity checks have been carried out on all beneficial owners and managing officers. These checks must be done by a third-party agent based in the UK, such as an accountant or solicitor.</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>to sign in to or create a Companies House account</li>
+  <li>to give the name and email address of someone we can contact about the application</li>
+  <li>to give <a href="/register/start-merged-with-guidance#what-information-you-need-to-submit" class="govuk-link">information about the overseas entity and its beneficial owners or managing officers</a></li>
+  <li>to confirm that <a href="/register/start-merged-with-guidance#what-identity-checks-are-needed" class="govuk-link">identity checks</a> have been completed by a third-party agent based in the UK</li>
+  <li>a credit or debit card to pay the £X fee - for now, you cannot pay with a Companies House payment account</li>
+</ul>
 
       {{ govukInsetText({
-  text: "The service will time out after 60 minutes of inactivity and your answers will not be saved."
+  text: "This service could take a while to complete and you cannot save your answers. The service will time out if you do not use it for 60 minutes."
 }) }}
 
       <a href="sign-in" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
