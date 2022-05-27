@@ -18,9 +18,32 @@
 
       <form class="form" method="post">
 
+        {% set entityDateHtml %}
+        <br>
+        {{ govukDateInput({
+          id: "entity-interested-date",
+          namePrefix: "entity-interested-date",
+          fieldset: {
+            legend: {
+              text: "What date did it become an interested person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+
+
+
         {{ govukRadios({
-          idPrefix: "trust-individual",
-          name: "trust-individual",
+          idPrefix: "trust-entity-role",
+          name: "trust-entity-role",
           fieldset: {
             legend: {
               text: "What is its role within the trust?",
@@ -43,7 +66,10 @@
             },
             {
               value: "interested",
-              text: "Interested person"
+              text: "Interested person",
+              conditional: {
+        html: entityDateHtml
+      }
             }
           ]
         }) }}
