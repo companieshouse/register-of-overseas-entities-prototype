@@ -19,35 +19,62 @@
       <form class="form" method="post">
 
 
-        {{ govukRadios({
-          idPrefix: "trust-individual",
-          name: "trust-individual",
-          fieldset: {
-            legend: {
-              text: "What is their role within the trust?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "beneficiary",
-              text: "Beneficiary"
-            },
-            {
-              value: "settlor",
-              text: "Settlor"
-            },
-            {
-              value: "grantor",
-              text: "Grantor"
-            },
-            {
-              value: "interested",
-              text: "Interested person"
-            }
-          ]
-        }) }}
+
+                {% set indintDateHtml %}
+                <br>
+                {{ govukDateInput({
+                  id: "individual-interested-date",
+                  namePrefix: "individual-interested-date",
+                  fieldset: {
+                    legend: {
+                      text: "What date did they become an interested person?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 27 3 2007"
+                  }
+                }) }}
+                {% endset -%}
+
+
+
+
+
+
+                {{ govukRadios({
+                  idPrefix: "trust-individual",
+                  name: "trust-individual",
+                  fieldset: {
+                    legend: {
+                      text: "What is their role within the trust?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "beneficiary",
+                      text: "Beneficiary"
+                    },
+                    {
+                      value: "settlor",
+                      text: "Settlor"
+                    },
+                    {
+                      value: "grantor",
+                      text: "Grantor"
+                    },
+                    {
+                      value: "interested",
+                      text: "Interested person",
+                      conditional: {
+                html: indintDateHtml
+              }
+                    }
+                  ]
+                }) }}
 
 
         {{ govukInput({
