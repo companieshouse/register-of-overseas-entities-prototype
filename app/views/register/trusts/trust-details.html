@@ -38,6 +38,70 @@
         }) }}
 
 
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set bodateHtml %}
+        {{ govukDateInput({
+          id: "bo-date",
+          namePrefix: "bo-date",
+          fieldset: {
+            legend: {
+              text: "What date did they become involved in the trust?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+        {% endset -%}
+
+
+        {{ govukCheckboxes({
+          idPrefix: "involved",
+          name: "involved",
+          fieldset: {
+            legend: {
+              text: "Who is involved in this trust?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "joe",
+              text: "Joe Bloggs",
+              conditional: {
+                html: bodateHtml
+              }
+            },
+            {
+              value: "jane",
+              text: "Jane Doe",
+              conditional: {
+                html: bodateHtml
+              }
+            },
+            {
+              value: "acme",
+              text: "Acme Example",
+              conditional: {
+                html: bodateHtml
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+
+
         {{ govukInput({
 
 
