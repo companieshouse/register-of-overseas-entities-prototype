@@ -50,7 +50,7 @@ padding-right: 25px;
 
   .govuk-button {
     background-color: #fff;
-    color:  $govuk-focus-text-colour;
+    color: #000 !important;
     &:visited {
       background-color: #f3f2f1	;
       color:  $govuk-focus-text-colour;
