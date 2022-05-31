@@ -47,14 +47,27 @@
         }) }}
 
         {% set formerNameHtml %}
-            {{ govukInput({
-              id: "former-full-name",
-              name: "former-full-name",
-              classes: "govuk-!-width-half",
-              label: {
-                text: "Former name or names"
-              }
-            }) }}
+              {{ govukInput({
+                label: {
+                  text: "What was their first name?",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
+                id: "mo-individual-former-first-name",
+                name: "mo-individual-former-first-name"
+              }) }}
+
+
+              {{ govukInput({
+                label: {
+                  text: "What was their last name?",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
+                classes: "govuk-!-width-three-quarters",
+                id: "mo-individual-former-last-name",
+                name: "mo-individual-former-last-name"
+              }) }}
             {% endset -%}
 
             {{ govukRadios({
