@@ -14,10 +14,11 @@
       <span class="govuk-caption-xl">MVP</span>
     </h1>
 
-{{ govukWarningText({
-      text: "All changes to this version must first be agreed with Product Managers",
-      iconFallbackText: "Warning"
-    }) }}
+
+
+    {{ govukNotificationBanner({
+        html: 'Please refer to the <a href="https://companieshouse.atlassian.net/wiki/spaces/UXD/pages/3800268801/ROE+MVP" class="govuk-link govuk-link--no-visited-state">detailed notes about this MVP in Confluence</a>.'
+      }) }}
 
 
     <div class="govuk-tabs" data-module="govuk-tabs">
@@ -40,15 +41,12 @@
         <ul class="govuk-list govuk-list--number list--mvp">
           <li>
             <a href="/register/start-merged-with-guidance">GOV.UK start page merged with guidance</a>
-            <span>This page will be 'built' and hosted by GOV.UK, no CH development work involved. Content still to be finalised.</span>
           </li>
           <li>
             <a href="/register/sold-land-filter">'Disposed of land?' filter question</a>
-            <span>Content still to be finalised.</span>
           </li>
           <li>
             <a href="/register/cannot-use">You cannot use this service (Disposed of land)</a>
-            <span>Content still to be finalised.</span>
           </li>
           <li>
             <a href="/register/secure-register-filter">'Secure register' filter question</a>
@@ -58,7 +56,6 @@
           </li>
           <li>
             <a href="/register/interrupt-card">'Interrupt' card</a>
-            <span>Content around identity checks still to be finalised.</span>
           </li>
           <li>
             <a href="/register/sign-in">Sign in to Companies House</a>
@@ -68,7 +65,6 @@
           </li>
           <li>
             <a href="/register/due-diligence">Identity checks</a>
-            <span>Policy and process for identity checking is still being discussed.</span>
           </li>
           <li>
             <a href="/register/entity">Tell us about the overseas entity</a>
