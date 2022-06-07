@@ -354,45 +354,9 @@ checked: checked("where-do-you-live", "wales")
 
 
 
-        {% if error3PAcode == true %}
-                {{ govukInput({
-                  label: {
-                    text: "What is their third party agent (3PA) code?",
-                    classes: "govuk-label--m",
-                    isPageHeading: false
-                  },
-                  hint: {
-                   text: "This is a six digit authorisation code supplied by Companies House to the third party agent"
-                 },
-                  id: "3PA-code",
-                  name: "3PA-code",
-                  value: 3PACode,
-                  errorMessage: {
-                          text: "Enter their third party agent (3PA) code"
-                        }
-                }) }}
-                {% else %}
-                {{ govukInput({
-                  label: {
-                    text: "What is their third party agent (3PA) code?",
-                    classes: "govuk-label--m",
-                    isPageHeading: false
-                  },
-                  hint: {
-                   text: "This is a six digit authorisation code supplied by Companies House to the third party agent"
-                 },
-                  id: "3PA-code",
-                  name: "3PA-code",
-                  value: 3PACode,
-                  classes: "govuk-!-width-one-half"
-                }) }}
-                {% endif %}
 
 
-
-
-<!--
-{% if errorAgentCode == true %}
+  <!---  {% if errorAgentCode == true %}
         {{ govukInput({
           label: {
             text: "What is the agent code?",
@@ -425,7 +389,10 @@ checked: checked("where-do-you-live", "wales")
           value: agentCode,
             classes: "govuk-!-width-one-half"
         }) }}
-        {% endif %}-->
+        {% endif %}--->
+
+
+
 
 {% if errorIdentityCheck == true %}
         {{ govukInput({
@@ -464,7 +431,7 @@ checked: checked("where-do-you-live", "wales")
 
 
 
-{% if errorStatement == true %}
+<!---{% if errorStatement == true %}
         {{ govukCheckboxes({
           idPrefix: "diligence",
           name: "diligence",
@@ -504,7 +471,7 @@ checked: checked("where-do-you-live", "wales")
             }
           ]
         }) }}
-        {% endif %}
+        {% endif %}--->
 
 
         {{ govukInsetText({
