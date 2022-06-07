@@ -4,7 +4,7 @@
 {% if errorList.length > 0 %}
   Error:
 {% endif %}
-  Due diligence – {{ serviceName }} – GOV.UK
+  Due diligence for the overseas entity – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -350,6 +350,47 @@ checked: checked("where-do-you-live", "wales")
           name: "aml-number",
             classes: "govuk-!-width-one-half"
         }) }}
+
+
+
+
+        {% if error3PAcode == true %}
+                {{ govukInput({
+                  label: {
+                    text: "What is the third party agent (3PA) code?",
+                    classes: "govuk-label--m",
+                    isPageHeading: false
+                  },
+                  hint: {
+                   text: "This is a six digit authorisation code supplied by Companies House to the third party agent"
+                 },
+                  id: "3PA-code",
+                  name: "3PA-code",
+                  value: 3PACode,
+                  errorMessage: {
+                          text: "Enter the third party agent (3PA) code"
+                        }
+                }) }}
+                {% else %}
+                {{ govukInput({
+                  label: {
+                    text: "What is the third party agent (3PA) code?",
+                    classes: "govuk-label--m",
+                    isPageHeading: false
+                  },
+                  hint: {
+                   text: "This is a six digit authorisation code supplied by Companies House to the third party agent"
+                 },
+                  id: "3PA-code",
+                  name: "3PA-code",
+                  value: 3PACode,
+                  classes: "govuk-!-width-one-half"
+                }) }}
+                {% endif %}
+
+
+
+
 <!--
 {% if errorAgentCode == true %}
         {{ govukInput({
