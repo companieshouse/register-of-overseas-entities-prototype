@@ -19,13 +19,11 @@ Has the entity disposed of UK property or land since 28 February 2022?
 
 
 {{ govukRadios({
-  classes: "govuk-radios--inline",
   idPrefix: "soldLand",
   name: "soldLand",
   fieldset: {
     legend: {
-      text: "Has the entity disposed of UK property or land since 28 February 2022?
-",
+      text: "Who is making the filing?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -33,21 +31,16 @@ Has the entity disposed of UK property or land since 28 February 2022?
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Someone from the overseas entity"
     },
     {
       value: "no",
-      text: "No"
+      text: "A third party agent"
     }
   ]
 }) }}
 
-{{ govukInsetText({
-  html: '
-            <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>To be confirmed.</p>
-        '
-}) }}
+
 
       {{ govukButton({
         text: "Continue"
