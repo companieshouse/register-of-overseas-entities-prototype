@@ -4,7 +4,8 @@ const router = express.Router()
 
 // Sign in
 require('./routes/sign-in.js')(router)
-
+require('./routes/sold-land-filter.js')(router)
+require('./routes/secure-register-filter.js')(router)
 
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
