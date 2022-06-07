@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Has the entity disposed of UK property or land since 28 February 2022?
+Who is making the filing?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -19,8 +19,8 @@ Has the entity disposed of UK property or land since 28 February 2022?
 
 
 {{ govukRadios({
-  idPrefix: "soldLand",
-  name: "soldLand",
+  idPrefix: "whoIsFiling",
+  name: "whoIsFiling",
   fieldset: {
     legend: {
       text: "Who is making the filing?",
@@ -30,11 +30,11 @@ Has the entity disposed of UK property or land since 28 February 2022?
   },
   items: [
     {
-      value: "yes",
+      value: "overseas-filing",
       text: "Someone from the overseas entity"
     },
     {
-      value: "no",
+      value: "third-party-filing",
       text: "A third party agent"
     }
   ]
