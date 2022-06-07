@@ -289,7 +289,49 @@
             ]
           }) }}
 
-            
+
+          <h2 class="govuk-heading-l">Who can we contact about this managing officer?</h2>
+
+
+          {{ govukInput({
+            label: {
+              text: "What is their first name?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            hint: {
+            text: "This is also known as their given name. Include any professional or honorary titles, if relevant."
+          },
+            id: "mo-corporate-contact-first-name",
+            name: "mo-corporate-contact-first-name"
+          }) }}
+
+
+          {{ govukInput({
+            label: {
+              text: "What is their last name?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            hint: {
+            text: "This is also known as their family name."
+          },
+            classes: "govuk-!-width-three-quarters",
+            id: "mo-corporate-contact-last-name",
+            name: "mo-corporate-contact-last-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "What is their email address?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "mo-corporate-contact-email",
+            name: "mo-corporate-contact-email"
+          }) }}
+
+
 
 
             {{ govukInsetText({
