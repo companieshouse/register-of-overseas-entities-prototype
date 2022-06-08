@@ -5,6 +5,7 @@ const router = express.Router()
 require('./routes/sign-in.js')(router)
 require('./routes/presenter.js')(router)
 require('./routes/due-diligence.js')(router)
+require('./routes/overseas-entity-due-diligence.js')(router)
 require('./routes/entity.js')(router)
 require('./routes/beneficial-owner-statements.js')(router)
 require('./routes/beneficial-owner-individual.js')(router)
@@ -13,6 +14,7 @@ require('./routes/sold-land-filter.js')(router)
 require('./routes/secure-register-filter.js')(router)
 require('./routes/trust-involved.js')(router)
 require('./routes/trust-involved-additions.js')(router)
+require('./routes/who-is-making-filing.js')(router)
 
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {

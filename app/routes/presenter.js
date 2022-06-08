@@ -37,7 +37,7 @@ module.exports = function (router) {
   			errorList: errors
   		})
   	} else {
-  		res.redirect( '/register/due-diligence' )
+  		res.redirect( '/register/who-is-making-filing' )
   	}
   })
 }
