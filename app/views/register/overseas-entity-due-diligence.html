@@ -23,7 +23,7 @@
           }) }}
       {% endif %}
 
-      <h1 class="govuk-heading-xl">Tell us about the agent that carried out identity checks</h1>
+      <h1 class="govuk-heading-xl">Tell us about the person or company that carried out identity checks</h1>
       <div  class="govuk-hint">
                   These are the identity checks that have been carried out on all beneficial owners and managing officers.
                   </div>
@@ -32,29 +32,29 @@
 {% if errorName == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent?",
+            text: "What is their name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-           text: "For example, the name of the law firm or accountant."
+           text: "Enter the company name, or the name of the person if they are self-employed."
          },
           id: "due-diligence-name",
           name: "due-diligence-name",
           value: dueDiligenceName,
           errorMessage: {
-                  text: "Enter the name of the agent"
+                  text: "Enter the name of the person or company that carried out identity checks"
                 }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent?",
+            text: "What is their name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-           text: "For example, the name of the law firm or accountant."
+           text: "Enter the company name, or the name of the person if they are self-employed."
          },
           id: "due-diligence-name",
           name: "due-diligence-name",
@@ -64,7 +64,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is the agent's correspondence address?",
+            text: "What is the correspondence address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -279,7 +279,7 @@ checked: checked("where-do-you-live", "wales")
 {% if errorEmail == true %}
         {{ govukInput({
           label: {
-            text: "What is the agent's email address?",
+            text: "What is their email address?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -293,7 +293,7 @@ checked: checked("where-do-you-live", "wales")
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the agent's email address?",
+            text: "What is their email address?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -310,7 +310,7 @@ checked: checked("where-do-you-live", "wales")
 {% if errorSupervisor == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent's supervisory body?",
+            text: "What is the name of the supervisory body?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -321,13 +321,13 @@ checked: checked("where-do-you-live", "wales")
           name: "supervisory-name",
           value: agentSupervisor,
           errorMessage: {
-                  text: "Enter the name of the agent's supervisory body"
+                  text: "Enter the name of the supervisory body"
                 }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent's supervisory body?",
+            text: "What is the name of the supervisory body?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -342,7 +342,7 @@ checked: checked("where-do-you-live", "wales")
 
         {{ govukInput({
           label: {
-            text: "What is the agent's Anti-Money Laundering (AML) registration number (if applicable)?",
+            text: "What is the Anti-Money Laundering (AML) registration number (if applicable)?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
