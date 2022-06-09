@@ -27,15 +27,17 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p>The relevant person can be an individual or a corporate entity. Some examples include:</p>
+        <p>You need to request a code if you, or the company you work for, are the 'relevant person' completing identity checks on the beneficial owners and managing officers of overseas entities that are registering with Companies House.
+
+        <p>The 'relevant person' can be an individual or a corporate entity. For example:</p>
 
 
         <ul class="govuk-list  govuk-list--bullet">
-          <li>credit institutions;</li>
-          <li>financial institutions;
-          <li>auditors, insolvency practitioners, external accountants and tax advisers;</li>
-          <li>independent legal professionals;</li>
-          <li>trust or company service providers; and</li>
+          <li>credit institutions</li>
+          <li>financial institutions
+          <li>auditors, insolvency practitioners, external accountants and tax advisers</li>
+          <li>independent legal professionals</li>
+          <li>trust or company service providers</li>
           <li>estate agents and letting agents</li>
         </ul>
 
@@ -52,7 +54,7 @@
 {% if errorName == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent?",
+            text: "What is the name of the person or company?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -69,7 +71,7 @@
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent?",
+            text: "What is the name of the person or company?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -84,7 +86,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is the agent's correspondence address?",
+            text: "What is their correspondence address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
@@ -299,7 +301,7 @@ checked: checked("where-do-you-live", "wales")
 {% if errorEmail == true %}
         {{ govukInput({
           label: {
-            text: "What is the agent's email address?",
+            text: "What is the email address?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -313,7 +315,7 @@ checked: checked("where-do-you-live", "wales")
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the agent's email address?",
+            text: "What is the email address?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -330,7 +332,7 @@ checked: checked("where-do-you-live", "wales")
 {% if errorSupervisor == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent's supervisory body?",
+            text: "What is the name of the supervisory body?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -341,13 +343,13 @@ checked: checked("where-do-you-live", "wales")
           name: "supervisory-name",
           value: agentSupervisor,
           errorMessage: {
-                  text: "Enter the name of the agent's supervisory body"
+                  text: "Enter the name of the supervisory body"
                 }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the agent's supervisory body?",
+            text: "What is the name of the supervisory body?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -362,7 +364,7 @@ checked: checked("where-do-you-live", "wales")
 
         {{ govukInput({
           label: {
-            text: "What is the agent's Anti-Money Laundering (AML) registration number (if applicable)?",
+            text: "What is the Anti-Money Laundering (AML) registration number (if applicable)?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
