@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set serviceName %}
+  Request an authorisation code for the registration of overseas entities
+{% endset%}
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Your authorisation code is <strong>CH-AC-12345678</strong> </h1>
+
+      </div>
+
+      {{ govukInsetText({
+        html: 'Make a note of this code and keep it safe. <span class="govuk-body govuk-!-font-weight-bold">It will not be emailed to you.</span>'
+      }) }}
+      <button onclick="window.print()" class="govuk-button">Print this page</button>
+
+
+<p>You will need to provide this code to Companies House if you carry out identity checks on an overseas entity that is being registered on the Register of Overseas Entities.</p>
+
+      <p><a href="/register/start-merged-with-guidance">Register an overseas entity and tell us about its beneficial owners</p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
