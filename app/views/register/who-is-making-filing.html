@@ -23,20 +23,21 @@ Who is making the filing?
   name: "whoIsFiling",
   fieldset: {
     legend: {
-      text: "Who is making the filing?",
+      text: "Who is completing this registration?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
   items: [
+  {
+    value: "agent",
+    text: "The UK-based person or company that carried out identity checks for the overseas entity"
+  },
     {
       value: "overseas",
-      text: "Someone from the overseas entity"
-    },
-    {
-      value: "agent",
-      text: "A third party agent"
+      text: "Someone else who works at, or works on behalf of, the overseas entity"
     }
+
   ]
 }) }}
 
