@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% set serviceName %}
+  Request an authorisation code for the registration of overseas entities
+{% endset%}
+{% block pageTitle %}
+Request an authorisation code for the registration of overseas entities - GOV.UK
+
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<form action="/identity/sign-in" method="get">
+
+  <h1 class="govuk-heading-xl">Title</h1>
+
+
+
+  <p>The relevant person can be an individual or a corporate entity. Some examples include:</p>
+
+
+  <ul class="govuk-list  govuk-list--bullet">
+    <li>credit institutions;</li>
+    <li>financial institutions;
+    <li>auditors, insolvency practitioners, external accountants and tax advisers;</li>
+    <li>independent legal professionals;</li>
+    <li>trust or company service providers; and</li>
+    <li>estate agents and letting agents</li>
+  </ul>
+
+  <p>They must be based in the UK and supervised under the Money Laundering, Terrorist Financing and Transfer of Funds Regulations 2017.</p>
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "identityRelevant",
+    name: "identityRelevant",
+    fieldset: {
+      legend: {
+        text: "Are you a relevant person?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

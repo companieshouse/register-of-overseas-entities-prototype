@@ -3,7 +3,7 @@
   Request an authorisation code for the registration of overseas entities
 {% endset%}
 {% block pageTitle %}
-  Confirmation – {{ serviceName }} – GOV.UK
+  Confirmation – Request an authorisation code for the registration of overseas entities - GOV.UK
 {% endblock %}
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -19,16 +19,17 @@
 
       </div>
 
-      {{ govukInsetText({
-        html: 'Make a note of this code and keep it safe. <span class="govuk-body govuk-!-font-weight-bold">It will not be emailed to you.</span>'
-      }) }}
-      <button onclick="window.print()" class="govuk-button">Print this page</button>
 
+
+      <p>
+        We have sent a confirmation email to <strong>jbloggs@example.com</strong> which contains your authorisation code.
+      </p>
 
 <p>You will need to provide this code to Companies House if you carry out identity checks on an overseas entity that is being registered on the Register of Overseas Entities.</p>
 
       <p><a href="/register/start-merged-with-guidance">Register an overseas entity and tell us about its beneficial owners</p>
 
+        <button onclick="window.print()" class="govuk-button govuk-button--secondary govuk-!-margin-top-3">Print this page</button>
 
 
     </div>

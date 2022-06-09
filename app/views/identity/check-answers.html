@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% set serviceName %}
+  Request an authorisation code for the registration of overseas entities
+{% endset%}
+{% block pageTitle %}
+  Check your answers - Request an authorisation code for the registration of overseas entities - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of agent
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sarah Philips
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/identity/identity-checks">
+              Change
+              <span class="govuk-visually-hidden">   Name of agent</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Agent's corresponce address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/identity/identity-checks">
+              Change
+              <span class="govuk-visually-hidden">   Agent's corresponce address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Agent's email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            sarah.phillips@example.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/identity/identity-checks">
+              Change
+              <span class="govuk-visually-hidden"> Agent's email address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Agent's supervisory body
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Solicitors Regulation Authority
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/identity/identity-checks">
+              Change
+              <span class="govuk-visually-hidden"> Agent's supervisory body</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Anti-Money Laundering (AML) registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            123456789-AB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/identity/identity-checks">
+              Change
+              <span class="govuk-visually-hidden">  Anti-Money Laundering (AML) registration number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Person with overall responsibility for identity checks
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jane Doe
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/identity/identity-checks">
+              Change
+              <span class="govuk-visually-hidden">   Person with overall responsibility for identity checks</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
