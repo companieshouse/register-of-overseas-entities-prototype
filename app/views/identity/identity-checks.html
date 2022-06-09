@@ -15,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl">Request an authorisation code for the registration of overseas entities</h1>
+      <h1 class="govuk-heading-xl">Tell us about the UK-regulated professional carrying out identity checks</h1>
 
 
 
@@ -28,7 +28,7 @@
 {% if errorName == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the person or company?",
+            text: "What is their?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -39,13 +39,13 @@
           name: "due-diligence-name",
           value: dueDiligenceName,
           errorMessage: {
-                  text: "Enter the name of the agent"
+                  text: "Enter the name of the UK-regulated professional"
                 }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the person or company?",
+            text: "What is their name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
