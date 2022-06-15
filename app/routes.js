@@ -16,6 +16,7 @@ require('./routes/trust-involved.js')(router)
 require('./routes/trust-involved-additions.js')(router)
 require('./routes/relevant-person.js')(router)
 require('./routes/starting-new.js')(router)
+require('./routes/trust-involved-alt.js')(router)
 
 
 router.post( '/register/beneficial-owner-statements', function ( req, res ) {
