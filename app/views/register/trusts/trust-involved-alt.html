@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What types of individuals and organisations are involved in the trust? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+      <form class="form" action="" method="post">
+
+
+<p> Trust 123 </p>
+
+
+        {{ govukRadios({
+            idPrefix: "trustTypes",
+            name: "trustTypes",
+            fieldset: {
+              legend: {
+                text: "Who is involved in the trust?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: "You can add more later."
+            },
+            items: [
+              {
+                value: "historical",
+                text: "Beneficial owners",
+                hint: {
+                    text: "This includes every individual or legal entity that has ever been a registrable beneficial owner of the overseas entity, due to being a trustee of this trust."
+                  }
+              },
+              {
+                value: "individual-trusts",
+                text: "Individuals",
+                hint: {
+                    text: "These could be beneficiaries, settlors, grantors, or interested persons."
+                  }
+              },
+              {
+                value: "ole-trusts",
+                text: "Legal entities",
+                hint: {
+                  text: "These could be beneficiaries, settlors, grantors, or interested persons. You do not need to tell us about government or public authorities."
+                  }
+              }
+                ]
+          }) }}
+
+
+          <h2 class="govuk-heading-l">What you have added so far to this trust:</h2>
+
+          <p>Trust 123 </p>
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+              {
+                key: {
+                  text: "Who is making the filing?"
+                },
+                value: {
+                  text: "Someone from the overseas entity"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "Who is making the filing?"
+                    }
+                  ]
+                }
+              },
+                {
+                  key: {
+                    text: "Name of agent"
+                  },
+                  value: {
+                    text: data['due-diligence-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Name of agent"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Correspondence address"
+                  },
+                  value: {
+                    html: data['agent-address-line-1'] <br> data['agent-address-city-town'] <br> data['agent-address-state'] <br> data['where-do-you-live']<br> data['agent-address-postcode']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Address of agent"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: "Email address"
+                  },
+                  value: {
+                    text: data['due-diligence-email']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Email address of agent"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: "Name of supervisory body"
+                  },
+                  value: {
+                    text: data['supervisory-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Name of the supervisory body"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: " Anti Money Laundering (AML) registration number"
+                  },
+                  value: {
+                    text: "87654321"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Anti Money Laundering (AML) registration number of the agent"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Agent code"
+                  },
+                  value: {
+                    text: data['agent-code']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Agent’s authentication code"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Person responsible for overseeing identity checks"
+                  },
+                  value: {
+                    text: data['partner-name']
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "Name of partner"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          </form>
+
+    </div>
+  </div>
+
+{% endblock %}
