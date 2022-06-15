@@ -19,8 +19,8 @@
       <form class="form" action="" method="post">
 
 
-<p> Trust 123 </p>
 
+        <span class="govuk-caption-l">Trust 123</span>
 
         {{ govukRadios({
             idPrefix: "trustTypes",
@@ -61,24 +61,23 @@
           }) }}
 
 
-          <h2 class="govuk-heading-l">What you have added so far to this trust:</h2>
+          <h2 class="govuk-heading-l">What you have added so far:</h2>
 
-          <p>Trust 123 </p>
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
               rows: [
               {
                 key: {
-                  text: "Who is making the filing?"
+                  text: "ACME"
                 },
                 value: {
-                  text: "Someone from the overseas entity"
+                  text: "Beneficial owner from 15/04/2002"
                 },
                 actions: {
                   items: [
                     {
                       href: "#",
-                      text: "Change",
+                      text: "Change or remove",
                       visuallyHiddenText: "Who is making the filing?"
                     }
                   ]
@@ -86,16 +85,16 @@
               },
                 {
                   key: {
-                    text: "Name of agent"
+                    text: "Beneficial owner"
                   },
                   value: {
-                    text: data['due-diligence-name']
+                    text: "ACME from 15/04/2002"
                   },
                   actions: {
                     items: [
                       {
                         href: "#",
-                        text: "Change",
+                        text: "Change or remove",
                         visuallyHiddenText: "Name of agent"
                       }
                     ]
