@@ -34,37 +34,40 @@
       {
         key: {
           text: "Beneficial owner",
-          visuallyHiddenText: "Who is involved in the trust?"
+          visuallyHiddenText: "Beneficial owner - ACME from 15 April 2020"
         },
         value: {
-          text: "ACME from 15 April 2020"
+          html: "ACME <br> from 15 April 2020"
         }
         }
       ,
         {
           key: {
-            text: "Beneficial owner"
+            text: "Beneficial owner",
+            visuallyHiddenText: "Beneficial owner - Joe Bloggs from 11 April 2019"
           },
           value: {
-            text: "Joe Bloggs from 11 April 2019"
+            html: "Joe Bloggs <br> from 11 April 2019"
           }
           }
         ,
           {
             key: {
-              text: "Individual settlor"
+              text: "Individual settlor",
+              visuallyHiddenText: "Individual settlor - Dan Ashcroft"
             },
             value: {
-              text: "Dan Ashcroft from 4 May 2020"
+              html: "Dan Ashcroft"
             }
             }
           ,
             {
               key: {
-                text: "Other legal entity"
+                text: "Other legal entity",
+                visuallyHiddenText: "Other legal entity - Doe LTD"
               },
               value: {
-                text: "Doe LTD from 7 June 2021"
+                text: "Doe LTD"
               }
         }
             ]
@@ -82,47 +85,53 @@
 
 <!---  <h3 class="govuk-heading-m">Who is involved in this trust?</h3>--->
 
+
+
+
 {{ govukSummaryList({
-classes: 'govuk-!-margin-bottom-3',
-rows: [
-{
-  key: {
-    text: "Islands Trust",
-    visuallyHiddenText: "Who is involved in the trust?"
-  },
-  value: {
-    text: "ACME from 15 April 2020"
-  }
-  }
-,
+  classes: 'govuk-!-margin-bottom-3',
+  rows: [
   {
     key: {
-      text: "Beneficial owner"
+      text: "Beneficial owner",
+      visuallyHiddenText: "Beneficial owner - Sarah Doe from 17 July 2016"
     },
     value: {
-      text: "Joe Bloggs from 11 April 2019"
+      html: "Sarah Doe <br> from 17 July 2016"
     }
     }
   ,
     {
       key: {
-        text: "Individual settlor"
+        text: "Historical beneficial owner",
+        visuallyHiddenText: "Beneficial owner - John Doe"
       },
       value: {
-        text: "Dan Ashcroft from 4 May 2020"
+        html: "John Doe"
       }
       }
     ,
       {
         key: {
-          text: "Other legal entity"
+          text: "Individual settlor",
+          visuallyHiddenText: "Individual settlor - Dave Mayhew"
         },
         value: {
-          text: "Doe LTD from 7 June 2021"
+          html: "Dave Mayhew"
         }
-  }
-      ]
-    }) }}
+        }
+      ,
+        {
+          key: {
+            text: "Other legal entity",
+            visuallyHiddenText: "Other legal entity - Islands Corp"
+          },
+          value: {
+            text: "Islands Corp"
+          }
+    }
+        ]
+      }) }}
 
 <p class="govuk-!-margin-bottom-7"><a href="#" class="govuk-body-m">Add or change individual or organisation
   <span class="govuk-visually-hidden">Islands Trust</span></a></p>
