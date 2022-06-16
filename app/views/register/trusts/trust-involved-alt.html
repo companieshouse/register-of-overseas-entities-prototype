@@ -60,62 +60,70 @@
                 ]
           }) }}
 
-          {{ govukButton({
-            text: "Continue"
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+            {{ govukButton({
+              text: "No more to add",
+              classes: "govuk-button--secondary",
+              href: '/register/trusts/check-answers-trusts-alt'
+            }) }}
+          </div>
+
+
+
+
+          {{ govukTable({
+            caption: "What you have added so far:",
+            captionClasses: "govuk-table__caption--l",
+            firstCellIsHeader: true,
+            head: [
+            {
+              text: "Name",
+              classes: "govuk-visually-hidden"
+            },
+            {
+              text: "Type",
+              classes: "govuk-visually-hidden"
+            },
+              {
+                text: "Change or remove",
+                classes: "govuk-visually-hidden"
+              }
+            ],
+            rows: [
+              [
+              {
+                text: "Beneficial owner"
+              },
+              {
+                html: "ACME <br> from 15 April 2020"
+              },
+              {
+                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>',
+                visuallyHiddenText: "Beneficial owner - ACME from 15 April 2020"
+              }
+             ],
+             [
+               {
+                text: "Beneficial owner"
+              },
+              {
+                html: "Joe Bloggs <br> from 11 April 2019"
+              },
+              {
+                html: '<a href="">Change or remove</a>',
+                visuallyHiddenText: "Beneficial owner - Joe Bloggs from 11 April 2019"
+              }
+            ]
+            ]
           }) }}
 
 
 
-          <h2 class="govuk-heading-l">What you have added so far to this trust:</h2>
 
-            {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-              {
-                key: {
-                  text: "Beneficial owner"
-                },
-                value: {
-                  html: "ACME <br> from 15 April 2020"
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change or remove",
-                      visuallyHiddenText: "Beneficial owner - ACME from 15 April 2020"
-                    }
-                  ]
-                }
-              },
-                {
-                  key: {
-                    text: "Beneficial owner"
-                  },
-                  value: {
-                    html: "Joe Bloggs <br> from 11 April 2019"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change or remove",
-                        visuallyHiddenText: "Beneficial owner - Joe Bloggs from 11 April 2019"
-                      }
-                    ]
-                  }
-                }
-                    ]
-                  }) }}
-
-
-                  <p>
-                  {{ govukButton({
-                    text: "No more to add",
-                     classes: "govuk-button--secondary",
-                     href: '/register/trusts/check-answers-trusts-alt'
-                  }) }}
-                  </p>
 
 
           </form>
