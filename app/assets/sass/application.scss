@@ -64,3 +64,28 @@ padding-right: 25px;
   }
 
 }
+
+
+
+//Styles for user bar
+
+ul#navigation {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0.8em 0;
+  text-align: right;
+  display: inline-block;
+  float: right;
+
+  li {
+    display: inline;
+    padding: 0 0 0 1.5em;
+    font-family: 'nta', Arial;
+    font-size: 16px;
+    overflow-wrap: break-word;
+  }
+}
+
+hr .user-bar {
+  border-bottom: 50px solid red;
+}

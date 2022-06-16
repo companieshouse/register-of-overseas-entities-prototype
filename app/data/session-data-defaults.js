@@ -21,4 +21,7 @@ module.exports = {
 
   // Insert values here
 
+  "email": [ "test@testcompany.co.uk" ]
+
+
 }
