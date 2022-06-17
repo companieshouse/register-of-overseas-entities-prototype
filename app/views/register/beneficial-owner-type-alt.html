@@ -38,29 +38,21 @@ hint: {
   text: "You can add more later."
 },
 items: [
-  {
-    value: "beneficialTypesIndividual",
-    text: "Individual person",
-    checked: checked("boType", "beneficialTypesIndividual"),
-    hint: {
-        text: "You can add trust information in this section, if relevant."
-      }
-  },
-
-  {
-    value: "beneficialTypesOther",
-    text: "Other legal entity",
-    checked: checked("boType", "beneficialTypesOther"),
-    hint: {
-        text: "You can add trust information in this section, if relevant."
-      }
-
-  },
-  {
-    value: "beneficialTypesGov",
-    text: "Government or public authority",
-    checked: checked("boType", "beneficialTypesGov")
-  }
+{
+  value: "beneficialTypesIndividual",
+  text: "Individual beneficial owner",
+  checked: checked("boType", "beneficialTypesIndividual")
+},
+{
+  value: "beneficialTypesOther",
+  text: "Other legal entity beneficial owner",
+  checked: checked("boType", "beneficialTypesOther")
+},
+{
+  value: "beneficialTypesGov",
+  text: "Government or public authority beneficial owner",
+  checked: checked("boType", "beneficialTypesGov")
+}
 ]
 }) }}
 
