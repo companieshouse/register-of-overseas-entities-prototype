@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -54,7 +55,7 @@
 
 
 
-                
+
 
         <h2 class="govuk-heading-m">Enter trust information from the Excel document</h2>
         {{ govukTextarea({

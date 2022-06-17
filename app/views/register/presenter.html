@@ -8,8 +8,8 @@ Who can we contact about this application? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-  {% include "includes/user-bar.html" %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
 
 {% endblock %}
 

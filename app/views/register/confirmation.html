@@ -4,6 +4,11 @@
   Confirmation – {{ serviceName }} – GOV.UK
 {% endblock %}
 
+{% block beforeContent %}
+{% include "includes/no-back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
