@@ -24,7 +24,7 @@
           }) }}
       {% endif %}
 
-      <h1 class="govuk-heading-xl">Tell us about the person or company that carried out identity checks</h1>
+      <h1 class="govuk-heading-xl">Tell us about the UK-regulated agent that carried out identity checks</h1>
       <div  class="govuk-hint">
                   These are the identity checks that have been completed for all beneficial owners and managing officers.
                   </div>
@@ -33,7 +33,7 @@
 {% if errorName == true %}
         {{ govukInput({
           label: {
-            text: "What is their name?",
+            text: "What is the agent's name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -44,13 +44,13 @@
           name: "due-diligence-name",
           value: dueDiligenceName,
           errorMessage: {
-                  text: "Enter the name of the person or company that carried out identity checks"
+                  text: "Enter the name of the agent that carried out identity checks"
                 }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is their name?",
+            text: "What is the agent's name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -355,7 +355,7 @@ checked: checked("where-do-you-live", "wales")
 {% if errorAgentCode == true %}
         {{ govukInput({
           label: {
-            text: "What is the agent code?",
+            text: "What is the agent assurance code?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -367,18 +367,18 @@ checked: checked("where-do-you-live", "wales")
           value: agentCode,
             classes: "govuk-!-width-one-half",
             errorMessage: {
-                    text: "Enter the agent code"
+                    text: "Enter the agent assurance code"
                   }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the agent code?",
+            text: "What is the agent assurance code?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
           hint: {
-    text: "This is provided by Companies House and is used to authenticate the agent"
+    text: "This is provided by Companies House and is used to authenticate the UK-regulated agent"
   },
           id: "agent-code",
           name: "agent-code",
@@ -451,7 +451,7 @@ checked: checked("where-do-you-live", "wales")
           name: "diligence",
           fieldset: {
             legend: {
-              text: "Statement of compliance ",
+              text: "Declaration ",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -459,7 +459,7 @@ checked: checked("where-do-you-live", "wales")
           items: [
             {
               value: "agree",
-              text: "PLACEHOLDER CONTENT: The identity checks have complied with the requirements of the Economic Crime (Transparency and Enforcement) Act 2022 to verify the identities of the people named in this application.",
+              text: "I confirm that verification has been carried out as required by The Register of Overseas Entities (Verification and Provision of Information) Regulations 2022. I confirm that the information provided in this statement is accurate, to the best of my knowledge. I understand that it is an offence to provide false information.",
               checked: checked("diligence", "agree")
             }
           ]
