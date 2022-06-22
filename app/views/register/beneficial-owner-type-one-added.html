@@ -58,6 +58,42 @@
 
 
 
+
+        {% elif (data['statements'] === "noneIdentified") %}
+
+        <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
+
+        {{ govukDetails({
+          summaryText: "What is a managing officer?",
+          text: "To be confirmed"
+        }) }}
+
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of managing officer do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-visually-hidden"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "moTypesIndividual",
+            text: "Individual managing officer"
+          },
+          {
+            value: "moTypesCorporate",
+            text: "Corporate managing officer"
+          }
+        ]
+        }) }}
+
         <h2 class="govuk-heading-l">What you have added so far:</h2>
 
         {{ govukTable({
@@ -94,42 +130,6 @@
           ]
         }) }}
 
-
-
-        {% elif (data['statements'] === "noneIdentified") %}
-
-        <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
-
-        {{ govukDetails({
-          summaryText: "What is a managing officer?",
-          text: "To be confirmed"
-        }) }}
-
-
-        {{ govukRadios({
-        idPrefix: "boType",
-        name: "boType",
-        fieldset: {
-          legend: {
-            text: "Which type of managing officer do you want to add?",
-            isPageHeading: false,
-            classes: "govuk-visually-hidden"
-          }
-        },
-        hint: {
-          text: "You can add more later."
-        },
-        items: [
-          {
-            value: "moTypesIndividual",
-            text: "Individual managing officer"
-          },
-          {
-            value: "moTypesCorporate",
-            text: "Corporate managing officer"
-          }
-        ]
-        }) }}
 
         {{ govukButton({
           text: "Add"

@@ -464,7 +464,7 @@ html: serviceAddressHtml
 
 {% call govukFieldset({
   legend: {
-    html: 'What is their nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply</p>',
+    html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply</p>',
 
     classes: "govuk-fieldset__legend--m",
     isPageHeading: false
@@ -544,7 +544,7 @@ html: serviceAddressHtml
                       name: "owner-sanctions",
                       fieldset: {
                         legend: {
-                          text: "Is it on the sanctions list?",
+                          text: "Is it on the UK sanctions list?",
                           isPageHeading: false,
                           classes: "govuk-fieldset__legend--m"
                         }
@@ -568,7 +568,7 @@ html: serviceAddressHtml
                       {{ govukInsetText({
                         html: '
                                   <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                                  <p>All information provided in this section about the government or public authority will be shown on the public Register of Overseas Entities.</p>
+                                  <p>All information provided in this section will be shown on the public Register of Overseas Entities.</p>
                                     '
                       }) }}
 
