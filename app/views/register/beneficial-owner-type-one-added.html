@@ -178,10 +178,47 @@
 
         <h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
 
-        {{ govukDetails({
-          summaryText: "What is a managing officer?",
-          text: "To be confirmed"
+
+
+        <div class="govuk-inset-text">
+
+        <h2 class="govuk-heading-l">What you have added so far:</h2>
+
+        {{ govukTable({
+          caption: "Beneficial owners",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Joe Bloggs"
+              },
+              {
+                text: "Individual"
+              },
+              {
+                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
+              }
+             ]
+          ]
         }) }}
+</div>
+
+
 
         {{ govukRadios({
         idPrefix: "boType",
@@ -193,9 +230,7 @@
             classes: "govuk-visually-hidden"
           }
         },
-        hint: {
-          text: "You can add more later."
-        },
+
         items: [
           {
             value: "beneficialTypesIndividual",
@@ -222,61 +257,28 @@
         }) }}
 
 
-        {{ govukButton({
-          text: "Add"
-        }) }}
-
-
-                <h2 class="govuk-heading-l">What you have added so far:</h2>
-
-                {{ govukTable({
-                  caption: "Beneficial owners",
-                  captionClasses: "govuk-table__caption--m",
-                  firstCellIsHeader: true,
-                  head: [
-                  {
-                    text: "Name",
-                    classes: "govuk-visually-hidden"
-                  },
-                  {
-                    text: "Type",
-                    classes: "govuk-visually-hidden"
-                  },
-                    {
-                      text: "Change or remove",
-                      classes: "govuk-visually-hidden"
-                    }
-                  ],
-                  rows: [
-                    [
-                      {
-                        text: "Joe Bloggs"
-                      },
-                      {
-                        text: "Individual"
-                      },
-                      {
-                        html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
-                      }
-                     ]
-                  ]
-                }) }}
-
 
 
 
         {% endif %}
 
 
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Add"
+        }) }}
+
+        {{ govukButton({
+          text: "No more to add",
+           classes: "govuk-button--secondary",
+           href: '/register/trusts/trust-details-upload'
+        }) }}
 
 
-<p>
-{{ govukButton({
-  text: "No more to add",
-   classes: "govuk-button--secondary",
-   href: '/register/trusts/trust-details-upload'
-}) }}
-</p>
+      </div>
+
+
 
       </form>
 
