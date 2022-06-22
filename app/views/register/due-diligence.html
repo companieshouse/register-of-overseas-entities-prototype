@@ -4,7 +4,7 @@
 {% if errorList.length > 0 %}
   Error:
 {% endif %}
-  Due diligence for the third party agent – {{ serviceName }} – GOV.UK
+  Tell us about the UK-regulated professional that carried out identity checks – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,11 +24,27 @@
           }) }}
       {% endif %}
 
-      <h1 class="govuk-heading-xl">Tell us about the UK-regulated agent that carried out identity checks</h1>
+      <h1 class="govuk-heading-xl">Tell us about the UK-regulated professional that carried out identity checks</h1>
       <div  class="govuk-hint">
                   These are the identity checks that have been completed for all beneficial owners and managing officers.
                   </div>
       <form class="form" method="post">
+
+
+        {{ govukDateInput({
+          id: "dateVerified",
+          namePrefix: "dateVerified",
+          fieldset: {
+            legend: {
+              text: "When were verification checks completed?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
 
 {% if errorName == true %}
         {{ govukInput({
@@ -459,7 +475,7 @@ checked: checked("where-do-you-live", "wales")
           items: [
             {
               value: "agree",
-              text: "I confirm that verification has been carried out as required by The Register of Overseas Entities (Verification and Provision of Information) Regulations 2022. I confirm that the information provided in this statement is accurate, to the best of my knowledge. I understand that it is an offence to provide false information.",
+              text: "I confirm that verification has been carried out as required by The Register of Overseas Entities (Verification and Provision of Information) Regulations 2022. I confirm that the information provided in this statement is accurate.",
               checked: checked("diligence", "agree")
             }
           ]
