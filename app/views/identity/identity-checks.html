@@ -18,7 +18,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl">Tell us about the UK-regulated professional carrying out identity checks</h1>
+      <h1 class="govuk-heading-xl">Tell us about the UK-regulated agent carrying out identity checks</h1>
 
 
 
@@ -48,7 +48,7 @@
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is their name?",
+            text: "What is the agent's name?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -63,7 +63,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What is their correspondence address?",
+            text: "What is the correspondence address?",
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
