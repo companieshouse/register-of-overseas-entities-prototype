@@ -42,7 +42,7 @@
                   },
                   {
                     key: {
-                      text: "Have any of the entity’s beneficial owners ever applied to protect personal information at Companies House?"
+                      text: "Do any of the entity’s beneficial owners have their personal information protected at Companies House?"
                     },
                     value: {
                       text: 'No'
@@ -114,10 +114,27 @@
             rows: [
             {
               key: {
-                text: "Who is making the filing?"
+                text: "Who is completing this registration"
               },
               value: {
                 text: "Someone from the overseas entity"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Who is making the filing?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date the identity checks were completed"
+              },
+              value: {
+                text: "20 June 2022"
               },
               actions: {
                 items: [
@@ -218,7 +235,7 @@
               },
               {
                 key: {
-                  text: "Agent code"
+                  text: "Agent assurance code"
                 },
                 value: {
                   text: data['agent-code']
@@ -531,7 +548,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Are they on the sanctions list?
+          Are they on the UK sanctions list?
 
         </dt>
         <dd class="govuk-summary-list__value">
@@ -680,7 +697,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Is it on the sanctions list?
+            Is it on the UK sanctions list?
           </dt>
           <dd class="govuk-summary-list__value">
             <p>No</p>
@@ -775,20 +792,7 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              On a public register in the country it was formed in
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p>Name of register / 1234567890</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="/register/beneficial-owner-other">
-                Change
-                <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority owner public register</span>
-              </a>
-            </dd>
-          </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date it became a beneficial owner
@@ -819,6 +823,20 @@
               <a href="/register/beneficial-owner-other">
                 Change
                 <span class="govuk-visually-hidden"> Government or public authority beneficial Example public authority ownernature of control</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is it on the UK sanctions list?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>No</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/register/beneficial-owner-other">
+                Change
+                <span class="govuk-visually-hidden">Corporate beneficial owner Sugar Holdings- is it on the sanctions list</span>
               </a>
             </dd>
           </div>
@@ -1052,20 +1070,7 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date it became a beneficial owner
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>27 March 2007</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/register/beneficial-owner-other">
-              Change
-              <span class="govuk-visually-hidden"> Corporate managing officer ACME Limited date it became a beneficial owner</span>
-            </a>
-          </dd>
-        </div>
+
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
