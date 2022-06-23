@@ -88,17 +88,21 @@
                   <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
                     '
       }) }}
+
+
+      <div class="govuk-button-group">
+
         {{ govukButton({
           text: "Add another trust",
           href: "/register/trusts/trust-details-upload"
         }) }}
 
-      <p>  {{ govukButton({
+    {{ govukButton({
           text: "No more to add",
           href: "/register/check-answers",
           classes: "govuk-button--secondary"
         }) }}
-      </p>
+      </div>
 
       </form>
 
