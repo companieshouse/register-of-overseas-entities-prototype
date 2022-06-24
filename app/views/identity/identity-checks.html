@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% set serviceName %}
-  Request an authorisation code for the registration of overseas entities
+  Request an agent assurance code
 {% endset%}
 {% block pageTitle %}
 
-  Tell us about the UK-regulated professional carrying out identity checks - Request an authorisation code for the registration of overseas entities – GOV.UK
+  Tell us about the UK-regulated professional carrying out identity checks - Request an agent assurance code – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -59,6 +59,46 @@
           name: "due-diligence-name",
           value: dueDiligenceName
           }) }}
+        {% endif %}
+
+{{ govukInput({
+  label: {
+    text: "Who can we contact about the identity checks?",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  id: "due-diligence-contact-name",
+  name: "due-diligence-contact-name"
+}) }}
+
+{% if errorEmail == true %}
+        {{ govukInput({
+          label: {
+            text: "What is the email address?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "due-diligence-email",
+          name: "due-diligence-email",
+          value: agentEmail,
+          errorMessage: {
+                  text: "Enter an email address"
+                }
+        }) }}
+        {% else %}
+        {{ govukInput({
+          label: {
+            text: "What is the email address?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          hint: {
+           text: "We'll use this if we need more information about the identity checks"
+         },
+          id: "due-diligence-email",
+          name: "due-diligence-email",
+          value: agentEmail
+        }) }}
         {% endif %}
 
         {% call govukFieldset({
@@ -274,38 +314,6 @@ checked: checked("where-do-you-live", "wales")
 
         {% endcall %}
 
-
-{% if errorEmail == true %}
-        {{ govukInput({
-          label: {
-            text: "What is the email address?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "due-diligence-email",
-          name: "due-diligence-email",
-          value: agentEmail,
-          errorMessage: {
-                  text: "Enter an email address"
-                }
-        }) }}
-        {% else %}
-        {{ govukInput({
-          label: {
-            text: "What is the email address?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          hint: {
-           text: "We'll use this if we need more information about the identity checks"
-         },
-          id: "due-diligence-email",
-          name: "due-diligence-email",
-          value: agentEmail
-        }) }}
-        {% endif %}
-
-
 {% if errorSupervisor == true %}
         {{ govukInput({
           label: {
@@ -385,57 +393,7 @@ checked: checked("where-do-you-live", "wales")
         }) }}
         {% endif %}
 
-
-
-
-
-{% if errorStatement == true %}
-        {{ govukCheckboxes({
-          idPrefix: "diligence",
-          name: "diligence",
-          fieldset: {
-            legend: {
-              text: "Statement of truth",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "agree",
-              text: "I confirm that the information provided in this form is true, to the best of my knowledge. I understand that I may be in contempt of court if I provide false information."
-            }
-          ],
-          errorMessage: {
-                  text: "Check and confirm the statement of compliance"
-                }
-        }) }}
-        {% else %}
-        {{ govukCheckboxes({
-          idPrefix: "diligence",
-          name: "diligence",
-          fieldset: {
-            legend: {
-              text: "Statement of truth",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "agree",
-              text: "I confirm that the information provided in this form is true, to the best of my knowledge. I understand that I may be in contempt of court if I provide false information.",
-              checked: checked("diligence", "agree")
-            }
-          ]
-        }) }}
-        {% endif %}
-
-
-
-
-
-
+<br>
 {{ govukButton({
   text: "Continue"
 }) }}
