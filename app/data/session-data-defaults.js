@@ -21,7 +21,8 @@ module.exports = {
 
   // Insert values here
 
-  "email": [ "user@testcompany.co.uk" ]
+  "email": [ "user@testcompany.co.uk" ],
+  "trust-name": [ "Trust 123" ]
 
 
 }

@@ -21,7 +21,7 @@
 
 
 
-        <span class="govuk-caption-l">Trust 123</span>
+        <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
 
         {{ govukRadios({
             idPrefix: "trustTypes",
@@ -100,11 +100,11 @@
                 text: "Beneficial owner"
               },
               {
-                html: "ACME <br> from 15 April 2020"
+                html: "ACME "
               },
               {
                 html: '<a href="beneficial-owner-individual-completed">Change or remove</a>',
-                visuallyHiddenText: "Beneficial owner - ACME from 15 April 2020"
+                visuallyHiddenText: "Beneficial owner - ACME"
               }
              ],
              [
@@ -112,11 +112,11 @@
                 text: "Beneficial owner"
               },
               {
-                html: "Joe Bloggs <br> from 11 April 2019"
+                html: "Joe Bloggs"
               },
               {
                 html: '<a href="">Change or remove</a>',
-                visuallyHiddenText: "Beneficial owner - Joe Bloggs from 11 April 2019"
+                visuallyHiddenText: "Beneficial owner - Joe Bloggs"
               }
             ]
             ]
