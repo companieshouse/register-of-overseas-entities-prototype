@@ -242,8 +242,9 @@
       <p class="govuk-body">They must be based in the UK and supervised under the Money
 Laundering, Terrorist Financing and Transfer of Funds Regulations 2017. They can be an individual or a corporate entity, such as a financial institution or legal professional.</p>
 
-<p class="govuk-body">Identity checks must be completed no longer than 3 months before the overseas entity is registered.</p>
-
+{{ govukInsetText({
+  text: "Identity checks must be completed no more than 3 months before the overseas entity is registered."
+}) }}
 
 <h3 class="govuk-heading-s">Agent assurance code</h3>
 <p class="govuk-body">The UK-regulated agent will need to <a href="/register/guidance-code" class="govuk-link">request an agent assurance code from Companies House</a>. This confirms that the agent has carried out identity checks. We cannot register an overseas entity without a code.  </p>
