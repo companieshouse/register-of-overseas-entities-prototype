@@ -91,3 +91,20 @@ ul#navigation {
   padding: 0.5em;
   margin: 0.2em 0 0 0.6em;
 }
+
+// Adding a download icon
+
+.download-icon {
+  padding: 0.5em 0 0 2.1em;
+  background-image: url("/public/images/icon-file-download.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// Styling download type and font-size
+
+.file-format-size {
+  display: block;
+  padding: 0.2em 0 0 2.2em;
+
+}
