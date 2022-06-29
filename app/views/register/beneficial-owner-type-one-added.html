@@ -21,78 +21,7 @@
 
         <h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
 
-
-        {{ govukRadios({
-        idPrefix: "boType",
-        name: "boType",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "You can add more later."
-        },
-        items: [
-          {
-            value: "beneficialTypesIndividual",
-            text: "Individual person"
-          },
-          {
-            value: "beneficialTypesOther",
-            text: "Other legal entity"
-
-          },
-          {
-            value: "beneficialTypesGov",
-            text: "Government or public authority"
-          }
-        ]
-        }) }}
-
-        {{ govukButton({
-          text: "Add"
-        }) }}
-
-
-
-
-        {% elif (data['statements'] === "noneIdentified") %}
-
-        <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
-
-        {{ govukDetails({
-          summaryText: "What is a managing officer?",
-          text: "To be confirmed"
-        }) }}
-
-
-        {{ govukRadios({
-        idPrefix: "boType",
-        name: "boType",
-        fieldset: {
-          legend: {
-            text: "Which type of managing officer do you want to add?",
-            isPageHeading: false,
-            classes: "govuk-visually-hidden"
-          }
-        },
-        hint: {
-          text: "You can add more later."
-        },
-        items: [
-          {
-            value: "moTypesIndividual",
-            text: "Individual managing officer"
-          },
-          {
-            value: "moTypesCorporate",
-            text: "Corporate managing officer"
-          }
-        ]
-        }) }}
+        <div class="govuk-inset-text">
 
         <h2 class="govuk-heading-l">What you have added so far:</h2>
 
@@ -126,53 +55,118 @@
                 html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
               }
              ]
-
           ]
         }) }}
+      </div>
 
 
-        {{ govukButton({
-          text: "Add"
+
+
+
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "beneficialTypesIndividual",
+            text: "Individual person"
+          },
+          {
+            value: "beneficialTypesOther",
+            text: "Other legal entity"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Government or public authority"
+          }
+        ]
         }) }}
 
 
-                <h2 class="govuk-heading-l">What you have added so far:</h2>
 
 
 
+        {% elif (data['statements'] === "noneIdentified") %}
 
-                {{ govukTable({
-                  caption: "Managing officers",
-                  captionClasses: "govuk-table__caption--m",
-                  firstCellIsHeader: true,
-                  head: [
-                  {
-                    text: "Name",
-                    classes: "govuk-visually-hidden"
-                  },
-                  {
-                    text: "Type",
-                    classes: "govuk-visually-hidden"
-                  },
-                    {
-                      text: "Change or remove",
-                      classes: "govuk-visually-hidden"
-                    }
-                  ],
-                  rows: [
-                   [
-                     {
-                      text: "Individual "
-                    },
-                    {
-                      text: "Name here"
-                    },
-                    {
-                      html: '<a href="">Change or remove</a>'
-                    }
-                  ]
-                  ]
-                }) }}
+        <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
+
+        <div class="govuk-inset-text">
+
+        <h2 class="govuk-heading-l">What you have added so far:</h2>
+
+        {{ govukTable({
+          caption: "Beneficial owners",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Joe Bloggs"
+              },
+              {
+                text: "Individual"
+              },
+              {
+                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
+              }
+             ]
+          ]
+        }) }}
+  </div>
+
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of managing officer do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-visually-hidden"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "moTypesIndividual",
+            text: "Individual managing officer"
+          },
+          {
+            value: "moTypesCorporate",
+            text: "Corporate managing officer"
+          }
+        ]
+        }) }}
+
+
 
         {% else %}
 
