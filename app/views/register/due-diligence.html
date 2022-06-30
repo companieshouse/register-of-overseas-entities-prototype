@@ -30,6 +30,11 @@
       <form class="form" method="post">
 
 
+        {% set secondLine %}
+        <div id="event-name-hint">
+          <p class="govuk-hint">For example, 21 7 2022. <br>These must be completed no more than 3 months before an overseas entity is registered.</p>
+        </div>
+          {% endset %}
         {{ govukDateInput({
           id: "dateVerified",
           namePrefix: "dateVerified",
@@ -41,9 +46,10 @@
             }
           },
           hint: {
-            text: "For example, 21 7 2022. These must be completed no more than 3 months before an overseas entity is registered."
+            html: secondLine
           }
-        }) }}
+         }) }}
+
 
 {% if errorName == true %}
         {{ govukInput({
