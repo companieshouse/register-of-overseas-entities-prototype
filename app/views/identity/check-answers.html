@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% set serviceName %}
-  Request an authorisation code for the registration of overseas entities
+  Request an agent assurance code
 {% endset%}
 {% block pageTitle %}
-  Check your answers - Request an authorisation code for the registration of overseas entities - GOV.UK
+  Check your answers - Request an agent assurance code - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -107,33 +107,19 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Person with overall responsibility for identity checks
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Jane Doe
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/identity/identity-checks">
-              Change
-              <span class="govuk-visually-hidden">   Person with overall responsibility for identity checks</span>
-            </a>
-          </dd>
-        </div>
       </dl>
 
 
-      <h2 class="govuk-heading-m">Submit your request</h2>
+      <h2 class="govuk-heading-m">Send your request</h2>
 
-      <p>By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>By sending this request you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
       <form action="confirmation" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Submit request
+          Send request
         </button>
 
       </form>
