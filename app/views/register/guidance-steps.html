@@ -22,10 +22,10 @@ There are different steps to registering and this depends on who you are and who
       <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
       <ul class="govuk-list govuk-list govuk-!-margin-bottom-8">
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#agentreg">You are the agent and you are registering for an overseas entity </a>
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#agentreg">You are an agent and you are registering for the overseas entity </a>
         </li>
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#agentoereg">You are the agent and the overseas entity is registering</a>
+          <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#agentoereg">You are an agent and the overseas entity is registering</a>
         </li>
         <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
           <a class="govuk-link govuk-body-s govuk-link--no-underline" href="#oeagentreg">You are the overseas entity and an agent is registering for you</a>
@@ -69,8 +69,8 @@ There are different steps to registering and this depends on who you are and who
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
-      <h3 id="agentreg" class="govuk-heading-m">You are the agent and you are registering for an overseas entity online</h3>
-      <p class="govuk-body">You are doing the identity checks and registering the overseas entity via our online service</p>
+      <h3 id="agentreg" class="govuk-heading-m">You are an agent and you are registering for the overseas entity</h3>
+      <p class="govuk-body">You are doing the identity checks and registering the overseas entity using our <strong>online service.</strong></p>
 
 
   <ol class="govuk-body govuk-list--spaced">
@@ -86,9 +86,18 @@ There are different steps to registering and this depends on who you are and who
   </ol>
 
 
+
+
+
+
+
+  <h3 class="govuk-heading-m">Or</h3>
+
+<!--- <p class="govuk-body">You are doing the identity checks and registering the overseas entity via our <strong>paper service</strong></p>
+--->
   {% set agentpaper %}
   <h3 class="govuk-heading-m">You are the agent and you are registering for an overseas entity on paper</h3>
-  <p class="govuk-body">You are doing the identity checks and registering the overseas entity via our paper forms</p>
+  <p class="govuk-body">You are doing the identity checks and registering the overseas entity using our <strong>paper forms.</strong></p>
 
 <ol class="govuk-body govuk-list--spaced">
 <li>Read the guidance and gather all data required</li>
@@ -97,22 +106,29 @@ There are different steps to registering and this depends on who you are and who
 <li>Email Companies House the completed assurance code request form</li>
 <li>Companies House emails you your organisation’s assurance code (do not share outside of your organisation)</li>
 <li>Complete the identity checks (see our guidance)</li>
-<li>Register the overseas entity and confirm identity checks information</li>
-<li>Send in your application via post/email to Companies House</li>
+<li>Contact Companies House to request a paper form</li>
+<li>Register the overseas entity and confirm identity checks using the form</li>
+<li>Send in your completed form via post/email to Companies House</li>
 <li>You will receive an email with your application number</li>
 <li>Companies House emails you to confirm if the registration is successful</li>
 </ol>
     {% endset %}
     {{ govukDetails({
-          summaryText: "You are the agent and you are registering for an overseas entity on paper",
+          summaryText: "You are doing the identity checks and registering the overseas entity via our paper service",
           html: agentpaper
           }) }}
+
+
+
+
+
+
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-5">
 
 
   <h3 id="agentoereg" class="govuk-heading-m ">You are an agent and the overseas entity is registering</h3>
-  <p class="govuk-body">You are doing the identity checks only</p>
+  <p class="govuk-body">You are doing the identity checks only.</p>
 
 <ol class="govuk-body govuk-list--spaced">
 <li>Read the guidance and gather all data required</li>
@@ -143,14 +159,50 @@ There are different steps to registering and this depends on who you are and who
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-5">
 
 
-<h3 id="oereg" class="govuk-heading-m ">You are an overseas entity and you or someone on behalf of you (not a third-party agent) is registering for you</h3>
-<p class="govuk-body">You will be registering for yourself</p>
+<h3 id="oereg" class="govuk-heading-m ">You are an overseas entity and you or someone on behalf of you is registering</h3>
+<p class="govuk-body">You or someone on behalf of you (not a third-part agent) will be registering using our <strong>online service</strong> and asking an agent to complete the identity checks</p>
+
 
 <ol class="govuk-body govuk-list--spaced">
 <li>Read the guidance and gather all data required</li>
-<li>Contact a third-party agent to let them know you want them to do your identity checks and your registration</li>
-<li>Provide all information required for the registration to the third party (see our guidance)</li>
+<li>Contact a third-party agent to let them know you want them to do your identity checks only</li>
+<li>Register the overseas entity (this is done before the agent can complete your identity checks)</li>
+<li>Once registered, you will receive an automatic response email with your application number</li>
+<li>Give this application number to your third-party agent</li>
+<li>Provide all information required for the identity checks to the third party</li>
 <li>Companies House emails you to confirm if the registration is successful</li>
+</ol>
+
+
+<h3 class="govuk-heading-m">Or</h3>
+
+<!--- <p class="govuk-body">You are doing the identity checks and registering the overseas entity via our <strong>paper service</strong></p>
+--->
+{% set oepaper %}
+<h3 class="govuk-heading-m">You are the overseas entity and you are registering using our paper service</h3>
+<p class="govuk-body">You or someone on behalf of you (not a third-part agent) will be registering using our <strong>paper forms</strong> and asking an agent to complete the identity checks</p>
+
+<ol class="govuk-body govuk-list--spaced">
+  <li>Read the guidance and gather all data required</li>
+  <li>Contact a third-party agent to let them know you want them to do your identity checks only</li>
+  <li>Contact Companies House to request a paper form</li>
+  <li>Register the overseas entity and confirm identity checks using the form</li>
+  <li>Send in your completed form via post/email to Companies House</li>
+  <li>You will receive an email with your application number</li>
+  <li>Give this application number to your third-party agent</li>
+  <li>Provide all information required for the identity checks to the third party</li>
+  <li>Companies House emails you to confirm if the registration is successful</li>
+
+
+
+
+</ol>
+  {% endset %}
+  {{ govukDetails({
+        summaryText: "You or someone on behalf of you (not a third-part agent) will be registering using our paper service and asking an agent to complete identity checks",
+        html: oepaper
+        }) }}
+
 
 
 
