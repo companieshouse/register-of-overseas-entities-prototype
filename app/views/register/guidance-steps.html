@@ -108,27 +108,23 @@ The process is also different if you are registering online or via paper form.
   <!---<p class="govuk-body">You are doing the identity checks and registering the overseas entity using our <strong>paper form.</strong></p>--->
 
 <ol class="govuk-body govuk-list--spaced">
-<li>Read the guidance and gather all data required</li>
-<li>Check if someone in your organisation has already requested an assurance code, if yes then skip to 6 in this list</li>
-<li>Download the assurance code request form (one code per organisation)</li>
-<li>Email Companies House the completed assurance code request form</li>
-<li>Companies House emails you your organisation’s assurance code (do not share outside of your organisation)</li>
-<li>Complete the identity checks (see our guidance)</li>
-<li>Contact Companies House to request a paper form</li>
-<li>Once received, register the overseas entity and confirm identity checks using the form</li>
-<li>Send in your completed form via post/email to Companies House</li>
-<li>You will receive an email with your application number</li>
-<li>Companies House emails you to confirm if the registration is successful</li>
+  <li>Read the guidance and gather all data required</li>
+  <li>Check if someone in your organisation has already requested an assurance code, if yes then skip to 6 in this list</li>
+  <li>Download the assurance code request form (one code per organisation)</li>
+  <li>Email Companies House the completed assurance code request form</li>
+  <li>Companies House emails you your organisation’s assurance code (do not share outside of your organisation)</li>
+  <li>Complete the identity checks (see our guidance)</li>
+  <li>Contact Companies House to request a paper form</li>
+  <li>Once received, register the overseas entity and confirm identity checks using the form</li>
+  <li>Send in your completed form via post/email to Companies House</li>
+  <li>You will receive an email with your application number</li>
+  <li>Companies House emails you to confirm if the registration is successful</li>
 </ol>
     {% endset %}
     {{ govukDetails({
           summaryText: "You are doing the identity checks and registering the overseas entity using our paper form",
           html: agentpaper
           }) }}
-
-
-
-
 
 
 
@@ -140,11 +136,11 @@ The process is also different if you are registering online or via paper form.
 
 <ol class="govuk-body govuk-list--spaced">
   <li>Read the guidance and gather all data required</li>
-  <li>Check if someone in your organisation has already requested an assurance code, if yes then skip to 6 in this list</li>
+  <li>Check if your organisation has already requested an assurance code, if they have then <a href="#6agentoereg">go to step 6</a> in this list</li>
   <li>Download the assurance code request form (one code per organisation)</li>
   <li>Email Companies House the completed assurance code request form</li>
   <li>Companies House emails you your organisation’s assurance code (do not share outside of your organisation)</li>
-  <li>The overseas entity registers(this can happen whilst you complete 1-5)</li>
+  <li id="6agentoereg">The overseas entity registers (this can happen whilst you complete 1-5)</li>
   <li>The overseas entity contacts you with their OE application number</li>
   <li>Download the identity checks form</li>
   <li>Complete the identity checks and add their OE application number to the form</li>
@@ -167,16 +163,15 @@ The process is also different if you are registering online or via paper form.
 
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-5">
-<h3 id="oereg" class="govuk-heading-m ">You are an overseas entity and you or someone on behalf of you is registering</h3>
-<p class="govuk-body">You or someone on behalf of you (not a third-part agent) will be registering using our <strong>online service</strong> and asking an agent to complete the identity checks</p>
+<h3 id="oereg" class="govuk-heading-m ">You are an overseas entity and you, or someone on behalf of you is registering</h3>
+<p class="govuk-body">You or someone on behalf of you (not a third-party agent) will be registering using our <strong>online service</strong> and asking an agent to complete the identity checks</p>
 
 <ol class="govuk-body govuk-list--spaced">
   <li>Read the guidance and gather all data required</li>
   <li>Contact a third-party agent to let them know you want them to do your identity checks only</li>
   <li>Register the overseas entity (this is done before the agent can complete your identity checks)</li>
-  <li>Once registered, you will receive an automatic response email with your application number</li>
-  <li>Give this application number to your third-party agent</li>
-  <li>Provide all information required for the identity checks to the third party</li>
+  <li>On completion, you will receive an email with your application number</li>
+  <li>Give this application number and all information required for identity checks to your third-party agent</li>
   <li>Companies House emails you to confirm if the registration is successful</li>
 </ol>
 
@@ -196,8 +191,7 @@ The process is also different if you are registering online or via paper form.
   <li>Once received, register the overseas entity using the form</li>
   <li>Send in your completed form via post/email to Companies House</li>
   <li>You will receive an email with your application number</li>
-  <li>Give this application number to your third-party agent</li>
-  <li>Provide all information required for the identity checks to the third party</li>
+  <li>Give this application number and all information required for identity checks to your third-party agent</li>
   <li>Companies House emails you to confirm if the registration is successful</li>
 </ol>
   {% endset %}
