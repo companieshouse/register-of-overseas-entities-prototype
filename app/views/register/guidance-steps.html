@@ -17,7 +17,13 @@
       How to register an overseas entity
       </h1>
       <p class="govuk-body-l">
-There are different steps to registering and this depends on who you are and who is registering for you. You may also be registering via our paper forms.</p>
+There are different steps to registering and this depends on who you are and who is registering for you.
+The process is also different if you are registering online or via paper forms.
+</p>
+
+{{ govukInsetText({
+  text: "Tip: Answer the questions on the registration service up until the sign in screen to find out which steps you need to take."
+}) }}
 
       <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
       <ul class="govuk-list govuk-list govuk-!-margin-bottom-8">
@@ -97,7 +103,8 @@ There are different steps to registering and this depends on who you are and who
 --->
   {% set agentpaper %}
   <h3 class="govuk-heading-m">You are the agent and you are registering for an overseas entity on paper</h3>
-  <p class="govuk-body">You are doing the identity checks and registering the overseas entity using our <strong>paper forms.</strong></p>
+
+  <!---<p class="govuk-body">You are doing the identity checks and registering the overseas entity using our <strong>paper form.</strong></p>--->
 
 <ol class="govuk-body govuk-list--spaced">
 <li>Read the guidance and gather all data required</li>
@@ -114,7 +121,7 @@ There are different steps to registering and this depends on who you are and who
 </ol>
     {% endset %}
     {{ govukDetails({
-          summaryText: "You are doing the identity checks and registering the overseas entity via our paper service",
+          summaryText: "You are doing the identity checks and registering the overseas entity using our paper form",
           html: agentpaper
           }) }}
 
