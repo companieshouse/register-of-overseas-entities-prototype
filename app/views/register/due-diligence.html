@@ -4,7 +4,7 @@
 {% if errorList.length > 0 %}
   Error:
 {% endif %}
-  Tell us about the UK-regulated professional that carried out identity checks – {{ serviceName }} – GOV.UK
+  Tell us about the UK-regulated professional that carried out verification checks – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,7 +24,7 @@
           }) }}
       {% endif %}
 
-      <h1 class="govuk-heading-xl">Complete this statement to confirm that identity checks have been completed</h1>
+      <h1 class="govuk-heading-xl">Complete this statement to confirm that verification checks have been completed</h1>
 
 
       <form class="form" method="post">
@@ -36,7 +36,7 @@
           namePrefix: "dateVerified",
           fieldset: {
             legend: {
-              text: "When were the identity checks completed?",
+              text: "When were the verification checks completed?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -61,7 +61,7 @@
           name: "due-diligence-name",
           value: dueDiligenceName,
           errorMessage: {
-                  text: "Enter the name of the agent that carried out identity checks"
+                  text: "Enter the name of the agent that carried out verification checks"
                 }
         }) }}
         {% else %}
@@ -316,7 +316,7 @@ checked: checked("where-do-you-live", "wales")
             isPageHeading: false
           },
           hint: {
-           text: "We'll use this if we need more information about the identity checks"
+           text: "We'll use this if we need more information about the verification checks"
          },
           id: "due-diligence-email",
           name: "due-diligence-email",
@@ -407,7 +407,7 @@ checked: checked("where-do-you-live", "wales")
 {% if errorIdentityCheck == true %}
         {{ govukInput({
           label: {
-            text: "What is the name of the person with overall responsibility for identity checks?",
+            text: "What is the name of the person with overall responsibility for verification checks?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -418,13 +418,13 @@ checked: checked("where-do-you-live", "wales")
           name: "partner-name",
           value: partnerName,
           errorMessage: {
-                  text: "Enter the name of the person with overall responsibility for identity checks"
+                  text: "Enter the name of the person with overall responsibility for verification checks"
                 }
         }) }}
         {% else %}
         {{ govukInput({
           label: {
-            text: "What is the name of the person with overall responsibility for identity checks?",
+            text: "What is the name of the person with overall responsibility for verification checks?",
             classes: "govuk-label--m",
             isPageHeading: false
           },
@@ -487,7 +487,7 @@ checked: checked("where-do-you-live", "wales")
         {{ govukInsetText({
           html: '
                     <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                    <p>The email address, agent assurance code and date the identity checks were completed will not be shown.</p>
+                    <p>The email address, agent assurance code and date the verification checks were completed will not be shown.</p>
                     <p>All other information provided in this section will be shown on the public Register of Overseas Entities.</p>
                 '
         }) }}

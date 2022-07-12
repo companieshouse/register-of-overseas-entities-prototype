@@ -4,7 +4,7 @@
 {% if errorList.length > 0 %}
   Error:
 {% endif %}
-  Tell us about the UK-regulated professional that carried out identity checks – {{ serviceName }} – GOV.UK
+  Tell us about the UK-regulated professional that carried out verification checks – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
 
 
 
-      <h1 class="govuk-heading-xl">Tell us about the UK-regulated agent that carried out identity checks</h1>
+      <h1 class="govuk-heading-xl">Tell us about the UK-regulated agent that carried out verification checks</h1>
 
       <form class="form" method="post">
 
@@ -30,7 +30,7 @@
                   namePrefix: "dateVerified",
                   fieldset: {
                     legend: {
-                      text: "When were the identity checks completed? (Optional)",
+                      text: "When were the verification checks completed? (Optional)",
                       isPageHeading: false,
                       classes: "govuk-fieldset__legend--m"
                     }
@@ -55,7 +55,7 @@
           name: "due-diligence-name",
           value: dueDiligenceName,
           errorMessage: {
-                  text: "Enter the name of the person or company that carried out identity checks"
+                  text: "Enter the name of the person or company that carried out verification checks"
                 }
         }) }}
         {% else %}
@@ -310,7 +310,7 @@ checked: checked("where-do-you-live", "wales")
             isPageHeading: false
           },
           hint: {
-           text: "We'll use this if we need more information about the identity checks"
+           text: "We'll use this if we need more information about the verification checks"
          },
           id: "due-diligence-email",
           name: "due-diligence-email",
@@ -350,7 +350,7 @@ checked: checked("where-do-you-live", "wales")
 
         {{ govukInput({
           label: {
-            text: "What is the name of the person with overall responsibility for identity checks?",
+            text: "What is the name of the person with overall responsibility for verification checks?",
             classes: "govuk-label--m",
             isPageHeading: false
           },

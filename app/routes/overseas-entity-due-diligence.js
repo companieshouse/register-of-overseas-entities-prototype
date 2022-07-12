@@ -115,7 +115,7 @@ module.exports = function (router) {
     if (req.session.data['partner-name'] === '') {
       identityCheckHasError = true
       errors.push({
-        text: "Enter the name of the person with overall responsibility for identity checks",
+        text: "Enter the name of the person with overall responsibility for verification checks",
         href: '#partner-name'
       })
     }
