@@ -18,12 +18,35 @@
         <h1 class="govuk-panel__title">Application submitted</h1>
         <div class="govuk-panel__body">
           Your application reference number: <br><strong>392433-950223-102918</strong>
+              {% if (data['whoIsFiling'] === "else") %}
+              <!--register/who-is-making-filing.html -->
+              <a href="javascript:void(0)" class="application-copy govuk-button govuk-button--secondary govuk-!-padding-bottom-1 govuk-!-padding-top-1" onclick="CopyToClipboard('application-reference');return false;">Copy <span class="govuk-visually-hidden">pplication reference number</a>
+                {% endif %}
         </div>
       </div>
 
       <p>
         We have sent a confirmation email to <strong>presenter@jmaccountants.com</strong> which contains your reference number.
       </p>
+
+
+
+      {% if (data['whoIsFiling'] === "else") %}
+      <!--register/who-is-making-filing.html -->
+
+      <h2 class="govuk-heading-m">What you need to do now</h2>
+      <p>You must give the application reference number to the UK-regulated agent that completed verification checks. </p>
+
+  <p>Then the agent needs to complete an <a href="/public/docs/Overseas-entity-verification-checks-statement.odt" class="govuk-link">Overseas entity verification checks statement</a> and email it to   agentcode@companieshouse.gov.uk.</p>
+
+  <p>They must do this <strong>within 14 days</strong>. We cannot process this application until we've received the statement.</p>
+
+{% endif %}
+
+
+
+
+
 
       <h2 class="govuk-heading-m">What happens next</h2>
       <p>We'll email you to let you know if your application to register an overseas entity has been accepted or rejected. We'll process the application as soon as possible. However, because this is a new service, we're not yet able to tell you exactly how long this will take.</p>
