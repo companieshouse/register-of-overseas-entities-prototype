@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Before you start – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="interrupt-card">
+        <h1 class="govuk-heading-l">Before you start</h1>
+
+          <h2 class="govuk-heading-m">Verification checks</h2>
+
+      <!--  <h3 class="govuk-heading-s">If you are the <a href="">UK-regulated professional</a> that carried out verification checks for the overseas entity</h2>
+
+          <p class="govuk-body">Ensure you have an <a href="">assurance code</a>. You’ll be asked to provide this code as part of this service.</p>
+
+
+        <h3 class="govuk-heading-s">  If you are someone else who works at, or works on behalf of, the overseas entity</h3>
+
+        <p class="govuk-body">Ensure your <a href="">UK-regulated professional</a> has an <a href="">assurance code</a>. You will need to send the application reference at the end of this service.</p>-->
+
+
+
+
+              <p class="govuk-body">A UK-regulated agent must carry out <a href="/register/start-merged-with-guidance#what-identity-checks-are-needed" class="govuk-link">verification checks</a> on all beneficial owners and managing officers no more than 3 months before the overseas entity is registered. They will need an <a href="/register/guidance-code" class="govuk-link">agent assurance code</a> to confirm they have authorisation to carry out these checks.</p>
+
+              <p class="govuk-body">If you are the UK-regulated agent, you will need to provide your code as part of this service.</p>
+
+              <p class="govuk-body">If you are not the UK-regulated agent, you will need to ask the agent to submit an <a href="/register/guidance-code" class="govuk-link">Overseas entity verification checks statement</a> within 14 days of submitting this application.</p>
+
+  <h2 class="govuk-heading-m">Trusts</h2>
+
+  <p class="govuk-body">If you need to tell us about <a href="/register/start-merged-with-guidance#how-to-submit-information-about-trusts" class="govuk-link">trusts</a>, we highly recommend that you complete the <a href="/public/pdf/TrustDataCapture.xlsm" class="govuk-link">Trust Excel document (52KB)</a> before you start, as the service will time out if you do not use it for 60 minutes.   </p>
+
+
+  <p class="govuk-body">You'll need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>open the document in Excel</li>
+      <li>enable macros when prompted</li>
+
+    </ul>
+  <p class="govuk-body">  Then follow the instructions within the document to enter the information into the service.  </p>
+
+
+
+
+
+  {{ govukButton({
+    text: "Continue",
+    href: "/register/sign-in"
+  }) }}
+
+        </div>
+
+
+
+
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
