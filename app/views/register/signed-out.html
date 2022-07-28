@@ -12,8 +12,6 @@ You have signed out of the service
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form action="/register/sign-in" method="get">
-
 <h1 class="govuk-heading-l">You have signed out of the service</h1>
 
 <p class="govuk-body">You answers have been saved.</p>
@@ -21,10 +19,9 @@ You have signed out of the service
 
 
       {{ govukButton({
-        text: "Sign in"
+        text: "Sign in",
+        href: "/register/sign-in"
       }) }}
-      </form>
-
 
 
 
