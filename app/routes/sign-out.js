@@ -6,6 +6,6 @@ module.exports = function (router) {
 		if ( signOut == "yes" ) {
 			res.redirect( "/register/signed-out" );
 		} else {
-			res.render( 'javascript:window.history.back()' );
+			res.render( '/register/entity' );
 		}
 	} );
