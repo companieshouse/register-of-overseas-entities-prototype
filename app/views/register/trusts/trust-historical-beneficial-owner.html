@@ -14,14 +14,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about all beneficial owners</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You need to tell us about every individual or legal entity that has ever been a registrable beneficial owner of the overseas entity, due to being a trustee of this trust. You can add more later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the beneficial owner</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
       <form class="form" action="" method="get">
 
         {{ govukInput({
             label: {
-              text: "What is the name of the beneficial owner?",
+              text: "What is the beneficial owner's name?",
               classes: "govuk-label--m",
               isPageHeading: false
             },
@@ -56,14 +56,14 @@
                 }
               },
               hint: {
-                text: "For example, 27 3 2007"
+                text: "For example, 28 5 2011"
               }
             }) }}
 
             {{ govukInsetText({
               html: '
                         <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                        <p>To be confirmed.</p>
+                        <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
                           '
             }) }}
 
