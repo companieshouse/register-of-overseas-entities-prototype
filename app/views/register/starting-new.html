@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Are you starting a new application? – {{ serviceName }} – GOV.UK
+Do you want to continue with your current application? – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,19 +23,22 @@ Are you starting a new application? – {{ serviceName }} – GOV.UK
   name: "startingNew",
   fieldset: {
     legend: {
-      text: "Are you starting a new application?",
+      text: "Do you want to continue with your current application?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
+  hint: {
+  text: "You already have a registration in progress from the last time you signed in."
+},
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes - continue with my current application"
     },
     {
       value: "no",
-      text: "No - I already started one"
+      text: "No - start a new application"
     }
   ]
 }) }}
