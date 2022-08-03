@@ -23,6 +23,54 @@
 
         <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
 
+        {{ govukTable({
+          caption: "What you have added so far:",
+          captionClasses: "govuk-table__caption--l",
+          firstCellIsHeader: true,
+          classes: "govuk-!-margin-bottom-9",
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+            {
+              text: "Beneficial owner"
+            },
+            {
+              html: "ACME "
+            },
+            {
+              html: '<a href="beneficial-owner-individual-completed">Change or remove</a>',
+              visuallyHiddenText: "Beneficial owner - ACME"
+            }
+           ],
+           [
+             {
+              text: "Beneficial owner"
+            },
+            {
+              html: "Joe Bloggs"
+            },
+            {
+              html: '<a href="">Change or remove</a>',
+              visuallyHiddenText: "Beneficial owner - Joe Bloggs"
+            }
+          ]
+          ]
+        }) }}
+
+
         {{ govukRadios({
             idPrefix: "trustTypes",
             name: "trustTypes",
@@ -76,51 +124,6 @@
 
 
 
-          {{ govukTable({
-            caption: "What you have added so far:",
-            captionClasses: "govuk-table__caption--l",
-            firstCellIsHeader: true,
-            head: [
-            {
-              text: "Name",
-              classes: "govuk-visually-hidden"
-            },
-            {
-              text: "Type",
-              classes: "govuk-visually-hidden"
-            },
-              {
-                text: "Change or remove",
-                classes: "govuk-visually-hidden"
-              }
-            ],
-            rows: [
-              [
-              {
-                text: "Beneficial owner"
-              },
-              {
-                html: "ACME "
-              },
-              {
-                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>',
-                visuallyHiddenText: "Beneficial owner - ACME"
-              }
-             ],
-             [
-               {
-                text: "Beneficial owner"
-              },
-              {
-                html: "Joe Bloggs"
-              },
-              {
-                html: '<a href="">Change or remove</a>',
-                visuallyHiddenText: "Beneficial owner - Joe Bloggs"
-              }
-            ]
-            ]
-          }) }}
 
 
 
