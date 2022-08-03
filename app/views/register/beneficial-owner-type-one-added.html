@@ -19,11 +19,8 @@
 
         {% if (data['statements'] === "allIdentifiedAllSupplied") %}
 
-        <h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
 
-        <div class="govuk-inset-text">
-
-        <h2 class="govuk-heading-l">What you have added so far:</h2>
+        <h1 class="govuk-heading-l">What <span class="govuk-visually-hidden"> benefical owners</span> you have added so far:</h1>
 
         {{ govukTable({
           caption: "Beneficial owners",
@@ -52,12 +49,20 @@
                 text: "Individual"
               },
               {
-                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
+                html: '<a href="beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
               }
              ]
           ]
         }) }}
-      </div>
+
+
+
+
+        <h2 class="govuk-heading-xl  govuk-!-margin-top-9 govuk-!-margin-bottom-5">Which type of beneficial owner do you want to add?</h2>
+
+        <div class="govuk-inset-text">
+
+
 
 
 
@@ -100,11 +105,7 @@
 
         {% elif (data['statements'] === "noneIdentified") %}
 
-        <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
-
-        <div class="govuk-inset-text">
-
-        <h2 class="govuk-heading-l">What you have added so far:</h2>
+        <h1 class="govuk-heading-l">What <span class="govuk-visually-hidden"> managing officers</span> you have added so far:</h1>
 
         {{ govukTable({
           caption: "Beneficial owners",
@@ -133,12 +134,18 @@
                 text: "Individual"
               },
               {
-                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
+                html: '<a href="beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
               }
              ]
           ]
         }) }}
-  </div>
+
+
+        <h2 class="govuk-heading-xl  govuk-!-margin-top-9  govuk-!-margin-bottom-52">Which type of managing officer do you want to add?</h2>
+
+
+
+
 
 
         {{ govukRadios({
@@ -170,13 +177,7 @@
 
         {% else %}
 
-        <h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
-
-
-
-        <div class="govuk-inset-text">
-
-        <h2 class="govuk-heading-l">What you have added so far:</h2>
+        <h1 class="govuk-heading-l">What <span class="govuk-visually-hidden"> benefical owners or managing officers</span> you have added so far:</h1>
 
         {{ govukTable({
           caption: "Beneficial owners",
@@ -205,12 +206,18 @@
                 text: "Individual"
               },
               {
-                html: '<a href="beneficial-owner-individual-completed">Change or remove</a>'
+                html: '<a href="beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
               }
              ]
           ]
         }) }}
-</div>
+
+        <h2 class="govuk-heading-xl govuk-!-margin-top-9 govuk-!-margin-bottom-5">Which type of beneficial owner or managing officer do you want to add?</h2>
+
+
+
+
+
 
 
 
