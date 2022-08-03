@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Historical beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the beneficial owner</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+
+      <form class="form" action="" method="get">
+
+        {{ govukInput({
+            label: {
+              text: "What is the beneficial owner's name?",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            id: "historical-beneficial-owner-name",
+            name: "historical-beneficial-owner-name"
+          }) }}
+
+
+          {{ govukDateInput({
+            id: "historical-beneficial-owner-start",
+            namePrefix: "historical-beneficial-owner-start",
+            fieldset: {
+              legend: {
+                text: "When did they become a beneficial owner?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+
+          {{ govukDateInput({
+              id: "historical-beneficial-owner-stop",
+              namePrefix: "historical-beneficial-owner-stop",
+              fieldset: {
+                legend: {
+                  text: "When did they cease to be a beneficial owner? (If relevant)",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 28 5 2011"
+              }
+            }) }}
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
+                          '
+            }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "/register/trusts/trust-involved-alt"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
