@@ -14,13 +14,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the land that has been disposed of</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">The entity must tell us if they’ve disposed of any land in England, Scotland and
-Wales between 28 February 2022 and the date of this application.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about UK property or land the entity has disposed of since 28 February 2022</h1>
+
+      <p class="govuk-body govuk govuk-!-margin-bottom-5 govuk-!-margin-top-5">The overseas entity must tell us if it has made a registrable:<br>
+    <ul class="govuk-body">
+    <li>Disposition under the Land Registration Act 2002 (England and Wales)
+    </li>
+    <li>Deed under the Land Registration (Scotland) Act 2012
+    </li>
+    </ul></p>
+
+<!--- {{ govukDetails({
+  summaryText: "More information about disposal of land",
+  html: "The overseas entity must tell us if it has made a registrable:<br>
+<ul>
+<li>Disposition under the Land Registration Act 2002 (England and Wales)
+</li>
+<li>Deed under the Land Registration (Scotland) Act 2012
+</li>
+</ul>"
+}) }} --->
 
       <form class="form" action="" method="get">
-
-
 
           {{ govukDateInput({
             id: "land-disposed-date",
@@ -45,19 +60,15 @@ Wales between 28 February 2022 and the date of this application.</p>
               },
               classes: "govuk-!-width-one-third",
               id: "land-title-number",
-              name: "land-title-number"
+              name: "land-title-number",
+              hint: {
+                text: "This is the registered title number of the qualifying estate or the title number of the title sheet in which the entity’s interest is registered."
+              }
             }) }}
 
-            {{ govukDetails({
-              summaryText: "More information about disposal of land",
-              html: "The overseas entity must tell us if it has made a registrable:<br>
-    <ul>
-      <li>Disposition under the Land Registration Act 2002 (England and Wales)
-      </li>
-      <li>Deed under the Land Registration (Scotland) Act 2012
-      </li>
-    </ul>"
-            }) }}
+
+
+
 
 
             {{ govukInsetText({
