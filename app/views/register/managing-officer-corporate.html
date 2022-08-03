@@ -209,37 +209,52 @@
 
         {% endcall %}
 
+
+
+        {% set stopDateHtml %}
+        <br>
         {{ govukDateInput({
           id: "officer-corp-enddate",
           namePrefix: "officer-corp-enddate",
           fieldset: {
             legend: {
-              text: "When did they cease to be a managing officer? (If relevant)",
+              text: "When did it stop being a managing officer?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           hint: {
             text: "For example, 28 5 2011"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "officer-stop",
+          name: "officer-stop",
+          fieldset: {
+            legend: {
+              text: "Did it stop being a managing officer after the overseas entity disposed of UK property or land?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
           },
           items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: endDay
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: endMonth
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: endYear
-    }
-  ]
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+        html: stopDateHtml
+       }
+     },
+     {
+              value: "no",
+              text: "No"
+            }
+          ]
         }) }}
+
+
 
 
 
