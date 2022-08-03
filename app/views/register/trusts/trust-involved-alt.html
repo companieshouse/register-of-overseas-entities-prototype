@@ -24,7 +24,7 @@
         <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
 
         {{ govukTable({
-          caption: "What you have added so far:",
+          caption: 'What <span class="govuk-visually-hidden">individuals or entities</span> you have added so far' | safe,
           captionClasses: "govuk-table__caption--l",
           firstCellIsHeader: true,
           classes: "govuk-!-margin-bottom-9",
@@ -115,7 +115,7 @@
             }) }}
 
             {{ govukButton({
-              text: "No more to add",
+              html: 'No more <span class="govuk-visually-hidden">individuals or entities</span> to add',
               classes: "govuk-button--secondary",
               href: '/register/trusts/check-answers-trusts-alt'
             }) }}
