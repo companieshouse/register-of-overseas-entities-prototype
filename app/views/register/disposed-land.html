@@ -14,21 +14,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the land that has disposed of</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can tell us about more later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the land that has been disposed of</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">The entity must tell us if they’ve disposed of any land in England, Scotland and
+Wales between 28 February 2022 and the date of this application.</p>
 
       <form class="form" action="" method="get">
 
-        {{ govukDetails({
-          summaryText: "More information about disposal of land",
-          html: "The overseas entity must tell us if it has made a registrable:<br>
-<ul>
-  <li>Disposition under the Land Registration Act 2002 (England and Wales)
-  </li>
-  <li>Deed under the Land Registration (Scotland) Act 2012
-  </li>
-</ul>"
-        }) }}
 
 
           {{ govukDateInput({
@@ -57,7 +48,16 @@
               name: "land-title-number"
             }) }}
 
-
+            {{ govukDetails({
+              summaryText: "More information about disposal of land",
+              html: "The overseas entity must tell us if it has made a registrable:<br>
+    <ul>
+      <li>Disposition under the Land Registration Act 2002 (England and Wales)
+      </li>
+      <li>Deed under the Land Registration (Scotland) Act 2012
+      </li>
+    </ul>"
+            }) }}
 
 
             {{ govukInsetText({
@@ -68,7 +68,7 @@
             }) }}
 
         {{ govukButton({
-          text: "Continue",
+          text: "Add",
           href: "/register/trusts/trust-involved-alt"
         }) }}
 
