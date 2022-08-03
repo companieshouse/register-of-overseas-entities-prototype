@@ -209,6 +209,38 @@
 
         {% endcall %}
 
+        {{ govukDateInput({
+          id: "managing-officer-corp-enddate",
+          namePrefix: "managing-officer-corp-enddate",
+          fieldset: {
+            legend: {
+              text: "When did they stop being a managing officer? (If relevant)",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 28 5 2011"
+          },
+          items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: endDay
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: endMonth
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: endYear
+    }
+  ]
+        }) }}
+
 
 
 
