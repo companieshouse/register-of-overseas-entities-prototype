@@ -575,96 +575,48 @@
 
 
 
-                        {% set indintDateHtml %}
+                        {% set stopDateHtml %}
                         <br>
                         {{ govukDateInput({
-                          id: "individual-interested-date",
-                          namePrefix: "individual-interested-date",
+                          id: "owner-enddate",
+                          namePrefix: "owner-enddate",
                           fieldset: {
                             legend: {
-                              text: "What date did they become an interested person?",
+                              text: "When did they stop being a beneficial owner?",
                               isPageHeading: false,
                               classes: "govuk-fieldset__legend--s"
                             }
                           },
                           hint: {
-                            text: "For example, 27 3 2007"
+                            text: "For example, 28 5 2011"
                           }
                         }) }}
                         {% endset -%}
 
                         {{ govukRadios({
-                          idPrefix: "trust-individual",
-                          name: "trust-individual",
+                          idPrefix: "owner-stop",
+                          name: "owner-stop",
                           fieldset: {
                             legend: {
-                              text: "What is their role within the trust?",
+                              text: "Did they stop being a beneficial owner after the overseas entity disposed of UK property or land?",
                               isPageHeading: false,
                               classes: "govuk-fieldset__legend--m"
                             }
                           },
                           items: [
                             {
-                              value: "beneficiary",
-                              text: "Beneficiary"
-                            },
-                            {
-                              value: "settlor",
-                              text: "Settlor"
-                            },
-                            {
-                              value: "grantor",
-                              text: "Grantor"
-                            },
-                            {
-                              value: "interested",
-                              text: "Interested person",
+                              value: "yes",
+                              text: "Yes",
                               conditional: {
-                        html: indintDateHtml
-                      }
+                        html: stopDateHtml
+                       }
+                     },
+                     {
+                              value: "no",
+                              text: "No"
                             }
                           ]
                         }) }}
-
-
-
-
-        {{ govukDateInput({
-          id: "owner-enddate",
-          namePrefix: "owner-enddate",
-          fieldset: {
-            legend: {
-              text: "When did they cease to be a beneficial owner? (If relevant)",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 28 5 2011"
-          },
-          items: [
-    {
-      classes: "govuk-input--width-2",
-      name: "day",
-      value: endDay
-    },
-    {
-      classes: "govuk-input--width-2",
-      name: "month",
-      value: endMonth
-    },
-    {
-      classes: "govuk-input--width-4",
-      name: "year",
-      value: endYear
-    }
-  ]
-        }) }}
-
-
-
-
-
 
 
 
