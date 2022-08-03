@@ -14,28 +14,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the beneficial owner</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the land that has disposed of</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can tell us about more later.</p>
 
       <form class="form" action="" method="get">
 
-        {{ govukInput({
-            label: {
-              text: "What is the beneficial owner's name?",
-              classes: "govuk-label--m",
-              isPageHeading: false
-            },
-            id: "historical-beneficial-owner-name",
-            name: "historical-beneficial-owner-name"
-          }) }}
+        {{ govukDetails({
+          summaryText: "When you must tell us about disposed land",
+          text: "The overseas entity must tell us if it has made a registrable:
+• disposition under the Land Registration Act 2002 (England and Wales)
+• deed under the Land Registration (Scotland) Act 2012
+ "
+        }) }}
 
 
           {{ govukDateInput({
-            id: "historical-beneficial-owner-start",
+            id: "land-disposed-date",
             namePrefix: "historical-beneficial-owner-start",
             fieldset: {
               legend: {
-                text: "When did they become a beneficial owner?",
+                text: "When did they dispose of the land?",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -45,20 +43,19 @@
             }
           }) }}
 
-          {{ govukDateInput({
-              id: "historical-beneficial-owner-stop",
-              namePrefix: "historical-beneficial-owner-stop",
-              fieldset: {
-                legend: {
-                  text: "When did they cease to be a beneficial owner? (If relevant)",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m"
-                }
+          {{ govukInput({
+              label: {
+                text: "What is the land title number?",
+                classes: "govuk-label--m",
+                isPageHeading: false
               },
-              hint: {
-                text: "For example, 28 5 2011"
-              }
+              classes: "govuk-!-width-one-third",
+              id: "land-title-number",
+              name: "land-title-number"
             }) }}
+
+
+
 
             {{ govukInsetText({
               html: '
