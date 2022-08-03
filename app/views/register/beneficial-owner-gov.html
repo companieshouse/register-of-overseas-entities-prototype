@@ -410,6 +410,40 @@ html: serviceAddressHtml
                 }) }}
 
 
+                {{ govukDateInput({
+                  id: "owner-enddate",
+                  namePrefix: "owner-enddate",
+                  fieldset: {
+                    legend: {
+                      text: "When did they cease to be a beneficial owner? (If relevant)",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 28 5 2011"
+                  },
+                  items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: endDay
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: endMonth
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: endYear
+            }
+          ]
+                }) }}
+
+
+
 <!--
         {% set PublicRegisterHtml %}
         {{ govukInput({

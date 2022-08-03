@@ -306,6 +306,43 @@
           }
         }) }}
 
+
+        {{ govukDateInput({
+          id: "owner-enddate",
+          namePrefix: "owner-enddate",
+          fieldset: {
+            legend: {
+              text: "When did they cease to be a beneficial owner? (If relevant)",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 28 5 2011"
+          },
+          items: [
+      {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: endDay
+      },
+      {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: endMonth
+      },
+      {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: endYear
+      }
+      ]
+        }) }}
+
+
+
+
+
         {% call govukFieldset({
           legend: {
             html: 'What is its nature of control?<br><p class="govuk-hint govuk-!-padding-top-1"> Select all that apply. If the beneficial owner is a trustee of a trust, you&#39ll need to enter trust information later in the service. </p>',
