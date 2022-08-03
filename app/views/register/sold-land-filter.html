@@ -19,25 +19,27 @@ Has the entity disposed of UK property or land since 28 February 2022?
 
 
 {{ govukRadios({
-  classes: "govuk-radios--inline",
   idPrefix: "soldLand",
   name: "soldLand",
   fieldset: {
     legend: {
-      text: "Has the entity disposed of UK property or land since 28 February 2022?
-",
+      text: "Has the entity disposed of any property or land in England, Scotland or Wales since 28 February 2022?  ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "No",
+      text: "No"
     },
     {
-      value: "no",
-      text: "No"
+      value: "Yes-some",
+      text: "Yes – some property or land"
+    },
+    {
+      value: "Yes",
+      text: "Yes – all property or land "
     }
   ]
 }) }}
