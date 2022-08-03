@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Historical beneficial owner – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the land that has been disposed of</h1>
+      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">The entity must tell us if they’ve disposed of any land in England, Scotland and
+Wales between 28 February 2022 and the date of this application.</p>
+
+      <form class="form" action="" method="get">
+
+
+
+          {{ govukDateInput({
+            id: "land-disposed-date",
+            namePrefix: "historical-beneficial-owner-start",
+            fieldset: {
+              legend: {
+                text: "When did they dispose of the land?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+
+          {{ govukInput({
+              label: {
+                text: "What is the title number of the land?",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+              classes: "govuk-!-width-one-third",
+              id: "land-title-number",
+              name: "land-title-number"
+            }) }}
+
+            {{ govukDetails({
+              summaryText: "More information about disposal of land",
+              html: "The overseas entity must tell us if it has made a registrable:<br>
+    <ul>
+      <li>Disposition under the Land Registration Act 2002 (England and Wales)
+      </li>
+      <li>Deed under the Land Registration (Scotland) Act 2012
+      </li>
+    </ul>"
+            }) }}
+
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
+                          '
+            }) }}
+
+        {{ govukButton({
+          text: "Add",
+          href: "/register/trusts/trust-involved-alt"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
