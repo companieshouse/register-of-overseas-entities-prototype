@@ -58,51 +58,48 @@
   ]
 }) }}
 
+<h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about UK property or land the entity has disposed of since 28 February 2022</h1>
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the land that has been disposed of</h1>
-      <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">The entity must tell us if they’ve disposed of any land in England, Scotland and
-Wales between 28 February 2022 and the date of this application.</p>
+<p class="govuk-body govuk govuk-!-margin-bottom-5 govuk-!-margin-top-5">The overseas entity must tell us if it has made a registrable:<br>
+<ul class="govuk-body">
+<li>Disposition under the Land Registration Act 2002 (England and Wales)
+</li>
+<li>Deed under the Land Registration (Scotland) Act 2012
+</li>
+</ul></p>
 
-      <form class="form" action="" method="get">
 
+<form class="form" action="" method="get">
 
+    {{ govukDateInput({
+      id: "land-disposed-date",
+      namePrefix: "land-disposed-date",
+      fieldset: {
+        legend: {
+          text: "When did they dispose of the land?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: "Tell us the date of the disposition or delivery of the deed.<br>For example, 27 3 2007"
+      }
+    }) }}
 
-          {{ govukDateInput({
-            id: "land-disposed-date",
-            namePrefix: "historical-beneficial-owner-start",
-            fieldset: {
-              legend: {
-                text: "When did they dispose of the land?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "For example, 27 3 2007"
-            }
-          }) }}
+    {{ govukInput({
+        label: {
+          text: "What is the title number of the land?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-!-width-one-third",
+        id: "land-title-number",
+        name: "land-title-number",
+        hint: {
+          text: "This is the registered title number of the qualifying estate or the title number of the title sheet in which the entity’s interest is registered."
+        }
+      }) }}
 
-          {{ govukInput({
-              label: {
-                text: "What is the title number of the land?",
-                classes: "govuk-label--m",
-                isPageHeading: false
-              },
-              classes: "govuk-!-width-one-third",
-              id: "land-title-number",
-              name: "land-title-number"
-            }) }}
-
-            {{ govukDetails({
-              summaryText: "More information about disposal of land",
-              html: "The overseas entity must tell us if it has made a registrable:<br>
-    <ul>
-      <li>Disposition under the Land Registration Act 2002 (England and Wales)
-      </li>
-      <li>Deed under the Land Registration (Scotland) Act 2012
-      </li>
-    </ul>"
-            }) }}
 
 
             {{ govukInsetText({
