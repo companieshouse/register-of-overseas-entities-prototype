@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What land or property you have added so far – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">What <span class="govuk-visually-hidden"> land</span> you have added so far</h1>
+
+
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Land disposal date"
+          },
+          {
+            text: "Land title number"
+          },
+          {
+            text: "",
+            classes: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "28 May 2022"
+            },
+            {
+              text: "CS72510"
+            },
+            {
+              html: '<a href="disposals/disposed-land">Change or remove <span class="govuk-visually-hidden">land or property</span></a>'
+            }
+          ]
+        ]
+      }) }}
+
+
+
+
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>TBA.</p>
+                          '
+            }) }}
+
+
+
+    <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Add property or land",
+          href: "/register/disposals/disposed-land"
+        }) }}
+
+        {{ govukButton({
+          text: "No more to add",
+           classes: "govuk-button--secondary",
+           href: '/register/check-answers'
+        }) }}
+</div>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
