@@ -14,15 +14,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about UK property or land the entity has disposed of since 28 February 2022</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about property or land the entity has disposed of</h1>
 
-      <p class="govuk-body govuk govuk-!-margin-bottom-5 govuk-!-margin-top-5">The overseas entity must tell us if it has made a registrable:<br>
-    <ul class="govuk-body">
-    <li>Disposition under the Land Registration Act 2002 (England and Wales)
-    </li>
-    <li>Deed under the Land Registration (Scotland) Act 2012
-    </li>
-    </ul></p>
+      <p class="govuk-body govuk govuk-!-margin-bottom-5 govuk-!-margin-top-5">
+        You must tell us if the entity has made a registrable disposition or deed with the Land Registries in Scotland, England and Wales since 28 February 2022.
+        <br><br>
+         You can add more later.
+      </p>
 
 <!--- {{ govukDetails({
   summaryText: "More information about disposal of land",
@@ -42,19 +40,19 @@
             namePrefix: "land-disposed-date",
             fieldset: {
               legend: {
-                text: "When did they dispose of the land?",
+                text: "When did it dispose of the property or land?",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m"
               }
             },
             hint: {
-              html: "Tell us the date of the disposition or delivery of the deed.<br>For example, 27 3 2007"
+              html: "For example, 27 5 2022"
             }
           }) }}
 
           {{ govukInput({
               label: {
-                text: "What is the title number of the land?",
+                text: "What is the title number?",
                 classes: "govuk-label--m",
                 isPageHeading: false
               },
@@ -62,11 +60,9 @@
               id: "land-title-number",
               name: "land-title-number",
               hint: {
-                text: "This is the registered title number of the qualifying estate or the title number of the title sheet in which the entity’s interest is registered."
+                text: "You can find this on the title register or title summary for the property or land."
               }
             }) }}
-
-
 
 
 
@@ -74,13 +70,13 @@
             {{ govukInsetText({
               html: '
                         <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                        <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
+                        <p>TBC.</p>
                           '
             }) }}
 
         {{ govukButton({
-          text: "Add",
-          href: "/register/trusts/trust-involved-alt"
+          text: "Add property or land",
+          href: "/register/disposals/added-so-far"
         }) }}
 
       </form>
