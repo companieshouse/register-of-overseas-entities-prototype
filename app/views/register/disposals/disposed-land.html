@@ -14,13 +14,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about property or land the entity has disposed of</h1>
+      <form class="form" action="/register/disposals/added-so-far" method="get">
 
-      <p class="govuk-body govuk govuk-!-margin-bottom-5 govuk-!-margin-top-5">
-        You must tell us if the entity has made a registrable disposition or deed with the Land Registries in Scotland, England and Wales since 28 February 2022.
-        <br><br>
-         You can add more later.
-      </p>
+
+
+
+      <h1 class="govuk-heading-xl">Tell us about property or land the entity has disposed of</h1>
+
+      <p class="govuk-body">
+        You must tell us if the entity has made a registrable disposition or deed with the Land Registries in Scotland, England and Wales since 28 February 2022.<p>
+
+           <p class="govuk-body">You can add more later.  </p>
 
 <!--- {{ govukDetails({
   summaryText: "More information about disposal of land",
@@ -33,7 +37,6 @@
 </ul>"
 }) }} --->
 
-      <form class="form" action="" method="get">
 
           {{ govukDateInput({
             id: "land-disposed-date",
@@ -75,8 +78,7 @@
             }) }}
 
         {{ govukButton({
-          text: "Add property or land",
-          href: "/register/disposals/added-so-far"
+          text: "Add property or land"
         }) }}
 
       </form>

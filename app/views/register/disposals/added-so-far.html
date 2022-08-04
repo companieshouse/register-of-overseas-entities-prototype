@@ -15,11 +15,15 @@
     <div class="govuk-grid-column-two-thirds">
 
 
+      <form class="form" action="" method="get">
+
+
+
       <h1 class="govuk-heading-xl">What <span class="govuk-visually-hidden"> land or property</span> you have added so far</h1>
 
 
       {{ govukTable({
-        firstCellIsHeader: true,
+        firstCellIsHeader: false,
         head: [
           {
             text: "Land disposal date"
@@ -41,7 +45,7 @@
               text: "CS72510"
             },
             {
-              html: '<a href="disposals/disposed-land">Change or remove <span class="govuk-visually-hidden">land or property</span></a>'
+              html: '<a href="/register/disposals/disposed-land">Change or remove <span class="govuk-visually-hidden">CS72510 / 28 May 2022</span></a>'
             }
           ]
         ]
@@ -70,7 +74,7 @@
         {{ govukButton({
           text: "No more to add",
            classes: "govuk-button--secondary",
-           href: '/register/check-answers'
+           href: "/register/disposals/disposed-land-info.html"
         }) }}
 </div>
 
