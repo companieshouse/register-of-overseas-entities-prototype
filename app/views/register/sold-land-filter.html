@@ -43,7 +43,12 @@ Has the entity disposed of any property or land in England, Scotland or Wales si
     }
   ]
 }) }}
-
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+        '
+}) }}
 
       {{ govukButton({
         text: "Continue"
