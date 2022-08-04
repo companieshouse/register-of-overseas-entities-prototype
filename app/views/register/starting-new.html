@@ -29,16 +29,20 @@ Do you want to continue with your current application? – {{ serviceName }} –
     }
   },
   hint: {
-  text: "You already have a registration in progress from the last time you signed in."
+  text: "You already have an application in progress."
 },
   items: [
     {
       value: "yes",
-      text: "Yes - continue with my current application"
+      text: "Yes"
     },
     {
       value: "no",
-      text: "No - start a new application"
+      text: "No - start a new application",
+      hint: {
+        text: "If you start a new application, your current one will be deleted."
+      },
+      checked: checked("statements", "noneIdentified")
     }
   ]
 }) }}
