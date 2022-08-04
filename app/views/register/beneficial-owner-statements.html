@@ -18,11 +18,17 @@
 
         <h1 class="govuk-heading-xl">Have any registrable beneficial owners been identified?</h1>
 
+
+        {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
+        <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
+        <!--Note, current intention is not to route users here is they select All - code added just in case-->
+
         {{ govukInsetText({
           text: "This includes any individuals or entities that were registrable beneficial owners of the overseas entity just before it disposed of its UK property or land.
           This also includes managing officers, if relevant."
         }) }}
 
+{% endif %}
 
 {% if errorStatements == true %}
         {{ govukRadios({
