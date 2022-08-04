@@ -574,9 +574,11 @@
 
 
 
+        {% if (data['soldLand'] === "no") %}
+        <!--Only show the 'When did they stop...' question if the user has answered 'Some' to /register/sold-land-filter-->
 
                         {% set stopDateHtml %}
-                        <br>
+
                         {{ govukDateInput({
                           id: "owner-enddate",
                           namePrefix: "owner-enddate",
@@ -618,6 +620,9 @@
                           ]
                         }) }}
 
+
+
+{% endif %}
 
 
         {% call govukFieldset({
