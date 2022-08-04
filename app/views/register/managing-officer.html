@@ -322,49 +322,55 @@
 
 
 
+        {% if (data['soldLand'] === "some") or (data['soldLand'] === "all") %}
+        <!--Only show the 'When did they stop...' question if the user has answered Some or All to /register/sold-land-filter-->
+        <!--Note, current intention is not to route users here is they select All - code added just in case-->
 
-        {% set stopDateHtml %}
-        <br>
-        {{ govukDateInput({
-          id: "officer-enddate",
-          namePrefix: "officer-enddate",
-          fieldset: {
-            legend: {
-              text: "When did they stop being a managing officer?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 28 5 2011"
-          }
-        }) }}
-        {% endset -%}
+            {% set stopDateHtml %}
 
-        {{ govukRadios({
-          idPrefix: "officer-stop",
-          name: "officer-stop",
-          fieldset: {
-            legend: {
-              text: "Did they stop being a managing officer after the overseas entity disposed of UK property or land?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-        html: stopDateHtml
-       }
-     },
-     {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
+                      {{ govukDateInput({
+                        id: "officer-enddate",
+                        namePrefix: "officer-enddate",
+                        fieldset: {
+                          legend: {
+                            text: "When did they stop being a managing officer?",
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--s"
+                          }
+                        },
+                        hint: {
+                          text: "For example, 28 5 2022"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      {{ govukRadios({
+                        idPrefix: "officer-stop",
+                        name: "officer-stop",
+                        fieldset: {
+                          legend: {
+                            text: "Did they stop being a managing officer after the overseas entity disposed of UK property or land?",
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--m"
+                          }
+                        },
+                        items: [
+                          {
+                            value: "yes",
+                            text: "Yes",
+                            conditional: {
+                      html: stopDateHtml
+                     }
+                   },
+                   {
+                            value: "no",
+                            text: "No"
+                          }
+                        ]
+                      }) }}
+
+{% endif %}
+
 
 
 
