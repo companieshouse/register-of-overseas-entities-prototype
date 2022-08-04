@@ -17,29 +17,30 @@
     <!---  <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us additional information about the disposal</h1>
 --->
 
+<h1 class="govuk-heading-xl">Tell us about the entity at the time of the disposal</h1>
+
+
 {{ govukTextarea({
   name: "land-detail",
   id: "land-detail",
   label: {
-    text: "Tell us more about the disposal of the land",
-    classes: "govuk-label--xl",
-    isPageHeading: true
+    isPageHeading: false
   },
   hint: {
-    text: "If you’ve disposed of land during the transitional period and the information about the overseas entity was different when the land was disposed, give the details below."
+    text: "Give us more details if the information you’ve provided about the overseas entity was different when the property or land was disposed of."
   }
 }) }}
 
             {{ govukInsetText({
               html: '
                         <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                        <p>None of the information you provide about the trust will be shown on the public Register of Overseas Entities. However, it may be shared with HMRC.</p>
+                        <p>TBC.</p>
                           '
             }) }}
 
         {{ govukButton({
           text: "Continue",
-          href: "/register/trusts/trust-involved-alt"
+          href: "/register/check-answers"
         }) }}
 
       </form>
