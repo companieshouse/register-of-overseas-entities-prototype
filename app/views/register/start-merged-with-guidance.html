@@ -154,16 +154,20 @@
         <li>registered office address and correspondence address</li>
         <li>email address - we'll use this to send important information, including the Overseas Entity ID</li>
         <li>legal form and governing law </li>
-        <li>public register it appears on and its registration number (if relevant)</li>
+        <li>public register it appears on and its registration number (if it has one)</li>
       </ul>
 
+      <!--
       <p class="govuk-body">If the entity has disposed of UK property or land since 28 February 2022, it will need to file on paper. It will also need to tell us:
 
-      <ul class="govuk-list govuk-list--bullet">
+      <ul class="govuk-list govuk-list-bullet">
          <li>the deed or title number of the land or property</li>
          <li>the date that the land or property was disposed of</li>
          <li>details of any additional beneficial owners or managing officers at the time the land or property was disposed of</li>
       </ul>
+      -->
+
+
 
 
       <h3 class="govuk-heading-s">UK-regulated agent information</h3>
@@ -174,17 +178,18 @@
           <li>name</li>
           <li>correspondence address</li>
           <li>email address – we'll use this if we need more information about the verification checks</li>
+          <li>supervisory body</li>
+          <li>Anti-Money Laundering (AML) number, if you have one</li>
         </ul>
 
-        <p class="govuk-body">If you're the UK-regulated agent, you'll also need to tell us:</p>
+        <p class="govuk-body">You’ll also need to tell us the name of the person with overall responsibility for verification checks.</p>
 
+        <p class="govuk-body">If you’re the UK-regulated agent, you’ll also need to tell us:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>when the verification checks were completed</li>
-          <li>the name of your supervisory body</li>
-          <li>your Anti-Money Laundering (AML) number, if you have one</li>
-          <li>the name of the person with overall responsibility for verification checks</li>
           <li>your <a href="/register/guidance-code" class="govuk-link">agent assurance code</a></li>
         </ul>
+
 
       <h3 class="govuk-heading-s">Beneficial owner information: individual person</h3>
 
@@ -234,7 +239,7 @@
 
       <h3 class="govuk-heading-s">If no beneficial owners can be identified</h3>
 
-      <p>If there are no beneficial owners, you'll need to give us information about the overseas entity's managing officers. This is a director, manager or company secretary of the overseas entity.</p>
+      <p>If there are no beneficial owners, or you have not identified all your beneficial owners, you’ll need to give us information about the overseas entity’s managing officers. This is a director, manager or company secretary of the overseas entity.</p>
 
       <h3 class="govuk-heading-s">Managing officer information: individual</h3>
 
@@ -296,13 +301,13 @@
   text: "Verification checks must be completed no more than 3 months before the overseas entity is registered."
 }) }}
 
-    <p class="govuk-body"><a href="javascript:void(0)" class="govuk-link">Find out what’s required for verification checks</a>.</p>
+    <p class="govuk-body">Read the <a href="https://www.gov.uk/government/publications/register-of-overseas-entities-guidance-on-registration-and-verification" class="govuk-link">Register of Overseas Entities: guidance on registration and verification</a>.</p>
 
     <h3 class="govuk-heading-s">Agent assurance code</h3>
-    <p class="govuk-body">The UK-regulated agent will need to <a href="/register/guidance-code" class="govuk-link">request an agent assurance code from Companies House</a>. This confirms that the agent has authorisation to carry out verification checks on an overseas entity. We cannot register an overseas entity without a code.</p>
+    <p class="govuk-body">The UK-regulated agent will need to <a href="/register/guidance-code" class="govuk-link">request an agent assurance code from Companies House</a>. This confirms that the agent has authorisation to file verification checks statements for an overseas entity. We cannot register an overseas entity without a code.</p>
 
     <h3 class="govuk-heading-s">Overseas entity verification checks statement</h3>
-    <p class="govuk-body">If the UK-regulated agent that carried out the verification checks is also registering the overseas entity, it can complete this statement as part of the registration service. Otherwise, it will need to submit a <a href="/register/guidance-code#use" class="govuk-link">Overseas entity verification checks statement</a>.</p>
+    <p class="govuk-body">If the UK-regulated agent that carried out the verification checks is also registering the overseas entity, it can complete this statement as part of the registration service. Otherwise, it will need to submit an <a href="/register/guidance-code#use" class="govuk-link">Overseas entity verification checks statement</a>.</p>
 
 
       <h3 id="what-information-shown-on-public-register" class="govuk-heading-m">What information will be shown on the public register</h3>
@@ -317,6 +322,7 @@
         <li>the agent assurance code</li>
         <li>the date verification checks were completed</li>
         <li>information about trusts, however it may be shared with HMRC</li>
+        <li>email addresses</li>
       </ul>
 
 
@@ -331,14 +337,12 @@
         <li>to give <a href="/register/guidance#what-information-you-need-to-submit" class="govuk-link">information about the overseas entity and its beneficial owners or managing officers</a></li>
         <li>to tell us about the UK-regulated agent that completed <a href="/register/guidance#what-identity-checks-are-needed" class="govuk-link">verification checks</a></li>
         <li>to give information about <a href="/register/guidance#how-to-submit-information-about-trusts" class="govuk-link">trusts</a> (if relevant)</li>
-        <li>a credit or debit card to pay the £100 registration fee - for now, you cannot pay with a Companies House payment account</li>
+        <li>to pay the £100 registration fee using a credit or debit card, or Companies House account</li>
       </ul>
 
   <p class="govuk-body">You'll need also need to provide an <a href="/register/guidance-code" class="govuk-link">agent assurance code</a> if you're the UK-regulated agent who carried out the verification checks.</p>
 
-  {{ govukInsetText({
-  text: "This service could take a while to complete and you cannot save your answers. The service will time out if you do not use it for 60 minutes."
-  }) }}
+    <p class="govuk-body">This service could take a while to complete and you cannot save your answers. The service will time out if you do not use it for 60 minutes. </p>
 
       {{ govukButton({
         text: "Start now",
@@ -362,10 +366,6 @@
 
       <p class="govuk-body">An overseas entity can apply to be removed from the Register of Overseas Entities if it is not, or is no longer, a registered owner of land or property in the UK.</p>
 
-{{ govukInsetText({
-  text: "The sections of The Economic Crime (Transparency and Enforcement) Act 2022 relating to updates and removal have not yet come into force. This means that updates and removal applications can only be made once this happens."
-}) }}
-
-
+      <p class="govuk-body">The sections of The Economic Crime (Transparency and Enforcement) Act 2022 relating to updates and removal have not yet come into force. This means that updates and removal applications can only be made once this happens.</p>
 
 {% endblock %}
