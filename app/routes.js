@@ -15,7 +15,7 @@ require('./routes/secure-register-filter.js')(router)
 require('./routes/trust-involved.js')(router)
 require('./routes/trust-involved-additions.js')(router)
 require('./routes/relevant-person.js')(router)
-//require('./routes/starting-new.js')(router)
+require('./routes/starting-new.js')(router)
 require('./routes/trust-involved-alt.js')(router)
 require('./routes/disposals.js')(router)
 
