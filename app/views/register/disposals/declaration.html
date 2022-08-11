@@ -19,9 +19,31 @@ Disposal of land declaration
 
     <form action="/register/interrupt-card" method="get">
 
+      <h1 class="govuk-heading-xl">Disposal of land declaration</h1>
 
-<h1 class="govuk-heading-xl">Disposal of land declaration</h1>
 
+{{ govukCheckboxes({
+  idPrefix: "diligence",
+  name: "diligence",
+  fieldset: {
+    legend: {
+    }
+  },
+  hint: {
+    text: "Lorem ipsum"
+  },
+  items: [
+    {
+      value: "agree",
+      text: "I confirm that this application includes all the information required under ...",
+      checked: checked("diligence", "agree")
+    }
+  ]
+}) }}
+
+
+
+<!--- Not sure which layout to go for - with hint text above, below is without hint text
 
 {{ govukCheckboxes({
   idPrefix: "diligence",
@@ -41,7 +63,7 @@ Disposal of land declaration
     }
   ]
 }) }}
-
+--->
 
 
 {{ govukInsetText({
