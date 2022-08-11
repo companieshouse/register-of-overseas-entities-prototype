@@ -24,7 +24,7 @@ module.exports = function (router) {
         errorList: errors
       })
     } else {
-      res.redirect('/register/sold-land-filter')
+      res.redirect('/register/starting-new')
     }
   })
 }
