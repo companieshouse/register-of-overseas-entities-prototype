@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Has anything about the entities changed since the disposal of land?
+Have any of the entities details changed since the disposal of land?
  – {{ serviceName }} – GOV.UK
 {% endblock %}
 
@@ -17,16 +17,17 @@ Has anything about the entities changed since the disposal of land?
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form action="/register/interrupt-card" method="get">
+
+    <form classes="form" action="/register/disposals/declaration" method="get">
 
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "secureRegister",
-  name: "secureRegister",
+  idPrefix: "disposalsChanged",
+  name: "disposalsChanged",
   fieldset: {
     legend: {
-      text: "Has anything about the entities changed since the disposal of land?
+      text: "Have any of the entities details changed since the disposal of land?
 ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
