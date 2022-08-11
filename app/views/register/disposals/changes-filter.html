@@ -27,14 +27,14 @@ Have any of the entities details changed since the disposal of land?
   name: "disposalsChanged",
   fieldset: {
     legend: {
-      text: "Have any of the entities details changed since the disposal of land?
+      text: "Was the information about the overseas entity different when the property or land was disposed of?
 ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
   hint: {
-  text: "This includes addresses, names and lorem ipsum."
+  text: "This includes any changes to the information you've provided so far. For example, a change of name or address."
 },
   items: [
     {
@@ -48,15 +48,6 @@ Have any of the entities details changed since the disposal of land?
   ]
 }) }}
 
-
-
-
-{{ govukInsetText({
-  html: '
-            <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
-              '
-}) }}
 
       {{ govukButton({
         text: "Continue"
