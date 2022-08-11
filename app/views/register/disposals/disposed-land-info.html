@@ -33,25 +33,6 @@
 }) }}
 
 
-{{ govukCheckboxes({
-  idPrefix: "diligence",
-  name: "diligence",
-  fieldset: {
-    legend: {
-      text: "Declaration ",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "agree",
-      text: "I confirm that this application includes all the information required under ...",
-      checked: checked("diligence", "agree")
-    }
-  ]
-}) }}
-
 
 {{ govukInsetText({
   html: '

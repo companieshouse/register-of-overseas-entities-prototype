@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Disposal of land declaration
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="/register/interrupt-card" method="get">
+
+
+<h1 class="govuk-heading-xl">Disposal of land declaration</h1>
+
+
+{{ govukCheckboxes({
+  idPrefix: "diligence",
+  name: "diligence",
+  fieldset: {
+    legend: {
+      text: "Declaration",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "agree",
+      text: "I confirm that this application includes all the information required under ...",
+      checked: checked("diligence", "agree")
+    }
+  ]
+}) }}
+
+
+
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+              '
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
