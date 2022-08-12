@@ -1119,92 +1119,60 @@
       </dl>
 
       <h2 class="govuk-heading-l">Disposals</h2>
+           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      <h3 class="govuk-heading-m">Sub-heading 1</h3>
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Land or property disposed of
+             </dt>
+             <dd class="govuk-summary-list__value">
 
-              {{ govukTable({
-                firstCellIsHeader: false,
-                head: [
-                  {
-                    text: "Disposal date"
-                  },
-                  {
-                    text: "Title number"
-                  },
-                  {
-                    text: "",
-                    classes: ""
-                  }
-                ],
-                rows: [
-                  [
-                    {
-                      text: "28 May 2022"
-                    },
-                    {
-                      text: "CS72510"
-                    },
-                    {
-                      html: '<a href="/register/disposals/disposed-land">Change<span class="govuk-visually-hidden">CS72510 / 28 May 2022</span></a>',
-                      classes: "check-answers-change-table"
-                    }
-                  ],
-                  [
-                    {
-                      text: "10 June 2022"
-                    },
-                    {
-                      text: "YM39675"
-                    },
-                    {
-                      html: '<a href="/register/disposals/disposed-land">Change<span class="govuk-visually-hidden">CS72510 / 28 May 2022</span></a>',
-                      classes: "check-answers-change-table"
-                    }
-                  ]
-                ]
-              }) }}
+               <ul class="govuk-list govuk-list--bullet">
+                 <li><span class="govuk-visually-hidden">Disposal date</span> 28 May 2022 / <span class="govuk-visually-hidden">Title number</span>CS72510 <!-- screen reader friendly text needed on these --></li>
+                 <li><span class="govuk-visually-hidden">Disposal date</span> 2 June 2022 / <span class="govuk-visually-hidden">Title number</span>AA44567</li>
+                 <li><span class="govuk-visually-hidden">Disposal date</span>10 June 2022 / <span class="govuk-visually-hidden">Title number</span>YM39675</li>
+               </ul>
 
-              <h3 class="govuk-heading-m">Sub-heading 2</h3>
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/disposals/added-so-far">
+                 Change
+                 <span class="govuk-visually-hidden">Land or property disposed of</span></span>
+               </a>
+             </dd>
+           </div>
 
-              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+           <div class="govuk-summary-list__row">
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Was the information about the overseas entity different when the property or land was disposed of?
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Yes
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a href="/register/trusts/trust-details-upload">
-                    Change
-                    <span class="govuk-visually-hidden">Disposals - details of the entity that have changed</span></span>
-                  </a>
-                </dd>
-              </div>
+             <dt class="govuk-summary-list__key">
+               Was the information about the overseas entity different when the property or land was disposed of?
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Yes
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/disposals/changes-filter">
+                 Change
+                 <span class="govuk-visually-hidden"> Was the information about the overseas entity different when the property or land was disposed of?</span></span>
+               </a>
+             </dd>
+           </div>
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+           What entity information was different at the time of the disposal?
+               </dt>
+               <dd class="govuk-summary-list__value">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae lacus ac enim dignissim tempor. Suspendisse potenti. Nam nec ultricies purus. Integer et posuere nulla. Ut cursus libero ut commodo ultricies. Vivamus luctus dolor urna, at dapibus velit tincidunt quis. Sed mauris sapien, imperdiet sit amet tellus ullamcorper, facilisis rhoncus nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc a diam eu sem malesuada rutrum nec at tellus. Donec quis iaculis lectus.
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <a href="/register/disposals/disposed-land-info">
+                   Change
+                   <span class="govuk-visually-hidden">Disposals - details of the entity that have changed</span></span>
+                 </a>
+               </dd>
+             </div>
 
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-      What entity information was different at the time of the disposal?
-          </dt>
-          <dd class="govuk-summary-list__value">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae lacus ac enim dignissim tempor. Suspendisse potenti. Nam nec ultricies purus. Integer et posuere nulla. Ut cursus libero ut commodo ultricies. Vivamus luctus dolor urna, at dapibus velit tincidunt quis. Sed mauris sapien, imperdiet sit amet tellus ullamcorper, facilisis rhoncus nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc a diam eu sem malesuada rutrum nec at tellus. Donec quis iaculis lectus.
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/register/trusts/trust-details-upload">
-              Change
-              <span class="govuk-visually-hidden">Disposals - details of the entity that have changed</span></span>
-            </a>
-          </dd>
-        </div>
-
-
-
-
-</dl>
-
+     </dl>
 
 
 
