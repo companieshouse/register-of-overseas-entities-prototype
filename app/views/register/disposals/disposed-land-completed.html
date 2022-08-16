@@ -38,6 +38,13 @@
 }) }} --->
 
 
+<!-- Note for Dev
+Please ensure that users cannot put in a date that is BEFORE 28th Feb 2022
+
+Note for IxD/content
+We need to add in an error message for a correct date
+--->
+
           {{ govukDateInput({
             id: "land-disposed-date",
             namePrefix: "land-disposed-date",
@@ -45,14 +52,30 @@
               legend: {
                 text: "When did it dispose of the property or land?",
                 isPageHeading: false,
-                value: "28 05 2022",
                 classes: "govuk-fieldset__legend--m"
               }
             },
             hint: {
-              html: "For example, 27 5 2022"
-            }
-          }) }}
+              text: "For example, 27 5 2022"
+            },
+            items:[
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: "28"
+            },
+                {
+                  classes: "govuk-input--width-2",
+                  name: "month",
+                  value: "5"
+                },
+                {
+                  classes: "govuk-input--width-4",
+                  name: "year",
+                  value: "2022"
+                }
+              ]
+            }) }}
 
           {{ govukInput({
               label: {
