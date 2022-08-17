@@ -19,9 +19,10 @@
 
 
 
-{{ govukTextarea({
+{{ govukCharacterCount({
   name: "land-detail",
   id: "land-detail",
+  maxlength: 1000,
   label: {
     text: "Tell us what entity information was different at the time of the disposal",
     classes: "govuk-label--xl",
@@ -31,6 +32,8 @@
     text: "You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
   }
 }) }}
+
+
 
 
 
