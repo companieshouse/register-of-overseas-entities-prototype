@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us about property or land the entity has disposed of – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/disposals/added-so-far" method="get">
+
+
+
+
+      <h1 class="govuk-heading-xl">Tell us about property or land the entity has disposed of</h1>
+
+      <p class="govuk-body">
+        You must tell us if the entity has disposed of land or property in England, Wales or Scotland since 28 February 2022.<p>
+
+           <p class="govuk-body">You can add more later.  </p>
+
+<!--- {{ govukDetails({
+  summaryText: "More information about disposal of land",
+  html: "The overseas entity must tell us if it has made a registrable:<br>
+<ul>
+<li>Disposition under the Land Registration Act 2002 (England and Wales)
+</li>
+<li>Deed under the Land Registration (Scotland) Act 2012
+</li>
+</ul>"
+}) }} --->
+
+
+          {{ govukDateInput({
+            id: "land-disposed-date",
+            namePrefix: "land-disposed-date",
+            fieldset: {
+              legend: {
+                text: "When did it dispose of the property or land?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html: "For example, 27 5 2022"
+            }
+          }) }}
+
+          {{ govukInput({
+              label: {
+                text: "What is the title number?",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+              classes: "govuk-!-width-one-third",
+              id: "land-title-number",
+              name: "land-title-number",
+              hint: {
+                text: "You can find this on the title register or title summary for the property or land."
+              }
+            }) }}
+
+
+
+            {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "disposalsChanged",
+            name: "disposalsChanged",
+            fieldset: {
+              legend: {
+                text: "Was any information about the overseas entity different when the property or land was disposed of?
+            ",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+            text: "This includes any changes to the information you've provided so far about the overseas entity and its beneficial owners or managing officers."
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+            }) }}
+
+
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+                    '
+            }) }}
+
+        {{ govukButton({
+          text: "Add property or land"
+        }) }}
+
+
+        <form classes="form" action="/register/disposals/declaration" method="get">
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
