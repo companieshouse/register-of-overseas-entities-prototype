@@ -21,10 +21,45 @@
                 {% set inputBox %}
                 <br>
                 {{ govukTextarea({
+                  name: "disposalInfo",
+                  id: "disposalInfo",
+                  label: {
+                    text: "What has changed about them?",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+                  }
+                }) }}
+                {% endset -%}
+
+
+
+                {% set inputBoxFormerBO %}
+                <br>
+                {{ govukTextarea({
                   name: "more-detail",
                   id: "more-detail",
                   label: {
-                    text: "Can you provide more detail?",
+                    text: "Tell us about the former beneficial officer",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+                  }
+                }) }}
+                {% endset -%}
+
+
+                {% set inputBoxFormerMO %}
+                <br>
+                {{ govukTextarea({
+                  name: "more-detail",
+                  id: "more-detail",
+                  label: {
+                    text: "Tell us about the former managing officer",
                     classes: "govuk-label--s",
                     isPageHeading: true
                   },
@@ -60,31 +95,31 @@
       }
     },
     {
-      value: "phone",
+      value: "boChange",
       text: "Joe Bloggs - Beneficial owner",
       conditional: {
         html: inputBox
       }
     },
     {
-      value: "text",
+      value: "moChange",
       text: "Jane Doe - Managing officer",
       conditional: {
         html: inputBox
       }
     },
     {
-      value: "phone",
+      value: "formerboChange",
       text: "Former beneficial owner",
       conditional: {
-        html: phoneHtml
+        html: inputBoxFormerBO
       }
     },
     {
-      value: "phone",
+      value: "formermoChange",
       text: "Former managing officer",
       conditional: {
-        html: phoneHtml
+        html: inputBoxFormerMO
       }
     }
 
@@ -92,9 +127,10 @@
 }) }}
 
 
-
-
-
+{{ govukDetails({
+  summaryText: "Lorem ipsum",
+  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+}) }}
 
 
             {{ govukInsetText({
