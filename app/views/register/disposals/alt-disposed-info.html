@@ -16,6 +16,37 @@
 
       <form class="form" action="/register/disposals/added-so-far" method="get">
 
+
+
+                {% set entityDateHtml %}
+                <br>
+                {{ govukDateInput({
+                  id: "entity-interested-date",
+                  namePrefix: "entity-interested-date",
+                  fieldset: {
+                    legend: {
+                      text: "What date did it become an interested person?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  hint: {
+                    text: "For example, 27 3 2007"
+                  }
+                }) }}
+                {% endset -%}
+
+
+
+
+
+
+
+
+
+
+
+
            {{ govukRadios({
              classes: "govuk-radios",
              idPrefix: "changed-name",
@@ -33,26 +64,40 @@
              items: [
                {
                  value: "entity",
-                 text: "Overseas entity"
+                 text: "Overseas entity",
+                 conditional: {
+             html: entityDateHtml
                },
                {
                  value: "bojoebloggs",
-                 text: "Beneficial owner - Joe Bloggs"
+                 text: "Beneficial owner - Joe Bloggs",
+                 conditional: {
+             html: entityDateHtml
                },
                {
                  value: "mojanedoe",
-                 text: "Managing officer - Jane Doe"
+                 text: "Managing officer - Jane Doe",
+                 conditional: {
+             html: entityDateHtml
                },
                {
                  value: "formermo",
-                   text: "Former managing officer"
+                   text: "Former beneficial owner",
+                   conditional: {
+               html: entityDateHtml
              },
              {
                value: "formerbo",
-                 text: "Former beneficial owner"
+                 text: "Former managing officer",
+                 conditional: {
+             html: entityDateHtml
            }
-             ]
-           }) }}
+         }
+       ]
+     }) }}
+
+
+
 
 
 
