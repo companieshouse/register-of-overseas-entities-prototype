@@ -18,20 +18,18 @@
 
 
 
-                {% set entityDateHtml %}
+                {% set inputBox %}
                 <br>
-                {{ govukDateInput({
-                  id: "entity-interested-date",
-                  namePrefix: "entity-interested-date",
-                  fieldset: {
-                    legend: {
-                      text: "What date did it become an interested person?",
-                      isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
-                    }
+                {{ govukTextarea({
+                  name: "more-detail",
+                  id: "more-detail",
+                  label: {
+                    text: "Can you provide more detail?",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
                   },
                   hint: {
-                    text: "For example, 27 3 2007"
+                    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
                   }
                 }) }}
                 {% endset -%}
@@ -41,8 +39,8 @@
 
            {{ govukRadios({
              classes: "govuk-radios",
-             idPrefix: "changed-name",
-             name: "changed-name",
+             idPrefix: "disposalChanges",
+             name: "disposalChanges",
              fieldset: {
                legend: {
                  text: "What does this change relate to?",
@@ -55,37 +53,36 @@
              },
              items: [
     {
-      value: "email",
-      text: "Email",
-      checked: true,
+      value: "entitychange",
+      text: "Overseas entity",
       conditional: {
-        html: emailHtml
+        html: inputBox
       }
     },
     {
       value: "phone",
-      text: "Phone",
+      text: "Joe Bloggs - Beneficial owner",
       conditional: {
-        html: phoneHtml
+        html: inputBox
       }
     },
     {
       value: "text",
-      text: "Text message",
+      text: "Jane Doe - Managing officer",
       conditional: {
-        html: textHtml
+        html: inputBox
       }
     },
     {
       value: "phone",
-      text: "Phone",
+      text: "Former beneficial owner",
       conditional: {
         html: phoneHtml
       }
     },
     {
       value: "phone",
-      text: "Phone",
+      text: "Former managing officer",
       conditional: {
         html: phoneHtml
       }
