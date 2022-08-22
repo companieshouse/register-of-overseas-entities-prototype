@@ -39,14 +39,6 @@
 
 
 
-
-
-
-
-
-
-
-
            {{ govukRadios({
              classes: "govuk-radios",
              idPrefix: "changed-name",
@@ -62,39 +54,45 @@
                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
              },
              items: [
-               {
-                 value: "entity",
-                 text: "Overseas entity",
-                 conditional: {
-             html: entityDateHtml
-               },
-               {
-                 value: "bojoebloggs",
-                 text: "Beneficial owner - Joe Bloggs",
-                 conditional: {
-             html: entityDateHtml
-               },
-               {
-                 value: "mojanedoe",
-                 text: "Managing officer - Jane Doe",
-                 conditional: {
-             html: entityDateHtml
-               },
-               {
-                 value: "formermo",
-                   text: "Former beneficial owner",
-                   conditional: {
-               html: entityDateHtml
-             },
-             {
-               value: "formerbo",
-                 text: "Former managing officer",
-                 conditional: {
-             html: entityDateHtml
-           }
-         }
-       ]
-     }) }}
+    {
+      value: "email",
+      text: "Email",
+      checked: true,
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: textHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+
+  ]
+}) }}
 
 
 
