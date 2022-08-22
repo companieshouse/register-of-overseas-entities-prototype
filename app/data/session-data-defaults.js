@@ -22,7 +22,7 @@ module.exports = {
   // Insert values here
 
   "email": [ "user@testcompany.co.uk" ],
-  "trust-name": [ "Trust 123" ]
+  "trust-name": [ "Islands Trust" ]
   //remember to put the comma back at the end of line 25!
 //  "contact-full-name": [ "Claire Contact" ],
 //  "contact-email": [ "contact@testcompany.co.uk" ]
