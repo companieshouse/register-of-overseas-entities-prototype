@@ -18,14 +18,12 @@
       <form class="form" action="/register/disposals/declaration" method="get">
 
 
-
-{{ govukCharacterCount({
+{{ govukTextarea({
   name: "land-detail",
   id: "land-detail",
-  maxlength: 1000,
   label: {
     text: "Tell us what information was different at the time of the disposal",
-    classes: "govuk-label--xl",
+    classes: "govuk-label--l",
     isPageHeading: true
   },
   hint: {
