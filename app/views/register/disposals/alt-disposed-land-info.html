@@ -88,9 +88,16 @@
         '
 }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Tell us about more changes"
+  }) }}
+
+  {{ govukButton({
+    text: "No more changes",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
 
       </form>
 
