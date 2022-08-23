@@ -24,6 +24,8 @@ module.exports = function (router) {
         errorList: errors
       })
     } else {
+      // Required fields have been captured and as such set the "are we signed in?" variable (gSignedIn) to TRUE
+      var gSignedIn = true;
       res.redirect('/register/starting-new')
     }
   })

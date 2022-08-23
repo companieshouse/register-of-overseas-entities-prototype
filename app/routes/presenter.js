@@ -1,12 +1,20 @@
 module.exports = function (router) {
   router.get( '/register/presenter', function ( req, res ) {
-    var contactName = req.session.data['contact-full-name']
-    var contactEmail = req.session.data['contact-email']
-  	res.render( 'register/presenter', {
-    contactName: contactName,
-    contactEmail: contactEmail
-  })
-  })
+
+	// If the "are we signed in?" variable (gSignedIn) is TRUE then...
+	if (req.session.data['gSignedIn'] === true) {
+		var contactName = req.session.data['contact-full-name']
+		var contactEmail = req.session.data['contact-email']
+		res.render( 'register/presenter', {
+			contactName: contactName,
+			contactEmail: contactEmail
+		})
+	// otherwise...
+	} else {
+		res.render( 'register/presenter', {
+		})
+	}
+	})
 
   router.post( '/register/presenter', function ( req, res ) {
   	var contactName = req.session.data['contact-full-name']
