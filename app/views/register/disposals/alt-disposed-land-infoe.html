@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us about the entity at the time of the disposal – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/register/disposals/declaration" method="get">
+
+
+{{ govukTextarea({
+  name: "land-detail",
+  id: "land-detail",
+  label: {
+    text: "Tell us what information was different at the time of the disposal",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+  }
+}) }}
+
+
+
+
+
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+        '
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

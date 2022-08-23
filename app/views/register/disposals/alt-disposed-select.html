@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What does this change relate to? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/disposals/added-so-far" method="get">
+
+
+
+           {{ govukRadios({
+             classes: "govuk-radios",
+             idPrefix: "disposalChanges",
+             name: "disposalChanges",
+             fieldset: {
+               legend: {
+                 text: "What does this change relate to?",
+                 isPageHeading: true,
+                 classes: "govuk-fieldset__legend--xl"
+               }
+             },
+             hint: {
+               text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+             },
+             items: [
+    {
+      value: "entitychange",
+      text: "Overseas entity"
+      },
+    {
+      value: "boChange",
+      text: "Joe Bloggs - Beneficial owner"
+    },
+    {
+      value: "moChange",
+      text: "Jane Doe - Managing officer"
+    },
+    {
+      value: "formerboChange",
+      text: "Former beneficial owner"
+    },
+    {
+      value: "formermoChange",
+      text: "Former managing officer"
+    }
+
+  ]
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "Lorem ipsum",
+  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+}) }}
+
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+                    '
+            }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+        <form classes="form" action="/register/disposals/declaration" method="get">
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
