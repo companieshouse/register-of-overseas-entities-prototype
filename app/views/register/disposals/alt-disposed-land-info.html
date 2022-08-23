@@ -21,13 +21,13 @@
         <!--Note, current intention is not to route users here is they select All - code added just in case-->
 
   {% if (data['disposalChanges'] === "entityChange") or (data['disposalChanges'] === "boChange") or (data['disposalChanges'] === "moChange") %}
-
+<span class="govuk-caption-xl">Joe Bloggs</span>
         {{ govukTextarea({
           name: "land-detail",
           id: "land-detail",
           label: {
             text: "What has changed about them?",
-            classes: "govuk-label--l",
+            classes: "govuk-label--xl",
             isPageHeading: true
           },
           hint: {
@@ -47,7 +47,7 @@
   id: "land-detail-bo",
   label: {
     text: "Tell us about the former Beneficial officer",
-    classes: "govuk-label--l",
+    classes: "govuk-label--xl",
     isPageHeading: true
   },
   hint: {
@@ -68,7 +68,7 @@
   id: "land-detail-mo",
   label: {
     text: "Tell us about the former Managing officer",
-    classes: "govuk-label--l",
+    classes: "govuk-label--xl",
     isPageHeading: true
   },
   hint: {
