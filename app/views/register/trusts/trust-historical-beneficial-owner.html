@@ -14,6 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+        <span class="govuk-caption-l">{{ data['trust-name'] }}</span>
       <h1 class="govuk-heading-xl govuk-!-margin-0">Tell us about the former beneficial owner</h1>
       <p class="govuk-!-margin-bottom-5 govuk-!-margin-top-5">You can add more later.</p>
 
@@ -68,7 +69,7 @@
             }) }}
 
         {{ govukButton({
-          text: "Continue",
+          text: "Save and continue",
           href: "/register/trusts/trust-involved-alt"
         }) }}
 

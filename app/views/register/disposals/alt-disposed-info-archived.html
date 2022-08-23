@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What does this change relate to? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/disposals/added-so-far" method="get">
+
+
+
+                {% set inputBox %}
+                <br>
+                {{ govukTextarea({
+                  name: "disposalInfo",
+                  id: "disposalInfo",
+                  label: {
+                    text: "What has changed about them?",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+                  }
+                }) }}
+                {% endset -%}
+
+
+
+                {% set inputBoxFormerBO %}
+                <br>
+                {{ govukTextarea({
+                  name: "more-detail",
+                  id: "more-detail",
+                  label: {
+                    text: "Tell us about the former beneficial officer",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+                  }
+                }) }}
+                {% endset -%}
+
+
+                {% set inputBoxFormerMO %}
+                <br>
+                {{ govukTextarea({
+                  name: "more-detail",
+                  id: "more-detail",
+                  label: {
+                    text: "Tell us about the former managing officer",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+                  }
+                }) }}
+                {% endset -%}
+
+
+
+
+           {{ govukRadios({
+             classes: "govuk-radios",
+             idPrefix: "disposalChanges",
+             name: "disposalChanges",
+             fieldset: {
+               legend: {
+                 text: "What does this change relate to?",
+                 isPageHeading: true,
+                 classes: "govuk-fieldset__legend--xl"
+               }
+             },
+             hint: {
+               text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+             },
+             items: [
+    {
+      value: "entitychange",
+      text: "Overseas entity",
+      conditional: {
+        html: inputBox
+      }
+    },
+    {
+      value: "boChange",
+      text: "Joe Bloggs - Beneficial owner",
+      conditional: {
+        html: inputBox
+      }
+    },
+    {
+      value: "moChange",
+      text: "Jane Doe - Managing officer",
+      conditional: {
+        html: inputBox
+      }
+    },
+    {
+      value: "formerboChange",
+      text: "Former beneficial owner",
+      conditional: {
+        html: inputBoxFormerBO
+      }
+    },
+    {
+      value: "formermoChange",
+      text: "Former managing officer",
+      conditional: {
+        html: inputBoxFormerMO
+      }
+    }
+
+  ]
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "Lorem ipsum",
+  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+}) }}
+
+
+            {{ govukInsetText({
+              html: '
+                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
+                        <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+                    '
+            }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+        <form classes="form" action="/register/disposals/declaration" method="get">
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
