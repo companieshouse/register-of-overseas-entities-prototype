@@ -15,23 +15,18 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/register/disposals/alt-disposed-select" method="get">
+      <form class="form" action="/register/disposals/alt-disposed-more" method="get">
 
         <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
         <!--Note, current intention is not to route users here is they select All - code added just in case-->
 
-<h1 class="govuk-heading-xl">What information has changed?</h1>
-
-{{ govukDetails({
-  summaryText: "Lorem ipsum",
-  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-}) }}
+  <span class="govuk-caption-xl">28 May 2022 / CS72510</span>
+<h1 class="govuk-heading-xl">Tell us what information was different at the time of the disposal</h1>
 
 
         {{ govukTextarea({
           name: "land-detail",
           id: "land-detail",
-          classes: "govuk-!-margin-bottom-9",
           label: {
             text: "Tell us what details have changed (public)",
             classes: "govuk-label--m",
@@ -40,6 +35,12 @@
           hint: {
             text: "This includes changes to the entity, its BOs and MOs, and details of any former BOs or MOs"
           }
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "What information should go in public details",
+          classes: "govuk-!-margin-bottom-9",
+          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
 
@@ -54,6 +55,10 @@
           hint: {
             text: "This includes changes to the entity, its BOs and MOs, and details of any former BOs or MOs"
           }
+        }) }}
+        {{ govukDetails({
+          summaryText: "What information should not go on the public record",
+          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
 
