@@ -19,8 +19,9 @@ require('./routes/starting-new.js')(router)
 require('./routes/trust-involved-alt.js')(router)
 require('./routes/disposals.js')(router)
 require('./routes/alt-disposed-land.js')(router)
-require('./routes/changes-filter.js')(router)
 require('./routes/alt-disposed-more.js')(router)
+require('./routes/changes-filter.js')(router)
+
 
 
 
