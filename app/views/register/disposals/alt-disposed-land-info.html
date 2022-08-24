@@ -15,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/register/disposals/declaration" method="get">
+      <form class="form" action="/register/disposals/alt-disposed-select" method="get">
 
         <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
         <!--Note, current intention is not to route users here is they select All - code added just in case-->
@@ -90,8 +90,7 @@
 
 
   {{ govukButton({
-    text: "Save and continue",
-    href: "/register/disposals/alt-disposed-more"
+    text: "Save and continue"
   }) }}
 
 
