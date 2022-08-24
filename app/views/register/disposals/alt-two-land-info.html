@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us what information was different at the time of the disposal – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/register/disposals/alt-disposed-select" method="get">
+
+        <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
+        <!--Note, current intention is not to route users here is they select All - code added just in case-->
+
+<h1 class="govuk-heading-xl">What information has changed?</h1>
+
+{{ govukDetails({
+  summaryText: "Lorem ipsum",
+  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+}) }}
+
+
+        {{ govukTextarea({
+          name: "land-detail",
+          id: "land-detail",
+          classes: "govuk-!-margin-bottom-9",
+          label: {
+            text: "Tell us what details have changed (public)",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "This includes changes to the entity, its BOs and MOs, and details of any former BOs or MOs"
+          }
+        }) }}
+
+
+        {{ govukTextarea({
+          name: "land-detail",
+          id: "land-detail",
+          label: {
+            text: "Tell us about changes that shouldn't be on public record",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "This includes changes to the entity, its BOs and MOs, and details of any former BOs or MOs"
+          }
+        }) }}
+
+
+
+
+
+
+
+
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+            <p>Some of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+        '
+}) }}
+
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
