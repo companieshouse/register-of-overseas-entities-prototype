@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us about the entity at the time of the disposal – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/register/disposals/alt-disposed-select" method="get">
+
+        <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
+        <!--Note, current intention is not to route users here is they select All - code added just in case-->
+
+  {% if (data['disposalChanges'] === "entityChange") or (data['disposalChanges'] === "boChange") or (data['disposalChanges'] === "moChange") %}
+<span class="govuk-caption-xl">Joe Bloggs</span>
+        {{ govukTextarea({
+          name: "land-detail",
+          id: "land-detail",
+          label: {
+            text: "What has changed about them?",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Tell us what information was different at the time of the disposal.
+            You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+          }
+        }) }}
+
+{% endif %}
+
+
+
+{% if (data['disposalChanges'] === "formerboChange") %}
+
+{{ govukTextarea({
+  name: "land-detail-bo",
+  id: "land-detail-bo",
+  label: {
+    text: "Tell us about the former Beneficial officer",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Tell us what information was different at the time of the disposal.
+    You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+  }
+}) }}
+
+{% endif %}
+
+
+
+
+{% if (data['disposalChanges'] === "formermoChange") %}
+
+{{ govukTextarea({
+  name: "land-detail-mo",
+  id: "land-detail-mo",
+  label: {
+    text: "Tell us about the former Managing officer",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Tell us what information was different at the time of the disposal.
+    You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+  }
+}) }}
+
+{% endif %}
+
+
+{{ govukCheckboxes({
+  idPrefix: "changesPublicRecord",
+  name: "changesPublicRecord",
+  fieldset: {
+    legend: {
+      text: "Do these changes contain any of the following confidential information?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply. If you do not tell us then all information will go on the public record."
+  },
+  items: [
+    {
+      value: "dob",
+      text: "Date of birth"
+    },
+    {
+      value: "residential",
+      text: "Residential address"
+    },
+    {
+      value: "protectedpersons",
+      text: "Contains information about protected persons"
+    }
+  ]
+}) }}
+
+
+
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+        '
+}) }}
+
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
