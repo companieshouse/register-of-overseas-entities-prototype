@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What does this change relate to? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/disposals/alt-four-disposed-land-info" method="get">
+<span class="govuk-caption-xl">28 May 2022 / CS72510</span>
+
+
+           {{ govukRadios({
+             classes: "govuk-radios",
+             idPrefix: "disposalChanges",
+             name: "disposalChanges",
+             fieldset: {
+               legend: {
+                 text: "What does this change relate to?",
+                 isPageHeading: true,
+                 classes: "govuk-fieldset__legend--xl"
+               }
+             },
+             hint: {
+               text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+             },
+             items: [
+    {
+      value: "entityChange",
+      text: "Overseas entity"
+      },
+    {
+      value: "boChange",
+      text: "Joe Bloggs - beneficial owner"
+    },
+    {
+      value: "moChange",
+      text: "Jane Doe - managing officer"
+    },
+    {
+      value: "formerboChange",
+      text: "Former beneficial owner"
+    },
+    {
+      value: "formermoChange",
+      text: "Former managing officer"
+    }
+
+  ]
+}) }}
+
+
+
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Add"
+              }) }}
+
+              {{ govukButton({
+                text: "No more to add",
+                classes: "govuk-button--secondary",
+                href: "/register/disposals/alt-four-disposed-more"
+              }) }}
+            </div>
+
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
