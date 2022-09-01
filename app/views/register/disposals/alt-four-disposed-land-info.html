@@ -26,13 +26,12 @@
           name: "land-detail",
           id: "land-detail",
           label: {
-            text: "What has changed about them?",
+            text: "Tell us what information was different immediately before the disposal",
             classes: "govuk-label--xl",
             isPageHeading: true
           },
           hint: {
-            text: "Tell us what information was different at the time of the disposal.
-            You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+            text: "Tell us what has changed, such as the overseas entity's name, and what it was immediately before the disposal."
           }
         }) }}
 
@@ -46,13 +45,12 @@
   name: "land-detail-bo",
   id: "land-detail-bo",
   label: {
-    text: "Tell us about the former Beneficial officer",
+    text: "Tell us what information was different immediately before the disposal",
     classes: "govuk-label--xl",
     isPageHeading: true
   },
   hint: {
-    text: "Tell us what information was different at the time of the disposal.
-    You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+    text: "Tell us what has changed, such as the beneficial owner's name, and what it was immediately before the disposal."
   }
 }) }}
 
@@ -67,13 +65,12 @@
   name: "land-detail-mo",
   id: "land-detail-mo",
   label: {
-    text: "Tell us about the former Managing officer",
+    text: "Tell us what information was different immediately before the disposal",
     classes: "govuk-label--xl",
     isPageHeading: true
   },
   hint: {
-    text: "Tell us what information was different at the time of the disposal.
-    You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
+    text: "Tell us what has changed, such as the managing officer's name, and what it was immediately before the disposal."
   }
 }) }}
 
@@ -85,13 +82,13 @@
   name: "changesPublicRecord",
   fieldset: {
     legend: {
-      text: "Do these changes contain any of the following confidential information?",
+      text: "Have you included any information that should not be shown on the public register?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
-    html: "Select all that apply. <br>If you do not tell us then all information will go on the public record."
+    html: "Select all that apply."
   },
   items: [
     {
@@ -100,18 +97,18 @@
     },
     {
       value: "residential",
-      text: "Residential address"
+      text: "Home address"
     },
     {
       value: "protectedpersons",
-      text: "Contains information about protected persons"
+      text: "Information about beneficial owners or managing officers who have their personal information protected at Companies House"
     },
     {
       divider: "or"
     },
     {
       value: "none",
-      text: "No, it does not include any of this information",
+      text: "No, I have not included any of this information",
        behaviour: "exclusive"
     }
   ]
@@ -122,7 +119,9 @@
 {{ govukInsetText({
   html: '
             <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
+            <p>If you have included a date of birth, a home address, or information about anyone who has their personal information protected, this information will not be shown. However, you must let us know if this information is included by selecting the relevant box.</p>
+
+            <p>All ither information provided in this section will be shown on the public Register of Overseas Entities.</p>
         '
 }) }}
 
