@@ -16,11 +16,67 @@ What you have added so far
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">What you have added so far</h1>
+   <!-- <h1 class="govuk-heading-xl">Land or property you have added so far</h1>-->
 
 
     <form classes="form" action="/register/disposals/declaration" method="get">
 
+
+
+    {{ govukTable({
+  caption: "Land or property you have added so far",
+  captionClasses: "govuk-table__caption--xl",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date of disposal"
+    },
+    {
+      text: "Title number"
+    },
+     {
+      html: '<span class="govuk-visually-hidden">Change or remove</span>'
+    }
+
+  ],
+  rows: [
+    [
+      {
+        text: "28 May 2022"
+      },
+      {
+        text: "CS72510"
+      },
+     {
+      html: '<a href="">Change or remove <span class="govuk-visually-hidden">28 May 2022 CS72510</span>'
+    }
+    ],
+    [
+      {
+        text: "30 June 2022"
+      },
+      {
+        text: "YM39675"
+      },
+     {
+      html: '<a href="">Change or remove <span class="govuk-visually-hidden">30 June 2022 YM39675</span>'
+    }
+    ]
+  ]
+}) }}
+
+     <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Add"
+              }) }}
+
+              {{ govukButton({
+                text: "No more to add",
+                classes: "govuk-button--secondary",
+                href: ""
+              }) }}
+            </div>
+<!---
       {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
               rows: [
@@ -53,7 +109,7 @@ What you have added so far
                       {
                         href: "/register/disposals/alt-disposed-land",
                         text: "Change or remove",
-                        visuallyHiddenText: "hange or remove 30 June 2022 / YM39675"
+                        visuallyHiddenText: "Change or remove 30 June 2022 / YM39675"
                       }
                     ]
                   }
@@ -62,7 +118,12 @@ What you have added so far
             }) }}
 
 
-<!---
+
+
+       
+
+
+
 
       <h1 class="govuk-heading-m">Land 1</h1>
 html: '<p class="govuk-body">David Smith was involved in the...</p><p class="govuk-body">Contains confidential information:<br>
@@ -122,7 +183,7 @@ html: '<p class="govuk-body">David Smith was involved in the...</p><p class="gov
             ]
         ]
       }) }}
---->
+
 
 
 {{ govukRadios({
@@ -159,6 +220,7 @@ html: '<p class="govuk-body">David Smith was involved in the...</p><p class="gov
       {{ govukButton({
         text: "Save and continue"
       }) }}
+      -->
       </form>
 
 
