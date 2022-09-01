@@ -15,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/register/disposals/alt-four-disposed-land-info" method="get">
-<span class="govuk-caption-xl">28 May 2022 / CS72510</span>
+<span class="govuk-caption-xl">Title number: CS72510</span>
 
 
            {{ govukRadios({
@@ -24,34 +24,34 @@
              name: "disposalChanges",
              fieldset: {
                legend: {
-                 text: "What does this change relate to?",
+                 text: "Which individual or entity does this change relate to?",
                  isPageHeading: true,
                  classes: "govuk-fieldset__legend--xl"
                }
              },
              hint: {
-               text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+               text: ""
              },
              items: [
     {
       value: "entityChange",
-      text: "Overseas entity"
+      text: "Sugar Holdings Limited"
       },
     {
       value: "boChange",
-      text: "Joe Bloggs - beneficial owner"
+      text: "Joe Bloggs"
     },
     {
       value: "moChange",
-      text: "Jane Doe - managing officer"
+      text: "Jane Doe"
     },
     {
       value: "formerboChange",
-      text: "Former beneficial owner"
+      text: "Helen Parsons"
     },
     {
       value: "formermoChange",
-      text: "Former managing officer"
+      text: "Frank Willis"
     }
 
   ]
@@ -62,7 +62,7 @@
 
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Add"
+                text: "Add individual or entity"
               }) }}
 
               {{ govukButton({
