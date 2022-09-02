@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Tell us what information was different immediately before the disposal – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/register/disposals/declaration" method="get">
+
+
+{{ govukTextarea({
+  name: "land-detail",
+  id: "land-detail",
+  label: {
+    text: "Tell us what information was different immediately before the disposal",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Tell us what has changed, such as the overseas entity’s name, and what it was immediately before the disposal."
+  }
+}) }}
+
+
+{{ govukCheckboxes({
+  idPrefix: "changesPublicRecord",
+  name: "changesPublicRecord",
+  fieldset: {
+    legend: {
+      text: "Have you included any information that should not be shown on the public register?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    html: "Select all that apply."
+  },
+  items: [
+    {
+      value: "dob",
+      text: "Date of birth"
+    },
+    {
+      value: "residential",
+      text: "Home address"
+    },
+    {
+      value: "protectedpersons",
+      text: "Information about beneficial owners or managing officers who have their personal information protected at Companies House"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "none",
+      text: "No, I have not included any of this information",
+       behaviour: "exclusive"
+    }
+  ]
+}) }}
+
+
+{{ govukInsetText({
+  html: '
+            <h2 class="govuk-heading-m">Information shown on the public register</h2>
+            <p>If you have included a date of birth, a home address, or information about anyone who has their personal information protected, this information will not be shown. However, you must let us know if this information is included by selecting the relevant box.</p>
+
+            <p>All ither information provided in this section will be shown on the public Register of Overseas Entities.</p>
+        '
+}) }}
+
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
