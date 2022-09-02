@@ -14,8 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/register/disposals/alt-disposed-select" method="get">
-
+<form classes="form" action="/register/disposals/disposed-land-info-individual" method="get">
 
 
 
@@ -71,11 +70,11 @@
 
             {{ govukRadios({
             classes: "govuk-radios",
-            idPrefix: "disposalsChanged",
-            name: "disposalsChanged",
+            idPrefix: "altChanged",
+            name: "altChanged",
             fieldset: {
               legend: {
-                text: "Was any information about the overseas entity different when the property or land was disposed of?",
+                text: "Was any information about the overseas entity different immediately before the property or land was disposed of?",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -105,17 +104,16 @@
             }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
 
 
-        <form classes="form" action="/register/disposals/alt-disposed-select" method="get">
-
-
-
-
-
       </form>
+
+
+    <a href="/register/disposals/alt-two-land-info" class="govuk-link-s">Version 3</a>
+    <a href="/register/disposals/alt-four-disposed-select" class="govuk-link-s">Version 4</a>
+
 
     </div>
   </div>

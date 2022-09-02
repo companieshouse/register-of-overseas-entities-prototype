@@ -1,0 +1,233 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+What you have added so far
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <!-- <h1 class="govuk-heading-xl">Land or property you have added so far</h1>-->
+
+
+    <form classes="form" action="/register/disposals/declaration" method="get">
+
+
+
+    {{ govukTable({
+  caption: "Land or property you have added so far",
+  captionClasses: "govuk-table__caption--xl",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date of disposal"
+    },
+    {
+      text: "Title number"
+    },
+     {
+      html: '<span class="govuk-visually-hidden">Change or remove</span>'
+    }
+
+  ],
+  rows: [
+    [
+      {
+        text: "28 May 2022"
+      },
+      {
+        text: "CS72510"
+      },
+     {
+      html: '<a href="">Change or remove <span class="govuk-visually-hidden">28 May 2022 CS72510</span>'
+    }
+    ],
+    [
+      {
+        text: "30 June 2022"
+      },
+      {
+        text: "YM39675"
+      },
+     {
+      html: '<a href="">Change or remove <span class="govuk-visually-hidden">30 June 2022 YM39675</span>'
+    }
+    ]
+  ]
+}) }}
+
+     <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Add property or land"
+              }) }}
+
+              {{ govukButton({
+                text: "No more to add",
+                classes: "govuk-button--secondary",
+                href: ""
+              }) }}
+            </div>
+<!---
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Disposed land"
+                  },
+                  value: {
+                    html: '<span class="govuk-visually-hidden">Date of disposal</span> 28 May 2022 / <span class="govuk-visually-hidden">Title number</span> CS72510'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "/register/disposals/alt-disposed-land",
+                        text: "Change or remove",
+                        visuallyHiddenText: "change or remove 28 May 2022 / CS72510"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Disposed land"
+                    },
+                    value: {
+                    html: '<span class="govuk-visually-hidden">Date of disposal</span> 30 June 2022 / <span class="govuk-visually-hidden">Title number</span> YM39675'
+                    },
+                  actions: {
+                    items: [
+                      {
+                        href: "/register/disposals/alt-disposed-land",
+                        text: "Change or remove",
+                        visuallyHiddenText: "Change or remove 30 June 2022 / YM39675"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+
+
+
+
+
+
+
+
+      <h1 class="govuk-heading-m">Land 1</h1>
+html: '<p class="govuk-body">David Smith was involved in the...</p><p class="govuk-body">Contains confidential information:<br>
+<ul>
+  <li>
+    Residential address
+  </li>
+</ul></p>'
+},
+
+
+      {{ govukTable({
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+        {
+          text: "Name",
+          classes: "govuk-visually-hidden"
+        },
+        {
+          text: "Type",
+          classes: "govuk-visually-hidden"
+        },
+          {
+            text: "Change or remove",
+            classes: "govuk-visually-hidden"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "28 May 2022 / CS72510"
+            },
+            {
+              html: "Public information: <br>
+              There was a change of ownership from...<br><br>
+              Private information:<br>
+              There was a change of residential address..."
+            },
+            {
+              html: '<a href="/register/disposals/alt-two-land-info-completed">Change or remove <span class="govuk-visually-hidden">28 May 2022 / CS72510 disposal changes</span></a>'
+            }
+           ],
+           [
+           {
+             text: "10 June 2022 / YM39675"
+           },
+           {
+             html: "Public information: <br>
+             David Smith was taken off the sanctions li...<br><br>
+             Private information:<br>
+             The beneficial owner became a secure re..."
+           },
+           {
+             html: '<a href="/register/disposals/alt-two-land-info-completed">Change or remove <span class="govuk-visually-hidden">28 May 2022 / CS72510 disposal changes</span></a>'
+           }
+            ]
+        ]
+      }) }}
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "disposalsMore",
+  name: "disposalsMore",
+  fieldset: {
+    legend: {
+      text: "Do you need to tell us about any more disposed land?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+  text: "Lorem ipsum"
+},
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      -->
+      </form>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -15,7 +15,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/register/disposals/alt-disposed-land-info" method="get">
-
+<span class="govuk-caption-xl">28 May 2022 / CS72510</span>
 
 
            {{ govukRadios({
@@ -39,11 +39,11 @@
       },
     {
       value: "boChange",
-      text: "Joe Bloggs - Beneficial owner"
+      text: "Joe Bloggs - beneficial owner"
     },
     {
       value: "moChange",
-      text: "Jane Doe - Managing officer"
+      text: "Jane Doe - managing officer"
     },
     {
       value: "formerboChange",
@@ -58,25 +58,80 @@
 }) }}
 
 
-{{ govukDetails({
-  summaryText: "Lorem ipsum",
-  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-}) }}
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What changes <span class="govuk-visually-hidden">to 28 May 2022 / CS72510</span> you have added so far
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    {{ govukTable({
+      caption: "28 May 2022 / CS72510",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+      {
+        text: "Name",
+        classes: "govuk-visually-hidden"
+      },
+      {
+        text: "Type",
+        classes: "govuk-visually-hidden"
+      },
+        {
+          text: "Change or remove",
+          classes: "govuk-visually-hidden"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Joe Bloggs - beneficial owner"
+          },
+          {
+            text: "There was a change of address from..."
+          },
+          {
+            html: '<a href="/register/disposals/alt-disposed-land-info-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs disposal changes</span></a>'
+          }
+         ],
+         [
+           {
+             text: "Former managing officer"
+           },
+           {
+             text: "On the 28 May 2022, David Sm..."
+           },
+           {
+             html: '<a href="/register/disposals/alt-disposed-land-info-completed">Change or remove <span class="govuk-visually-hidden">Former managing officer disposal changes</span></a>'
+           }
+          ]
+      ]
+    }) }}
+
+  </div>
+</details>
 
 
-            {{ govukInsetText({
-              html: '
-                        <h2 class="govuk-heading-m">Information shown on the public register</h2>
-                        <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
-                    '
-            }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Add"
+              }) }}
+
+              {{ govukButton({
+                text: "No more to add",
+                classes: "govuk-button--secondary",
+                href: "/register/disposals/alt-disposed-more"
+              }) }}
+            </div>
 
 
       </form>
+
+
 
     </div>
   </div>

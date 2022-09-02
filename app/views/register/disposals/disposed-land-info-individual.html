@@ -15,9 +15,9 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/register/disposals/declaration" method="get">
+      <form class="form" action="/register/disposals/added-so-far" method="get">
 
-
+<span class="govuk-caption-xl">Title number: CS72510</span>
 {{ govukTextarea({
   name: "land-detail",
   id: "land-detail",
@@ -38,9 +38,8 @@
 {{ govukInsetText({
   html: '
             <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>Dates of birth and home addresses will not be shown. Information about people who have their personal information protected at Companies House will not be shown. However, you must tell us that you’ve included this type of information.
-<p>All other information provided in this section will be shown on the public Register of Overseas Entities.</p>
-        '
+      <p>Dates of birth and home addresses will not be shown. Information about people who have their personal information protected at Companies House will not be shown. However, you must tell us that you’ve included this type of information.</p>
+            <p>All other information provided in this section will be shown on the public Register of Overseas Entities.</p>        '
 }) }}
 
         {{ govukButton({

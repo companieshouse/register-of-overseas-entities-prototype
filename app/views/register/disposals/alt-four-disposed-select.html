@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What does this change relate to? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/disposals/alt-four-disposed-land-info" method="get">
+<span class="govuk-caption-xl">Title number: CS72510</span>
+
+
+           {{ govukRadios({
+             classes: "govuk-radios",
+             idPrefix: "disposalChanges",
+             name: "disposalChanges",
+             fieldset: {
+               legend: {
+                 text: "Whose information was different immediately before the disposal?",
+                 isPageHeading: true,
+                 classes: "govuk-fieldset__legend--xl"
+               }
+             },
+             hint: {
+               text: "You can add more later."
+             },
+             items: [
+    {
+      value: "entityChange",
+      text: "Sugar Holdings Limited"
+      },
+    {
+      value: "boChange",
+      text: "Joe Bloggs"
+    },
+    {
+      value: "moChange",
+      text: "Jane Doe"
+    },
+    {
+      value: "formerboChange",
+      text: "Helen Parsons"
+    },
+    {
+      value: "formermoChange",
+      text: "Frank Willis"
+    }
+
+  ]
+}) }}
+
+
+
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Add individual or entity"
+              }) }}
+
+              {{ govukButton({
+                text: "No more to add",
+                classes: "govuk-button--secondary",
+                href: "/register/disposals/alt-four-disposed-more"
+              }) }}
+            </div>
+
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

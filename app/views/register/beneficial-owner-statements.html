@@ -23,10 +23,13 @@
         <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
         <!--Note, current intention is not to route users here is they select All - code added just in case-->
 
-        {{ govukInsetText({
-          text: "This includes any individuals or entities that were registrable beneficial owners of the overseas entity just before it disposed of its property or land.
-          This also includes managing officers, if relevant."
-        }) }}
+        <div class="govuk-inset-text">
+<h3 class="govuk-heading-s">Disposals of property or land</h3>
+          If an overseas entity has made a disposal, you must also tell us about any individuals or entities that were registrable beneficial owners <strong>immediately before</strong> the disposal.
+          This also includes managing officers, if relevant.
+        </div>
+
+
 
 {% endif %}
 

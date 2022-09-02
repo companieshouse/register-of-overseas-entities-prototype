@@ -20,11 +20,11 @@
         <!--Only show the inset text if the user has answered Some or All to /register/sold-land-filter-->
         <!--Note, current intention is not to route users here is they select All - code added just in case-->
 
-  {% if (data['disposalChanges'] === "entityChange") or (data['disposalChanges'] === "boChange") or (data['disposalChanges'] === "moChange") %}
 <span class="govuk-caption-xl">Joe Bloggs</span>
         {{ govukTextarea({
           name: "land-detail",
           id: "land-detail",
+          value: "Joe's office address has changed. Previous address was: 12 King Road, Bedminster, Bristol BS3 4BA",
           label: {
             text: "What has changed about them?",
             classes: "govuk-label--xl",
@@ -36,48 +36,6 @@
           }
         }) }}
 
-{% endif %}
-
-
-
-{% if (data['disposalChanges'] === "formerboChange") %}
-
-{{ govukTextarea({
-  name: "land-detail-bo",
-  id: "land-detail-bo",
-  label: {
-    text: "Tell us about the former Beneficial officer",
-    classes: "govuk-label--xl",
-    isPageHeading: true
-  },
-  hint: {
-    text: "Tell us what information was different at the time of the disposal.
-    You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
-  }
-}) }}
-
-{% endif %}
-
-
-
-
-{% if (data['disposalChanges'] === "formermoChange") %}
-
-{{ govukTextarea({
-  name: "land-detail-mo",
-  id: "land-detail-mo",
-  label: {
-    text: "Tell us about the former Managing officer",
-    classes: "govuk-label--xl",
-    isPageHeading: true
-  },
-  hint: {
-    text: "Tell us what information was different at the time of the disposal.
-    You'll need to tell us what has changed, such as the overseas entity's name, and what it was at the time of the disposal."
-  }
-}) }}
-
-{% endif %}
 
 
 
@@ -89,9 +47,17 @@
 }) }}
 
 
+<div class="govuk-button-group">
   {{ govukButton({
-    text: "Save and continue"
+    text: "Save and continue",
+    href: "/register/disposals/alt-disposed-select"
   }) }}
+
+  {{ govukButton({
+    text: "Remove",
+    classes: "govuk-button--warning"
+  }) }}
+</div>
 
 
       </form>
