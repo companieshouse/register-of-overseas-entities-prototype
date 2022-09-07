@@ -32,7 +32,10 @@ padding-right: 25px;
     overflow: hidden;
 }
 
-// CH Notification banner
+// CH NOTIFICATION BANNER
+// The banner takes the form of a container div which in-turn is made of two separate divs. These being:
+// 1. title and (button) link
+// 2. content (the messaging)
 
 .ch-notification-banner { // Banner container
   background-color:#1d70b8;
