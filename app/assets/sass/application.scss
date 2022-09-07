@@ -32,7 +32,54 @@ padding-right: 25px;
     overflow: hidden;
 }
 
+// CH Notification banner
 
+.ch-notification-banner { // Banner container
+  background-color:#1d70b8;
+  font-family: "GDS Transport", arial, sans-serif;
+  color: #fff !important;
+  margin-bottom: 30px;
+}
+
+.ch-notification-title { // Banner tite and button element container
+  background-color:#1d70b8;
+  font-size: 19px;
+  font-weight: 700;
+  padding: 10px 25px;
+}
+
+.ch-notification-content { // Banner content container
+  background-color:#ffffff;
+  color: #0b0c0c;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px;
+  border:#1d70b8 5px;
+  border-style: none solid solid solid;
+}
+
+.ch-show-hide-button { // Banner show/hide button styled as a link
+  background-color: transparent;
+  font-size: 16px;
+  float: right;
+  border: none;
+  color: white;
+  text-align: right;
+  text-decoration: underline solid white;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer; 
+}
+
+.ch-show-hide-button:hover { // Banner show/hide button hover state styling
+  text-decoration: underline solid white 3px;
+}
+
+.ch-show-hide-button:focus { // Banner show/hide button focus state styling
+  color: #0b0c0c;
+  text-decoration: underline solid #0b0c0c 3px;
+  background-color: #ffdd00;
+}
 
 //Styles for interrupt card
 
@@ -80,7 +127,7 @@ ul#navigation {
   text-align: right;
   display: inline-block;
   float: right;
-
+  
   li {
     display: inline;
     font-family: 'nta', Arial;

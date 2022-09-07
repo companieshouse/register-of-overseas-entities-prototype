@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+You cannot use this service – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {# CH Notification banner #}
+    <div class="ch-notification-banner" role="region">
+      <div class="ch-notification-title">
+        An important message
+        <button class="ch-show-hide-button" id="ch-show-hide-button" onclick="chShowHideNotificationBanner()">
+          Hide message
+        </button>
+      </div>
+      <div class="ch-notification-content" id="ch-notification-content">
+        I am the detail of an important message. <a href="#" class="govuk-link">I am a link in an important message</a>.
+      </div>
+    </div>
+
+    {# Details component #}
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with nationality
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+      </div>
+    </details>
+
+    {# Notification banner #}
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          An important message
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          I am the detail of an important message.
+          <a class="govuk-notification-banner__link" href="#">I am a link in an important message</a>.
+        </p>
+      </div>
+    </div>
+    {# #}
+
+    <h1 class="govuk-heading-l">You cannot use this service</h1>
+
+     <p class="govuk-body">If the entity has disposed of all of its land or property in England, Scotland or Wales since 28 February 2022, it will need to register using the paper form instead.</p>
+
+     <p class="govuk-body">Email us at <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you need us to send you the paper form. </p>
+
+  </div>
+</div>
+
+{% endblock %}
