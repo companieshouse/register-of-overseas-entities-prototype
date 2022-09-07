@@ -20,9 +20,14 @@ You cannot use this service – {{ serviceName }} – GOV.UK
     <div class="ch-notification-banner" role="region">
       <div class="ch-notification-title">
         An important message
-        <button class="ch-show-hide-button" id="ch-show-hide-button" onclick="chShowHideNotificationBanner()">
+        {# By default disable the following button by setting its CSS display attriute to "none" (it isn't rendered to the viewport) #}
+        <button class="ch-show-hide-button" id="ch-show-hide-button" style="display: none;" onclick="chShowHideNotificationBanner()">
           Hide message
         </button>
+        {# In the event JavaScript is available, then hard reference the above button ID and set its CSS display attribute to "block" (making it visible) #}
+        <script>
+          document.getElementById("ch-show-hide-button").style.display = "block";
+        </script>
       </div>
       <div class="ch-notification-content" id="ch-notification-content">
         I am the detail of an important message. <a href="#" class="govuk-link">I am a link in an important message</a>.
