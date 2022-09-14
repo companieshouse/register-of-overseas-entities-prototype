@@ -20,7 +20,43 @@
         {% if (data['statements'] === "allIdentifiedAllSupplied") %}
 
 
-        <h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
+        <h1 class="govuk-heading-xl">Beneficial owners or managing officers involved in the overseas entity</h1>
+
+
+
+        {{ govukTable({
+          caption: "What you have added so far",
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-8",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Joe Bloggs"
+              },
+              {
+                text: "Individual beneficial owner"
+              },
+              {
+                html: '<a href="/register/beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
+              }
+             ]
+          ]
+        }) }}
 
 
 
@@ -29,7 +65,7 @@
         name: "boType",
         fieldset: {
           legend: {
-            text: "",
+            text: "Which type of beneficial owner do you want to add?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
@@ -56,48 +92,10 @@
 
 
 
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What <span class="govuk-visually-hidden">beneficial owners</span> you have added so far
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            {{ govukTable({
-              caption: "Beneficial owners",
-              captionClasses: "govuk-table__caption--m",
-              firstCellIsHeader: true,
-              head: [
-              {
-                text: "Name",
-                classes: "govuk-visually-hidden"
-              },
-              {
-                text: "Type",
-                classes: "govuk-visually-hidden"
-              },
-                {
-                  text: "Change or remove",
-                  classes: "govuk-visually-hidden"
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "Joe Bloggs"
-                  },
-                  {
-                    text: "Individual beneficial owner"
-                  },
-                  {
-                    html: '<a href="/register/beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
-                  }
-                 ]
-              ]
-            }) }}
 
-          </div>
-        </details>
+
+
+
 
 
 
@@ -105,9 +103,45 @@
         {% elif (data['statements'] === "noneIdentified") %}
 
 
-        <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
+        <h1 class="govuk-heading-xl">Beneficial owners or managing officers involved in the overseas entity</h1>
 
 
+                            {{ govukTable({
+                              caption: "What you have added so far",
+                              captionClasses: "govuk-table__caption--m",
+                              classes: "govuk-!-margin-bottom-8",
+                              firstCellIsHeader: true,
+                              head: [
+                              {
+                                text: "Name",
+                                classes: "govuk-visually-hidden"
+                              },
+                              {
+                                text: "Type",
+                                classes: "govuk-visually-hidden"
+                              },
+                                {
+                                  text: "Change or remove",
+                                  classes: "govuk-visually-hidden"
+                                }
+                              ],
+                              rows: [
+                                [
+                                  {
+                                    text: "Joe Bloggs"
+                                  },
+                                  {
+                                    text: "Individual managing officer"
+                                  },
+                                  {
+                                    html: '<a href="javascript:void(0)">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
+                                  }
+                                 ]
+                              ]
+                            }) }}
+
+
+<h2 class="govuk-heading-m">Which type of managing officer do you want to add?</h2>
 
         {{ govukRadios({
         idPrefix: "boType",
@@ -133,55 +167,6 @@
           }
         ]
         }) }}
-
-
-
-                <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      What <span class="govuk-visually-hidden">managing officers</span> you have added so far
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    {{ govukTable({
-                      caption: "Managing officers",
-                      captionClasses: "govuk-table__caption--m",
-                      firstCellIsHeader: true,
-                      head: [
-                      {
-                        text: "Name",
-                        classes: "govuk-visually-hidden"
-                      },
-                      {
-                        text: "Type",
-                        classes: "govuk-visually-hidden"
-                      },
-                        {
-                          text: "Change or remove",
-                          classes: "govuk-visually-hidden"
-                        }
-                      ],
-                      rows: [
-                        [
-                          {
-                            text: "Joe Bloggs"
-                          },
-                          {
-                            text: "Individual managing officer"
-                          },
-                          {
-                            html: '<a href="javascript:void(0)">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
-                          }
-                         ]
-                      ]
-                    }) }}
-
-                  </div>
-                </details>
-
-
-
-
 
 
 
@@ -238,8 +223,9 @@
         }) }}
 
 
-<h2 class="govuk-heading-m">Which type of beneficial owner or managing officer do you want to add?</h2>
-<span class="govuk-caption-m govuk-!-margin-bottom-6">You can add more later</span>
+        <h2 class="govuk-heading-m">Which type of beneficial owner or managing officer do you want to add?</h2>
+        <span class="govuk-caption-m govuk-!-margin-bottom-6">You can add more later</span>
+
 
         {{ govukRadios({
         idPrefix: "boType",
@@ -277,22 +263,14 @@
         ]
         }) }}
 
-      <!---  caption: "What you have added so far",
-        captionClasses: "govuk-table__caption--m",
-        <h2 class="govuk-table__caption--m">What beneficial owners and managing officers<span> you have added so far
-        </span></h2>--->
-
-
-
-
-
-
-
 
         {% endif %}
 
 
-
+        <!---  caption: "What you have added so far",
+          captionClasses: "govuk-table__caption--m",
+          <h2 class="govuk-table__caption--m">What beneficial owners and managing officers<span> you have added so far
+          </span></h2>--->
 
 
 
