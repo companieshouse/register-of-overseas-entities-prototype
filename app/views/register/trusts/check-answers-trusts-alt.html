@@ -1311,24 +1311,29 @@
       }) }}
 
 <p class="govuk-!-margin-bottom-7"><a href="javascript:void(0)" class="govuk-body-m">Add or change individual or organisation
-  <span class="govuk-visually-hidden">Islands Trust</span></a></p> --->
+  <span class="govuk-visually-hidden">Islands Trust</span></a></p>
 
 
 
 
 
-<div class="govuk-button-group govuk-!-margin-top-9">
+<div class="govuk-button-group govuk-!-margin-top-9"> --->
+
+
+            {{ govukButton({
+              text: "Add another trust",
+              href: "/register/trusts/trust-details"
+            }) }}
+
+  <h2 class="govuk-heading-m">Declaration</h2>
+    <p class="govuk-body">By submitting this information you are confirming that, to the best of the entity's knowledge, it has all the required information about the trust.</p>
+
 
           {{ govukButton({
-            text: "Add another trust",
-            href: "/register/trusts/trust-details"
-          }) }}
-
-
-          {{ govukButton({
-            text: "No more trusts to add",
+            text: "Accept and submit - No more trusts to add",
              classes: "govuk-button--secondary"
           }) }}
+
 
 </div>
 
