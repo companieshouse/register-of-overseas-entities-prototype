@@ -106,8 +106,9 @@
         <h1 class="govuk-heading-xl">Beneficial owners or managing officers involved in the overseas entity</h1>
 
 
+
                             {{ govukTable({
-                              caption: "What you have added so far",
+                              caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
                               captionClasses: "govuk-table__caption--m",
                               classes: "govuk-!-margin-bottom-8",
                               firstCellIsHeader: true,
@@ -270,7 +271,14 @@
         <!---  caption: "What you have added so far",
           captionClasses: "govuk-table__caption--m",
           <h2 class="govuk-table__caption--m">What beneficial owners and managing officers<span> you have added so far
-          </span></h2>--->
+          </span></h2>
+
+
+
+          html: '<h2 class="govuk-table__caption--m">What <span class=“govuk-visually-hidden”>beneficial owners and managing officers </span> you have added so far</h2>',
+
+
+          --->
 
 
 
