@@ -20,7 +20,7 @@
         {% if (data['statements'] === "allIdentifiedAllSupplied") %}
 
 
-
+  <span class="govuk-caption-xl">Joe Bloggs</span>
         <h1 class="govuk-heading-xl">Which type of beneficial owner do you want to add?</h1>
 
 
@@ -106,7 +106,7 @@
         {% elif (data['statements'] === "noneIdentified") %}
 
 
-
+  <span class="govuk-caption-xl">Joe Bloggs</span>
         <h1 class="govuk-heading-xl">Which type of managing officer do you want to add?</h1>
 
 
@@ -191,8 +191,8 @@
         {% else %}
 
 
-
-        <h1 class="govuk-heading-xl">Which type of beneficial owner or managing officer do you want to add?</h1>
+  <span class="govuk-caption-xl">Joe Bloggs</span>
+        <h1 class="govuk-heading-xl">Beneficial owners or managing officers involved in the overseas entity</h1>
 
 
 
@@ -238,15 +238,10 @@
         }) }}
 
 
-                <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      What <span class="govuk-visually-hidden">beneficial owners and managing officers</span> you have added so far
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
+
                     {{ govukTable({
-                      caption: "Beneficial owners and managing officers",
+                      caption: "What beneficial owners and managing officers</span> you have added so far
+                    </span>",
                       captionClasses: "govuk-table__caption--m",
                       firstCellIsHeader: true,
                       head: [
@@ -289,8 +284,6 @@
                       ]
                     }) }}
 
-                  </div>
-                </details>
 
 
 
