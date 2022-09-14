@@ -25,7 +25,7 @@
 
 
         {{ govukTable({
-          caption: "What you have added so far",
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
           captionClasses: "govuk-table__caption--m",
           classes: "govuk-!-margin-bottom-8",
           firstCellIsHeader: true,
@@ -142,7 +142,6 @@
                             }) }}
 
 
-<h2 class="govuk-heading-m">Which type of managing officer do you want to add?</h2>
 
         {{ govukRadios({
         idPrefix: "boType",
@@ -151,7 +150,7 @@
           legend: {
             text: "Which type of managing officer do you want to add?",
             isPageHeading: false,
-            classes: "govuk-visually-hidden"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
@@ -179,7 +178,7 @@
 
 
         {{ govukTable({
-          caption: "What you have added so far",
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
           captionClasses: "govuk-table__caption--m",
           classes: "govuk-!-margin-bottom-8",
           firstCellIsHeader: true,
@@ -224,9 +223,6 @@
         }) }}
 
 
-        <h2 class="govuk-heading-m">Which type of beneficial owner or managing officer do you want to add?</h2>
-        <span class="govuk-caption-m govuk-!-margin-bottom-6">You can add more later</span>
-
 
         {{ govukRadios({
         idPrefix: "boType",
@@ -235,10 +231,12 @@
           legend: {
             text: "Which type of beneficial owner or managing officer do you want to add?",
             isPageHeading: false,
-            classes: "govuk-visually-hidden"
+            classes: "govuk-fieldset__legend--m"
           }
         },
-
+        hint: {
+          text: "You can add more later."
+        },
         items: [
           {
             value: "beneficialTypesIndividual",
@@ -266,19 +264,6 @@
 
 
         {% endif %}
-
-
-        <!---  caption: "What you have added so far",
-          captionClasses: "govuk-table__caption--m",
-          <h2 class="govuk-table__caption--m">What beneficial owners and managing officers<span> you have added so far
-          </span></h2>
-
-
-
-          html: '<h2 class="govuk-table__caption--m">What <span class=“govuk-visually-hidden”>beneficial owners and managing officers </span> you have added so far</h2>',
-
-
-          --->
 
 
 
