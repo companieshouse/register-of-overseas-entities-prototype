@@ -43,6 +43,18 @@
 
 
 
+
+
+        {{ govukInput({
+          label: {
+            text: "What is its name?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "corp-name",
+          name: "corp-name"
+        }) }}
+
         {{ govukRadios({
           idPrefix: "trust-entity-role",
           name: "trust-entity-role",
@@ -77,15 +89,6 @@
         }) }}
 
 
-        {{ govukInput({
-          label: {
-            text: "What is its name?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          id: "corp-name",
-          name: "corp-name"
-        }) }}
         {% call govukFieldset({
           legend: {
             text: "What is its principal or registered office address?",
