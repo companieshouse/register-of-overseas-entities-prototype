@@ -131,7 +131,7 @@ module.exports = function (router) {
         errorList: errors
       })
     } else {
-      res.redirect('/register/beneficial-owner-type-three-added')
+      res.redirect('/register/beneficial-owner-type-one-added')
     }
   })
 }
