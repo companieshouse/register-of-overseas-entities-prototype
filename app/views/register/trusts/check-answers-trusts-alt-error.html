@@ -1,0 +1,1335 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers for your trust information – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <form class="form" action="/register/trusts/check-answers-trusts-alt" method="post">
+
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Jane Doe has not been assigned to a trust - you may need to add them to an existing one or tell us about another trust",
+      href: "#trust-add"
+    }
+  ]
+}) }}
+
+
+      <h1 class="govuk-heading-xl">Check your answers for your trust information</h1>
+
+
+            <h2 class="govuk-heading-l">Islands Trust</h2>
+                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+                 <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                     Trust name
+                   </dt>
+                     <dd class="govuk-summary-list__value">
+                       Islands Trust
+                     </dd>
+
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+                     <a href="/register/trusts/trust-details">
+                       Change
+                       <span class="govuk-visually-hidden">Name of the trust</span>
+                     </a>
+                   </dd>
+                 </div>
+
+                 <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                     Date the trust was created
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                     19 June 2004
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+                     <a href="/register/trusts/trust-details">
+                       Change
+                       <span class="govuk-visually-hidden"> Was the information about the overseas entity different when the property or land was disposed of?</span>
+                     </a>
+                   </dd>
+                 </div>
+
+                   <div class="govuk-summary-list__row">
+                     <dt class="govuk-summary-list__key">
+                 Beneficial owners involved in the trust
+                     </dt>
+                                  <dd class="govuk-summary-list__value">
+                     <ul class="govuk-list govuk-list--bullet">
+                       <li><span class="govuk-visually-hidden">Joe Bloggs</span>Joe Bloggs <!-- screen reader friendly text needed on these --></li>
+                       <li><span class="govuk-visually-hidden">ACME</span>Jane Doe</li>
+                     </ul>
+                     </dd>
+                     <dd class="govuk-summary-list__actions">
+                       <a href="/register/trusts/trust-details">
+                         Change
+                         <span class="govuk-visually-hidden">Trusts - involved in the trust</span>
+                       </a>
+                     </dd>
+                   </div>
+
+
+                   <div class="govuk-summary-list__row">
+                     <dt class="govuk-summary-list__key">
+                      Does the entity have all the required information about the trust?
+                     </dt>
+                     <dd class="govuk-summary-list__value">
+                       Yes
+                     </dd>
+                     <dd class="govuk-summary-list__actions">
+                       <a href="/register/trusts/trust-details">
+                         Change
+                         <span class="govuk-visually-hidden"> To the best of their knowledge, does the entity have all the required information about the trust?</span>
+                       </a>
+                     </dd>
+                   </div>
+
+           </dl>
+
+
+
+
+        <h3 class="govuk-heading-m">Former beneficial owner for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Former beneficial owner's name
+             </dt>
+               <dd class="govuk-summary-list__value">
+                 Dan Ashcroft
+               </dd>
+
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-historical-beneficial-owner">
+                 Change
+                 <span class="govuk-visually-hidden">Beneficial owner's name</span></span>
+               </a>
+             </dd>
+           </div>
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Date they become a beneficial owner
+             </dt>
+             <dd class="govuk-summary-list__value">
+               19 June 2004
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-historical-beneficial-owner">
+                 Change
+                 <span class="govuk-visually-hidden">When did they become a beneficial owner?</span>
+               </a>
+             </dd>
+           </div>
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Date they stopped being a beneficial owner
+             </dt>
+             <dd class="govuk-summary-list__value">
+               21 October 2021
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-historical-beneficial-owner">
+                 Change
+                 <span class="govuk-visually-hidden">When did they stop being a beneficial owner?</span>
+               </a>
+             </dd>
+           </div>
+      </dl>
+
+
+
+
+
+      <h3 class="govuk-heading-m">Individual for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             First name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Javier
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">First name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Last name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Tabarés
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Last name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date of birth
+           </dt>
+           <dd class="govuk-summary-list__value">
+             28 January 1979
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Date of birth</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Role within the trust
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Settlor
+             </dd>
+
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Role within the trust</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Nationality
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Spanish
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Nationality</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Home address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+      <li><span class="govuk-visually-hidden">Ronda de St. Pere</span>Ronda de St. Pere <!-- screen reader friendly text needed on these --></li>
+      <li><span class="govuk-visually-hidden">36</span>36</li>
+      <li><span class="govuk-visually-hidden">08010 Barcelona</span>08010 Barcelona</li>
+      <li><span class="govuk-visually-hidden">Spain</span>Spain</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Home address</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Correspondence address
+           </dt>
+           <dd class="govuk-summary-list__value">
+           <ul class="govuk-list">
+           <li><span class="govuk-visually-hidden">C. d'Arístides Maillol</span>C. d'Arístides Maillol <!-- screen reader friendly text needed on these --></li>
+           <li><span class="govuk-visually-hidden">12</span>12</li>
+           <li><span class="govuk-visually-hidden">08028 Barcelona</span>08028 Barcelona</li>
+           <li><span class="govuk-visually-hidden">Spain</span>Spain</li>
+           </ul>
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">What is their correspondence address?</span>
+             </a>
+           </dd>
+         </div>
+      </dl>
+
+
+
+      <h3 class="govuk-heading-m">Legal entity for Islands Trust</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Name
+           <dd class="govuk-summary-list__value">
+             Acme LTD
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Name of the legal entity</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Role within the trust
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Grantor
+             </dd>
+
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Role within the trust</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Principal or registered office address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+      <li><span class="govuk-visually-hidden">Av. de Luis Aragonés</span>Av. de Luis Aragonés <!-- screen reader friendly text needed on these --></li>
+      <li><span class="govuk-visually-hidden">4</span>4</li>
+      <li><span class="govuk-visually-hidden">28022 Madrid</span>28022 Madrid</li>
+      <li><span class="govuk-visually-hidden">Spain</span>Spain</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Principal or registered office address</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Correspondence address
+           </dt>
+           <dd class="govuk-summary-list__value">
+             The correspondence address is the same as the principle or registered office address
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">What is its correspondence address?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Country it was formed in
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Spain
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Which country was it formed in?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Legal form
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Limited company
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-oler">
+               Change
+               <span class="govuk-visually-hidden">What is its legal form?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Governing law
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Spain
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">What is the governing law?</span>
+             </a>
+           </dd>
+         </div>
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Overseas public register
+           </dt>
+           <dd class="govuk-summary-list__value">
+             The European Business Registry Association (EBRA)
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Name of register</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Entity’s registration number
+           </dt>
+           <dd class="govuk-summary-list__value">
+             CZY-5467-09
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Entity’s registration number in the country it was formed in</span>
+             </a>
+           </dd>
+         </div>
+      </dl>
+
+
+
+<!--- SCREEN READER TEXT NEEDS ADDING TO CHANGE LINKS
+
+
+  <h2 class="govuk-heading-l">KR NALT- UND FISCHER- MOSER M.A.B.</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Trust name
+             </dt>
+               <dd class="govuk-summary-list__value">
+                 KR NALT- UND FISCHER- MOSER M.A.B.
+               </dd>
+
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-details">
+                 Change
+                 <span class="govuk-visually-hidden">Name of the trust</span>
+               </a>
+             </dd>
+           </div>
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+              Date the trust was created
+             </dt>
+             <dd class="govuk-summary-list__value">
+               24 February 1994
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-details">
+                 Change
+                 <span class="govuk-visually-hidden">When was the trust created?</span>
+               </a>
+             </dd>
+           </div>
+
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+           Beneficial owners involved in the trust
+               </dt>
+                            <dd class="govuk-summary-list__value">
+               <ul class="govuk-list govuk-list--bullet">
+                 <li><span class="govuk-visually-hidden">Acme LTD</span>Acme LTDscreen reader friendly text needed on these</li>
+                 <li><span class="govuk-visually-hidden">Lenton Tech & Units Trade Corporate LTD</span>Lenton Tech & Units Trade Corporate LTD</li>
+                 <li><span class="govuk-visually-hidden">Alina Moritz</span>Alina Moritz</li>
+               </ul>
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <a href="/register/trusts/trust-details">
+                   Change
+                   <span class="govuk-visually-hidden">Trusts - involved in the trust</span></span>
+                 </a>
+               </dd>
+             </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">Individual for KR NALT- UND FISCHER- MOSER M.A.B.</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             First name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Alexander
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">First name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Last name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Fischer
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Last name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date of birth
+           </dt>
+           <dd class="govuk-summary-list__value">
+             28 March 1956
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Date of birth</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+            Role within the trust
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Interested person
+             </dd>
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Role within the trust</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date they became an interested person
+           </dt>
+             <dd class="govuk-summary-list__value">
+               20 April 1997
+             </dd>
+
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Date they became an interested person</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Nationality
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Austrian
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Nationality</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Home address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+      <li><span class="govuk-visually-hidden">Palais Trautson</span>Palais Trautson screen reader friendly text needed on these</li>
+
+
+
+      <li><span class="govuk-visually-hidden">Museumstraße 7</span>Museumstraße 7</li>
+      <li><span class="govuk-visually-hidden">1070 Wien</span>1070 Wien</li>
+      <li><span class="govuk-visually-hidden">Austria</span>Austria</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Home address</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Correspondence address
+           </dt>
+           <dd class="govuk-summary-list__value">
+             The correspondence address is the same as the home address
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Is their correspondence address the same as their home address?</span>
+             </a>
+           </dd>
+         </div>
+
+      </dl>
+
+      <h3 class="govuk-heading-m">Individual for KR NALT- UND FISCHER- MOSER M.A.B.</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             First name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Wolfgang
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">First name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Last name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Fischer
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Last name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date of birth
+           </dt>
+           <dd class="govuk-summary-list__value">
+             1 January 1979
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Date of birth</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Role within the trust
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Beneficiary
+             </dd>
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Role within the trust</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Nationality
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Austrian
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Nationality</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Home address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+        <li><span class="govuk-visually-hidden">Palais Trautson</span>Palais Trautson</li>
+        <li><span class="govuk-visually-hidden">Museumstraße 7</span>Museumstraße 7</li>
+        <li><span class="govuk-visually-hidden">1070 Wien</span>1070 Wien</li>
+        <li><span class="govuk-visually-hidden">Austria</span>Austria</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Home address</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Correspondence address
+           </dt>
+           <dd class="govuk-summary-list__value">
+             The correspondence address is the same as the home address
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Is their correspondence address the same as their home address?</span>
+             </a>
+           </dd>
+         </div>
+      </dl>
+
+
+      <h3 class="govuk-heading-m">Former beneficial owner for KR NALT- UND FISCHER- MOSER M.A.B</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Former beneficial owner's name
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Friedrich Moser
+             </dd>
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-historical-beneficial-owner">
+               Change
+               <span class="govuk-visually-hidden">Beneficial owner's name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date they become a beneficial owner
+           </dt>
+           <dd class="govuk-summary-list__value">
+             19 June 2004
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-historical-beneficial-owner">
+               Change
+               <span class="govuk-visually-hidden">When did they become a beneficial owner?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date they stopped being a beneficial owner
+           </dt>
+           <dd class="govuk-summary-list__value">
+             21 October 2021
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-historical-beneficial-owner">
+               Change
+               <span class="govuk-visually-hidden">When did they stop being a beneficial owner?</span>
+             </a>
+           </dd>
+         </div>
+      </dl>
+
+
+
+
+
+      <h2 class="govuk-heading-l">MT INVESTMENTS LIMITED</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Name of the trust
+             </dt>
+               <dd class="govuk-summary-list__value">
+                 MT INVESTMENTS LIMITED
+               </dd>
+
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-details">
+                 Change
+                 <span class="govuk-visually-hidden">Name of the trust</span>
+               </a>
+             </dd>
+           </div>
+
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Date the trust was created
+             </dt>
+             <dd class="govuk-summary-list__value">
+               4 May 2012
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="/register/trusts/trust-details">
+                 Change
+                 <span class="govuk-visually-hidden">When was the trust created?</span>
+               </a>
+             </dd>
+           </div>
+
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+           Beneficial owners involved in the trust
+               </dt>
+                            <dd class="govuk-summary-list__value">
+               <ul class="govuk-list govuk-list--bullet">
+                 <li><span class="govuk-visually-hidden">Isle of Man LTD</span>Isle of Man LTD</li>
+                 <li><span class="govuk-visually-hidden">Simon Coles</span>Simon Coles</li>
+                 <li><span class="govuk-visually-hidden">Martha Coles</span>Martha Coles</li>
+                 <li><span class="govuk-visually-hidden">Jacob Coles</span>Jacob Coles</li>
+                 <li><span class="govuk-visually-hidden">Sara Coles</span>Sara Coles</li>
+               </ul>
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <a href="/register/trusts/trust-details">
+                   Change
+                   <span class="govuk-visually-hidden">Trusts - involved in the trust</span>
+                 </a>
+               </dd>
+             </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">Former beneficial owner for MT INVESTMENTS LIMITED</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Former beneficial owner's name
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Arthur Coles
+             </dd>
+
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-historical-beneficial-owner">
+               Change
+               <span class="govuk-visually-hidden">Beneficial owner's name</span></span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date they became a beneficial owner
+           </dt>
+           <dd class="govuk-summary-list__value">
+             4 May 2012
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-historical-beneficial-owner">
+               Change
+               <span class="govuk-visually-hidden">When did they become a beneficial owner?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date they stopped being a beneficial owner
+           </dt>
+           <dd class="govuk-summary-list__value">
+             21 October 2021
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-historical-beneficial-owner">
+               Change
+               <span class="govuk-visually-hidden">When did they stop being a beneficial owner?</span>
+             </a>
+           </dd>
+         </div>
+      </dl>
+
+
+      <h3 class="govuk-heading-m">Individual for MT INVESTMENTS LIMITED</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             First name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Amanda
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">First name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Last name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Coles-Smythe
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Last name</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Date of birth
+           </dt>
+           <dd class="govuk-summary-list__value">
+             10 January 1990
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Date of birth</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Role within the trust
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Settlor
+             </dd>
+
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Role within the trust</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Nationality
+           </dt>
+           <dd class="govuk-summary-list__value">
+             British
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Nationality</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Home address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+        <li><span class="govuk-visually-hidden">Glencrutchery Rd</span>Glencrutchery Rd</li>
+        <li><span class="govuk-visually-hidden">Douglas</span>Douglas </li>
+        <li><span class="govuk-visually-hidden">IM2 6DA</span>IM2 6DA</li>
+        <li><span class="govuk-visually-hidden">Isle of Man</span>Isle of Man</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">Home address</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Correspondence address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+        <li><span class="govuk-visually-hidden">IM</span>IM</li>
+        <li><span class="govuk-visually-hidden">33 Birch Hill Ave</span>33 Birch Hill Ave</li>
+        <li><span class="govuk-visually-hidden">Onchan IM3 1RD</span>Onchan IM3 1RD</li>
+        <li><span class="govuk-visually-hidden">Isle of Man</span>Isle of Man</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-individual">
+               Change
+               <span class="govuk-visually-hidden">What is their correspondence address?</span>
+             </a>
+           </dd>
+         </div>
+
+      </dl>
+
+
+
+      <h3 class="govuk-heading-m">Legal entity for MT INVESTMENTS LIMITED</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Name
+           <dd class="govuk-summary-list__value">
+             Jones LTD
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Name of the legal entity</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Role within the trust
+           </dt>
+             <dd class="govuk-summary-list__value">
+               Beneficiary
+             </dd>
+
+
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Role within the trust</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Principal or registered office address
+           </dt>
+           <dd class="govuk-summary-list__value">
+      <ul class="govuk-list">
+      <li><span class="govuk-visually-hidden">Oliver's Mount</span>Oliver's Mount</li>
+      <li><span class="govuk-visually-hidden">Braddan</span>Braddan</li>
+      <li><span class="govuk-visually-hidden">IM4 4HW</span>IM4 4HW</li>
+      <li><span class="govuk-visually-hidden">Isle of Man</span>Isle of Man</li>
+      </ul>
+      </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Principal or registered office address</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Correspondence address
+           </dt>
+           <dd class="govuk-summary-list__value">
+             The correspondence address is the same as the principal or registered office address
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Is its correspondence address the same as its principal or registered office address?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Country it was formed in
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Isle of Man
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Which country was it formed in?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Legal form
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Limited company
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">What is its legal form?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Governing law
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Isle of Man
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">What is the governing law?</span>
+             </a>
+           </dd>
+         </div>
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Overseas public register
+           </dt>
+           <dd class="govuk-summary-list__value">
+             ICAEW
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Public register in the country it was formed in</span>
+             </a>
+           </dd>
+         </div>
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Entity’s registration number
+           </dt>
+           <dd class="govuk-summary-list__value">
+             45608318
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="/register/trusts/trust-ole">
+               Change
+               <span class="govuk-visually-hidden">Entity’s registration number in the country it was formed in</span>
+             </a>
+           </dd>
+         </div>
+      </dl>
+
+
+
+
+
+--->
+
+
+
+
+
+
+
+
+<!---
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">{{ data['trust-name'] }}</h2>
+
+      <p class="govuk-!-margin-bottom-3"><a href="javascript:void(0)">Change or remove <span class="govuk-visually-hidden">Trust 123</span></a></p>
+
+
+  <h3 class="govuk-heading-m">Who is involved in this trust?</h3>
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-3',
+      rows: [
+      {
+        key: {
+          text: "Beneficial owner"
+        },
+        value: {
+          html: "ACME"
+        }
+        }
+      ,
+        {
+          key: {
+            text: "Beneficial owner"
+          },
+          value: {
+            html: "Joe Bloggs"
+          }
+          }
+        ,
+          {
+            key: {
+              text: "Individual settlor"
+            },
+            value: {
+              html: "Dan Ashcroft"
+            }
+            }
+          ,
+            {
+              key: {
+                text: "Other legal entity"
+              },
+              value: {
+                text: "Doe LTD"
+              }
+        }
+            ]
+          }) }}
+
+
+<p class="govuk-!-margin-bottom-7"><a href="javascript:void(0)" class="govuk-body-m">Add or change individual or organisation
+  <span class="govuk-visually-hidden">Trust 123</span></a></p>
+
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom-2">Islands Trust</h2>
+
+<p class="govuk-!-margin-bottom-3"><a href="javascript:void(0)">Change or remove <span class="govuk-visually-hidden">Islands Trust</span></a></p>
+
+
+ <h3 class="govuk-heading-m">Who is involved in this trust?</h3>
+
+
+
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-3',
+  rows: [
+  {
+    key: {
+      text: "Beneficial owner"
+    },
+    value: {
+      html: "Sarah Doe"
+    }
+    }
+    ,
+      {
+        key: {
+          text: "Individual settlor"
+        },
+        value: {
+          html: "Dave Mayhew"
+        }
+        }
+      ,
+        {
+          key: {
+            text: "Other legal entity"
+          },
+          value: {
+            text: "Islands Corp"
+          }
+    }
+        ]
+      }) }}
+
+<p class="govuk-!-margin-bottom-7"><a href="javascript:void(0)" class="govuk-body-m">Add or change individual or organisation
+  <span class="govuk-visually-hidden">Islands Trust</span></a></p>
+
+---->
+
+
+
+
+
+  <h2 class="govuk-heading-m">Declaration</h2>
+    <p class="govuk-body">By selecting 'No more trusts to add' you are confirming that, to the best of the entity's knowledge, you have added all the required information about the trust.</p>
+
+
+    <div class="govuk-button-group">
+
+
+                {{ govukButton({
+                  text: "Add another trust",
+                  href: "/register/trusts/trust-details"
+                }) }}
+
+          {{ govukButton({
+            id: "trust-add",
+            text: "No more trusts to add",
+             classes: "govuk-button--secondary",
+    errorMessage: {
+    text: "test"
+  }
+             
+          }) }}
+
+
+</div>
+
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
