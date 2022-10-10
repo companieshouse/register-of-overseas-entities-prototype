@@ -18,9 +18,25 @@ You now need to tell us about trusts
 
 <h1 class="govuk-heading-xl">You now need to tell us about trusts</h1>
 
+
+
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    You have told us that one or more beneficial owners are involved in a trust.</a>
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+<!---
  <p class="govuk-body">
   You have told us that one or more beneficial owners are involved in a trust and we need to capture that information.
  </p>
+ ---->
+
+
 
 <h3 id="how-to-submit-information-about-trusts" class="govuk-heading-m">What information you need to submit about trusts</h3>
 
@@ -81,9 +97,6 @@ You now need to tell us about trusts
         text: "Save and continue"
       }) }}
      
-
-
-
 
     </div>
   </div>
