@@ -16,11 +16,11 @@ You now need to tell us about trusts
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">You now need to tell us about trusts</h1>
+<h1 class="govuk-heading-xl">You now need to submit trust information</h1>
 
 
 
-{% set html %}
+<!---{% set html %}
   <p class="govuk-notification-banner__heading">
     You have told us that one or more beneficial owners are involved in a trust.</a>
   </p>
@@ -38,65 +38,22 @@ You now need to tell us about trusts
 
 
 
-<h3 id="how-to-submit-information-about-trusts" class="govuk-heading-m">What information you need to submit about trusts</h3>
-
-      <p class="govuk-body">If any individuals or legal entities are beneficial owners of the overseas entity due to being a trustee of a trust, you’ll need to give us information about that trust.</p>
-
-      <h3 class="govuk-heading-s">Trust information</h3>
-      <p>You'll need to tell us:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the name of the trust</li>
-        <li>when the trust was created</li>
-        <li>which of the overseas entity's beneficial owners are involved in the trust</li>
+      <p class="govuk-body">At least one individual or entity you’ve told us about is a beneficial owner of the overseas entity, due to being a trustee of a trust.</p>
+      <p class="govuk-body">In the next section, you’ll need to tell us about the trust. You’ll also need to tell us about: </p>
+      <ul class="govuk-body">
+        <li>any former beneficial owners</li>
+        <li>other individuals and legal entities involved in the trust</li>
       </ul>
-
-      <h3 class="govuk-heading-s">Former beneficial owner information</h3>
-      <p>You’ll need to tell us about all individuals or entities who were formerly a beneficial owner of the overseas entity due to being a trustee of the trust. You’ll need to tell us:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the former beneficial owner's name</li>
-        <li>when they became a beneficial owner</li>
-        <li>when they stopped being a beneficial owner</li>
-      </ul>
-
-      <h3 class="govuk-heading-s">Information about individuals involved in the trust</h3>
-      <p>You'll need to tell us the individual's:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>role (beneficiary, settlor, grantor or interested person)</li>
-        <li>first and last name</li>
-        <li>date of birth</li>
-        <li>nationality</li>
-        <li>home and correspondence address</li>
-      </ul>
-
-      <p>You’ll also need to tell us what date they became an interested person (if relevant).</p>
-
-      <h3 class="govuk-heading-s">Information about legal entities involved in the trust</h3>
-      <p>You'll need to tell us the legal entity’s:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>role (beneficiary, settlor, grantor or interested person)</li>
-        <li>name</li>
-        <li>principal or registered office address</li>
-        <li>correspondence address</li>
-        <li>country it was formed in</li>
-        <li>legal form and governing law</li>
-        <li>public register it appears on and its registration number (if it has one)</li>
-      </ul>
-      <p>You do not need to tell us about government or public authorities.</p>
+      <p>You can add information about multiple trusts if needed. </p>
 
 
 
-{{ govukInsetText({
-  html: '
-            <h2 class="govuk-heading-m">Information may be shared with HM Revenue and Customs (HMRC)</h2>
-            <p>Details of the trust will not be available on the public record, but may be disclosed to HM Revenue and Customs (HMRC).</p>
-        '
-}) }}
 
 
       {{ govukButton({
-        text: "Save and continue"
+        text: "Continue"
       }) }}
-     
+
 
     </div>
   </div>
