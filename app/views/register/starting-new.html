@@ -21,25 +21,24 @@ Do you want to continue with your current application? – {{ serviceName }} –
   name: "startingNew",
   fieldset: {
     legend: {
-      text: "Do you want to continue with your current application?",
+      text: "Do you want to continue with a saved application?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
-  hint: {
-  text: "You already have an application in progress."
-},
+
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      hint: {
+        text: "Continue with a saved application from Your Filings."
+      }
     },
     {
       value: "no",
       text: "No - start a new application",
-      hint: {
-        text: "If you start a new application, your current one will be deleted."
-      },
+  
       checked: checked("statements", "noneIdentified")
     }
   ]
