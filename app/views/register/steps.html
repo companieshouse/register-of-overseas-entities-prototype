@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if errorList.length > 0 %}
+  Error:
+{% endif %}
+Steps for this service – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Steps in this service</h1>
+
+  <p class="govuk-body">Lorem ipsum our <strong>online service.</strong></p>
+
+
+
+      <h3 id="agentreg" class="govuk-heading-m">You are a UK-regulated agent and you are registering for the overseas entity</h3>
+      <p class="govuk-body">You are doing the verification checks and registering the overseas entity using our <strong>online service.</strong></p>
+
+  <ol class="govuk-body govuk-list--spaced">
+    <li><a href="/register/start-merged-with-guidance">Read the guidance</a> and gather all information <br>
+        <span class="govuk-body-s">If relevant, also download and complete the <a href="/public/pdf/TrustDataCapture.xlsm" class="govuk-link">Trust Excel document</a>. (52KB)</span></li>
+    <li>Check if someone from your organisation has already requested an agent assurance code. <br>
+      <span class="govuk-body-s">If they have then <a href="#6agentreg">go to step 6</a> in this list</li></span>
+    <li><a href="/public/docs/Request-an-agent-assurance-code-new.odt">Download the 'Request an agent assurance code' form</a>. <span class="govuk-body-s">(ODT, 9KB)</span> <br> You get one code per organisation.</p>
+    <li>Complete the agent assurance code request form and email it to <a href="">agentcode@companieshouse.gov.uk</a></li>
+    <li>Companies House sends your organisation’s agent assurance code via email (do not share outside of your organisation)</li>
+    <li id="6agentreg">Complete the verification checks (see your guidance)</li>
+    <li>Register the overseas entity within three months of doing the verification checks</li>
+    <li>Companies House emails you an automatic response email with your application number</li>
+    <li>Companies House sends you the overseas entity number via email and confirms that the registration is successful</li>
+  </ol>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+
+
+
+{{ govukInsetText({
+  html: '  <h2 class="govuk-heading-m">Information shown on the public register</h2>
+    <p>None of the information provided in this section will be shown on the public Register of Overseas Entities.</p>'
+}) }}
+
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
