@@ -195,3 +195,158 @@ ul#navigation {
 .check-answers-change-table {
   text-align: right;
 }
+
+
+// FILING CARDS CSS LIFTED FROM 'CONF-STTATEMENT-PROTOTYPE'
+// Commented out classes which I believe are not required, in the event they are then we can uncomment them
+
+//.flex {
+//  display: flex;
+//}
+
+//.govuk-summary-card {
+//  border: 1px solid #b1b4b6;
+//}
+
+//.govuk-summary-card_heading {
+//  background: #f3f2f1;
+//}
+
+//.govuk-link__print {
+//   display: none;
+// }
+
+//.govuk-input--company-number {
+//  max-width: 13ex;
+//}
+
+//.govuk-hint-text {
+//  color: $govuk-secondary-text-colour;
+//}
+
+// Card background
+.one-filing {
+  margin-bottom: 2em;
+  background-color: #f8f8f8;
+  padding: 1em;
+  clear: both;
+}
+
+// Links under header
+.js-toggle-nav {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'proxima_nova', Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  z-index: 60;
+  clear: none;
+  background: transparent;
+  border-bottom: 1px solid #bfc1c3;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+
+.js-signout {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'proxima_nova', Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  z-index: 60;
+  clear: none;
+  background: transparent;
+  border-bottom: 1px solid #bfc1c3;
+  vertical-align: middle;
+  padding-bottom: 20px;
+}
+
+.user {
+  display: inline;
+}
+
+.content {
+  display: inline;
+}
+
+.content-email {
+  display: inline;
+  padding-right: 20px;
+}
+
+.nav-spacing {
+  padding-left: 20px;
+}
+
+.text-description {
+  font-size: 16px;
+}
+
+//.search-bar-active {
+//  background: #dee0e2;
+//  padding: .5em;
+//  border: none;
+//  margin: 0;
+//  color: #0b0c0c;
+//}
+
+//.search-header .searchfield {
+//  position: relative;
+//  vertical-align: baseline;
+//}
+
+//.search-header .search-submit {
+//  position: absolute;
+//  bottom: 0;
+//  right: 0;
+//  height: 50px;
+//  width: 50px;
+//  overflow: visible;
+//  cursor: pointer;
+//}
+
+//.search-header button {
+//  box-shadow: none;
+//  z-index: 4;
+//  top: 0;
+//  border: none;
+//  text-indent: -5000px;
+//  color: #fff;
+//  background-color: #005ea5;
+//  background-image: url('/images/search/search-button.png');
+//  background-repeat: no-repeat;
+//  background-position: -12.5% 50%;
+//}
+
+//.govuk-summary-list__row:last-child {
+//  .govuk-summary-list__key {
+//    border-bottom: 1px solid transparent;
+//  }
+//  .govuk-summary-list__value {
+//    border-bottom: 1px solid transparent;
+//  }
+//  .govuk-summary-list__actions {
+//    border-bottom: 1px solid transparent;
+//  }
+//}
+
+//.app-task-list__items {
+//  padding-left: 0px;
+//}
+
+//.govuk-panel {
+//  .govuk-panel--rejection {
+//    color: #ffffff;
+//    background: #d4351c;
+//  }
+//}
+
+//.govuk-tag--dark-grey {
+//  background-color: 	#505a5f;
+//}
+
+//.rejected {
+//  background: transparent;
+//  border: 6px solid #d4351c;
+//  color: #d4351c;
+//}

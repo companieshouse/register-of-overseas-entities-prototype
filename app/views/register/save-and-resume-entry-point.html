@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Save and resume entry point – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Save and resume entry point</h1>
+      <p class="govuk-body">User has chosen to continue an incomplete reigstration.</p>
+      <p class="govuk-body">Where is the resume entry point? Is it the beginning of the process, or later in the flow post identity?</p>
+    </div>
+  </div>
+
+{% endblock %}

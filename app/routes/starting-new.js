@@ -20,7 +20,9 @@ router.post('/register/starting-new', function(req, res) {
         res.redirect('/register/sold-land-filter');
     } else {
 		console.log('starting-new.js ELSE'); // print to console to show which radio has been chosen
-        res.render('register/who-is-making-filing');
+        //res.render('register/who-is-making-filing');
+        // Route to Your filings page
+        res.render('users/transactions');
     }
 })
 }
