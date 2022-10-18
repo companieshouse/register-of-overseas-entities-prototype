@@ -19,6 +19,7 @@ Has the entity disposed of any property or land in England, Scotland or Wales si
 <form class="form" method="post">
 
 {{ govukRadios({
+  classes: "govuk-radios--inline",
   idPrefix: "soldLand",
   name: "soldLand",
   fieldset: {
@@ -28,26 +29,19 @@ Has the entity disposed of any property or land in England, Scotland or Wales si
       classes: "govuk-fieldset__legend--xl"
     }
   },
+  hint: {
+  text: "Select yes if the entity has disposed of some or all its land or property."
+},
   items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
     {
       value: "no",
       text: "No"
-    },
-    {
-      value: "some",
-      text: "Yes – some property or land"
-    },
-    {
-      value: "all",
-      text: "Yes – all property or land "
     }
   ]
-}) }}
-{{ govukInsetText({
-  html: '
-            <h2 class="govuk-heading-m">Information shown on the public register</h2>
-            <p>All of the information provided in this section will be shown on the public Register of Overseas Entities.</p>
-        '
 }) }}
 
       {{ govukButton({
