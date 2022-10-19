@@ -27,5 +27,7 @@ module.exports = {
   "contact-full-name": [ "Claire Contact" ],
   "contact-email": [ "contact@testcompany.co.uk" ],
   // Set the "are we signed in?" variable (gSignedIn) to FALSE as its default
-  "gSignedIn": [ "false" ]
+  "gSignedIn": [ "false" ],
+  // signOutFirstTrigger is specific to the sign-out page to ensure the error messaging can come into play
+  "signOutFirstTrigger": [ "yes" ]
 }
