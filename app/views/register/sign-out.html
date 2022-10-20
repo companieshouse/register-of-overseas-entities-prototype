@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
   {% if (data['signOutFirstTrigger'] != "yes") and (data['signOut']|length == 0) %}
-    Error: 
+    Error:
   {% endif %}
   Are you sure you want to sign out? – {{ serviceName }} – GOV.UK
 {% endblock %}
@@ -25,7 +25,7 @@
             titleText: "There is a problem",
             errorList: [
             {
-              text: "Select if you want to sign out",
+              text: "Select yes if you want to sign out",
               href: "#signOut"
             }
             ]
@@ -53,7 +53,7 @@
             </div>
             {% if (data['signOutFirstTrigger'] != "yes") and (data['signOut']|length == 0) %}
               <p id="signOut-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Select if you want to sign out
+                <span class="govuk-visually-hidden">Error:</span> Select yes if you want to sign out
               </p>
             {% endif %}
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
