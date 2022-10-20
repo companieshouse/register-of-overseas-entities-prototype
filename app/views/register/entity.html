@@ -24,6 +24,7 @@
           }) }}
       {% endif %}
 
+      <span class="govuk-caption-xl">Overseas Entity Name LTD</span>
       <h1 class="govuk-heading-xl">Tell us about the overseas entity</h1>
 
       <form class="form" method="post">
@@ -33,7 +34,7 @@
           text: "This is a legal entity, such as a company or organisation, that is governed by the law of a country or territory outside the UK."
         }) }}
 
-
+<!---
 
         {% if errorName == true %}
         {{ govukInput({
@@ -60,7 +61,7 @@
           name: "entity-name",
           value: entityName
         }) }}
-        {% endif %}
+        {% endif %}-->
 
 {% if errorCountry == true %}
         <div class="govuk-form-group">
