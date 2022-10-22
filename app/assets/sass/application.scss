@@ -20,10 +20,10 @@ $govuk-assets-path: '/govuk/assets/';
 /* PRINT CSS */
 @media print {
 
-  // We could reduce these further as there's a lot of repetition, but for the sake of clarty to see what's being hidden, etc.
-  // I've chosen to increase the number of elements/classes being referred to.
+  // We could reduce these further as there's a lot of repetition, but for the sake of clarity to see what's 
+  // being hidden, etc., I've chosen to increase the number of elements/classes being referred to.
 
-  // To test the styles we don't have to waste reams and reams of paper.
+  // Also, to test the styles we don't have to waste reams and reams of paper.
 
   // Chrome:
   // 1. Select "View > Developer > Developer Tools"
@@ -98,7 +98,7 @@ $govuk-assets-path: '/govuk/assets/';
   // Hide the grey GOVUK footer, along with the content held within it
   footer.govuk-footer, div.govuk-footer__meta {
     visibility: hidden;
-   }
+  }
 
 }
 
