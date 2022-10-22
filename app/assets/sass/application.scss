@@ -17,6 +17,91 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+/* PRINT CSS */
+@media print {
+
+  // We could reduce these further as there's a lot of repetition, but for the sake of clarty to see what's being hidden, etc.
+  // I've chosen to increase the number of elements/classes being referred to.
+
+  // To test the styles we don't have to waste reams and reams of paper.
+
+  // Chrome:
+  // 1. Select "View > Developer > Developer Tools"
+  // 2. From the kebab menu (three dots) choose "More tools > Rendering"
+  // 3. Scroll to the bottom of the list, find "Emulate CSS media type" and choose "Print"
+
+  // Override body style setting the page margin to 0
+  body {
+    margin: 0;
+  }
+  
+  // Override body, all headers (h1, h2, h3, and, h4) and p styles setting their colour and background colours
+  // We are setting the font colour to be black and the background colour on which it sits to be white
+  body, h1, h2, h3, h4, p {
+    color: #000;
+    background-color: #fff;
+  }
+
+  // Set a specific class of the h1 element to a new font size
+  h1.govuk-heading-xl {
+    font-size: 24pt;
+  }
+
+  // Set a specific class of the h2 element to a new font size
+  h2.govuk-heading-l {
+    font-size: 20pt;
+  }
+
+  // Set a specific class of both the h3 and h4 elements to a set font size
+  h3.govuk-heading-m, h4.govuk-heading-s {
+    font-size: 18pt;
+  }
+
+  // Font size adjustments for 'Check your answers' specific classes brought into line with
+  // parpagraph and list elements so as they are the same size 
+  dt.govuk-summary-list__key, dd.govuk-summary-list__value, p, li {
+    font-size: 13pt;
+  }
+  
+  // Hide the a (links) as well as two further anchor classes that are attributed to buttons and back links
+  a, a.govuk-button, a.govuk-back-link {
+    visibility: hidden;
+  }
+
+  // Override the override (due to above) by ensuring both GOVUK and the 'service name' are visible
+  // (they are links and have been hidden with the above, but we want them to feature as part of the print stylesheet)
+  a.govuk-header__link, a.govuk-header__link--service-name {
+    visibility: visible;
+  }
+
+  // Hide the alpha/beta/live phase banner
+  div.govuk-phase-banner {
+    visibility: hidden;
+  }
+
+  // Hide the email address of the logged in user
+  li.user {
+    visibility: hidden;
+  }
+
+  // Set the content of the main div to 100%
+  // (it looks better with respect to section breaks, etc., but doesn't neccessarily force the content to be 100% width)
+  div.govuk-grid-column-two-thirds-from-desktop {
+    width: 100%;
+  }
+
+  // Hide horizontal rule
+  hr {
+    visibility: hidden;
+  }
+
+  // Hide the grey GOVUK footer, along with the content within it
+  footer.govuk-footer, div.govuk-footer__meta {
+    visibility: hidden;
+   }
+
+}
+
 @import "accessible-autocomplete";
 
 .gem-c-contents-list__list-item--dashed {
