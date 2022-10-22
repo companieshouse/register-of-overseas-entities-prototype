@@ -52,13 +52,13 @@ $govuk-assets-path: '/govuk/assets/';
     font-size: 20pt;
   }
 
-  // Set a specific class of both the h3 and h4 elements to a set font size
+  // Set a specific class of both the h3 and h4 elements to a new font size
   h3.govuk-heading-m, h4.govuk-heading-s {
     font-size: 18pt;
   }
 
   // Font size adjustments for 'Check your answers' specific classes brought into line with
-  // parpagraph and list elements so as they are the same size 
+  // parpagraph and list elements so as they become the same size 
   dt.govuk-summary-list__key, dd.govuk-summary-list__value, p, li {
     font-size: 13pt;
   }
@@ -90,12 +90,12 @@ $govuk-assets-path: '/govuk/assets/';
     width: 100%;
   }
 
-  // Hide horizontal rule
+  // Hide horizontal rule (there's only at the top of the page I believe)
   hr {
     visibility: hidden;
   }
 
-  // Hide the grey GOVUK footer, along with the content within it
+  // Hide the grey GOVUK footer, along with the content held within it
   footer.govuk-footer, div.govuk-footer__meta {
     visibility: hidden;
    }
