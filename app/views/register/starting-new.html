@@ -21,12 +21,16 @@ Do you want to continue with your current application? – {{ serviceName }} –
   name: "startingNew",
   fieldset: {
     legend: {
-      text: "Do you want to continue with a saved application?",
+      text: "Do you want to continue with a saved application",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
-    }
-    
+    }  
   },
+  hint: {
+    text: "If you have saved applications, you can continue with one of these or start a new one."
+  },
+
+
 
   items: [
     {
@@ -44,6 +48,8 @@ Do you want to continue with your current application? – {{ serviceName }} –
     }
   ]
 }) }}
+
+
 
 
       {{ govukButton({
