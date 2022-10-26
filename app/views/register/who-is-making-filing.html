@@ -19,7 +19,7 @@ Who is making the filing?
 <form action="/register/overseas-entity-due-diligence" method="get">
 
 
-{{ govukRadios({
+<!--{{ govukRadios({
   idPrefix: "whoIsFiling",
   name: "whoIsFiling",
   fieldset: {
@@ -40,7 +40,63 @@ Who is making the filing?
     }
 
   ]
-}) }}
+}) }}-->
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  
+    <h1 class="govuk-fieldset__heading">
+      Who is completing this registration?
+    </h1>
+  
+  </legend>
+  
+
+  <div class="govuk-radios"
+    data-module="govuk-radios">
+    
+      
+          
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whoIsFiling" name="whoIsFiling" type="radio" value="agent" {{ checked("whoIsFiling", "agent") }}> 
+          <label class="govuk-label govuk-radios__label" for="whoIsFiling">
+        Someone who works for the UK-regulated agent that carried out verification checks
+      </label>
+          
+        </div>
+        
+        
+      
+    
+      
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whoIsFiling-2" name="whoIsFiling" type="radio" value="else" {{ checked("whoIsFiling", "else") }}>
+          <label class="govuk-label govuk-radios__label" for="whoIsFiling-2">
+        Someone else
+      </label>
+          
+        </div>
+        
+        
+      
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
 
 
       {{ govukButton({

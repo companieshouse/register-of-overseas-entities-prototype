@@ -17,10 +17,10 @@ What is the name of the overseas entity?
 
 
 
-<form action="/register/presenter" method="get">
+<form action="/register/presenter" method="post">
 
 
-{{ govukInput({
+<!--{{ govukInput({
   label: {
     text: "What is the name of the overseas entity?",
     classes: "govuk-label--xl",
@@ -28,9 +28,15 @@ What is the name of the overseas entity?
   },
   id: "overseas-name",
   name: "overseas-name"
-}) }}
+}) }}-->
 
-
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="overseas-name">
+      What is the name of the overseas entity?
+    </label>
+  </h1>
+  <input class="govuk-input" id="overseas-name" name="overseas-name" type="text" value="{{ data['overseas-name'] }}">
+</div>
 
 
       {{ govukButton({
