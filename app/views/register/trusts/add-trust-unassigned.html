@@ -19,13 +19,14 @@ Do you want to add another trust?
 
     <form classes="form" action="/register/check-answers" method="get">
    
+<!--When "no" is selected for "addTrust" and the user still needs to assign BOs that they say are part of a trust.-->
 
 {{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
     {
-      html: 'You still need to assign individuals or entities to a trust
-      <br>
+      html: 'You still need to assign beneficial owners to a trust:
+      <br><br>
       <ul>
       <li>Jane Doe</li>
       <li>Joe Bloggs</li>
@@ -42,7 +43,7 @@ Do you want to add another trust?
 {{ govukRadios({
   classes: "govuk-radios",
   idPrefix: "addTrust",
-  name: "addTrustr",
+  name: "addTrust",
   fieldset: {
     legend: {
       text: "Do you need to add another trust?
@@ -52,7 +53,13 @@ Do you want to add another trust?
     }
   },
   errorMessage: {
-    text: "You still need to assign individuals or entities to a trust"
+    html: 'You still need to assign beneficial owners to a trust:
+      <br><br>
+      <ul class="govuk-body govuk-error-summary__body">
+      <li class>Jane Doe</li>
+      <li>Joe Bloggs</li>
+      <li>ACME LTD</li>
+      </ul>'
   },
   items: [
     {
