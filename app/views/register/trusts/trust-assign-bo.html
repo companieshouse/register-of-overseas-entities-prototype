@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Do you want to add Joe Bloggs to an existing trust?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+  {% include "includes/user-bar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">You need to assign a beneficial owner to a trust</h1>
+
+
+<!---
+
+ <p class="govuk-body">
+  You have told us that one or more beneficial owners are involved in a trust and we need to capture that information.
+ </p>
+
+      <p class="govuk-body">You still need to assign an individual or entity to a trust that you told us about previously.</p>
+      <p class="govuk-body">You have 2 people to assign:</p>
+      <ul class="govuk-body govuk-!-margin-bottom-5">
+        <li>Jane Doe</li>
+        <li>Joe Bloggs</li>
+      </ul>
+
+{{ govukRadios({
+  name: "which-trust-jane",
+  fieldset: {
+    legend: {
+      text: "Which trust do you want to assign Jane Doe to?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "cayman-trust",
+      text: "Cayman Trust"
+    },
+    {
+      value: "islands-trust",
+      text: "Islands Trust"
+    }
+  ]
+}) }}-->
+
+
+{{ govukCheckboxes({
+  name: "countries",
+  fieldset: {
+    legend: {
+      text: "Which existing trust do you want to add Joe Bloggs to?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply"
+  },
+  items: [
+    {
+     value: "cayman-trust",
+      text: "Cayman Trust"
+    },
+    {
+      value: "islands-trust",
+      text: "Islands Trust"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "none",
+      text: "None of the above",
+      behaviour: "exclusive"
+    }
+  ]
+}) }}
+
+
+{{ govukRadios({
+  name: "which-trust-joe",
+  fieldset: {
+    legend: {
+      text: "Do you want to add a new trust?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: '/register/trusts/trust-details'
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
