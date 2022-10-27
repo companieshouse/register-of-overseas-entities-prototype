@@ -19,15 +19,24 @@ Do you want to add another trust?
 
     <form classes="form" action="/register/check-answers" method="get">
    
+
 {{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
     {
-      text: "You still need to assign these individuals or entities to a trust",
+      html: 'You still need to assign individuals or entities to a trust
+      <br>
+      <ul>
+      <li>Jane Doe</li>
+      <li>Joe Bloggs</li>
+      <li>ACME LTD</li>
+      </ul>
+      ',
       href: "#addTrust"
     }
   ]
 }) }}
+
 
 
 {{ govukRadios({
@@ -43,7 +52,7 @@ Do you want to add another trust?
     }
   },
   errorMessage: {
-    text: "Select if you are British, Irish or a citizen of a different country"
+    text: "You still need to assign individuals or entities to a trust"
   },
   items: [
     {
