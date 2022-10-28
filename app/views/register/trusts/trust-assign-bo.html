@@ -58,7 +58,7 @@ Do you want to add Joe Bloggs to an existing trust?
   name: "countries",
   fieldset: {
     legend: {
-      text: "Which existing trust do you want to add Joe Bloggs to?",
+      text: "Which trust do you want to add Joe Bloggs to?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
@@ -76,17 +76,13 @@ Do you want to add Joe Bloggs to an existing trust?
       text: "Islands Trust"
     },
     {
-      divider: "or"
-    },
-    {
-      value: "none",
-      text: "None of the above",
-      behaviour: "exclusive"
+      value: "new-trust",
+      text: "A new trust"
     }
   ]
 }) }}
 
-
+<!--
 {{ govukRadios({
   name: "which-trust-joe",
   fieldset: {
@@ -106,7 +102,7 @@ Do you want to add Joe Bloggs to an existing trust?
       text: "No"
     }
   ]
-}) }}
+}) }}-->
 
 
 
