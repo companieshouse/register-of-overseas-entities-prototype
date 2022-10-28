@@ -16,7 +16,7 @@ Do you want to add Joe Bloggs to an existing trust?
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">You need to assign a beneficial owner to a trust</h1>
+<!--<h1 class="govuk-heading-xl">You need to assign a beneficial owner to a trust</h1>-->
 
 
 <!---
@@ -58,9 +58,9 @@ Do you want to add Joe Bloggs to an existing trust?
   name: "countries",
   fieldset: {
     legend: {
-      text: "Which trust do you want to add Joe Bloggs to?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
+      text: "Which trust is Joe Bloggs a trustee for?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
     }
   },
   hint: {
@@ -77,7 +77,10 @@ Do you want to add Joe Bloggs to an existing trust?
     },
     {
       value: "new-trust",
-      text: "A new trust"
+      text: "A new trust",
+      hint: {
+        text:"You'll need to tell us about the trust."
+      }
     }
   ]
 }) }}
