@@ -12,6 +12,7 @@ module.exports = function (router) {
     var governingLaw = req.session.data['entity-governing-law']
     var publicRegister = req.session.data['entity-public-register']
     var publicName = req.session.data['entity-public-register-name']
+    var publicJurisdiction = req.session.data['entity-public-register-jurisdiction']
     var publicNumber = req.session.data['entity-public-register-number']
 
   	res.render( 'register/entity', {
@@ -27,6 +28,7 @@ module.exports = function (router) {
       governingLaw: governingLaw,
       publicRegister: publicRegister,
       publicNumber: publicNumber,
+      publicJurisdiction: publicJurisdiction,
       publicName: publicName
     });
   })
@@ -44,6 +46,7 @@ module.exports = function (router) {
     var governingLaw = req.session.data['entity-governing-law']
     var publicRegister = req.session.data['entity-public-register']
     var publicName = req.session.data['entity-public-register-name']
+    var publicJurisdiction = req.session.data['entity-public-register-jurisdiction']
     var publicNumber = req.session.data['entity-public-register-number']
   	var errors = []
   	var nameHasError = false
@@ -58,6 +61,7 @@ module.exports = function (router) {
     var governingLawHasError = false
     var publicRegisterHasError = false
     var registerNameHasError = false
+    var registerJurisdictionHasError = false
     var registerNumberHasError = false
 
   	if (req.session.data['entity-name'] === '') {
@@ -144,6 +148,13 @@ module.exports = function (router) {
   			href: '#entity-public-register-name'
   		})
   	}
+    if (req.session.data['entity-public-register-jurisdiction'] === '' && req.session.data['entity-public-register'] === 'yes') {
+  		registerJurisdictionHasError = true
+  		errors.push({
+  			text: 'Enter the name of the jurisdiction the entity operates under',
+  			href: '#entity-public-register-jurisdiction'
+  		})
+  	}
     if (req.session.data['entity-public-register-number'] === '' && req.session.data['entity-public-register'] === 'yes') {
       registerNumberHasError = true
       errors.push({
@@ -151,7 +162,7 @@ module.exports = function (router) {
         href: '#entity-public-register-number'
       })
     }
-  	if (nameHasError || countryHasError || principalAddressHasError || cityHasError || serivceAddressHasError || emailHasError || legalFormHasError || governingLawHasError || publicRegisterHasError || registerNameHasError || registerNumberHasError) {
+  	if (nameHasError || countryHasError || principalAddressHasError || cityHasError || serivceAddressHasError || emailHasError || legalFormHasError || governingLawHasError || publicRegisterHasError || registerNameHasError || registerJurisdictionHasError || registerNumberHasError) {
   		res.render('register/entity', {
   			errorName: nameHasError,
         errorCountry: countryHasError,
@@ -166,6 +177,7 @@ module.exports = function (router) {
         errorPublicRegister: publicRegisterHasError,
         errorRegisterName: registerNameHasError,
         errorRegisterNumber: registerNumberHasError,
+        errorRegisterJurisdiction: registerJurisdictionHasError,
   			errorList: errors,
         entityName: entityName,
         countryFormed: countryFormed,
@@ -179,7 +191,8 @@ module.exports = function (router) {
         governingLaw: governingLaw,
         publicRegister: publicRegister,
         publicNumber: publicNumber,
-        publicName: publicName
+        publicName: publicName,
+        publicJurisdiction: publicJurisdiction
   		})
   	} else {
   		res.redirect( '/register/beneficial-owner-statements' )

@@ -544,7 +544,7 @@ html: serviceAddressHtml
   name: "entity-public-register-name",
     value: publicName,
   hint: {
-   text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
+   text: "Include the full name. For example, Jersey Financial Services Commission."
  },
   label: {
     text: "Name of register"
@@ -559,13 +559,44 @@ html: serviceAddressHtml
   name: "entity-public-register-name",
   value: publicName,
   hint: {
-   text: "Include its jurisdiction. For example, Hong Kong or State of Delaware."
+   text: "Include the full name. For example, Jersey Financial Services Commission."
  },
   label: {
     text: "Name of register"
   }
 }) }}
 {% endif %}
+
+{# Jurisdiction #}
+{% if errorRegisterJurisdiction == true %}
+  {{ govukInput({
+    id: "entity-public-register-jurisdiction",
+    name: "entity-public-register-jurisdiction",
+      value: publicJurisdiction,
+    hint: {
+    text: "For example, Jersey."
+  },
+    label: {
+      text: "Jurisdiction"
+    },
+    errorMessage: {
+            text: "Enter the name of the jurisdiction the entity operates under"
+          }
+  }) }}
+{% else %}
+  {{ govukInput({
+    id: "entity-public-register-jurisdiction",
+    name: "entity-public-register-jurisdiction",
+      value: publicJurisdiction,
+    hint: {
+    text: "For example, Jersey."
+  },
+    label: {
+      text: "Jurisdiction"
+    }
+  }) }}
+{% endif %}
+
 {% if errorRegisterNumber == true %}
 {{ govukInput({
   id: "entity-public-register-number",
