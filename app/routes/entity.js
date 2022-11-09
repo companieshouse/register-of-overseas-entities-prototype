@@ -144,14 +144,14 @@ module.exports = function (router) {
     if (req.session.data['entity-public-register-name'] === '' && req.session.data['entity-public-register'] === 'yes') {
   		registerNameHasError = true
   		errors.push({
-  			text: 'Enter the name of the register the entity operates under',
+  			text: 'Enter the name of the register',
   			href: '#entity-public-register-name'
   		})
   	}
     if (req.session.data['entity-public-register-jurisdiction'] === '' && req.session.data['entity-public-register'] === 'yes') {
   		registerJurisdictionHasError = true
   		errors.push({
-  			text: 'Enter the name of the jurisdiction the entity operates under',
+  			text: 'Enter the jurisdiction',
   			href: '#entity-public-register-jurisdiction'
   		})
   	}
