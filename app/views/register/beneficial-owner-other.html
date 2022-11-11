@@ -238,6 +238,221 @@
 
 
 
+
+
+
+
+
+
+
+<!-- -->
+
+
+{% set boCorpPublicRegisterHtml %}
+{% if errorboCorpRegisterName == true %}
+{{ govukInput({
+  id: "bo-corp-public-register-name",
+  name: "bo-corp-public-register-name",
+    value: boCorpPublicName,
+  hint: {
+   text: "Include the full name. For example, Jersey Financial Services Commission."
+ },
+  label: {
+    text: "Name of register"
+  },
+  errorMessage: {
+          text: "Enter the name of the register"
+        }
+}) }}
+{% else %}
+{{ govukInput({
+  id: "bo-corp-public-register-name",
+  name: "bo-corp-public-register-name",
+  value: boCorpPublicName,
+  hint: {
+   text: "Include the full name. For example, Jersey Financial Services Commission."
+ },
+  label: {
+    text: "Name of register"
+  }
+}) }}
+{% endif %}
+
+{# Jurisdiction #}
+{% if errorboCorpRegisterJurisdiction == true %}
+  {{ govukInput({
+    id: "bo-corp-public-register-jurisdiction",
+    name: "bo-corp-public-register-jurisdiction",
+      value: boCorpPublicJurisdiction,
+    hint: {
+    text: "For example, Jersey."
+  },
+    label: {
+      text: "Jurisdiction"
+    },
+    errorMessage: {
+            text: "Enter the jurisdiction"
+          }
+  }) }}
+{% else %}
+  {{ govukInput({
+    id: "bo-corp-public-register-jurisdiction",
+    name: "bo-corp-public-register-jurisdiction",
+      value: boCorpPublicJurisdiction,
+    hint: {
+    text: "For example, Jersey."
+  },
+    label: {
+      text: "Jurisdiction"
+    }
+  }) }}
+{% endif %}
+
+{% if errorboCorpRegisterNumber == true %}
+{{ govukInput({
+  id: "bo-corp-public-register-number",
+  name: "bo-corpe-public-register-number",
+  value: boCorpPublicNumber,
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Entity's registration number"
+  },
+  errorMessage: {
+          text: "Enter the entity's registration number"
+        }
+}) }}
+{% else %}
+{{ govukInput({
+  id: "bo-corp-public-register-number",
+  name: "bo-corp-public-register-number",
+  value: boCorpPublicNumber,
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Entity’s registration number"
+  }
+}) }}
+{% endif %}
+{% endset -%}
+
+
+
+{% if errorboCorpPublicRegister == true %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ],
+  errorMessage: {
+          text: "Select yes if the entity is already on a public register in the country it was formed in"
+        }
+}) }}
+{% else %}
+{% if boCorpPublicRegister === 'yes' %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: true,
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+{% elseif boCorpPublicRegister === 'no' %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: true
+    }
+  ]
+}) }}
+{% else %}
+{{ govukRadios({
+  idPrefix: "bo-corp-public-register",
+  name: "bo-corp-public-register",
+  fieldset: {
+    legend: {
+      text: "Is the other legal entity already on a public register in the country it was formed in?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: boCorpPublicRegisterHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+{% endif %}
+{% endif %}
+
+
+
+
+
+
+
+<!--
+
         {% set entityPublicRegisterHtml %}
         {{ govukInput({
           id: "bo-corp-public-register-name",
@@ -286,7 +501,7 @@
             }
           ]
         }) }}
-
+-->
 
 
 
