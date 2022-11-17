@@ -31,5 +31,5 @@ module.exports = {
   // signOutFirstTrigger is specific to the sign-out page to ensure the error messaging can come into play
   "signOutFirstTrigger": [ "yes" ],
     // Overseas entity name
-  "overseas-name": [ "DA Investments Limited" ]
+  "overseas-name": [ "Sugar Hotel" ]
 }
