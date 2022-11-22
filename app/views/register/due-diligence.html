@@ -86,6 +86,7 @@
             classes: "govuk-fieldset__legend--m",
             isPageHeading: false
           }
+          
         }) %}
 
           {{ govukInput({
@@ -93,7 +94,7 @@
               html: 'Property name or number'
             },
             hint: {
-             text: "For example, 'Saron House', '116' or 'Unit 37a'"
+             text: "For example, 'Saron House', '116' or 'Unit 37a'. It will need to match the correspondence address on the agent assurance code request."
            },
             id: "agent-address-property-name-number",
             name: "agent-address-property-name-number"
@@ -429,7 +430,7 @@ checked: checked("where-do-you-live", "wales")
             isPageHeading: false
           },
           hint: {
-    text: "For example, tell us the name of the Head of Compliance"
+    text: "For example, tell us the name of the Head of Compliance. It will need to match the name on the agent assurance code request."
   },
           id: "partner-name",
           name: "partner-name",
