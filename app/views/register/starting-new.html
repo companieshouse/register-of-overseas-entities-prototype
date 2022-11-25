@@ -27,7 +27,7 @@ Do you want to continue with your current application? – {{ serviceName }} –
     }  
   },
   hint: {
-    text: "If you have saved applications, you can continue with one of these or start a new one."
+    text: "If you have saved applications, you can continue with one of these or start a new one. "
   },
 
 
@@ -43,7 +43,9 @@ Do you want to continue with your current application? – {{ serviceName }} –
     {
       value: "no",
       text: "No - start a new application",
-
+      hint: {
+        text: "This will not delete any saved applications."
+      },
       checked: checked("statements", "noneIdentified")
     }
   ]
