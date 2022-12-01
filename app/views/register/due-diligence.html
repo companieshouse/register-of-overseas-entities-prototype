@@ -24,8 +24,8 @@
           }) }}
       {% endif %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-0">Complete this statement to confirm that verification checks have been completed</h1>
-      <p class="govuk-body-l govuk-!-margin-bottom-8 govuk-!-margin-top-5">The agent’s details must match the information used to request the agent assurance code.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-0 govuk-!-margin-bottom-8" >Complete this statement to confirm that verification checks have been completed</h1>
+    
 
       <form class="form" method="post">
 
@@ -47,6 +47,13 @@
          }) }}
 
 
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+          {{ govukWarningText({
+            text: "All agent details you enter here must be exactly the same as the details on the ‘Request an agent assurance code’ document that was submitted for your company. ",
+            iconFallbackText: "Warning"
+        }) }}
+
+
 {% if errorName == true %}
         {{ govukInput({
           label: {
@@ -55,7 +62,7 @@
             isPageHeading: false
           },
           hint: {
-           text: "Enter the company name, or your own name if you are self-employed. It will need to match the name on the agent assurance code request exactly."
+           text: "Enter the company name, or your own name if you are self-employed. "
          },
           id: "due-diligence-name",
           name: "due-diligence-name",
@@ -72,7 +79,7 @@
             isPageHeading: false
           },
           hint: {
-           text: "Enter the company name, or your own name if you are self-employed. It will need to match the name on the agent assurance code request exactly. "
+           text: "Enter the company name, or your own name if you are self-employed.  "
          },
           id: "due-diligence-name",
           name: "due-diligence-name",
@@ -94,7 +101,7 @@
               html: 'Property name or number'
             },
             hint: {
-             text: "For example, 'Saron House', '116' or 'Unit 37a'. It will need to match the correspondence address on the agent assurance code request."
+             text: "For example, 'Saron House', '116' or 'Unit 37a'."
            },
             id: "agent-address-property-name-number",
             name: "agent-address-property-name-number"
@@ -430,7 +437,7 @@ checked: checked("where-do-you-live", "wales")
             isPageHeading: false
           },
           hint: {
-    text: "For example, tell us the name of the Head of Compliance. It will need to match the name on the agent assurance code request."
+    text: "For example, tell us the name of the Head of Compliance. "
   },
           id: "partner-name",
           name: "partner-name",
