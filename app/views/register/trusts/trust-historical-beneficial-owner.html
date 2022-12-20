@@ -20,7 +20,7 @@
 
       <form class="form" action="" method="get">
 
-        {{ govukInput({
+<!--        {{ govukInput({
             label: {
               text: "What is the beneficial owner's name?",
               classes: "govuk-label--m",
@@ -29,6 +29,74 @@
             id: "historical-beneficial-owner-name",
             name: "historical-beneficial-owner-name"
           }) }}
+          -->
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set entityHtml %}
+{{ govukInput({
+  id: "entity-name",
+  name: "entity-name",
+  type: "name",
+  autocomplete: "name",
+  spellcheck: false,
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Name"
+  }
+}) }}
+{% endset -%}
+{% set individualHtml %}
+{{ govukInput({
+  id: "individual-name",
+  name: "individual-name",
+  type: "first-name",
+  autocomplete: "first-name",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "First name"
+  }
+}) }}
+
+{{ govukInput({
+  id: "individual-name",
+  name: "individual-name",
+  type: "last-name",
+  autocomplete: "last-name",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Last name"
+  }
+}) }}
+
+{% endset -%}
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Is the former beneficial owner an individual or a legal entity?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "entity",
+      text: "Legal entity",
+      conditional: {
+        html: entityHtml
+      }
+    },
+    {
+      value: "individual",
+      text: "Individual",
+      conditional: {
+        html: individualHtml
+      }
+    }
+  ]
+}) }}
 
 
           {{ govukDateInput({
