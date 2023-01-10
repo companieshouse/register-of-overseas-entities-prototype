@@ -59,29 +59,44 @@
           },
           id: "trust-name",
           name: "trust-name",
+          value: "Islands Trust",
           hint: {
             text: "If the trust does not have a name, give a description that it can be identified by."
           }
         }) }}
 
 
-
-
-
         {{ govukDateInput({
-          id: "trust-created",
-          namePrefix: "trust-created",
-          fieldset: {
-            legend: {
-              text: "When was the trust created?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
+  id: "trust-created",
+  namePrefix: "trust-created",
+  fieldset: {
+    legend: {
+      text: "When was the trust created?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: "10"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: "6"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: "2014"
+    }
+  ]
+}) }}
 
 
 
@@ -150,10 +165,7 @@
                       <p>We will not show any of the information you provide on this screen on the public Register of Overseas Entities. However, we may share it with HMRC.</p>
                         '
           }) }}
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/register/trusts/trust-involved-alt"
-        }) }}
+
 
 <div class="govuk-button-group">
   {{ govukButton({
@@ -161,9 +173,9 @@
     href: "/register/trusts/trust-involved-alt"
   }) }}
   {{ govukButton({
-    text: "Save as draft",
+    text: "Delete this trust",
     classes: "govuk-button--warning",
-    href: "#"
+    href: "/register/delete-warning-generic-alt"
   }) }}
 </div>
 
