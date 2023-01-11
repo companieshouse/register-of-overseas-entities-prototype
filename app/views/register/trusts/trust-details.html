@@ -81,6 +81,7 @@
           }
         }) }}
 
+<!--
         {{ govukCheckboxes({
           idPrefix: "involved",
           name: "involved",
@@ -102,9 +103,41 @@
             {
               value: "acme",
               text: "Acme Limited"
+              
             }
           ]
         }) }}
+
+-->
+
+
+<div class="govuk-form-group govuk-!-margin-bottom-4">
+  <fieldset class="govuk-fieldset" aria-describedby="involved">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Which of the overseas entity’s beneficial owners are trustees of this trust?
+      </h2>
+    </legend>
+    <div id="involved-hint" class="govuk-hint">
+      Select all that apply. You can add more later.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="involved" name="involved" type="checkbox" value="joebloggs">
+        <label class="govuk-label govuk-checkboxes__label" for="involved">
+          Joe Bloggs
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="involved-2" name="involved" type="checkbox" value="acmelimited">
+        <label class="govuk-label govuk-checkboxes__label" for="involved-2">
+          Acme Limited
+        </label>
+
+    </div>
+  </fieldset>
+</div>
+
 
 
       <p class="govuk-body govuk-!-margin-bottom-7"><a href="/register/beneficial-owner-type-one-added" class="govuk-link govuk-link--no-visited-state">Change a beneficial owner's trust nature of control</a></p>
