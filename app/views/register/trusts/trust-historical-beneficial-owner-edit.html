@@ -37,6 +37,7 @@
 {{ govukInput({
   id: "entity-name",
   name: "entity-name",
+  value: "Jane Wright",
   type: "name",
   autocomplete: "name",
   spellcheck: false,
@@ -84,6 +85,7 @@
     {
       value: "entity",
       text: "Legal entity",
+      checked: true,
       conditional: {
         html: entityHtml
       }
@@ -99,35 +101,74 @@
 }) }}
 
 
-          {{ govukDateInput({
-            id: "historical-beneficial-owner-start",
-            namePrefix: "historical-beneficial-owner-start",
-            fieldset: {
-              legend: {
-                text: "When did they become a beneficial owner?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              text: "For example, 27 3 2007"
-            }
-          }) }}
 
-          {{ govukDateInput({
-              id: "historical-beneficial-owner-stop",
-              namePrefix: "historical-beneficial-owner-stop",
-              fieldset: {
-                legend: {
-                  text: "When did they stop being a beneficial owner?",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                text: "For example, 28 5 2011"
-              }
-            }) }}
+       {{ govukDateInput({
+  id: "historical-beneficial-owner-start",
+  namePrefix: "historical-beneficial-owner-start",
+  fieldset: {
+    legend: {
+      text: "When did they become a beneficial owner?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: "10"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: "6"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: "2014"
+    }
+  ]
+}) }}
+
+
+
+
+       {{ govukDateInput({
+  id: "historical-beneficial-owner-stop",
+  namePrefix: "historical-beneficial-owner-stop",
+  fieldset: {
+    legend: {
+      text: "When did they stop being a beneficial owner?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: "26"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: "1"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: "2019"
+    }
+  ]
+}) }}
+
 
             {{ govukInsetText({
               html: '
@@ -136,10 +177,21 @@
                           '
             }) }}
 
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/register/trusts/trust-involved-alt"
-        }) }}
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/register/trusts/trust-involved-alt"
+  }) }}
+  {{ govukButton({
+    text: "Remove from the trust",
+    classes: "govuk-button--warning",
+    href: "/register/delete-warning-generic-alt"
+  }) }}
+</div>
+
+
 
       </form>
 
