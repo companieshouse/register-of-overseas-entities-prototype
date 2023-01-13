@@ -22,6 +22,8 @@ require('./routes/alt-disposed-land.js')(router)
 require('./routes/alt-disposed-more.js')(router)
 require('./routes/changes-filter.js')(router)
 require('./routes/add-trust.js')(router)
+require('./routes/remove.js')(router)
+
 
 // Sign-out routing to be imported, together with ensuring the signOut value is NULL (not set)
 var signOut = null;
