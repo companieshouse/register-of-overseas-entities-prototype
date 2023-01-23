@@ -34,8 +34,8 @@
       href: "#beneficiary-individual-dob"
     },
     {
-      text: "Select their role within the trust",
-      href: "#trust-individual"
+      text: "Start typing, then select a nationality from the list",
+      href: "#nationality"
     },
 
     {
@@ -252,10 +252,14 @@ Date of birth must include a month<br></p>
 
 
 
-        <div class="govuk-form-group">
+        
+        <div class="govuk-form-group govuk-form-group--error">
            <label for="autocomplete-default" class="govuk-label--m">What is their nationality?</label>
+            <p id="nationality-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Start typing, then select a nationality from the list 
+  </p>
           <p class="govuk-hint">Start typing a nationality, then choose from the list</p>
-          <div id="nationality" class="autocomplete-wrapper"></div>
+          <div id="nationality" class="autocomplete-wrapper "></div>
         </div>
 
         <p class="govuk-body">
@@ -264,6 +268,7 @@ Date of birth must include a month<br></p>
         <div id="second-nationality" class="second-nationality" style="display: none">
           <div class="govuk-form-group">
             <label for="autocomplete-default" class="govuk-label">Second nationality (optional)</label>
+            
             <p class="govuk-hint">Dual citizenship (also known as dual nationality) is allowed in some countries. This means they can be a citizen of their own country and another country.</p>
             <div id="nationalityTwo" class="autocomplete-wrapper"></div>
           </div>
@@ -280,7 +285,7 @@ Date of birth must include a month<br></p>
         </div>
 
 
-        
+
 
         {% call govukFieldset({
           legend: {
