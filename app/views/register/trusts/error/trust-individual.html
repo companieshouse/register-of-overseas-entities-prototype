@@ -39,26 +39,25 @@
     },
 
     {
-      text: "Select their role within the trust",
-      href: "#trust-individual"
+      text: "Enter the property name or number",
+      href: "#usual-residential-address-property-name-number"
     },
     {
-      text: "Select their role within the trust",
-      href: "#trust-individual"
+      text: "Enter address line 1",
+      href: "#usual-residential-address-line-1"
     },
     {
-      text: "Select their role within the trust",
-      href: "#trust-individual"
+      text: "Enter the city or town",
+      href: "#usual-residential-address-city-town"
     },
     {
-      text: "Select their role within the trust",
-      href: "#trust-individual"
+      text: "Start typing, then select a country from the list",
+      href: "#country"
     },
     {
-      text: "Select their role within the trust",
-      href: "#trust-individual"
+      text: "Select yes if their correspondence address is the same as their home address",
+      href: "#same-address"
     }
-    
   ]
 }) }}
 
@@ -296,6 +295,9 @@ Date of birth must include a month<br></p>
 
         }) %}
 
+
+
+
         {{ govukInput({
           label: {
             html: 'Property name or number'
@@ -303,19 +305,27 @@ Date of birth must include a month<br></p>
           hint: {
            text: "For example, 'Saron House', '116' or 'Apartment 37a'"
          },
+  errorMessage: {
+    text: "Enter the property name or number"
+  },
           id: "usual-residential-address-property-name-number",
           name: "usual-residential-address-property-name-number"
         }) }}
+
 
         {{ govukInput({
           label: {
             text: "Address line 1"
           },
+  errorMessage: {
+    text: "Enter address line 1"
+  },
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-line-1",
           name: "usual-residential-address-line-1",
           autocomplete: "address-line1"
         }) }}
+
 
         {{ govukInput({
           label: {
@@ -331,6 +341,9 @@ Date of birth must include a month<br></p>
           label: {
             text: "City or town"
           },
+  errorMessage: {
+    text: "Enter the city or town"
+  },
           classes: "govuk-!-width-two-thirds",
           id: "usual-residential-address-city-town",
           name: "usual-residential-address-city-town"
@@ -345,11 +358,18 @@ Date of birth must include a month<br></p>
           name: "service-address-state"
         }) }}
 
-        <div class="govuk-form-group">
+
+
+        <div class="govuk-form-group govuk-form-group--error">
            <label for="autocomplete-default" class="govuk-label">Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list</p>
+             <p id="full-name-input-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Start typing, then select a country from the list
+  </p>
+          <p class="govuk-hint">Start typing a country, then choose from the list</p> 
           <div id="country" class="autocomplete-wrapper"></div>
         </div>
+
+
 
         {{ govukInput({
           label: {
@@ -361,6 +381,11 @@ Date of birth must include a month<br></p>
           autocomplete: "postal-code"
         }) }}
         {% endcall %}
+
+
+
+
+
 
         {% set serviceAddressHtml %}
         <br>
@@ -421,7 +446,7 @@ Date of birth must include a month<br></p>
         }) }}
 
         <div class="govuk-form-group">
-           <label for="autocomplete-default" class="govuk-label">Country</label>
+           <label for="autocomplete-default" class="govuk-label" >Country</label>
           <p class="govuk-hint">Start typing a country, then choose from the list</p>
           <div id="country-2" class="autocomplete-wrapper"></div>
         </div>
@@ -439,6 +464,7 @@ Date of birth must include a month<br></p>
         {% endcall %}
         {% endset -%}
 
+
         {{ govukRadios({
           classes: "govuk-radios",
           idPrefix: "same-address",
@@ -450,6 +476,9 @@ Date of birth must include a month<br></p>
               classes: "govuk-fieldset__legend--m"
             }
           },
+  errorMessage: {
+    text: "Select yes if their correspondence address is the same as their home address"
+  },
           items: [
             {
               value: "yes",
@@ -464,6 +493,26 @@ Date of birth must include a month<br></p>
             }
           ]
         }) }}
+
+
+<p class="govuk-body">
+  
+<strong>If no selected, but no address entered: </strong>
+Show all below errors below and mirror 'What is their home address?' in fields and summary<br>
+
+<strong>If no selected, but property name or number missing: </strong>
+Enter the property name or number<br>
+
+<strong>If address line 1 missing: </strong>
+Enter address line 1<br>
+
+<strong>City or town missing: </strong>
+Enter the city or town<br>
+
+<strong>Country missing: </strong>
+Start typing, then select a country from the list<br>
+</p>
+
 
         {{ govukInsetText({
           html: '
