@@ -14,12 +14,49 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-            {{ govukErrorSummary({
+{{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Select which type of individual or entity you want to add",
-      href: "#trustTypes"
+      text: "Enter its name",
+      href: "#beneficiary-individual-first-name"
+    },
+    {
+      text: "Enter their last name",
+      href: "#beneficiary-individual-last-name"
+    },
+    {
+      text: "Enter their date of birth",
+      href: "#beneficiary-individual-dob"
+    },
+    {
+      text: "Date of birth must include a year",
+      href: "#beneficiary-individual-dob"
+    },
+    {
+      text: "Start typing, then select a nationality from the list",
+      href: "#nationality"
+    },
+
+    {
+      text: "Enter the property name or number",
+      href: "#usual-residential-address-property-name-number"
+    },
+    {
+      text: "Enter address line 1",
+      href: "#usual-residential-address-line-1"
+    },
+    {
+      text: "Enter the city or town",
+      href: "#usual-residential-address-city-town"
+    },
+    {
+      text: "Start typing, then select a country from the list",
+      href: "#country"
+    },
+    {
+      text: "Select yes if their correspondence address is the same as their home address",
+      href: "#same-address"
     }
   ]
 }) }}
@@ -56,8 +93,8 @@
 
 
 
-
-
+Enter its name 
+corp-name
 
 
         {{ govukInput({
@@ -69,7 +106,7 @@
           id: "corp-name",
           name: "corp-name",
   errorMessage: {
-    text: "Enter your full name"
+    text: "Enter its name"
   }
         }) }}
 
