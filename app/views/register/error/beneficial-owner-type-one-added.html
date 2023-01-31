@@ -1,0 +1,306 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Beneficial owners or managing officers involved in the overseas entity – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/register/beneficial-owner-individual" method="get">
+
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "You need to add at least one managing officer",
+      href: "#passport-issued-day"
+    }
+  ]
+}) }}
+
+
+        {% if (data['statements'] === "allIdentifiedAllSupplied") %}
+
+
+        <h1 class="govuk-heading-xl">Beneficial owners involved in the overseas entity</h1>
+
+
+
+        {{ govukTable({
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-8",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Joe Bloggs"
+              },
+              {
+                text: "Individual beneficial owner"
+              },
+              {
+                html: '<a href="/register/beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
+              }
+             ]
+          ]
+        }) }}
+
+
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of beneficial owner do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "beneficialTypesIndividual",
+            text: "Individual beneficial owner"
+          },
+          {
+            value: "beneficialTypesOther",
+            text: "Other legal entity beneficial owner"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Government or public authority beneficial owner"
+          }
+        ]
+        }) }}
+
+
+
+
+
+
+
+
+
+
+
+        {% elif (data['statements'] === "noneIdentified") %}
+
+
+        <h1 class="govuk-heading-xl">Managing officers involved in the overseas entity</h1>
+
+
+
+                            {{ govukTable({
+                              caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
+                              captionClasses: "govuk-table__caption--m",
+                              classes: "govuk-!-margin-bottom-8",
+                              firstCellIsHeader: true,
+                              head: [
+                              {
+                                text: "Name",
+                                classes: "govuk-visually-hidden"
+                              },
+                              {
+                                text: "Type",
+                                classes: "govuk-visually-hidden"
+                              },
+                                {
+                                  text: "Change or remove",
+                                  classes: "govuk-visually-hidden"
+                                }
+                              ],
+                              rows: [
+                                [
+                                  {
+                                    text: "Joe Bloggs"
+                                  },
+                                  {
+                                    text: "Individual managing officer"
+                                  },
+                                  {
+                                    html: '<a href="javascript:void(0)">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
+                                  }
+                                 ]
+                              ]
+                            }) }}
+
+
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of managing officer do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "moTypesIndividual",
+            text: "Individual managing officer"
+          },
+          {
+            value: "moTypesCorporate",
+            text: "Corporate managing officer"
+          }
+        ]
+        }) }}
+
+
+
+
+        {% else %}
+
+
+        <h1 class="govuk-heading-xl">Beneficial owners and managing officers involved in the overseas entity</h1>
+
+
+        {{ govukTable({
+          caption: 'What <span class="govuk-visually-hidden">beneficial owners or managing officers</span> you have added so far' | safe,
+          captionClasses: "govuk-table__caption--m",
+          classes: "govuk-!-margin-bottom-8",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "Name",
+            classes: "govuk-visually-hidden"
+          },
+          {
+            text: "Type",
+            classes: "govuk-visually-hidden"
+          },
+            {
+              text: "Change or remove",
+              classes: "govuk-visually-hidden"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Joe Bloggs"
+              },
+              {
+                text: "Individual beneficial owner"
+              },
+              {
+                html: '<a href="/register/beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
+              }
+             ],
+             [
+               {
+                 text: "Jane Doe"
+               },
+               {
+                 text: "Individual managing officer"
+               },
+               {
+                 html: '<a href="/register/beneficial-owner-individual-completed">Change or remove <span class="govuk-visually-hidden">Joe Bloggs</span></a>'
+               }
+              ]
+          ]
+        }) }}
+
+
+
+        {{ govukRadios({
+        idPrefix: "boType",
+        name: "boType",
+        fieldset: {
+          legend: {
+            text: "Which type of beneficial owner or managing officer do you want to add?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+  errorMessage: {
+    text: "You need to add at least one managing officer"
+  },
+        hint: {
+          text: "You can add more later."
+        },
+        items: [
+          {
+            value: "beneficialTypesIndividual",
+            text: "Individual beneficial owner"
+          },
+          {
+            value: "beneficialTypesOther",
+            text: "Other legal entity beneficial owner"
+
+          },
+          {
+            value: "beneficialTypesGov",
+            text: "Government or public authority beneficial owner"
+          },
+          {
+            value: "moTypesIndividual",
+            text: "Individual managing officer"
+          },
+          {
+            value: "moTypesCorporate",
+            text: "Corporate managing officer"
+          }
+        ]
+        }) }}
+
+
+        {% endif %}
+
+
+
+
+        <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Add"
+        }) }}
+
+        {{ govukButton({
+          text: "No more to add",
+           classes: "govuk-button--secondary",
+           href: '/register/trusts/trust-interrupt'
+        }) }}
+
+
+      </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
