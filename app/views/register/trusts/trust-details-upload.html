@@ -62,11 +62,15 @@
         name: "more-detail",
         id: "more-detail",
         label: {
-          text: "If you've already completed the Trust Excel document, follow the instructions in the document to paste the data into the box:",
+          text: "If you've already completed the Trust Excel document, follow the instructions in the document to paste the data into the box, then select to add the trust. You can only add data for one trust at a time:",
           classes: "govuk-body",
           isPageHeading: false
         }
       }) }}
+
+        <div id="with-hint-info" class="govuk-hint govuk-character-count__message govuk-!-margin-bottom-6" >
+    You have added data for one trust.
+  </div>
                     <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
@@ -93,7 +97,7 @@
       <div class="govuk-button-group">
 
         {{ govukButton({
-          text: "Add another trust",
+          text: "Add trust",
           href: "/register/trusts/trust-details-upload"
         }) }}
 
